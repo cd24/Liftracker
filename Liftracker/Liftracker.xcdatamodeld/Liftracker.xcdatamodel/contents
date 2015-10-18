@@ -12,9 +12,9 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Rep" representedClassName="Rep" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="num_reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" syncable="YES"/>
         <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
     </entity>
     <elements>

@@ -21,7 +21,6 @@ class DataManager {
         let fetch_request = NSFetchRequest(entityName: "Rep")
         let sort_predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
         fetch_request.predicate = sort_predicate
-        //fetch_request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
         let results: [Rep]
         do {
             results = try managedContext.executeFetchRequest(fetch_request) as! [Rep]
@@ -41,7 +40,7 @@ class DataManager {
             results = try managedContext.executeFetchRequest(fetch_request) as! [MuscleGroup]
         }
         catch{
-            //NSLog(String(format: "Error while loading muscle groups: %s", error.stringValue()))
+            NSLog("Error while loading muscle groups: \(error)")
         }
         
         return results
@@ -89,11 +88,16 @@ class DataManager {
         return exercice
     }
     
-    func newRep(weight weight: Int, repetitions reps: Int) -> Rep {
+    func newRep(weight w: Int, repetitions reps: Int, exercice ex: Exercice) -> Rep {
+        return newRep(weight: w, repetitions: reps, exercice: ex, date: getDayOfWeek())
+    }
+    
+    func newRep(weight w: Int, repetitions reps: Int, exercice ex: Exercice, date day: NSDate) -> Rep{
         let rep = NSEntityDescription.insertNewObjectForEntityForName("Rep", inManagedObjectContext: managedContext) as! Rep
-        rep.weight = weight
+        rep.weight = w
         rep.num_reps = reps
-        rep.day = getToday()
+        rep.date = "\(day)"
+        rep.exercice = ex
         save_context()
         return rep
     }
@@ -115,29 +119,6 @@ class DataManager {
     func sortDescriptorName() -> [NSSortDescriptor]{
         return [NSSortDescriptor(key: "name", ascending: true)]
     }
-    
-    func getToday() -> Day {
-        let today = getDayOfWeek()
-        
-        let fetch_request = NSFetchRequest(entityName: "Day")
-        let search_predicate = NSPredicate(format: "date=='\(today)'")
-        fetch_request.predicate = search_predicate
-        do {
-            let results = try managedContext.executeFetchRequest(fetch_request)
-            if (results.count > 0){
-                return results[0] as! Day
-            }
-        }
-        catch {
-            NSLog("Error Occurred \n\(error)")
-        }
-        
-        let new_day = NSEntityDescription.insertNewObjectForEntityForName("Day", inManagedObjectContext: managedContext) as! Day
-        new_day.date = "\(getDayOfWeek())"
-        save_context()
-        return new_day
-    }
-    
     
     func save_context(){
         do {

@@ -31,6 +31,18 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save_rep");
         repsTemp = DataManager.getInstance().loadAllRepsFor(exercice: exercice!)
         self.title = exercice?.name
+        
+        for rep in repsTemp {
+            if allReps.keys.contains(rep.date!){
+                allReps[rep.date!]!.append(rep)
+            }
+            else {
+                allReps[rep.date!] = [rep]
+                repKeys.append(rep.date!)
+            }
+        }
+        
+        repKeys.sortInPlace()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -47,11 +59,14 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if allReps.keys.count == 0 {
+            return 1
+        }
         return allReps.keys.count
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0){
+        if allReps.keys.count == 0 {
             return 1
         }
         let key = repKeys[section]
@@ -61,10 +76,15 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let key = repKeys[indexPath.section]
-        let rep = allReps[key]![indexPath.row]
-        cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(rep.weight!)"
-
+        
+        if allReps.keys.count == 0 {
+            cell.textLabel?.text = "No Reps Found"
+        }
+        else {
+            let key = repKeys[indexPath.section]
+            let rep = allReps[key]![indexPath.row]
+            cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(rep.weight!)"
+        }
         return cell
     }
     
@@ -81,17 +101,21 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if allReps.keys.count == 0 {
+            return ""
+        }
         return "\(repKeys[section])"
     }
     
     func save_rep(){
         let manager = DataManager.getInstance()
+        weight?.resignFirstResponder()
+        num_reps?.resignFirstResponder()
         if let w = Int(weight!.text!) {
             if let r = Int(num_reps!.text!){
-                let new_rep = manager.newRep(weight: w, repetitions: r)
+                let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!)
                 addRep(repetition: new_rep)
                 tableView!.reloadData()
-                manager.save_context()
             }
         }
     }
@@ -104,7 +128,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func addRep(repetition rep: Rep){
-        let date = rep.day!.date!
+        let date = rep.date!
         if allReps.keys.contains(date){
             allReps[date]?.append(rep)
         }

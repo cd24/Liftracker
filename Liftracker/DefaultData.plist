@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>hasRun</key>
-	<true/>
+	<false/>
 	<key>MuscleGroup</key>
 	<dict>
 		<key>Arms</key>

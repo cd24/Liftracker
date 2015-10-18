@@ -13,6 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let loadOnceKey = "DefaultDataLoad"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -95,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupDefault(){
         let manager = DataManager.getInstance()
         if let values = readInDefaults() {
-            if values["hasRun"] as! Bool {
+            if NSUserDefaults().boolForKey(loadOnceKey) {
                 return //Already run - should be good!
             }
             let muscle_groups = values["MuscleGroup"] as! [String:Array<String>]
@@ -107,6 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     new_exercice.best = 0;
                 }
             }
+            NSUserDefaults().setBool(true, forKey: loadOnceKey)
         }
         manager.save_context()
         

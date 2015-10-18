@@ -18,6 +18,7 @@
 		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; settings = {ASSET_TAGS = (); }; };
 		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
@@ -67,6 +68,8 @@
 		521F4A081BC8B06400FA6E02 /* DefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultData.plist; sourceTree = "<group>"; };
 		521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceAdderViewController.swift; sourceTree = "<group>"; };
 		521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepsViewController.swift; sourceTree = "<group>"; };
+		5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
 		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,8 @@
 		52AFF0431BC8933D00A1115F = {
 			isa = PBXGroup;
 			children = (
+				5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */,
+				5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */,
 				52AFF04E1BC8933D00A1115F /* Liftracker */,
 				52AFF0661BC8933D00A1115F /* LiftrackerTests */,
 				52AFF0711BC8933D00A1115F /* LiftrackerUITests */,
@@ -343,6 +348,7 @@
 				52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */,
 				52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */,
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
+				5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
 				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
 				52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */,
