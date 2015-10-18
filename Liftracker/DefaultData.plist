@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hasRun</key>
+	<true/>
+	<key>MuscleGroup</key>
+	<dict>
+		<key>Arms</key>
+		<array>
+			<string>Bicept Curl</string>
+			<string>French Press</string>
+			<string>EZ Bar Preacher Curl</string>
+		</array>
+		<key>Chest</key>
+		<array>
+			<string>Flat Dumbbell Bench Press</string>
+			<string>Inclined Dumbbell Bench Press</string>
+			<string>Declined Dumbbell Bench Press</string>
+			<string>Flat Dumbbell Fly</string>
+		</array>
+	</dict>
+</dict>
+</plist>

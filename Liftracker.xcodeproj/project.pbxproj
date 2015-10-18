@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52151E031BCEA638006BC0B1 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E081BCF0DEB006BC0B1 /* Exercice.m */; settings = {ASSET_TAGS = (); }; };
+		52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */; settings = {ASSET_TAGS = (); }; };
+		52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E101BCF0DEB006BC0B1 /* Rep.m */; settings = {ASSET_TAGS = (); }; };
+		52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E141BCF0DEB006BC0B1 /* Day.m */; settings = {ASSET_TAGS = (); }; };
+		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; settings = {ASSET_TAGS = (); }; };
+		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
+		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
-		52AFF0521BC8933D00A1115F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0511BC8933D00A1115F /* ViewController.swift */; };
 		52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF0531BC8933D00A1115F /* Main.storyboard */; };
 		52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0561BC8933D00A1115F /* Liftracker.xcdatamodeld */; };
 		52AFF05A1BC8933D00A1115F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF0591BC8933D00A1115F /* Assets.xcassets */; };
 		52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */; };
 		52AFF0681BC8933D00A1115F /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0671BC8933D00A1115F /* LiftrackerTests.swift */; };
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
+		52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +49,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52151E031BCEA638006BC0B1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		52151E051BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Exercice+CoreDataProperties.h"; path = "../Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Exercice+CoreDataProperties.m"; path = "../Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52151E071BCF0DEB006BC0B1 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercice.h; path = ../Exercice.h; sourceTree = "<group>"; };
+		52151E081BCF0DEB006BC0B1 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercice.m; path = ../Exercice.m; sourceTree = "<group>"; };
+		52151E091BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MuscleGroup+CoreDataProperties.h"; path = "../MuscleGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
+		52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MuscleGroup+CoreDataProperties.m"; path = "../MuscleGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52151E0B1BCF0DEB006BC0B1 /* MuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuscleGroup.h; path = ../MuscleGroup.h; sourceTree = "<group>"; };
+		52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuscleGroup.m; path = ../MuscleGroup.m; sourceTree = "<group>"; };
+		52151E0D1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Rep+CoreDataProperties.h"; path = "../Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
+		52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Rep+CoreDataProperties.m"; path = "../Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52151E0F1BCF0DEB006BC0B1 /* Rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rep.h; path = ../Rep.h; sourceTree = "<group>"; };
+		52151E101BCF0DEB006BC0B1 /* Rep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rep.m; path = ../Rep.m; sourceTree = "<group>"; };
+		52151E131BCF0DEB006BC0B1 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Day.h; path = ../Day.h; sourceTree = "<group>"; };
+		52151E141BCF0DEB006BC0B1 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Day.m; path = ../Day.m; sourceTree = "<group>"; };
+		521F4A081BC8B06400FA6E02 /* DefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultData.plist; sourceTree = "<group>"; };
+		521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceAdderViewController.swift; sourceTree = "<group>"; };
+		521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepsViewController.swift; sourceTree = "<group>"; };
+		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
+		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFF04F1BC8933D00A1115F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52AFF0511BC8933D00A1115F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52AFF0541BC8933D00A1115F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52AFF0571BC8933D00A1115F /* Liftracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker.xcdatamodel; sourceTree = "<group>"; };
 		52AFF0591BC8933D00A1115F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +82,10 @@
 		52AFF06E1BC8933D00A1115F /* LiftrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
 		52AFF0741BC8933D00A1115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		52ECDC241BD3F9C900609C9B /* Day+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Day+CoreDataProperties.h"; path = "../Day+CoreDataProperties.h"; sourceTree = "<group>"; };
+		52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Day+CoreDataProperties.m"; path = "../Day+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52ECDC271BD3FC7F00609C9B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52151E021BCEA627006BC0B1 /* Data Management */ = {
+			isa = PBXGroup;
+			children = (
+				52151E031BCEA638006BC0B1 /* DataManager.swift */,
+			);
+			name = "Data Management";
+			sourceTree = "<group>";
+		};
 		52AFF0431BC8933D00A1115F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +128,7 @@
 				52AFF0661BC8933D00A1115F /* LiftrackerTests */,
 				52AFF0711BC8933D00A1115F /* LiftrackerUITests */,
 				52AFF04D1BC8933D00A1115F /* Products */,
+				52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +145,16 @@
 		52AFF04E1BC8933D00A1115F /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				52151E021BCEA627006BC0B1 /* Data Management */,
+				52AFF0821BC8955D00A1115F /* CoreDataModels */,
 				52AFF04F1BC8933D00A1115F /* AppDelegate.swift */,
-				52AFF0511BC8933D00A1115F /* ViewController.swift */,
 				52AFF0531BC8933D00A1115F /* Main.storyboard */,
+				521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */,
+				521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */,
+				521F4A081BC8B06400FA6E02 /* DefaultData.plist */,
+				52ECDC271BD3FC7F00609C9B /* Settings.bundle */,
+				5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */,
+				5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */,
 				52AFF0591BC8933D00A1115F /* Assets.xcassets */,
 				52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */,
 				52AFF05E1BC8933D00A1115F /* Info.plist */,
@@ -126,6 +179,29 @@
 				52AFF0741BC8933D00A1115F /* Info.plist */,
 			);
 			path = LiftrackerUITests;
+			sourceTree = "<group>";
+		};
+		52AFF0821BC8955D00A1115F /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				52ECDC241BD3F9C900609C9B /* Day+CoreDataProperties.h */,
+				52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */,
+				52151E051BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.h */,
+				52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */,
+				52151E071BCF0DEB006BC0B1 /* Exercice.h */,
+				52151E081BCF0DEB006BC0B1 /* Exercice.m */,
+				52151E091BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.h */,
+				52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */,
+				52151E0B1BCF0DEB006BC0B1 /* MuscleGroup.h */,
+				52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */,
+				52151E0D1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.h */,
+				52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */,
+				52151E0F1BCF0DEB006BC0B1 /* Rep.h */,
+				52151E101BCF0DEB006BC0B1 /* Rep.m */,
+				52151E131BCF0DEB006BC0B1 /* Day.h */,
+				52151E141BCF0DEB006BC0B1 /* Day.m */,
+			);
+			name = CoreDataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +266,13 @@
 		52AFF0441BC8933D00A1115F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = MCApps;
 				TargetAttributes = {
 					52AFF04B1BC8933D00A1115F = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 6VKP38H23M;
 					};
 					52AFF0621BC8933D00A1115F = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -233,6 +311,8 @@
 			files = (
 				52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */,
 				52AFF05A1BC8933D00A1115F /* Assets.xcassets in Resources */,
+				52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */,
+				521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */,
 				52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +338,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52AFF0521BC8933D00A1115F /* ViewController.swift in Sources */,
+				52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */,
+				52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */,
+				52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */,
+				52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */,
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
+				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
+				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
+				52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */,
+				5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */,
+				52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
+				52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */,
+				5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */,
+				52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */,
+				521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +492,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MCA.Liftracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -411,10 +509,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MCA.Liftracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -485,6 +588,7 @@
 				52AFF0791BC8933D00A1115F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52AFF07A1BC8933D00A1115F /* Build configuration list for PBXNativeTarget "LiftrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +597,7 @@
 				52AFF07C1BC8933D00A1115F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52AFF07D1BC8933D00A1115F /* Build configuration list for PBXNativeTarget "LiftrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +606,7 @@
 				52AFF07F1BC8933D00A1115F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

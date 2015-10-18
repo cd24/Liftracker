@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setupDefault()
         return true
     }
 
@@ -90,6 +91,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+    
+    func setupDefault(){
+        let manager = DataManager.getInstance()
+        if let values = readInDefaults() {
+            if values["hasRun"] as! Bool {
+                return //Already run - should be good!
+            }
+            let muscle_groups = values["MuscleGroup"] as! [String:Array<String>]
+            for key in muscle_groups.keys{
+                let new_group = manager.newMuscleGroup(name: key)
+                let exercices = muscle_groups[key]
+                for exercice: String in exercices!{
+                    let new_exercice = manager.newExercice(name: exercice, muscle_group: new_group)
+                    new_exercice.best = 0;
+                }
+            }
+        }
+        manager.save_context()
+        
+    }
+    
+    func readInDefaults() -> NSDictionary? {
+        var myDict: NSDictionary?
+        if let path = NSBundle.mainBundle().pathForResource("DefaultData", ofType: "plist"){
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        
+        return myDict
+    }
 
     // MARK: - Core Data Saving support
 
