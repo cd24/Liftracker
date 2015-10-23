@@ -1,39 +1,19 @@
 //
-//  MGSelectionController.swift
+//  HomeCellTableViewController.swift
 //  Liftracker
 //
-//  Created by John McAvey on 10/9/15.
+//  Created by John McAvey on 10/18/15.
 //  Copyright © 2015 MCApps. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class MGSelectionController: UITableViewController {
-
-    let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
-    var muscle_group: Array<MuscleGroup> = Array();
-    var modal: Bool = false
+class HomeCellTableViewController: UITableViewController {
+    
+    var reps = [Rep]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Groups"
-        
-        //load exercices for function
-        load_data()
-        if (muscle_group.count == 0){
-            load_data()
-        }
-        
-        if (modal){
-            
-        }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -51,52 +31,26 @@ class MGSelectionController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1;
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return muscle_group.count
+        return reps.count
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = muscle_group[indexPath.row].name;
+        let rep = reps[indexPath.row]
+        cell.textLabel?.text = "Weight \(rep.weight), Reps: \(rep.num_reps)"
 
         return cell
     }
     
-    func load_data(){
-        let fetch_request = NSFetchRequest(entityName: "MuscleGroup");
-        let order = NSSortDescriptor(key: "name", ascending: false)
-        fetch_request.sortDescriptors?.append(order)
-        
-        do {
-            let results = try managed_context.executeFetchRequest(fetch_request) as! Array<MuscleGroup>
-            for result in results {
-                muscle_group.append(result);
-            }
-        }
-        catch {
-            NSLog("An Error was thrown!");
-        }
-    }
-    
-    func addGroup(){
-        //todo: implement
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let viewController = segue.destinationViewController as! ExerciceSelectorController;
-        viewController.group = muscle_group[(tableView.indexPathForSelectedRow?.row)!]
-    }
-    
-    func dismiss(){
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

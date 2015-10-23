@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Automatic">
-    <entity name="Day" representedClassName="Day" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="Exercice" representedClassName="Exercice" syncable="YES">
         <attribute name="best" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +15,6 @@
         <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="-344" positionY="297" width="128" height="60"/>
         <element name="Exercice" positionX="-198" positionY="-27" width="128" height="90"/>
         <element name="MuscleGroup" positionX="-416" positionY="-78" width="128" height="60"/>
         <element name="Rep" positionX="-90" positionY="105" width="128" height="105"/>

@@ -10,7 +10,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Group</string>
+			<string>User Info</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -18,43 +18,107 @@
 			<key>Title</key>
 			<string>Name</string>
 			<key>Key</key>
-			<string>name_preference</string>
-			<key>DefaultValue</key>
-			<string></string>
-			<key>IsSecure</key>
-			<false/>
-			<key>KeyboardType</key>
-			<string>Alphabet</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
+			<string>user_name</string>
 		</dict>
 		<dict>
+			<key>Values</key>
+			<array>
+				<string>Female</string>
+				<string>Male</string>
+				<string>Undisclosed</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Female</string>
+				<string>Male</string>
+				<string>Prefer not to say</string>
+			</array>
 			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
+			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
-			<string>Enabled</string>
+			<string>Gender</string>
 			<key>Key</key>
-			<string>enabled_preference</string>
+			<string>user_gender</string>
 			<key>DefaultValue</key>
-			<true/>
+			<string>Undisclosed</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSSliderSpecifier</string>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Calculation Settings</string>
+		</dict>
+		<dict>
+			<key>Values</key>
+			<array>
+				<string>Brzycki</string>
+				<string>Epley</string>
+				<string>Lander</string>
+				<string>Lombardi</string>
+				<string>Mahew</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Brzycki</string>
+				<string>Epley</string>
+				<string>Lander</string>
+				<string>Lombardi</string>
+				<string>Mahew</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Max Rep Formula</string>
 			<key>Key</key>
-			<string>slider_preference</string>
+			<string>max_rep_calculator</string>
 			<key>DefaultValue</key>
-			<real>0.5</real>
-			<key>MinimumValue</key>
-			<integer>0</integer>
-			<key>MaximumValue</key>
-			<integer>1</integer>
-			<key>MinimumValueImage</key>
-			<string></string>
-			<key>MaximumValueImage</key>
-			<string></string>
+			<string>Epley</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Unit Settings</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>Lbs</string>
+				<string>Kgs</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>Lbs</string>
+				<string>Kgs</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Weight Units</string>
+			<key>Key</key>
+			<string>weight_units</string>
+			<key>DefaultValue</key>
+			<string>Lbs</string>
+		</dict>
+		<dict>
+			<key>Values</key>
+			<array>
+				<string>Liter</string>
+				<string>Ounce</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>Liter</string>
+				<string>Ounce</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Fluid Units</string>
+			<key>Key</key>
+			<string>fluid_units</string>
+			<key>DefaultValue</key>
+			<string>Liter</string>
 		</dict>
 	</array>
 </dict>
