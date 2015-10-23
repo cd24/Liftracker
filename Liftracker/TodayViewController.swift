@@ -9,10 +9,26 @@
 import UIKit
 
 class TodayViewController: UITableViewController {
+    
+    var todaysReps: [Exercice:[Rep]] = [Exercice:[Rep]]()
+    var keys: [Exercice] = []
+    let manager = DataManager.getInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //todaysReps = manager.loadAllRepsFor(date: NSDate())
+        let muscle_groups = manager.loadAllMuscleGroups()
+        let today = NSDate()
+        for mg in muscle_groups{
+            let exercices = manager.loadExercicesFor(muscle_group: mg)
+            for exercice in exercices{
+                let reps = manager.loadAllRepsFor(exercice: exercice, date: today)
+                todaysReps[exercice]? = reps
+                keys.append(exercice)
+            }
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +45,23 @@ class TodayViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return todaysReps.keys.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return todaysReps[keys[section]]!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
+        let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
+        cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

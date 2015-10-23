@@ -32,6 +32,38 @@ class DataManager {
         return results;
     }
     
+    func loadAllRepsFor(exercice exercice: Exercice, date date: NSDate) -> [Rep]{
+        let fetch_request = NSFetchRequest(entityName: "Rep")
+        let cleanded_date = startOfDay(date)
+        let sort_predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)' AND date == '\(cleanded_date)")
+        fetch_request.predicate = sort_predicate
+        let results: [Rep]
+        do {
+            results = try managedContext.executeFetchRequest(fetch_request) as! [Rep]
+        }
+        catch {
+            results = [];
+            //todo: Report the error
+        }
+        return results;
+    }
+    
+    func loadAllRepsFor( date date: NSDate) -> [Rep]{
+        let fetch_request = NSFetchRequest(entityName: "Rep")
+        let cleanded_date: NSDate = startOfDay(date)
+        let sort_predicate = NSPredicate(format: "date == '\(cleanded_date)")
+        fetch_request.predicate = sort_predicate
+        let results: [Rep]
+        do {
+            results = try managedContext.executeFetchRequest(fetch_request) as! [Rep]
+        }
+        catch {
+            results = [];
+            //todo: Report the error
+        }
+        return results;
+    }
+    
     func loadAllMuscleGroups() -> [MuscleGroup]{
         let fetch_request = NSFetchRequest(entityName: "MuscleGroup")
         fetch_request.sortDescriptors = sortDescriptorName()
@@ -131,9 +163,12 @@ class DataManager {
     }
     
     func getDayOfWeek() -> NSDate {
-        let today = NSDate()
+        return startOfDay(NSDate())
+    }
+    
+    func startOfDay(date: NSDate) -> NSDate{
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let startOfDay = calendar.startOfDayForDate(today)
+        let startOfDay = calendar.startOfDayForDate(date)
         return startOfDay
     }
     
