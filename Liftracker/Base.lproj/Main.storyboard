@@ -226,18 +226,82 @@
             </objects>
             <point key="canvasLocation" x="-1177" y="936"/>
         </scene>
-        <!--Today-->
-        <scene sceneID="zQJ-d1-M40">
+        <!--Stats-->
+        <scene sceneID="hio-Sj-Y5B">
             <objects>
-                <tableViewController id="rK9-A2-2vW" customClass="TodayViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Krs-89-Gfa">
+                <tableViewController id="g5w-DG-NUe" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ia1-X7-GkS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YhQ-U5-EV8">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AG7-6Y-hOm">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AG7-6Y-hOm" id="7ax-8b-kxh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g5w-DG-NUe" id="X3a-0W-o7E"/>
+                            <outlet property="delegate" destination="g5w-DG-NUe" id="NHN-OT-nVN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Stats" image="bars.png" id="a4r-De-eUi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLk-FW-hxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1177" y="1661"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="tdd-nP-boE">
+            <objects>
+                <tableViewController id="ot5-W9-CcC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DrU-jm-jfX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OlB-IY-TKj">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OlB-IY-TKj" id="PAd-eu-LcH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ot5-W9-CcC" id="U9Y-Em-u93"/>
+                            <outlet property="delegate" destination="ot5-W9-CcC" id="4w5-mK-Ygq"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="History" id="FzY-SG-aXH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXh-KE-H57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1177" y="2436"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="zQJ-d1-M40">
+            <objects>
+                <tableViewController id="rK9-A2-2vW" customClass="TodayViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Krs-89-Gfa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YhQ-U5-EV8">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YhQ-U5-EV8" id="kBz-ns-k6W">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -275,11 +339,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="OIp-tm-JUP" kind="relationship" relationship="viewControllers" id="jW6-Wx-gbL"/>
+                        <segue destination="g5w-DG-NUe" kind="relationship" relationship="viewControllers" id="u09-oK-Nxm"/>
+                        <segue destination="ot5-W9-CcC" kind="relationship" relationship="viewControllers" id="X6Q-wZ-m8M"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt5-fD-gwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1877" y="977"/>
+            <point key="canvasLocation" x="-2301" y="1441"/>
         </scene>
         <!--Selection Controller-->
         <scene sceneID="0f9-nE-W0P">
@@ -350,6 +416,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bars.png" width="31" height="31"/>
         <image name="home.png" width="26" height="26"/>
     </resources>
 </document>

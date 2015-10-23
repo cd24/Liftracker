@@ -32,9 +32,9 @@ class DataManager {
         return results;
     }
     
-    func loadAllRepsFor(exercice exercice: Exercice, date date: NSDate) -> [Rep]{
+    func loadAllRepsFor(exercice exercice: Exercice, date day: NSDate) -> [Rep]{
         let fetch_request = NSFetchRequest(entityName: "Rep")
-        let cleanded_date = startOfDay(date)
+        let cleanded_date = startOfDay(day)
         let sort_predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)' AND date == '\(cleanded_date)'")
         fetch_request.predicate = sort_predicate
         let results: [Rep]

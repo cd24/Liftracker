@@ -23,6 +23,10 @@
 		52347E551BD4386400560AFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E541BD4386400560AFA /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		526C290D1BD9F9EC009B7D19 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290C1BD9F9EC009B7D19 /* home.png */; settings = {ASSET_TAGS = (); }; };
+		526C290F1BDA7950009B7D19 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290E1BDA7950009B7D19 /* bars.png */; settings = {ASSET_TAGS = (); }; };
+		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		526C29151BDA7DD3009B7D19 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C29141BDA7DD3009B7D19 /* book.png */; settings = {ASSET_TAGS = (); }; };
+		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
@@ -81,6 +85,10 @@
 		5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
 		5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
 		526C290C1BD9F9EC009B7D19 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		526C290E1BDA7950009B7D19 /* bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars.png; sourceTree = "<group>"; };
+		526C29121BDA798F009B7D19 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		526C29141BDA7DD3009B7D19 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
+		526C29181BDA7EAD009B7D19 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
 		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,8 +160,29 @@
 			isa = PBXGroup;
 			children = (
 				526C290C1BD9F9EC009B7D19 /* home.png */,
+				526C290E1BDA7950009B7D19 /* bars.png */,
+				526C29141BDA7DD3009B7D19 /* book.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		526C29161BDA7E70009B7D19 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				526C29181BDA7EAD009B7D19 /* DayViewController.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		526C29171BDA7E79009B7D19 /* Adding Info */ = {
+			isa = PBXGroup;
+			children = (
+				521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */,
+				521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */,
+				5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */,
+				5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */,
+			);
+			name = "Adding Info";
 			sourceTree = "<group>";
 		};
 		52AFF0431BC8933D00A1115F = {
@@ -182,7 +211,9 @@
 		52AFF04E1BC8933D00A1115F /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				526C29171BDA7E79009B7D19 /* Adding Info */,
 				526C290B1BD9F979009B7D19 /* Assets */,
+				526C29161BDA7E70009B7D19 /* History */,
 				52FFB3A61BD95CD500CFF0FC /* Stats */,
 				52E667B71BD6FC8A0028DA8B /* Today */,
 				52347E4F1BD436ED00560AFA /* Home */,
@@ -190,12 +221,8 @@
 				52AFF0821BC8955D00A1115F /* CoreDataModels */,
 				52AFF04F1BC8933D00A1115F /* AppDelegate.swift */,
 				52AFF0531BC8933D00A1115F /* Main.storyboard */,
-				521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */,
-				521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */,
 				521F4A081BC8B06400FA6E02 /* DefaultData.plist */,
 				52ECDC271BD3FC7F00609C9B /* Settings.bundle */,
-				5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */,
-				5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */,
 				52AFF0591BC8933D00A1115F /* Assets.xcassets */,
 				52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */,
 				52AFF05E1BC8933D00A1115F /* Info.plist */,
@@ -258,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */,
+				526C29121BDA798F009B7D19 /* StatsViewController.swift */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -371,8 +399,10 @@
 				52AFF05A1BC8933D00A1115F /* Assets.xcassets in Resources */,
 				526C290D1BD9F9EC009B7D19 /* home.png in Resources */,
 				52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */,
+				526C290F1BDA7950009B7D19 /* bars.png in Resources */,
 				521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */,
 				52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */,
+				526C29151BDA7DD3009B7D19 /* book.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +433,7 @@
 				52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */,
 				52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */,
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
+				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
 				5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
@@ -411,6 +442,7 @@
 				52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */,
 				52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */,
 				5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */,
+				526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */,
 				52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */,
 				52347E531BD4379E00560AFA /* HomeCardCollectionViewCell.swift in Sources */,
 				52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */,
