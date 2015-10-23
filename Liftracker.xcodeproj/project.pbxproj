@@ -22,6 +22,7 @@
 		52347E531BD4379E00560AFA /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E521BD4379E00560AFA /* HomeCardCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		52347E551BD4386400560AFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E541BD4386400560AFA /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		526C290D1BD9F9EC009B7D19 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290C1BD9F9EC009B7D19 /* home.png */; settings = {ASSET_TAGS = (); }; };
 		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 		52347E541BD4386400560AFA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
 		5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
+		526C290C1BD9F9EC009B7D19 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
 		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,14 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		526C290B1BD9F979009B7D19 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				526C290C1BD9F9EC009B7D19 /* home.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		52AFF0431BC8933D00A1115F = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		52AFF04E1BC8933D00A1115F /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				526C290B1BD9F979009B7D19 /* Assets */,
 				52FFB3A61BD95CD500CFF0FC /* Stats */,
 				52E667B71BD6FC8A0028DA8B /* Today */,
 				52347E4F1BD436ED00560AFA /* Home */,
@@ -358,6 +369,7 @@
 			files = (
 				52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */,
 				52AFF05A1BC8933D00A1115F /* Assets.xcassets in Resources */,
+				526C290D1BD9F9EC009B7D19 /* home.png in Resources */,
 				52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */,
 				521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */,
 				52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */,

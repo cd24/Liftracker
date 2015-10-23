@@ -72,6 +72,10 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     func validData() -> Bool{
         return name_field?.text != "" // todo: Some other validation might be nice.  EG if it already exists... so on so forth.
     }
+    
+    @IBAction func dismiss(){
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

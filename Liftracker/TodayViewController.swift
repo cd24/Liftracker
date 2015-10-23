@@ -34,6 +34,9 @@ class TodayViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
+        title = "Today"
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +64,10 @@ class TodayViewController: UITableViewController {
         cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
 
         return cell
+    }
+    
+    @IBAction func add_reps(){
+        performSegueWithIdentifier("Add", sender: self)
     }
 
     /*

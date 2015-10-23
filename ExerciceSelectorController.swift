@@ -77,6 +77,10 @@ class ExerciceSelectorController: UITableViewController {
     func load_data(){
         exercices = DataManager.getInstance().loadExercicesFor(muscle_group: group!)
     }
+    
+    @IBAction func dismiss(){
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -93,7 +93,7 @@ class MGSelectionController: UITableViewController {
         viewController.group = muscle_group[(tableView.indexPathForSelectedRow?.row)!]
     }
     
-    func dismiss(){
+    @IBAction func dismiss(){
         dismissViewControllerAnimated(true, completion: nil)
     }
     

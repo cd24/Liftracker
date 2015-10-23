@@ -107,7 +107,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return "\(repKeys[section])"
     }
     
-    func save_rep(){
+    @IBAction func save_rep(){
         let manager = DataManager.getInstance()
         weight?.resignFirstResponder()
         num_reps?.resignFirstResponder()
@@ -118,6 +118,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 tableView!.reloadData()
             }
         }
+    }
+    
+    @IBAction func dismiss(){
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func orderByDate(reps reps: [Rep]) -> [String:[Rep]]{
