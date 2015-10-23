@@ -120,6 +120,68 @@
 			<key>DefaultValue</key>
 			<string>Liter</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Style</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>Blue</string>
+				<string>Green</string>
+				<string>Grey</string>
+				<string>Red</string>
+				<string>White</string>
+				<string>Yellow</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>#4dd6ef</string>
+				<string>#4def53</string>
+				<string>#bbc4c3</string>
+				<string>#ea5354</string>
+				<string>#ffffff</string>
+				<string>#dee91c</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Main Color</string>
+			<key>Key</key>
+			<string>background_color</string>
+			<key>DefaultValue</key>
+			<string>#4dd6ef</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>Blue</string>
+				<string>Green</string>
+				<string>Grey</string>
+				<string>Red</string>
+				<string>White</string>
+				<string>Yellow</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>#4dd6ef</string>
+				<string>#4def53</string>
+				<string>#bbc4c3</string>
+				<string>#ea5354</string>
+				<string>#ffffff</string>
+				<string>#dee91c</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Tint Color</string>
+			<key>Key</key>
+			<string>tint_color</string>
+			<key>DefaultValue</key>
+			<string>#ffffff</string>
+		</dict>
 	</array>
 </dict>
 </plist>

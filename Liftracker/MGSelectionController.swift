@@ -13,7 +13,7 @@ class MGSelectionController: UITableViewController {
 
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var muscle_group: Array<MuscleGroup> = Array();
-    var modal: Bool = false
+    var maxView: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +24,6 @@ class MGSelectionController: UITableViewController {
         if (muscle_group.count == 0){
             load_data()
         }
-        
-        if (modal){
-            
-        }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +75,7 @@ class MGSelectionController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as! ExerciceSelectorController;
         viewController.group = muscle_group[(tableView.indexPathForSelectedRow?.row)!]
+        viewController.maxView = maxView
     }
     
     @IBAction func dismiss(){

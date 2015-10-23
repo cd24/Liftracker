@@ -26,6 +26,22 @@ class StatCalculator {
         return max!;
     }
     
+    func getMaxForAllReps(exercice ex: Exercice) -> [Int:Rep]{
+        let reps = manager.loadAllRepsFor(exercice: ex)
+        var map = [Int:Rep]()
+        for rep in reps {
+            let (weight, num_reps) = intValues(rep)
+            if weight > map[num_reps]!.weight?.integerValue {
+                map[num_reps] = rep
+            }
+            else {
+                map[num_reps] = rep
+            }
+        }
+        
+        return map
+    }
+    
     func estimatedMax(rep: Rep) -> Double{
         let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
         switch (formula){
@@ -71,5 +87,9 @@ class StatCalculator {
     
     func values(rep: Rep) -> (Double, Double){
         return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
+    }
+    
+    func intValues(rep: Rep) -> (Int, Int){
+        return (rep.weight!.integerValue, rep.num_reps!.integerValue)
     }
 }

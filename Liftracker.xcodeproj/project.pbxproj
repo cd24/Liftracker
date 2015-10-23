@@ -27,6 +27,7 @@
 		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		526C29151BDA7DD3009B7D19 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C29141BDA7DD3009B7D19 /* book.png */; settings = {ASSET_TAGS = (); }; };
 		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
 		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		526C29121BDA798F009B7D19 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		526C29141BDA7DD3009B7D19 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		526C29181BDA7EAD009B7D19 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxTableViewController.swift; sourceTree = "<group>"; };
 		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
 		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +288,7 @@
 			children = (
 				52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */,
 				526C29121BDA798F009B7D19 /* StatsViewController.swift */,
+				526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
 				5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
+				526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
 				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
 				52347E511BD4370000560AFA /* HomeCellTableViewController.swift in Sources */,

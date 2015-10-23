@@ -1,64 +1,47 @@
 //
-//  TodayViewController.swift
+//  MaxTableViewController.swift
 //  Liftracker
 //
-//  Created by John McAvey on 10/20/15.
+//  Created by John McAvey on 10/23/15.
 //  Copyright © 2015 MCApps. All rights reserved.
 //
 
 import UIKit
 
-class TodayViewController: UITableViewController {
+class MaxTableViewController: UITableViewController {
     
-    var todaysReps: [Exercice:[Rep]] = [Exercice:[Rep]]()
-    var keys: [Exercice] = []
-    let manager = DataManager.getInstance()
-    let reuseIdentifier = "Cell"
-
+    var exercice: Exercice?
+    var results: [Int:Rep]?
+    var keys: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadData()
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = UIColor.whiteColor()//todo: Colors in preferences
-        self.refreshControl?.tintColor = UIColor.blackColor()//todo: Colors in prefrences
-        self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        for key in results!.keys{
+            keys.append(key)
+        }
+        
+        keys = keys.sort()
+        NSLog("\(keys)")
+        
+        title = "\(exercice!.name!) Max"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
-        title = "Today"
     }
     
     override func viewWillAppear(animated: Bool) {
-        loadData()
-    }
-    
-    func loadData(){
-        let muscle_groups = manager.loadAllMuscleGroups()
-        let today = NSDate()
-        todaysReps = [Exercice:[Rep]]()
-        for mg in muscle_groups{
-            let exercices = manager.loadExercicesFor(muscle_group: mg)
-            for exercice in exercices{
-                let reps = manager.loadAllRepsFor(exercice: exercice, date: today)
-                if reps.count == 0{
-                    continue
-                }
-                todaysReps[exercice] = reps
-                keys.append(exercice)
-            }
+        keys = []
+        for key in results!.keys{
+            keys.append(key)
         }
         
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        keys = keys.sort()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,36 +50,28 @@ class TodayViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return todaysReps.keys.count
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return todaysReps[keys[section]]!.count
+        if let res = results?.keys {
+            return res.count
+        }
+        return 0
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
-        let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
+        NSLog("IndexPath.row: \(indexPath.row), key: \(keys[indexPath.row])")
+        let rep = results![keys[indexPath.row]]
+        cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!)" //append weight units to the end of the string.
 
         return cell
     }
-    
-    @IBAction func add_reps(){
-        performSegueWithIdentifier("Add", sender: self)
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return keys[section].name
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -142,5 +117,7 @@ class TodayViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

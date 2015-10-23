@@ -11,9 +11,11 @@ import CoreData
 
 class ExerciceSelectorController: UITableViewController {
     
-    var exercices: Array<Exercice> = Array();
-    var group: MuscleGroup?;
-    let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
+    var exercices: Array<Exercice> = Array()
+    var group: MuscleGroup?
+    var maxView: Bool?
+    let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,13 @@ class ExerciceSelectorController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Max"{
+            let destination = segue.destinationViewController as! MaxTableViewController
+            destination.exercice = exercices[tableView.indexPathsForSelectedRows![0].row]
+            let reps = DataManager.getInstance().loadAllRepsFor(exercice: destination.exercice!)
+            destination.results = getMaxForAllReps(exercice: destination.exercice!, reps: reps)
+            NSLog("\(destination.results)")
+        }
         if segue.identifier == "AddExercice" {
             let destination = segue.destinationViewController as! ExerciceAdderViewController
             destination.tableView = self
@@ -74,12 +83,37 @@ class ExerciceSelectorController: UITableViewController {
         performSegueWithIdentifier("AddExercice", sender: self)
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if maxView! {
+            performSegueWithIdentifier("Max", sender: self)
+        }
+        else {
+            performSegueWithIdentifier("Reps", sender: self)
+        }
+    }
+    
     func load_data(){
         exercices = DataManager.getInstance().loadExercicesFor(muscle_group: group!)
     }
     
-    @IBAction func dismiss(){
-        dismissViewControllerAnimated(true, completion: nil)
+    func getMaxForAllReps(exercice ex: Exercice, reps: [Rep]) -> [Int:Rep]{
+        let reps = DataManager.getInstance().loadAllRepsFor(exercice: ex)
+        var map = [Int:Rep]()
+        for rep in reps {
+            let (weight, num_reps) = intValues(rep)
+            if weight > map[num_reps]?.weight?.integerValue {
+                map[num_reps] = rep
+            }
+            else {
+                map[num_reps] = rep
+            }
+        }
+        
+        return map
+    }
+    
+    func intValues(rep: Rep) -> (Int, Int){
+        return (rep.weight!.integerValue, rep.num_reps!.integerValue)
     }
 
     /*
