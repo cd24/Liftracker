@@ -243,6 +243,49 @@
             </objects>
             <point key="canvasLocation" x="-1177" y="1673"/>
         </scene>
+        <!--History-->
+        <scene sceneID="bfV-Pd-S9s">
+            <objects>
+                <viewController id="IJV-SV-we7" customClass="HistoryViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZyZ-2H-ZcE"/>
+                        <viewControllerLayoutGuide type="bottom" id="iRJ-kY-tb6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CaY-79-RDE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="230-NA-bf2">
+                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Item" id="bxu-st-r9S"/>
+                                </items>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Rqw-1g-htv">
+                                <rect key="frame" x="0.0" y="66" width="600" height="485"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rqw-1g-htv" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="a0K-9i-OsG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rqw-1g-htv" secondAttribute="trailing" constant="-20" id="flv-F8-ug1"/>
+                            <constraint firstItem="230-NA-bf2" firstAttribute="top" secondItem="ZyZ-2H-ZcE" secondAttribute="bottom" id="hiT-X5-PGI"/>
+                            <constraint firstItem="Rqw-1g-htv" firstAttribute="top" secondItem="230-NA-bf2" secondAttribute="bottom" id="jmJ-Ib-zLD"/>
+                            <constraint firstItem="iRJ-kY-tb6" firstAttribute="top" secondItem="Rqw-1g-htv" secondAttribute="bottom" id="zdt-nE-xrQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" id="ZSM-yH-2jL"/>
+                    <connections>
+                        <outlet property="mainView" destination="Rqw-1g-htv" id="Yys-9m-MYl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb6-XX-neA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1177" y="2464"/>
+        </scene>
         <!--Stats-->
         <scene sceneID="hio-Sj-Y5B">
             <objects>
@@ -279,38 +322,6 @@
             </objects>
             <point key="canvasLocation" x="-365" y="1673"/>
         </scene>
-        <!--History-->
-        <scene sceneID="tdd-nP-boE">
-            <objects>
-                <tableViewController id="ot5-W9-CcC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DrU-jm-jfX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OlB-IY-TKj">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OlB-IY-TKj" id="PAd-eu-LcH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ot5-W9-CcC" id="U9Y-Em-u93"/>
-                            <outlet property="delegate" destination="ot5-W9-CcC" id="4w5-mK-Ygq"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="History" id="FzY-SG-aXH"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bXh-KE-H57" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1177" y="2436"/>
-        </scene>
         <!--Today-->
         <scene sceneID="zQJ-d1-M40">
             <objects>
@@ -319,7 +330,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YhQ-U5-EV8">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
@@ -360,8 +371,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="OIp-tm-JUP" kind="relationship" relationship="viewControllers" id="jW6-Wx-gbL"/>
-                        <segue destination="ot5-W9-CcC" kind="relationship" relationship="viewControllers" id="X6Q-wZ-m8M"/>
                         <segue destination="DUg-jt-Cha" kind="relationship" relationship="viewControllers" id="Wbz-hp-M7f"/>
+                        <segue destination="IJV-SV-we7" kind="relationship" relationship="viewControllers" id="13f-FK-bn1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt5-fD-gwP" userLabel="First Responder" sceneMemberID="firstResponder"/>

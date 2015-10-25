@@ -20,16 +20,21 @@ class TodayViewController: UITableViewController {
 
         loadData()
         
+        let backGroundHex = NSUserDefaults.standardUserDefaults().valueForKey("background_color") as? String
+        let tintColorHex = NSUserDefaults.standardUserDefaults().valueForKey("tint_color") as? String
+        
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = UIColor.whiteColor()//todo: Colors in preferences
-        self.refreshControl?.tintColor = UIColor.blackColor()//todo: Colors in prefrences
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if let bgcolor = backGroundHex, let tintColor = tintColorHex{
+            self.refreshControl?.backgroundColor = manager.colorWithHexString(bgcolor)
+            self.refreshControl?.tintColor = manager.colorWithHexString(tintColor)
+            
+        }
+        else {
+            self.refreshControl?.backgroundColor = UIColor.whiteColor()
+            self.refreshControl?.tintColor = UIColor.blackColor()
+        }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
         title = "Today"
@@ -43,6 +48,7 @@ class TodayViewController: UITableViewController {
         let muscle_groups = manager.loadAllMuscleGroups()
         let today = NSDate()
         todaysReps = [Exercice:[Rep]]()
+        keys = []
         for mg in muscle_groups{
             let exercices = manager.loadExercicesFor(muscle_group: mg)
             for exercice in exercices{

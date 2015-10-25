@@ -54,10 +54,10 @@ class MaxTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let res = results?.keys {
-            return res.count
+        if keys.count > 0 {
+            return results!.keys.count
         }
-        return 0
+        return 1
     }
 
     
@@ -65,9 +65,14 @@ class MaxTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
-        NSLog("IndexPath.row: \(indexPath.row), key: \(keys[indexPath.row])")
-        let rep = results![keys[indexPath.row]]
-        cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!)" //append weight units to the end of the string.
+        if keys.count > 0 {
+            NSLog("IndexPath.row: \(indexPath.row), key: \(self.keys[indexPath.row])")
+            let rep = results![self.keys[indexPath.row]]
+            cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!)" //append weight units to the end of the string.
+        }
+        else {
+            cell.textLabel?.text = "You haven't done this one yet!"
+        }
 
         return cell
     }

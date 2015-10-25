@@ -14,6 +14,7 @@ class MGSelectionController: UITableViewController {
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var muscle_group: Array<MuscleGroup> = Array();
     var maxView: Bool = false
+    var estimate: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
