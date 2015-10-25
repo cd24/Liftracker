@@ -73,12 +73,10 @@ class TodayViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return todaysReps.keys.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return todaysReps[keys[section]]!.count
     }
 
@@ -88,6 +86,7 @@ class TodayViewController: UITableViewController {
         // Configure the cell...
         let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
         cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
     }
@@ -101,7 +100,16 @@ class TodayViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        performSegueWithIdentifier("Rep", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Rep" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let controller = segue.destinationViewController as! RepsViewController
+            controller.exercice = keys[indexPath.section]
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
 
     /*

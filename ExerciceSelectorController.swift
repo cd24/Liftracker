@@ -55,6 +55,7 @@ class ExerciceSelectorController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = exercices[indexPath.row].name;
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
     }

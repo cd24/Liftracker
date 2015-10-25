@@ -104,7 +104,12 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if allReps.keys.count == 0 {
             return ""
         }
-        return "\(repKeys[section])"
+        let key = repKeys[section]
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        let date = formatter.dateFromString(key)
+        let formattedString = DataManager.getInstance().dateToString(date!)
+        return "\(formattedString)"
     }
     
     @IBAction func save_rep(){
@@ -165,6 +170,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 

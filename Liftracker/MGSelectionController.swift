@@ -49,6 +49,7 @@ class MGSelectionController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = muscle_group[indexPath.row].name;
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
     }

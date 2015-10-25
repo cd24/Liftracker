@@ -172,8 +172,11 @@ class DataManager {
         return startOfDay
     }
     
-    func dateToString(){
+    func dateToString(date: NSDate) -> String{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy"
         
+        return formatter.stringFromDate(date)
     }
     
     func colorWithHexString (hex:String) -> UIColor {

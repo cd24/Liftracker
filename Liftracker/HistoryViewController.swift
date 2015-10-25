@@ -35,11 +35,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func createTableviews(){
-        let framea = mainView.frame
-        let frame = CGRectMake(framea.size.width * CGFloat(floatLiteral: 0.0), 0.0, framea.width * 0.9, framea.height)
+        let frame = mainView.frame
         right = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
         left = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
         current = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
+        configureTableViewConstraints()
     }
     
     func configurePageController(){
@@ -233,24 +233,46 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func loadPages(){
-        var frame1 = mainView.bounds,
-            frame2 = mainView.bounds,
-            frame3 = mainView.bounds
-        
-        frame1 = CGRectMake(frame1.size.width * CGFloat(floatLiteral: 0.0), 0.0, frame1.width * 0.9, mainView.frame.height)
-        
-        frame2 = CGRectMake(frame2.size.width * CGFloat(floatLiteral: 1.0), 0.0, frame2.width * 0.9, mainView.frame.height)
-        
-        frame3 = CGRectMake(frame3.size.width * CGFloat(floatLiteral: 2.0), 0.0, frame3.width * 0.9, mainView.frame.height)
-        
         let newPageOne = pages[0], newPageTwo = pages[1], newPageThree = pages[2]
-        newPageOne.frame = frame1
-        newPageTwo.frame = frame2
-        newPageThree.frame = frame3
         
         mainView.addSubview(newPageOne)
         mainView.addSubview(newPageTwo)
         mainView.addSubview(newPageThree)
+    }
+    
+    func configureTableViewConstraints(){
+        for table in pages {
+            let widthConstraint = NSLayoutConstraint(item: table,
+                attribute: NSLayoutAttribute.Width,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.Width,
+                multiplier: 0.9,
+                constant: 0)
+            let heightConstraint = NSLayoutConstraint(item: table,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.Height,
+                multiplier: 0.9,
+                constant: 0)
+            let yConstraint = NSLayoutConstraint(item: table,
+                attribute: NSLayoutAttribute.CenterY,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.CenterY,
+                multiplier: 1.0,
+                constant: 0)
+            let xConstraint = NSLayoutConstraint(item: table,
+                attribute: NSLayoutAttribute.CenterX,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: self.view,
+                attribute: NSLayoutAttribute.CenterX,
+                multiplier: 1.0,
+                constant: 0)
+            
+            NSLayoutConstraint.activateConstraints([widthConstraint, heightConstraint, xConstraint, yConstraint])
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

@@ -244,6 +244,24 @@
             <point key="canvasLocation" x="-1177" y="1673"/>
         </scene>
         <!--History-->
+        <scene sceneID="Yu7-6N-eEQ">
+            <objects>
+                <navigationController id="GDY-d0-jHP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" id="B7U-Un-7nL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bvm-9c-ZpF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IJV-SV-we7" kind="relationship" relationship="rootViewController" id="Hdc-Se-3qh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7n-Hx-ceN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1907" y="2464"/>
+        </scene>
+        <!--History-->
         <scene sceneID="bfV-Pd-S9s">
             <objects>
                 <viewController id="IJV-SV-we7" customClass="HistoryViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -255,29 +273,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="230-NA-bf2">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem title="Item" id="bxu-st-r9S"/>
-                                </items>
-                            </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Rqw-1g-htv">
-                                <rect key="frame" x="0.0" y="66" width="600" height="485"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Rqw-1g-htv">
+                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
                                 <animations/>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rqw-1g-htv" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="a0K-9i-OsG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rqw-1g-htv" secondAttribute="trailing" constant="-20" id="flv-F8-ug1"/>
-                            <constraint firstItem="230-NA-bf2" firstAttribute="top" secondItem="ZyZ-2H-ZcE" secondAttribute="bottom" id="hiT-X5-PGI"/>
-                            <constraint firstItem="Rqw-1g-htv" firstAttribute="top" secondItem="230-NA-bf2" secondAttribute="bottom" id="jmJ-Ib-zLD"/>
-                            <constraint firstItem="iRJ-kY-tb6" firstAttribute="top" secondItem="Rqw-1g-htv" secondAttribute="bottom" id="zdt-nE-xrQ"/>
+                            <constraint firstItem="Rqw-1g-htv" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="00v-E1-SEk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rqw-1g-htv" secondAttribute="trailing" constant="-20" id="CSd-8C-iEH"/>
+                            <constraint firstItem="iRJ-kY-tb6" firstAttribute="top" secondItem="Rqw-1g-htv" secondAttribute="bottom" id="her-4R-5tL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="ZSM-yH-2jL"/>
+                    <navigationItem key="navigationItem" title="History" id="qyU-aB-GDX"/>
                     <connections>
                         <outlet property="mainView" destination="Rqw-1g-htv" id="Yys-9m-MYl"/>
                     </connections>
@@ -341,6 +351,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="zNP-PH-yQd" kind="show" identifier="Rep" trigger="accessoryAction" id="y0H-dc-NhL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -372,7 +385,7 @@
                     <connections>
                         <segue destination="OIp-tm-JUP" kind="relationship" relationship="viewControllers" id="jW6-Wx-gbL"/>
                         <segue destination="DUg-jt-Cha" kind="relationship" relationship="viewControllers" id="Wbz-hp-M7f"/>
-                        <segue destination="IJV-SV-we7" kind="relationship" relationship="viewControllers" id="13f-FK-bn1"/>
+                        <segue destination="GDY-d0-jHP" kind="relationship" relationship="viewControllers" id="TM4-WG-e5x"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt5-fD-gwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,6 +464,7 @@
         <image name="home.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QdV-YM-UYx"/>
+        <segue reference="y0H-dc-NhL"/>
+        <segue reference="kNv-in-yEe"/>
     </inferredMetricsTieBreakers>
 </document>
