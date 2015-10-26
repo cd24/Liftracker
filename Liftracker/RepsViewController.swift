@@ -18,6 +18,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var repKeys = [String]()
     var updating = false
     var rowUpdating: NSIndexPath?
+    let manager = DataManager.getInstance()
     @IBOutlet var tableView: UITableView?
     @IBOutlet var num_reps: UITextField?
     @IBOutlet var weight: UITextField?
@@ -62,15 +63,18 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if allReps.keys.count == 0 {
             return 1
         }
-        return allReps.keys.count
+        return allReps.keys.count + 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if allReps.keys.count == 0 {
             return 1
         }
-        let key = repKeys[section]
-        return allReps[key]!.count
+        if section > 0{
+            let key = repKeys[section - 1]
+            return allReps[key]!.count
+        }
+        return 1
     }
 
     
@@ -81,9 +85,15 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.text = "No Reps Found"
         }
         else {
-            let key = repKeys[indexPath.section]
-            let rep = allReps[key]![indexPath.row]
-            cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(rep.weight!)"
+            if indexPath.section == 0{
+                let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
+                cell.textLabel?.text = "Estimated ORM: \(roundedString) \(manager.getUnitString())"
+            }
+            else {
+                let key = repKeys[indexPath.section - 1]
+                let rep = allReps[key]![indexPath.row]
+                cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(rep.weight!) \(manager.getUnitString())"
+            }
         }
         return cell
     }
@@ -104,7 +114,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if allReps.keys.count == 0 {
             return ""
         }
-        let key = repKeys[section]
+        if section == 0{
+            return "Estimated Max"
+        }
+        let key = repKeys[section - 1]
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         let date = formatter.dateFromString(key)

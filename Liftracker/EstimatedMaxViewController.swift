@@ -14,19 +14,16 @@ class EstimatedMaxViewController: UITableViewController {
     var exercices: [Exercice:Double] = [Exercice:Double]()
     var keys: [Exercice] = []
     let manager = DataManager.getInstance();
-    let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let mainColorHex = NSUserDefaults.standardUserDefaults().valueForKey("background_color") as! String
-        let tintColorHex = NSUserDefaults.standardUserDefaults().valueForKey("tint_color") as! String
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UIColor.whiteColor()//todo: Colors in preferences
         self.refreshControl?.tintColor = UIColor.blackColor()//todo: Colors in prefrences
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl?.beginRefreshing()
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,95 +42,45 @@ class EstimatedMaxViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! EstimateCell
         
         // Configure the cell...
         let exercice = keys[indexPath.row]
-        let max = exercices[exercice]
-        cell.textLabel?.text = "\(exercice) \t \(max)"
-        
+        let cellText: String
+        if exercices.keys.contains(exercice){
+            let max = exercices[exercice]
+            let roundedDouble = String(format: "%.2f ", max!)
+            cellText = roundedDouble + manager.getUnitString()
+        }
+        else {
+            cellText = "No Data"
+        }
+        cell.leftText.text = "\(exercice.name!)"
+        cell.rightText.text = cellText
         return cell
     }
     
     func loadData(){
         let manager = DataManager.getInstance()
+        keys = []
+        exercices = [Exercice:Double]()
         let ex = manager.loadExercicesFor(muscle_group: mg!)
         for exercice in ex {
-            var reps = manager.loadAllRepsFor(exercice: exercice)
-            var max = estimatedMax(reps[0])
-            for rep in reps{
-                let temp = estimatedMax(rep)
-                if max < temp{
-                    max = temp
-                }
+            let reps = manager.loadAllRepsFor(exercice: exercice)
+            if reps.count > 0{
+                let max = manager.estimatedMax(exercice)
+                exercices[exercice] = max
+                keys.append(exercice)
             }
-            exercices[exercice] = max
-            keys.append(exercice)
+            else {
+                keys.append(exercice)
+            }
         }
         tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
     
-    func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
-        let reps = manager.loadAllRepsFor(exercice: ex)
-        var max: Rep?
-        for rep in reps {
-            if max != nil {
-                max = rep;
-            }
-            else if rep.num_reps == reps && max!.weight?.integerValue > rep.weight?.integerValue {
-                max = rep
-            }
-        }
-        return max!;
-    }
     
-    func estimatedMax(rep: Rep) -> Double{
-        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        switch (formula){
-        case epley:
-            return epleyMax(rep)
-        case brzycki:
-            return brzyckiMax(rep)
-        case lander:
-            return landerMax(rep)
-        case lombardi:
-            return lombardiMax(rep)
-        case mayhew:
-            return mayhewMax(rep)
-        default:
-            return epleyMax(rep)
-        }
-    }
-    
-    func epleyMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * ( 1 + numReps/30)
-    }
-    
-    func brzyckiMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return weight * (36 / (37 - numReps))
-    }
-    
-    func landerMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return (100 * weight) / (101.3 - 2.67123*numReps)
-    }
-    
-    func lombardiMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * pow(numReps, 0.10)
-    }
-    
-    func mayhewMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return (100*weight)/(52.2 + 41.9 * pow(2.7182, -0.055*numReps)) // couldn't find math.e, so I estimated :)
-    }
-    
-    func values(rep: Rep) -> (Double, Double){
-        return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
-    }
 
 
     /*

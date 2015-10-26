@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52151E031BCEA638006BC0B1 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
-		52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E081BCF0DEB006BC0B1 /* Exercice.m */; settings = {ASSET_TAGS = (); }; };
-		52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */; settings = {ASSET_TAGS = (); }; };
-		52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E101BCF0DEB006BC0B1 /* Rep.m */; settings = {ASSET_TAGS = (); }; };
-		52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E141BCF0DEB006BC0B1 /* Day.m */; settings = {ASSET_TAGS = (); }; };
-		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; settings = {ASSET_TAGS = (); }; };
-		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52347E511BD4370000560AFA /* HomeCellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E501BD4370000560AFA /* HomeCellTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52347E531BD4379E00560AFA /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E521BD4379E00560AFA /* HomeCardCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		52347E551BD4386400560AFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52347E541BD4386400560AFA /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		526C290D1BD9F9EC009B7D19 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290C1BD9F9EC009B7D19 /* home.png */; settings = {ASSET_TAGS = (); }; };
-		526C290F1BDA7950009B7D19 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290E1BDA7950009B7D19 /* bars.png */; settings = {ASSET_TAGS = (); }; };
-		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		526C29151BDA7DD3009B7D19 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C29141BDA7DD3009B7D19 /* book.png */; settings = {ASSET_TAGS = (); }; };
-		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; settings = {ASSET_TAGS = (); }; };
-		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; settings = {ASSET_TAGS = (); }; };
+		52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52151E031BCEA638006BC0B1 /* DataManager.swift */; };
+		52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */; };
+		52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E081BCF0DEB006BC0B1 /* Exercice.m */; };
+		52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */; };
+		52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */; };
+		52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */; };
+		52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E101BCF0DEB006BC0B1 /* Rep.m */; };
+		52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E141BCF0DEB006BC0B1 /* Day.m */; };
+		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; };
+		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; };
+		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; };
+		524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524344441BDEE81E0066C3DA /* EstimateCell.swift */; };
+		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; };
+		526C290D1BD9F9EC009B7D19 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290C1BD9F9EC009B7D19 /* home.png */; };
+		526C290F1BDA7950009B7D19 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290E1BDA7950009B7D19 /* bars.png */; };
+		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; };
+		526C29151BDA7DD3009B7D19 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C29141BDA7DD3009B7D19 /* book.png */; };
+		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; };
+		526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */; };
+		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; };
+		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
 		52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF0531BC8933D00A1115F /* Main.storyboard */; };
 		52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0561BC8933D00A1115F /* Liftracker.xcdatamodeld */; };
@@ -37,23 +35,24 @@
 		52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */; };
 		52AFF0681BC8933D00A1115F /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0671BC8933D00A1115F /* LiftrackerTests.swift */; };
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
-		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
-		52F21A7F1BDBFA8200962961 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A751BDBFA8200962961 /* AppIcon.appiconset */; settings = {ASSET_TAGS = (); }; };
-		52F21A801BDBFA8200962961 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A761BDBFA8200962961 /* Icon-60.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A811BDBFA8200962961 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A771BDBFA8200962961 /* Icon-72.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A821BDBFA8200962961 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A781BDBFA8200962961 /* Icon-72@2x.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A831BDBFA8200962961 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A791BDBFA8200962961 /* Icon-Small-50.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A841BDBFA8200962961 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7A1BDBFA8200962961 /* Icon-Small-50@2x.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A851BDBFA8200962961 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7B1BDBFA8200962961 /* Icon.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A861BDBFA8200962961 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7C1BDBFA8200962961 /* Icon@2x.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A871BDBFA8200962961 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7D1BDBFA8200962961 /* iTunesArtwork.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A881BDBFA8200962961 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7E1BDBFA8200962961 /* iTunesArtwork@2x.png */; settings = {ASSET_TAGS = (); }; };
-		52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A891BDC2A3000962961 /* HistoryViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */; settings = {ASSET_TAGS = (); }; };
+		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
+		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; };
+		52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */; };
+		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; };
+		52F21A7F1BDBFA8200962961 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A751BDBFA8200962961 /* AppIcon.appiconset */; };
+		52F21A801BDBFA8200962961 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A761BDBFA8200962961 /* Icon-60.png */; };
+		52F21A811BDBFA8200962961 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A771BDBFA8200962961 /* Icon-72.png */; };
+		52F21A821BDBFA8200962961 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A781BDBFA8200962961 /* Icon-72@2x.png */; };
+		52F21A831BDBFA8200962961 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A791BDBFA8200962961 /* Icon-Small-50.png */; };
+		52F21A841BDBFA8200962961 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7A1BDBFA8200962961 /* Icon-Small-50@2x.png */; };
+		52F21A851BDBFA8200962961 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7B1BDBFA8200962961 /* Icon.png */; };
+		52F21A861BDBFA8200962961 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7C1BDBFA8200962961 /* Icon@2x.png */; };
+		52F21A871BDBFA8200962961 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7D1BDBFA8200962961 /* iTunesArtwork.png */; };
+		52F21A881BDBFA8200962961 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F21A7E1BDBFA8200962961 /* iTunesArtwork@2x.png */; };
+		52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A891BDC2A3000962961 /* HistoryViewController.swift */; };
+		52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */; };
+		52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */; };
+		A103348417A7FF484BDB59D0 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Liftracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28909FDAD5E8270DAD0EE282 /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		52151E031BCEA638006BC0B1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		52151E051BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Exercice+CoreDataProperties.h"; path = "../Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
 		52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Exercice+CoreDataProperties.m"; path = "../Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -92,9 +93,7 @@
 		521F4A081BC8B06400FA6E02 /* DefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultData.plist; sourceTree = "<group>"; };
 		521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceAdderViewController.swift; sourceTree = "<group>"; };
 		521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepsViewController.swift; sourceTree = "<group>"; };
-		52347E501BD4370000560AFA /* HomeCellTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellTableViewController.swift; sourceTree = "<group>"; };
-		52347E521BD4379E00560AFA /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		52347E541BD4386400560AFA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		524344441BDEE81E0066C3DA /* EstimateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimateCell.swift; sourceTree = "<group>"; };
 		5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
 		5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
 		526C290C1BD9F9EC009B7D19 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		52F21A891BDC2A3000962961 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedMaxViewController.swift; sourceTree = "<group>"; };
 		52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatCalculator.swift; sourceTree = "<group>"; };
+		DDCA756437B146F5910C1020 /* Pods-Liftracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A103348417A7FF484BDB59D0 /* Pods_Liftracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,9 +176,6 @@
 		52347E4F1BD436ED00560AFA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				52347E501BD4370000560AFA /* HomeCellTableViewController.swift */,
-				52347E521BD4379E00560AFA /* HomeCardCollectionViewCell.swift */,
-				52347E541BD4386400560AFA /* HomeViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -222,6 +220,8 @@
 				52AFF0711BC8933D00A1115F /* LiftrackerUITests */,
 				52AFF04D1BC8933D00A1115F /* Products */,
 				52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */,
+				5A66C53D72FA64BFBAC9E554 /* Pods */,
+				8A3AED87AC7F74D61BD5E65C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,8 +333,26 @@
 				526C29121BDA798F009B7D19 /* StatsViewController.swift */,
 				526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */,
 				52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */,
+				524344441BDEE81E0066C3DA /* EstimateCell.swift */,
 			);
 			name = Stats;
+			sourceTree = "<group>";
+		};
+		5A66C53D72FA64BFBAC9E554 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDCA756437B146F5910C1020 /* Pods-Liftracker.debug.xcconfig */,
+				28909FDAD5E8270DAD0EE282 /* Pods-Liftracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A3AED87AC7F74D61BD5E65C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +362,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52AFF0771BC8933D00A1115F /* Build configuration list for PBXNativeTarget "Liftracker" */;
 			buildPhases = (
+				F693439FCBDBDCA736CE67A8 /* Check Pods Manifest.lock */,
 				52AFF0481BC8933D00A1115F /* Sources */,
 				52AFF0491BC8933D00A1115F /* Frameworks */,
 				52AFF04A1BC8933D00A1115F /* Resources */,
+				1D250ED1E27DD5F53BEBAF08 /* Embed Pods Frameworks */,
+				BE9EF5930AA0DE67829A7EDC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -479,6 +500,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D250ED1E27DD5F53BEBAF08 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9EF5930AA0DE67829A7EDC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F693439FCBDBDCA736CE67A8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52AFF0481BC8933D00A1115F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -486,7 +555,6 @@
 			files = (
 				52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */,
 				52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */,
-				52347E551BD4386400560AFA /* HomeViewController.swift in Sources */,
 				52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */,
 				52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */,
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
@@ -495,15 +563,14 @@
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
 				526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
+				524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */,
 				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
-				52347E511BD4370000560AFA /* HomeCellTableViewController.swift in Sources */,
 				52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */,
 				52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */,
 				5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */,
 				526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */,
 				52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */,
 				52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */,
-				52347E531BD4379E00560AFA /* HomeCardCollectionViewCell.swift in Sources */,
 				52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */,
 				52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
@@ -648,6 +715,7 @@
 		};
 		52AFF0781BC8933D00A1115F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDCA756437B146F5910C1020 /* Pods-Liftracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -666,6 +734,7 @@
 		};
 		52AFF0791BC8933D00A1115F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28909FDAD5E8270DAD0EE282 /* Pods-Liftracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

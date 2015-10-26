@@ -75,13 +75,28 @@ class MGSelectionController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let viewController = segue.destinationViewController as! ExerciceSelectorController;
-        viewController.group = muscle_group[(tableView.indexPathForSelectedRow?.row)!]
-        viewController.maxView = maxView
+        if segue.identifier == "Select"{
+            let viewController = segue.destinationViewController as! ExerciceSelectorController;
+            viewController.group = muscle_group[tableView.indexPathForSelectedRow!.row]
+            viewController.maxView = maxView
+        }
+        else if segue.identifier == "Max"{
+            let viewController = segue.destinationViewController as! EstimatedMaxViewController
+            viewController.mg = muscle_group[tableView.indexPathForSelectedRow!.row]
+        }
     }
     
     @IBAction func dismiss(){
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if estimate {
+            performSegueWithIdentifier("Max", sender: self)
+        }
+        else {
+            performSegueWithIdentifier("Select", sender: self)
+        }
     }
     
     /*

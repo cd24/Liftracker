@@ -51,16 +51,20 @@ class StatsViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Max"{
-            let destinationController = segue.destinationViewController as! MGSelectionController
+        let destinationController = segue.destinationViewController as! MGSelectionController
+        let row = tableView.indexPathForSelectedRow!.row
+        if row == 0{
+            destinationController.estimate = false
             destinationController.maxView = true
+        }
+        if row == 1 {
+            destinationController.maxView = false
+            destinationController.estimate = true
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0{
-            performSegueWithIdentifier("Max", sender: self)
-        }
+        performSegueWithIdentifier("Max", sender: self)
     }
 
 

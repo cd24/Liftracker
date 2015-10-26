@@ -13,6 +13,7 @@ class MaxTableViewController: UITableViewController {
     var exercice: Exercice?
     var results: [Int:Rep]?
     var keys: [Int] = []
+    let manager = DataManager.getInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +69,10 @@ class MaxTableViewController: UITableViewController {
         if keys.count > 0 {
             NSLog("IndexPath.row: \(indexPath.row), key: \(self.keys[indexPath.row])")
             let rep = results![self.keys[indexPath.row]]
-            cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!)" //append weight units to the end of the string.
+            cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!) \(manager.getUnitString())" //append weight units to the end of the string.
         }
         else {
-            cell.textLabel?.text = "You haven't done this one yet!"
+            cell.textLabel?.text = "You haven't done this exercice yet!"
         }
 
         return cell

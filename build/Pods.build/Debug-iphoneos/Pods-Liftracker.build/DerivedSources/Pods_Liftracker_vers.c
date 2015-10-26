@@ -1,0 +1,1 @@
+ const unsigned char Pods_LiftrackerVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_Liftracker  PROJECT:Pods-1" "\n"; const double Pods_LiftrackerVersionNumber __attribute__ ((used)) = (double)1.;

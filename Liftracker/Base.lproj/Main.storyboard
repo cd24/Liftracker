@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wcw-bz-Wfr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wcw-bz-Wfr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,6 +41,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on0-8x-OrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1176" y="1673"/>
+        </scene>
+        <!--Estimated Max View Controller-->
+        <scene sceneID="o3j-g4-NOZ">
+            <objects>
+                <tableViewController id="hKi-Wk-QXj" customClass="EstimatedMaxViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fbC-8X-Lcl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="q7n-na-08u" customClass="EstimateCell" customModule="Liftracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q7n-na-08u" id="3iL-SI-YZH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5D-Lj-wqr">
+                                            <rect key="frame" x="542" y="11" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as4-jD-BPe">
+                                            <rect key="frame" x="20" y="11" width="480" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="as4-jD-BPe" firstAttribute="top" secondItem="3iL-SI-YZH" secondAttribute="topMargin" constant="3" id="Blt-Lx-QOp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="as4-jD-BPe" secondAttribute="bottom" constant="3.5" id="Vu0-sF-f4E"/>
+                                        <constraint firstItem="k5D-Lj-wqr" firstAttribute="top" secondItem="3iL-SI-YZH" secondAttribute="topMargin" constant="3" id="ibP-tu-PQu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="k5D-Lj-wqr" secondAttribute="trailing" constant="8" id="kmd-9Z-naH"/>
+                                        <constraint firstItem="as4-jD-BPe" firstAttribute="leading" secondItem="3iL-SI-YZH" secondAttribute="leadingMargin" constant="12" id="mLE-TE-h2A"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="k5D-Lj-wqr" secondAttribute="bottom" constant="3.5" id="pxV-Za-RFT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="leftText" destination="as4-jD-BPe" id="0xr-M1-pEg"/>
+                                    <outlet property="rightText" destination="k5D-Lj-wqr" id="JRL-Uw-vcP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hKi-Wk-QXj" id="gBS-Tx-196"/>
+                            <outlet property="delegate" destination="hKi-Wk-QXj" id="3Qe-VS-yKM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1V-f8-2rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176" y="2464"/>
         </scene>
         <!--Reps View Controller-->
         <scene sceneID="eFA-sq-wwY">
@@ -411,9 +470,6 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <connections>
-                                    <segue destination="ZfA-dt-mdG" kind="show" id="74f-Yv-CjK"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -422,6 +478,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="BVM-G2-ZO9"/>
+                    <connections>
+                        <segue destination="hKi-Wk-QXj" kind="show" identifier="Max" id="aVE-nc-Lka"/>
+                        <segue destination="ZfA-dt-mdG" kind="show" identifier="Select" id="pJZ-4u-QPW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6c-ew-vXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -464,7 +524,7 @@
         <image name="home.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y0H-dc-NhL"/>
-        <segue reference="kNv-in-yEe"/>
+        <segue reference="QdV-YM-UYx"/>
+        <segue reference="IYe-LK-zW3"/>
     </inferredMetricsTieBreakers>
 </document>
