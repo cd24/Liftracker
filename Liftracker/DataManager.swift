@@ -311,4 +311,12 @@ class DataManager {
     func values(rep: Rep) -> (Double, Double){
         return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
     }
+    
+    func saveToFile(){
+        
+    }
+    
+    func openShareMenu(){
+        
+    }
 }

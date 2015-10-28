@@ -8,14 +8,13 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class HistoryViewController: UIViewController,UIScrollViewDelegate {
 
-    var left = IDTableView(), right = IDTableView(), current = IDTableView()
-    var pages: [IDTableView] = []
-    let leftID = 1, rightID = 2, centerID = 3
+    var left = HistoryTableViewController(style: UITableViewStyle.Grouped),
+        right = HistoryTableViewController(style: UITableViewStyle.Grouped),
+        current = HistoryTableViewController(style: UITableViewStyle.Grouped)
+    var pages: [HistoryTableViewController] = []
     let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    var leftData = [Exercice:[Rep]](), rightData = [Exercice:[Rep]](), centerData = [Exercice:[Rep]]()
-    var leftKeys = [Exercice](), rightKeys = [Exercice](), centerKeys = [Exercice]()
     var dayFocus = NSDate()
     @IBOutlet var mainView: UIScrollView!
     @IBOutlet var pageController: UIPageControl!
@@ -24,21 +23,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createTableviews()
-        addIDs()
-        addDelegates()
-        addDatasources()
-        registerXibsinTableviews()
         
         loadAllData()
         configurePageController()
-    }
-    
-    func createTableviews(){
-        let frame = mainView.frame
-        right = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
-        left = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
-        current = IDTableView(frame: frame, style: UITableViewStyle.Grouped)
+        centerView()
     }
     
     func configurePageController(){
@@ -49,73 +37,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         pageController.currentPage = 1
         lock_zoom()
     }
-    
-    func makeTableviewsGrouped(){
-        
-    }
-    
-    func addIDs(){
-        left.id = leftID
-        right.id = rightID
-        current.id = centerID
-    }
-    
-    func addDelegates(){
-        right.delegate = self
-        current.delegate = self
-        left.delegate = self
-    }
-    
-    func addDatasources(){
-        left.dataSource = self
-        current.dataSource = self
-        right.dataSource = self
-    }
-    
-    func registerXibsinTableviews(){
-        left.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-        right.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-        current.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let table = tableView as? IDTableView{
-            //update for each tableview
-            if table.id == leftID{
-                return leftKeys.count
-            }
-            else if table.id == rightID{
-                return rightKeys.count
-            }
-            else if table.id == centerID{
-                return centerKeys.count
-            }
-        }
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let table = tableView as? IDTableView{
-            if table.id == leftID{
-                let key = leftKeys[section]
-                return leftData[key]!.count
-            }
-            else if table.id == rightID{
-                let key = rightKeys[section]
-                return rightData[key]!.count
-            }
-            else if table.id == centerID{
-                let key = centerKeys[section]
-                return centerData[key]!.count
-            }
-        }
-        
-        return 1
     }
     
     func lock_zoom(){
@@ -123,84 +48,48 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         mainView?.minimumZoomScale = 1.0
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        var weight: Int = 0
-        var num_reps: Int = 0
-        let rep: Rep
-        let key: Exercice
-        
-        if let table = tableView as? IDTableView{
-            if table.id == leftID{
-                key = leftKeys[indexPath.section]
-                rep = leftData[key]![indexPath.row]
-                weight = rep.weight!.integerValue
-                num_reps = rep.num_reps!.integerValue
-            }
-            else if table.id == rightID{
-                key = rightKeys[indexPath.section]
-                rep = rightData[key]![indexPath.row]
-                weight = rep.weight!.integerValue
-                num_reps = rep.num_reps!.integerValue
-            }
-            else if table.id == centerID{
-                key = centerKeys[indexPath.section]
-                rep = centerData[key]![indexPath.row]
-                weight = rep.weight!.integerValue
-                num_reps = rep.num_reps!.integerValue
-            }
-            cell.textLabel?.text = "Weight: \(weight), Num Reps: \(num_reps)"
-        }
-        else {
-            cell.textLabel?.text = "Test Cell"
-        }
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let table = tableView as? IDTableView{
-            if table.id == leftID{
-                return leftKeys[section].name
-            }
-            else if table.id == rightID{
-                return rightKeys[section].name
-            }
-            else if table.id == centerID{
-                return centerKeys[section].name
-            }
-        }
-        return ""
-    }
-    
     func loadAllData(){
         let yesterday = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         let tomorrow = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        (leftData, leftKeys) = fill_data(yesterday)
-        (centerData, centerKeys) = fill_data(dayFocus)
-        (rightData, rightKeys) = fill_data(tomorrow)
-        reload_all()
+        updateView(fill_data(dayFocus), controller: current, day: dayFocus)
+        updateView(fill_data(yesterday), controller: left, day: yesterday)
+        updateView(fill_data(tomorrow), controller: right, day: tomorrow)
     }
     
     func shiftForward(){
-        dayFocus = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        (leftData, leftKeys) = (centerData, centerKeys)
-        (centerData, centerKeys) = (rightData, rightKeys)
-        let tomorrow = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        (rightData, rightKeys) = fill_data(tomorrow)
+        let leftD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
+        let centerD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
+        let rightD = dayFocus
+        updateView((current.data, current.keys), controller: left, day: leftD)
+        updateView((right.data, right.keys), controller: current, day: centerD)
+        updateView(fill_data(rightD), controller: right, day: rightD)
+        centerView()
+        dayFocus = centerD
     }
     
     func shiftBackward(){
-        dayFocus = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        (rightData, rightKeys) = (centerData, centerKeys)
-        (centerData, centerKeys) = (leftData, leftKeys)
-        let yesterday = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        (leftData, leftKeys) = fill_data(yesterday)
+        let leftD = dayFocus
+        let rightD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
+        let centerD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
+        updateView((current.data, current.keys), controller: right, day: rightD)
+        updateView((left.data, left.keys), controller: current, day: centerD)
+        updateView(fill_data(leftD), controller: left, day: leftD)
+        centerView()
+        dayFocus = centerD
     }
     
-    func reload_all(){
-        right.reloadData()
-        left.reloadData()
-        current.reloadData()
+    func centerView(){
+        let x = view.bounds.width
+        let y = CGFloat(0.0)
+        let point = CGPointMake(x, y)
+        mainView.contentOffset = point
+    }
+    
+    func updateView(info: (data: [Exercice:[Rep]], keys: [Exercice]), controller: HistoryTableViewController, day: NSDate){
+        controller.keys = info.keys
+        controller.data = info.data
+        controller.day = day
+        controller.tableView.reloadData()
     }
     
     func fill_data(day: NSDate)-> (data: [Exercice:[Rep]], keys: [Exercice]){
@@ -241,9 +130,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             frame.origin.x = frame.size.width * CGFloat(i)
             frame.origin.y = 0.0
             
-            page.frame = frame
-            mainView.addSubview(page)
-            configureTableViewConstraints(page)
+            page.view.frame = frame
+            mainView.addSubview(page.view)
         }
     }
     

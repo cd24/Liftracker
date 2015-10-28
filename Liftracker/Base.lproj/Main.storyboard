@@ -129,6 +129,10 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mzx-Z4-9V0">
                                 <rect key="frame" x="486" y="168" width="94" height="29"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="save_rep" destination="zNP-PH-yQd" eventType="valueChanged" id="TRq-4g-SBL"/>
+                                    <action selector="valueChanged:" destination="zNP-PH-yQd" eventType="valueChanged" id="hrD-v1-qZo"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiY-xM-lfM">
                                 <rect key="frame" x="20" y="101" width="458" height="30"/>
@@ -139,6 +143,10 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="o81-5u-tKf">
                                 <rect key="frame" x="486" y="101" width="94" height="29"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="save_rep" destination="zNP-PH-yQd" eventType="valueChanged" id="6cj-eq-I7c"/>
+                                    <action selector="valueChanged:" destination="zNP-PH-yQd" eventType="valueChanged" id="N0L-Cw-5Lu"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZf-CZ-yuI">
                                 <rect key="frame" x="20" y="72" width="54" height="21"/>
@@ -188,8 +196,10 @@
                     </view>
                     <connections>
                         <outlet property="num_reps" destination="jh6-ZR-XXU" id="aAr-5Z-Pa5"/>
+                        <outlet property="rep_stepper" destination="mzx-Z4-9V0" id="9yw-7R-Gtq"/>
                         <outlet property="tableView" destination="zVA-G6-nde" id="Vbi-KB-mGb"/>
                         <outlet property="weight" destination="DiY-xM-lfM" id="V6B-pw-dIG"/>
+                        <outlet property="weight_stepper" destination="o81-5u-tKf" id="rZP-93-IaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiA-pZ-upX" userLabel="First Responder" sceneMemberID="firstResponder"/>

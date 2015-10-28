@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var exercice: Exercice?
@@ -19,11 +19,12 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var updating = false
     var rowUpdating: NSIndexPath?
     let manager = DataManager.getInstance()
+    var recognizer: UITapGestureRecognizer!
     @IBOutlet var tableView: UITableView?
     @IBOutlet var num_reps: UITextField?
     @IBOutlet var weight: UITextField?
-    @IBOutlet var weight_stepper: UIStepper?
-    @IBOutlet var rep_stepper: UIStepper?
+    @IBOutlet var weight_stepper: UIStepper!
+    @IBOutlet var rep_stepper: UIStepper!
     
     
     override func viewDidLoad() {
@@ -43,13 +44,36 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
+        configureSteppers()
+        configureTextFields()
+        fillSuggestedData()
+    }
+    
+    func fillSuggestedData(){
+        let repSuggestion = 10
+        let tenMax = manager.estimatedMax(exercice!, reps: repSuggestion)
+        weight?.text = "\(tenMax)"
+        num_reps?.text = "\(repSuggestion)"
+        rep_stepper.value = Double(repSuggestion)
+    }
+    
+    func configureSteppers(){
         repKeys.sortInPlace()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        weight_stepper.minimumValue = 0
+        weight_stepper.maximumValue = Double.infinity
+        rep_stepper.minimumValue = 0
+        rep_stepper.maximumValue = Double.infinity
+        rep_stepper.stepValue = 1
+        weight_stepper.stepValue = 2.5
+    }
+    
+    func configureTextFields(){
+        num_reps?.delegate = self
+        num_reps?.keyboardType = UIKeyboardType.DecimalPad
+        weight?.delegate = self
+        weight?.keyboardType = UIKeyboardType.DecimalPad
+        
+        recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
     }
 
     override func didReceiveMemoryWarning() {
@@ -178,8 +202,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
-
-    
     // Override to support editing the table view.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -200,30 +222,42 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    @IBAction func valueChanged(sender: UIStepper){
+        if sender == rep_stepper {
+            num_reps?.text = "\(sender.value)"
+        }
+        else if sender == weight_stepper{
+            weight?.text = "\(sender.value)"
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField == weight!{
+            if let value = Double(weight!.text!){
+                weight_stepper.value = value
+            }
+            else {
+                weight_stepper.value = 0
+            }
+        }
+        else if textField == num_reps!{
+            if let value = Double(num_reps!.text!){
+                rep_stepper.value = value
+            }
+            else {
+                rep_stepper.value = 0
+            }
+        }
+        
+        self.view.removeGestureRecognizer(recognizer)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.view.addGestureRecognizer(recognizer)
     }
-    */
-
+    
+    func dismissKeyboard(){
+        weight?.resignFirstResponder()
+        num_reps?.resignFirstResponder()
+    }
 }
