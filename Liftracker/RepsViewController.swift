@@ -74,7 +74,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             let key = repKeys[section - 1]
             return allReps[key]!.count
         }
-        return 1
+        return 3
     }
 
     
@@ -86,8 +86,19 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else {
             if indexPath.section == 0{
-                let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
+                
+                if indexPath.row  == 0{
+                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
                 cell.textLabel?.text = "Estimated ORM: \(roundedString) \(manager.getUnitString())"
+                }
+                else if indexPath.row == 1{
+                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!, reps: 5))
+                    cell.textLabel?.text = "Estimated 5 Rep Max: \(roundedString)"
+                }
+                else if indexPath.row == 2{
+                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!, reps: 10))
+                    cell.textLabel?.text = "Estimated 10 Rep Max: \(roundedString)"
+                }
             }
             else {
                 let key = repKeys[indexPath.section - 1]

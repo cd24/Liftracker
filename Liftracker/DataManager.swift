@@ -244,6 +244,15 @@ class DataManager {
         return max!;
     }
     
+    func estimatedMax(ex: Exercice, reps: Int) -> Double {
+        let orm = estimatedMax(ex)
+        let conversions = [1: 1, 2: 0.95, 3:0.9, 4: 0.88, 5: 0.86, 6:0.83, 7: 0.80, 8:0.78, 9:0.76, 10:0.75, 11:0.72, 12:0.70]
+        if reps < 12{
+            return orm * conversions[reps]!
+        }
+        return orm*0.6
+    }
+    
     func estimatedMax(ex: Exercice) -> Double{
         var max: Double = 0.0;
         let reps = loadAllRepsFor(exercice: ex)

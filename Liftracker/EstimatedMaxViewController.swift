@@ -24,6 +24,8 @@ class EstimatedMaxViewController: UITableViewController {
         self.refreshControl?.tintColor = UIColor.blackColor()//todo: Colors in prefrences
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         loadData()
+        
+        title = "\(mg!.name!)"
     }
 
     override func didReceiveMemoryWarning() {
