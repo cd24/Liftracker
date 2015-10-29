@@ -30,16 +30,19 @@ class HistoryTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if keys.count > 0{
-            return keys.count
+            return keys.count + 1
         }
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if keys.count == 0{
+        if keys.count == 0 && section == 0{
+            return 2;
+        }
+        else if section == 0{
             return 1;
         }
-        let key = keys[section]
+        let key = keys[section - 1]
         return data[key]!.count
     }
 
@@ -47,13 +50,21 @@ class HistoryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        if keys.count == 0{
-            cell.textLabel?.text = "No data for day: \(manager.dateToString(day))"
+        if indexPath.section == 0 {
+            if indexPath.row == 0{
+                cell.textLabel?.text = manager.dateToString(day)
+                return cell
+            }
+            if keys.count == 0{
+                if indexPath.row == 1 {
+                    cell.textLabel?.text = "No data for day: \(manager.dateToString(day))"
+                }
+            }
         }
         else{
-            let key = keys[indexPath.section]
+            let key = keys[indexPath.section - 1]
             let rep = data[key]![indexPath.row]
-            cell.textLabel?.text = "Weight: \(rep.weight), Num Reps: \(rep.num_reps)"
+            cell.textLabel?.text = "Weight: \(rep.weight!), Num Reps: \(rep.num_reps!)"
         }
 
         return cell
@@ -61,11 +72,17 @@ class HistoryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if keys.count > 0{
-            return keys[section].name!
+            if section == 0{
+                return ""
+            }
+            return keys[section-1].name!
         }
         return ""
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

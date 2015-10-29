@@ -342,21 +342,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Rqw-1g-htv">
-                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Rqw-1g-htv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="443"/>
                                 <animations/>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7F-pX-FGe">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Back   " id="Fj1-on-KOd">
+                                        <connections>
+                                            <action selector="shiftBackward" destination="IJV-SV-we7" id="YDV-LU-9Ch"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ulp-Jg-Ydi"/>
+                                    <barButtonItem title="Add Exercice" id="Fqs-ge-RFu"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Uef-vL-Asv"/>
+                                    <barButtonItem title="Forward" id="4bL-21-zp7">
+                                        <connections>
+                                            <action selector="shiftForward" destination="IJV-SV-we7" id="EjU-Uw-nT4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rqw-1g-htv" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="00v-E1-SEk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rqw-1g-htv" secondAttribute="trailing" constant="-20" id="CSd-8C-iEH"/>
-                            <constraint firstItem="iRJ-kY-tb6" firstAttribute="top" secondItem="Rqw-1g-htv" secondAttribute="bottom" id="her-4R-5tL"/>
+                            <constraint firstItem="Rqw-1g-htv" firstAttribute="top" secondItem="ZyZ-2H-ZcE" secondAttribute="bottom" id="5K2-S9-r1K"/>
+                            <constraint firstItem="f7F-pX-FGe" firstAttribute="top" secondItem="Rqw-1g-htv" secondAttribute="bottom" id="6Yo-qG-emC"/>
+                            <constraint firstItem="Rqw-1g-htv" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="JPK-38-fJI"/>
+                            <constraint firstItem="f7F-pX-FGe" firstAttribute="leading" secondItem="CaY-79-RDE" secondAttribute="leadingMargin" constant="-20" id="RFF-zJ-Qek"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rqw-1g-htv" secondAttribute="trailing" constant="-20" id="Son-Nv-pE8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f7F-pX-FGe" secondAttribute="trailing" constant="-20" id="XUH-iW-tDc"/>
+                            <constraint firstItem="iRJ-kY-tb6" firstAttribute="top" secondItem="f7F-pX-FGe" secondAttribute="bottom" id="vff-Gr-Az5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="ZSM-yH-2jL"/>
-                    <navigationItem key="navigationItem" title="History" id="qyU-aB-GDX"/>
+                    <navigationItem key="navigationItem" id="qyU-aB-GDX"/>
                     <connections>
                         <outlet property="mainView" destination="Rqw-1g-htv" id="Yys-9m-MYl"/>
                     </connections>

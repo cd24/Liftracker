@@ -10,8 +10,8 @@ import UIKit
 
 class HistoryViewController: UIViewController,UIScrollViewDelegate {
 
-    var left = HistoryTableViewController(style: UITableViewStyle.Grouped),
-        right = HistoryTableViewController(style: UITableViewStyle.Grouped),
+    var //left = HistoryTableViewController(style: UITableViewStyle.Grouped)//,
+        //right = HistoryTableViewController(style: UITableViewStyle.Grouped),
         current = HistoryTableViewController(style: UITableViewStyle.Grouped)
     var pages: [HistoryTableViewController] = []
     let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
@@ -22,15 +22,15 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         loadAllData()
         configurePageController()
         centerView()
+        loadPages()
+        setTitle()
     }
     
     func configurePageController(){
-        pages = [left, current, right]
+        //pages = [left, current, right]
         pageController = UIPageControl(frame: mainView.frame)
         loadPages()
         pageController.numberOfPages = 3
@@ -52,30 +52,32 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         let yesterday = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         let tomorrow = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         updateView(fill_data(dayFocus), controller: current, day: dayFocus)
-        updateView(fill_data(yesterday), controller: left, day: yesterday)
-        updateView(fill_data(tomorrow), controller: right, day: tomorrow)
+        //updateView(fill_data(yesterday), controller: left, day: yesterday)
+        //updateView(fill_data(tomorrow), controller: right, day: tomorrow)
     }
     
-    func shiftForward(){
+    @IBAction func shiftForward(){
         let leftD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         let centerD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         let rightD = dayFocus
-        updateView((current.data, current.keys), controller: left, day: leftD)
-        updateView((right.data, right.keys), controller: current, day: centerD)
-        updateView(fill_data(rightD), controller: right, day: rightD)
-        centerView()
+        //updateView((current.data, current.keys), controller: left, day: leftD)
+        updateView(fill_data(centerD), controller: current, day: centerD)
+        //updateView(fill_data(rightD), controller: right, day: rightD)
+        //centerView()
         dayFocus = centerD
+        setTitle()
     }
     
-    func shiftBackward(){
+    @IBAction func shiftBackward(){
         let leftD = dayFocus
         let rightD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
         let centerD = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: dayFocus, options: NSCalendarOptions(rawValue: 0))!
-        updateView((current.data, current.keys), controller: right, day: rightD)
-        updateView((left.data, left.keys), controller: current, day: centerD)
-        updateView(fill_data(leftD), controller: left, day: leftD)
-        centerView()
+        //updateView((current.data, current.keys), controller: right, day: rightD)
+        updateView(fill_data(centerD), controller: current, day: centerD)
+        //updateView(fill_data(leftD), controller: left, day: leftD)
+        //centerView()
         dayFocus = centerD
+        setTitle()
     }
     
     func centerView(){
@@ -124,6 +126,7 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func loadPages(){
+        /*
         for i in 0...2 {
             let page = pages[i]
             var frame = mainView.frame
@@ -132,7 +135,19 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
             
             page.view.frame = frame
             mainView.addSubview(page.view)
-        }
+        }*/
+        var frame = mainView.frame
+        var bounds = mainView.bounds
+        frame.origin.x = 0.0
+        frame.origin.y = -65.0
+        current.view.bounds = mainView.bounds
+        current.view.frame = frame
+        mainView.addSubview(current.view)
+    }
+    
+    func setTitle() {
+        ///title = "\(DataManager.getInstance().dateToString(dayFocus))"
+        title = "History"
     }
     
     func configureTableViewConstraints(table: UITableView){
