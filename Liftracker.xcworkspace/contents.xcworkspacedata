@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Rep+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:Rep+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:Liftracker.xcodeproj">
    </FileRef>
    <FileRef

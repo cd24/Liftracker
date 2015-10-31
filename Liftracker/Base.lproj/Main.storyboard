@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wcw-bz-Wfr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wcw-bz-Wfr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="1176" y="2464"/>
         </scene>
-        <!--Reps View Controller-->
+        <!--Title-->
         <scene sceneID="eFA-sq-wwY">
             <objects>
                 <viewController id="zNP-PH-yQd" customClass="RepsViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,6 @@
                                 <rect key="frame" x="486" y="168" width="94" height="29"/>
                                 <animations/>
                                 <connections>
-                                    <action selector="save_rep" destination="zNP-PH-yQd" eventType="valueChanged" id="TRq-4g-SBL"/>
                                     <action selector="valueChanged:" destination="zNP-PH-yQd" eventType="valueChanged" id="hrD-v1-qZo"/>
                                 </connections>
                             </stepper>
@@ -144,7 +143,6 @@
                                 <rect key="frame" x="486" y="101" width="94" height="29"/>
                                 <animations/>
                                 <connections>
-                                    <action selector="save_rep" destination="zNP-PH-yQd" eventType="valueChanged" id="6cj-eq-I7c"/>
                                     <action selector="valueChanged:" destination="zNP-PH-yQd" eventType="valueChanged" id="N0L-Cw-5Lu"/>
                                 </connections>
                             </stepper>
@@ -194,6 +192,7 @@
                             <constraint firstItem="jh6-ZR-XXU" firstAttribute="leading" secondItem="2Yh-61-G0G" secondAttribute="leadingMargin" id="zRn-gQ-0K4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="CeN-Lk-mhO"/>
                     <connections>
                         <outlet property="num_reps" destination="jh6-ZR-XXU" id="aAr-5Z-Pa5"/>
                         <outlet property="rep_stepper" destination="mzx-Z4-9V0" id="9yw-7R-Gtq"/>
@@ -316,7 +315,7 @@
         <scene sceneID="Yu7-6N-eEQ">
             <objects>
                 <navigationController id="GDY-d0-jHP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="B7U-Un-7nL"/>
+                    <tabBarItem key="tabBarItem" title="History" image="book.png" id="B7U-Un-7nL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bvm-9c-ZpF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -356,7 +355,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ulp-Jg-Ydi"/>
-                                    <barButtonItem title="Add Exercice" id="Fqs-ge-RFu"/>
+                                    <barButtonItem title="Today" id="Fqs-ge-RFu">
+                                        <connections>
+                                            <action selector="today" destination="IJV-SV-we7" id="uvU-B2-k8O"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Uef-vL-Asv"/>
                                     <barButtonItem title="Forward" id="4bL-21-zp7">
                                         <connections>
@@ -379,9 +382,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="ZSM-yH-2jL"/>
-                    <navigationItem key="navigationItem" id="qyU-aB-GDX"/>
+                    <navigationItem key="navigationItem" id="qyU-aB-GDX">
+                        <barButtonItem key="rightBarButtonItem" title="Add Exercice" id="Ht1-mg-82Z">
+                            <connections>
+                                <action selector="addToCurrent" destination="IJV-SV-we7" id="7g7-zE-GrP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainView" destination="Rqw-1g-htv" id="Yys-9m-MYl"/>
+                        <segue destination="c6x-Vn-fS9" kind="show" identifier="Add" id="45R-Xg-NLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb6-XX-neA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -554,10 +564,11 @@
     </scenes>
     <resources>
         <image name="bars.png" width="31" height="31"/>
+        <image name="book.png" width="26" height="26"/>
         <image name="home.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QdV-YM-UYx"/>
-        <segue reference="IYe-LK-zW3"/>
+        <segue reference="y0H-dc-NhL"/>
+        <segue reference="kNv-in-yEe"/>
     </inferredMetricsTieBreakers>
 </document>

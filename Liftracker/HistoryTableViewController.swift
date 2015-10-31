@@ -57,7 +57,7 @@ class HistoryTableViewController: UITableViewController {
             }
             if keys.count == 0{
                 if indexPath.row == 1 {
-                    cell.textLabel?.text = "No data for day: \(manager.dateToString(day))"
+                    cell.textLabel?.text = "No data for today!"
                 }
             }
         }

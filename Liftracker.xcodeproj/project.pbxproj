@@ -18,6 +18,7 @@
 		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; };
 		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; };
 		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; };
+		522E815A1BE54E2600F7072E /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 522E81591BE54E2600F7072E /* book.png */; };
 		524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524344441BDEE81E0066C3DA /* EstimateCell.swift */; };
 		524344471BDEEF8A0066C3DA /* ProgressChartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524344461BDEEF8A0066C3DA /* ProgressChartViewCell.swift */; };
 		524344521BDF08C20066C3DA /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 524344481BDF08C20066C3DA /* AppIcon.appiconset */; };
@@ -30,11 +31,9 @@
 		524344591BDF08C20066C3DA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5243444F1BDF08C20066C3DA /* Icon@2x.png */; };
 		5243445A1BDF08C20066C3DA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 524344501BDF08C20066C3DA /* iTunesArtwork.png */; };
 		5243445B1BDF08C20066C3DA /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 524344511BDF08C20066C3DA /* iTunesArtwork@2x.png */; };
-		5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */; };
 		526C290D1BD9F9EC009B7D19 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290C1BD9F9EC009B7D19 /* home.png */; };
 		526C290F1BDA7950009B7D19 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C290E1BDA7950009B7D19 /* bars.png */; };
 		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; };
-		526C29151BDA7DD3009B7D19 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C29141BDA7DD3009B7D19 /* book.png */; };
 		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; };
 		526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */; };
 		526ED0D91BE16957001E0D19 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526ED0D81BE16957001E0D19 /* HistoryTableViewController.swift */; };
@@ -95,6 +94,7 @@
 		521F4A081BC8B06400FA6E02 /* DefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultData.plist; sourceTree = "<group>"; };
 		521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceAdderViewController.swift; sourceTree = "<group>"; };
 		521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepsViewController.swift; sourceTree = "<group>"; };
+		522E81591BE54E2600F7072E /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		524344441BDEE81E0066C3DA /* EstimateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimateCell.swift; sourceTree = "<group>"; };
 		524344461BDEEF8A0066C3DA /* ProgressChartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressChartViewCell.swift; sourceTree = "<group>"; };
 		524344481BDF08C20066C3DA /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
@@ -112,7 +112,6 @@
 		526C290C1BD9F9EC009B7D19 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		526C290E1BDA7950009B7D19 /* bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars.png; sourceTree = "<group>"; };
 		526C29121BDA798F009B7D19 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		526C29141BDA7DD3009B7D19 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		526C29181BDA7EAD009B7D19 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxTableViewController.swift; sourceTree = "<group>"; };
 		526ED0D81BE16957001E0D19 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -187,9 +186,9 @@
 		526C290B1BD9F979009B7D19 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				522E81591BE54E2600F7072E /* book.png */,
 				526C290C1BD9F9EC009B7D19 /* home.png */,
 				526C290E1BDA7950009B7D19 /* bars.png */,
-				526C29141BDA7DD3009B7D19 /* book.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -427,7 +426,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = MCApps;
 				TargetAttributes = {
 					52AFF04B1BC8933D00A1115F = {
@@ -471,6 +470,7 @@
 			files = (
 				524344531BDF08C20066C3DA /* Icon-60.png in Resources */,
 				5243445A1BDF08C20066C3DA /* iTunesArtwork.png in Resources */,
+				522E815A1BE54E2600F7072E /* book.png in Resources */,
 				524344591BDF08C20066C3DA /* Icon@2x.png in Resources */,
 				52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */,
 				524344571BDF08C20066C3DA /* Icon-Small-50@2x.png in Resources */,
@@ -486,7 +486,6 @@
 				521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */,
 				524344581BDF08C20066C3DA /* Icon.png in Resources */,
 				52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */,
-				526C29151BDA7DD3009B7D19 /* book.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +565,6 @@
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
 				526ED0D91BE16957001E0D19 /* HistoryTableViewController.swift in Sources */,
 				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
-				5249754D1BD40E72004A6B54 /* Rep+CoreDataProperties.m in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
 				526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,

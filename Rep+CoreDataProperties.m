@@ -1,9 +1,9 @@
 //
 //  Rep+CoreDataProperties.m
-//  Liftracker
+//  
 //
-//  Created by John McAvey on 10/18/15.
-//  Copyright © 2015 MCApps. All rights reserved.
+//  Created by John McAvey on 10/31/15.
+//
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -13,9 +13,10 @@
 
 @implementation Rep (CoreDataProperties)
 
+@dynamic date;
 @dynamic num_reps;
 @dynamic weight;
-@dynamic date;
+@dynamic unit;
 @dynamic exercice;
 
 @end

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         setupDefault()
+        setupPreferenceDefaults()
         return true
     }
 
@@ -137,6 +138,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    func setupPreferenceDefaults() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject("John Doe", forKey: "user_name")
+        defaults.setObject("Undisclosed", forKey: "user_gender")
+        defaults.setObject("Epley", forKey: "max_rep_calculator")
+        defaults.setObject("Lbs", forKey: "weight_units")
+        defaults.setObject("Liter", forKey: "fuild_units")
+        defaults.setObject("#4dd6ef", forKey: "background_color")
+        defaults.setObject("#ffffff", forKey: "tint_color")
     }
 
 }

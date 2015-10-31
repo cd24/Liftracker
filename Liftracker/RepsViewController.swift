@@ -19,6 +19,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var updating = false
     var rowUpdating: NSIndexPath?
     let manager = DataManager.getInstance()
+    var addDate: NSDate!
     var recognizer: UITapGestureRecognizer!
     @IBOutlet var tableView: UITableView?
     @IBOutlet var num_reps: UITextField?
@@ -47,6 +48,20 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         configureSteppers()
         configureTextFields()
         fillSuggestedData()
+        repKeys.sortInPlace({(ele1: String, ele2: String) -> Bool in
+            let formatter = NSDateFormatter()
+            formatter.locale = NSLocale.systemLocale()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            let date1 = formatter.dateFromString(ele1)
+            let date2 = formatter.dateFromString(ele2)
+            if date1 == nil || date2 == nil{
+                return false
+            }
+            let before = date1!.compare(date2!)
+            NSLog("val: \(before.rawValue), descending: \(NSComparisonResult.OrderedDescending.rawValue)")
+            return before == NSComparisonResult.OrderedDescending
+        })
+        tableView?.reloadData()
     }
     
     func fillSuggestedData(){
@@ -127,7 +142,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             else {
                 let key = repKeys[indexPath.section - 1]
                 let rep = allReps[key]![indexPath.row]
-                cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(rep.weight!) \(manager.getUnitString())"
+                cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(manager.getRepWeightString(rep))"
             }
         }
         return cell
@@ -164,17 +179,16 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let manager = DataManager.getInstance()
         weight?.resignFirstResponder()
         num_reps?.resignFirstResponder()
-        if let w = Int(weight!.text!) {
-            if let r = Int(num_reps!.text!){
-                let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!)
+        if let w = Double(weight!.text!) {
+            if let r = Double(num_reps!.text!){
+                if addDate == nil{
+                    addDate = NSDate()
+                }
+                let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: addDate)
                 addRep(repetition: new_rep)
                 tableView!.reloadData()
             }
         }
-    }
-    
-    @IBAction func dismiss(){
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func orderByDate(reps reps: [Rep]) -> [String:[Rep]]{
@@ -193,6 +207,18 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             allReps[date] = [rep]
             repKeys.append(date)
         }
+        repKeys.sortInPlace({(ele1: String, ele2: String) -> Bool in
+            let formatter = NSDateFormatter()
+            formatter.locale = NSLocale.systemLocale()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+            let date1 = formatter.dateFromString(ele1)
+            let date2 = formatter.dateFromString(ele2)
+            if date1 == nil || date2 == nil{
+                return false
+            }
+            let before = date1!.compare(date2!)
+            return before == NSComparisonResult.OrderedAscending ? false: true
+        })
     }
 
     
@@ -254,10 +280,15 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func textFieldDidBeginEditing(textField: UITextField) {
         self.view.addGestureRecognizer(recognizer)
+        textField.selectAll(self)
     }
     
     func dismissKeyboard(){
-        weight?.resignFirstResponder()
-        num_reps?.resignFirstResponder()
+        if weight!.isFirstResponder(){
+            weight!.resignFirstResponder()
+        }
+        else if num_reps!.isFirstResponder(){
+            num_reps!.resignFirstResponder()
+        }
     }
 }

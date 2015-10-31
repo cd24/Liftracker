@@ -20,21 +20,10 @@ class TodayViewController: UITableViewController {
 
         loadData()
         
-        let backGroundHex = NSUserDefaults.standardUserDefaults().valueForKey("background_color") as? String
-        let tintColorHex = NSUserDefaults.standardUserDefaults().valueForKey("tint_color") as? String
-        
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
-        
-        if let bgcolor = backGroundHex, let tintColor = tintColorHex{
-            self.refreshControl?.backgroundColor = manager.colorWithHexString(bgcolor)
-            self.refreshControl?.tintColor = manager.colorWithHexString(tintColor)
-            
-        }
-        else {
-            self.refreshControl?.backgroundColor = UIColor.whiteColor()
-            self.refreshControl?.tintColor = UIColor.blackColor()
-        }
+        self.refreshControl?.backgroundColor = manager.getMainColor()
+        self.refreshControl?.tintColor = manager.getTintColor()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
         title = "Today"
@@ -85,7 +74,7 @@ class TodayViewController: UITableViewController {
 
         // Configure the cell...
         let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
+        cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell

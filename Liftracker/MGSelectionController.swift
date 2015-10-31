@@ -14,6 +14,7 @@ class MGSelectionController: UITableViewController {
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var muscle_group: Array<MuscleGroup> = Array();
     var maxView: Bool = false
+    var addDate: NSDate!
     var estimate: Bool = false
     
     override func viewDidLoad() {
@@ -79,6 +80,7 @@ class MGSelectionController: UITableViewController {
             let viewController = segue.destinationViewController as! ExerciceSelectorController;
             viewController.group = muscle_group[tableView.indexPathForSelectedRow!.row]
             viewController.maxView = maxView
+            viewController.addDate = addDate
         }
         else if segue.identifier == "Max"{
             let viewController = segue.destinationViewController as! EstimatedMaxViewController

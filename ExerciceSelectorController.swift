@@ -14,6 +14,7 @@ class ExerciceSelectorController: UITableViewController {
     var exercices: Array<Exercice> = Array()
     var group: MuscleGroup?
     var maxView: Bool?
+    var addDate: NSDate!
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     
@@ -76,6 +77,7 @@ class ExerciceSelectorController: UITableViewController {
         if segue.identifier == "Reps" {
             let destination = segue.destinationViewController as! RepsViewController;
             destination.exercice = exercices[tableView.indexPathForSelectedRow!.row];
+            destination.addDate = addDate
         }
         NSLog(String(format:"Identifier: ", segue.identifier!));
     }

@@ -68,14 +68,20 @@ class DayViewController: UITableViewController {
         
         // Configure the cell...
         let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "Weight: \(rep.weight!), Reps: \(rep.num_reps!)"
+        cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
         
         return cell
     }
     
-    @IBAction func add_reps(){
+    func add_reps(){
         performSegueWithIdentifier("Add", sender: self)
         //todo: send the date along with the segue so reps are added to the correct day.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationController = segue.destinationViewController as? MGSelectionController {
+            destinationController.addDate = NSDate()
+        }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

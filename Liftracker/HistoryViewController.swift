@@ -80,6 +80,11 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         setTitle()
     }
     
+    @IBAction func today(){
+        dayFocus = NSDate()
+        updateView(fill_data(dayFocus), controller: current, day: dayFocus)
+    }
+    
     func centerView(){
         let x = view.bounds.width
         let y = CGFloat(0.0)
@@ -162,6 +167,16 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         updateView()
+    }
+    
+    @IBAction func addToCurrent() {
+        performSegueWithIdentifier("Add", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? MGSelectionController {
+            destination.addDate = dayFocus
+        }
     }
     /*
     // MARK: - Navigation

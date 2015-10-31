@@ -13,6 +13,8 @@ class DataManager {
     static private var manager: DataManager = DataManager()
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
+    
+    let userNameKey = "user_name", genderKey = "user_gender", claculatorKey = "max_rep_calculator", weightUnitKey = "weight_units", fluidUnitsKey = "fuild_units", backgroundColorKey = "background_color", tintColorKey = "tint_color"
 
     static func getInstance() -> DataManager {
         return manager;
@@ -121,16 +123,18 @@ class DataManager {
         return exercice
     }
     
-    func newRep(weight w: Int, repetitions reps: Int, exercice ex: Exercice) -> Rep {
+    func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice) -> Rep {
         return newRep(weight: w, repetitions: reps, exercice: ex, date: getDayOfWeek())
     }
     
-    func newRep(weight w: Int, repetitions reps: Int, exercice ex: Exercice, date day: NSDate) -> Rep{
+    func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice, var date day: NSDate) -> Rep{
         let rep = NSEntityDescription.insertNewObjectForEntityForName("Rep", inManagedObjectContext: managedContext) as! Rep
+        day = startOfDay(day)
         rep.weight = w
         rep.num_reps = reps
         rep.date = "\(day)"
         rep.exercice = ex
+        rep.unit = getUnitString()
         save_context()
         return rep
     }
@@ -175,8 +179,8 @@ class DataManager {
     
     func dateToString(date: NSDate) -> String{
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "MMM dd, yyyy"
-        
+        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("EdMMMyyyy", options: 0, locale: NSLocale.systemLocale())
+        formatter.timeZone = NSTimeZone.systemTimeZone()
         return formatter.stringFromDate(date)
     }
     
@@ -205,15 +209,19 @@ class DataManager {
     }
     
     func getUnitString() -> String{
-        return "Lbs" //todo: Use setting interface
+        return NSUserDefaults.standardUserDefaults().objectForKey(weightUnitKey) as! String //todo: Use setting interface
     }
     
     func getMainColor() -> UIColor {
-        return UIColor.whiteColor() // todo: Use settings interface
+        let colorString = NSUserDefaults.standardUserDefaults().objectForKey(backgroundColorKey) as! String
+        let color = colorWithHexString(colorString)
+        return color
     }
     
     func getTintColor() -> UIColor {
-        return UIColor.blackColor() //todo: Use settings interface
+        let colorString = NSUserDefaults.standardUserDefaults().objectForKey(tintColorKey) as! String
+        let color = colorWithHexString(colorString)
+        return color
     }
     
     func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
@@ -310,6 +318,21 @@ class DataManager {
     
     func values(rep: Rep) -> (Double, Double){
         return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
+    }
+    
+    func getRepWeightString(rep: Rep) -> String {
+        let weight = getUnitString()
+        if weight == rep.unit!{
+            return "\(rep.weight!) \(weight)"
+        }
+        if weight == "Kgs" {
+            let kgsWeight = 0.453592 * rep.weight!.doubleValue
+            return "\(kgsWeight) \(weight)"
+        }
+        else {
+            let lbsWeight = 2.20462 * rep.weight!.doubleValue
+            return "\(lbsWeight) \(weight)"
+        }
     }
     
     func saveToFile(){
