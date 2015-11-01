@@ -213,14 +213,14 @@ class DataManager {
     }
     
     func getMainColor() -> UIColor {
-        let colorString = NSUserDefaults.standardUserDefaults().objectForKey(backgroundColorKey) as! String
-        let color = colorWithHexString(colorString)
+        //let colorString = NSUserDefaults.standardUserDefaults().objectForKey(backgroundColorKey) as! String
+        let color = UIColor(red: 192.0/255.0, green: 1, blue: 254.0/255, alpha: 1)//colorWithHexString(colorString)
         return color
     }
     
     func getTintColor() -> UIColor {
-        let colorString = NSUserDefaults.standardUserDefaults().objectForKey(tintColorKey) as! String
-        let color = colorWithHexString(colorString)
+        //let colorString = NSUserDefaults.standardUserDefaults().objectForKey(tintColorKey) as! String
+        let color = UIColor.blackColor() //colorWithHexString(colorString)
         return color
     }
     

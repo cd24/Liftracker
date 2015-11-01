@@ -297,7 +297,7 @@
         <scene sceneID="Ow9-oi-q2U">
             <objects>
                 <navigationController id="DUg-jt-Cha" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="bars.png" id="sVG-s7-7OE"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="weight.png" id="sVG-s7-7OE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HmE-JL-cW5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -315,7 +315,7 @@
         <scene sceneID="Yu7-6N-eEQ">
             <objects>
                 <navigationController id="GDY-d0-jHP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="book.png" id="B7U-Un-7nL"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history.png" id="B7U-Un-7nL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bvm-9c-ZpF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -367,7 +367,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Gde-2D-CqE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="443"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZGN-zJ-j27">
                                         <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
@@ -577,11 +577,13 @@
     </scenes>
     <resources>
         <image name="bars.png" width="31" height="31"/>
-        <image name="book.png" width="26" height="26"/>
-        <image name="home.png" width="26" height="26"/>
+        <image name="history.png" width="29" height="26"/>
+        <image name="home.png" width="28" height="28"/>
+        <image name="weight.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="y0H-dc-NhL"/>
-        <segue reference="45R-Xg-NLQ"/>
+        <segue reference="QdV-YM-UYx"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.31254817895349918" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

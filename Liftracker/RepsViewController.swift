@@ -247,7 +247,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section > 0{
+        if indexPath.section > 0 && !updating{
             updating = true
             rowUpdating = indexPath
             let repFromRowKey = repKeys[indexPath.section - 1]

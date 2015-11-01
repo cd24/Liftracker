@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         setupDefault()
         setupPreferenceDefaults()
+        //UINavigationBar.appearance().barTintColor = DataManager.getInstance().getMainColor()
         return true
     }
 
