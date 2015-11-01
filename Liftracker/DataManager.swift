@@ -342,4 +342,9 @@ class DataManager {
     func openShareMenu(){
         
     }
+    
+    func deleteRep(rep: Rep){
+        managedContext.deleteObject(rep)
+        save_context()
+    }
 }

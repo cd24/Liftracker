@@ -58,9 +58,9 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return false
             }
             let before = date1!.compare(date2!)
-            NSLog("val: \(before.rawValue), descending: \(NSComparisonResult.OrderedDescending.rawValue)")
             return before == NSComparisonResult.OrderedDescending
         })
+        matchTextBox()
         tableView?.reloadData()
     }
     
@@ -148,18 +148,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        //put info in the text fiels, perform update instead of save
-        updating = true
-        rowUpdating = indexPath
-    }
-    
-    func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        //remove updating status
-        updating = false
-        return indexPath
-    }
-    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if allReps.keys.count == 0 {
             return ""
@@ -179,13 +167,25 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let manager = DataManager.getInstance()
         weight?.resignFirstResponder()
         num_reps?.resignFirstResponder()
+        
         if let w = Double(weight!.text!) {
             if let r = Double(num_reps!.text!){
-                if addDate == nil{
-                    addDate = NSDate()
+                if updating {
+                    let repFromRowKey = repKeys[rowUpdating!.section - 1]
+                    let repFromRow = allReps[repFromRowKey]![rowUpdating!.row]
+                    repFromRow.num_reps = r
+                    repFromRow.weight = w
+                    manager.save_context()
+                    tableView!.deselectRowAtIndexPath(rowUpdating!, animated: true)
+                    updating = false
                 }
-                let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: addDate)
-                addRep(repetition: new_rep)
+                else{
+                    if addDate == nil{
+                        addDate = NSDate()
+                    }
+                    let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: addDate)
+                    addRep(repetition: new_rep)
+                }
                 tableView!.reloadData()
             }
         }
@@ -232,12 +232,14 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            let key = repKeys[indexPath.section]
+            let key = repKeys[indexPath.section-1]
+            let rep = allReps[key]![indexPath.row]
             allReps[key]!.removeAtIndex(indexPath.row)
             if (allReps[key]!.count == 0){
                 allReps.removeValueForKey(key)
                 repKeys.removeAtIndex(indexPath.section)
             }
+            manager.deleteRep(rep)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -245,7 +247,26 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section > 0{
+            updating = true
+            rowUpdating = indexPath
+            let repFromRowKey = repKeys[indexPath.section - 1]
+            let repFromRow = allReps[repFromRowKey]![indexPath.row]
+            self.weight?.text = "\(repFromRow.weight!.doubleValue)"
+            self.num_reps?.text = "\(repFromRow.num_reps!.doubleValue)"
+            matchTextBox()
+        }
+        else {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        updating = false
+    }
+    
+    func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return indexPath.section > 0
     }
     
     @IBAction func valueChanged(sender: UIStepper){
@@ -258,23 +279,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if textField == weight!{
-            if let value = Double(weight!.text!){
-                weight_stepper.value = value
-            }
-            else {
-                weight_stepper.value = 0
-            }
-        }
-        else if textField == num_reps!{
-            if let value = Double(num_reps!.text!){
-                rep_stepper.value = value
-            }
-            else {
-                rep_stepper.value = 0
-            }
-        }
-        
+        matchTextBox()
         self.view.removeGestureRecognizer(recognizer)
     }
     
@@ -289,6 +294,21 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if num_reps!.isFirstResponder(){
             num_reps!.resignFirstResponder()
+        }
+    }
+    
+    func matchTextBox() {
+        if let value = Double(weight!.text!){
+            weight_stepper.value = value
+        }
+        else {
+            weight_stepper.value = 0
+        }
+        if let value = Double(num_reps!.text!){
+            rep_stepper.value = value
+        }
+        else {
+            rep_stepper.value = 0
         }
     }
 }
