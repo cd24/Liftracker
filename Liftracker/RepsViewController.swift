@@ -225,7 +225,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Override to support conditional editing of the table view.
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return indexPath.section > 0
     }
     
     // Override to support editing the table view.

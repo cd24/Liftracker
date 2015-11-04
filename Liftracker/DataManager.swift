@@ -77,7 +77,6 @@ class DataManager {
         catch{
             NSLog("Error while loading muscle groups: \(error)")
         }
-        
         return results
     }
     

@@ -72,6 +72,7 @@ class ExerciceSelectorController: UITableViewController {
         if segue.identifier == "AddExercice" {
             let destination = segue.destinationViewController as! ExerciceAdderViewController
             destination.tableView = self
+            destination.currentGroup = group!
         }
         
         if segue.identifier == "Reps" {
@@ -93,6 +94,7 @@ class ExerciceSelectorController: UITableViewController {
         else {
             performSegueWithIdentifier("Reps", sender: self)
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func load_data(){

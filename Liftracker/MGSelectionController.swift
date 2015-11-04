@@ -22,10 +22,7 @@ class MGSelectionController: UITableViewController {
         self.title = "Groups"
         
         //load exercices for function
-        load_data()
-        if (muscle_group.count == 0){
-            load_data()
-        }
+        muscle_group = DataManager.getInstance().loadAllMuscleGroups()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,22 +50,6 @@ class MGSelectionController: UITableViewController {
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell
-    }
-    
-    func load_data(){
-        let fetch_request = NSFetchRequest(entityName: "MuscleGroup");
-        let order = NSSortDescriptor(key: "name", ascending: false)
-        fetch_request.sortDescriptors?.append(order)
-        
-        do {
-            let results = try managed_context.executeFetchRequest(fetch_request) as! Array<MuscleGroup>
-            for result in results {
-                muscle_group.append(result);
-            }
-        }
-        catch {
-            NSLog("An Error was thrown!");
-        }
     }
     
     func addGroup(){
@@ -99,6 +80,7 @@ class MGSelectionController: UITableViewController {
         else {
             performSegueWithIdentifier("Select", sender: self)
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     /*

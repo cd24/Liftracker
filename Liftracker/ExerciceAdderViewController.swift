@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     var groups: Array<MuscleGroup>?
     var tableView: ExerciceSelectorController?
+    var currentGroup: MuscleGroup!
     var selectedIndex: Int = 0
-    @IBOutlet var picker_view: UIPickerView?
-    @IBOutlet var name_field: UITextField?
+    @IBOutlet var picker_view: UIPickerView!
+    @IBOutlet var name_field: UITextField!
     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
@@ -21,11 +22,19 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         
         groups = DataManager.getInstance().loadAllMuscleGroups()
         
-        picker_view?.delegate = self
-        picker_view?.dataSource = self
-        picker_view?.reloadAllComponents()
+        picker_view.delegate = self
+        picker_view.dataSource = self
+        picker_view.reloadAllComponents()
+        
+        name_field.delegate = self
+        
+        /*
+        let index = groups!.indexOf(currentGroup)!
+        picker_view?.selectedRowInComponent(index)
+        */
 
         // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save");
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +61,7 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         selectedIndex = row;
     }
     
-    @IBAction func save(){
+    func save(){
         if (!validData()){
             return
         }
@@ -67,6 +76,7 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         tableView!.load_data()
         tableView!.tableView.reloadData()
         dismissViewControllerAnimated(false, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func validData() -> Bool{
@@ -76,7 +86,11 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBAction func dismiss(){
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.selectAll(self)
+    }
+    
     /*
     // MARK: - Navigation
 

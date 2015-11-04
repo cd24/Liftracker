@@ -39,8 +39,8 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Right
         
         current.view.addGestureRecognizer(doubleTapRecognizer)
-        view.addGestureRecognizer(leftSwipeRecognizer)
-        view.addGestureRecognizer(rightSwipeRecognizer)
+        current.view.addGestureRecognizer(leftSwipeRecognizer)
+        current.view.addGestureRecognizer(rightSwipeRecognizer)
     }
     
     func configureTableView(){
