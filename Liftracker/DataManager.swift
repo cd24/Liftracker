@@ -96,24 +96,6 @@ class DataManager {
         return results
     }
     
-    func loadDays() -> [Day]{
-        let fetch_request = NSFetchRequest(entityName: "Day")
-        fetch_request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-        var results: [Day] = []
-        do {
-            results = try managedContext.executeFetchRequest(fetch_request) as! [Day]
-        }
-        catch
-        {
-            
-        }
-        return results
-    }
-    
-    func loadDayFor(date date: NSDate) -> [Day]{
-        return [] // todo: Implement me :)
-    }
-    
     func newExercice(name name: String, muscle_group group: MuscleGroup) -> Exercice{
         let exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: managedContext) as! Exercice
         exercice.name = name
@@ -136,13 +118,6 @@ class DataManager {
         rep.unit = getUnitString()
         save_context()
         return rep
-    }
-    
-    func newDay(date: NSDate) -> Day {
-        let day = NSEntityDescription.insertNewObjectForEntityForName("Day", inManagedObjectContext: managedContext) as! Day
-        day.date = "\(date)"
-        save_context()
-        return day
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {

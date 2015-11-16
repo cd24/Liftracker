@@ -2,7 +2,7 @@
 //  Rep+CoreDataProperties.m
 //  
 //
-//  Created by John McAvey on 10/31/15.
+//  Created by John McAvey on 11/12/15.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,8 +15,8 @@
 
 @dynamic date;
 @dynamic num_reps;
-@dynamic weight;
 @dynamic unit;
+@dynamic weight;
 @dynamic exercice;
 
 @end

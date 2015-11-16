@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIAlertViewDelegate {
     var groups: Array<MuscleGroup>?
     var tableView: ExerciceSelectorController?
     var currentGroup: MuscleGroup!
@@ -63,6 +63,11 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     
     func save(){
         if (!validData()){
+            let alert = UIAlertController(title: "Invalid Data", message: "The data you entered either exists already or is empty.  Please enter a value which is not already entered to save", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.Cancel, handler: {action in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         let new_exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: context) as! Exercice
@@ -80,7 +85,14 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     func validData() -> Bool{
-        return name_field?.text != "" // todo: Some other validation might be nice.  EG if it already exists... so on so forth.
+        //todo: Validate field
+        let exercices = DataManager.getInstance().loadExercicesFor(muscle_group: groups![selectedIndex])
+        for exercice in exercices {
+            if exercice.name! == name_field.text! {
+                return false
+            }
+        }
+        return name_field?.text != ""
     }
     
     @IBAction func dismiss(){

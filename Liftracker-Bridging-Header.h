@@ -4,5 +4,4 @@
 
 #import "Rep.h"
 #import "Exercice.h"
-#import "Day.h"
 #import "MuscleGroup.h"

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520502101BF5076A007BAF65 /* LoaderControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205020F1BF5076A007BAF65 /* LoaderControllerViewController.swift */; };
+		5205021D1BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 520502121BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.m */; };
+		5205021E1BF51B85007BAF65 /* MuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 520502141BF51B85007BAF65 /* MuscleGroup.m */; };
+		5205021F1BF51B85007BAF65 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 520502161BF51B85007BAF65 /* Rep+CoreDataProperties.m */; };
+		520502201BF51B85007BAF65 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 520502181BF51B85007BAF65 /* Rep.m */; };
+		520502211BF51B85007BAF65 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205021A1BF51B85007BAF65 /* Exercice+CoreDataProperties.m */; };
+		520502221BF51B85007BAF65 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205021C1BF51B85007BAF65 /* Exercice.m */; };
 		52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52151E031BCEA638006BC0B1 /* DataManager.swift */; };
-		52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */; };
-		52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E081BCF0DEB006BC0B1 /* Exercice.m */; };
-		52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */; };
-		52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */; };
-		52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */; };
-		52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E101BCF0DEB006BC0B1 /* Rep.m */; };
-		52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 52151E141BCF0DEB006BC0B1 /* Day.m */; };
 		5219C34B1BE5C7D4007E2C18 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C3481BE5C7D4007E2C18 /* history.png */; };
 		5219C34C1BE5C7D4007E2C18 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C3491BE5C7D4007E2C18 /* home.png */; };
 		5219C34D1BE5C7D4007E2C18 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C34A1BE5C7D4007E2C18 /* weight.png */; };
@@ -48,7 +48,7 @@
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
 		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
 		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; };
-		52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */; };
+		52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */; };
 		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; };
 		52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A891BDC2A3000962961 /* HistoryViewController.swift */; };
 		52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */; };
@@ -76,21 +76,20 @@
 /* Begin PBXFileReference section */
 		009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Liftracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28909FDAD5E8270DAD0EE282 /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
+		5205020F1BF5076A007BAF65 /* LoaderControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderControllerViewController.swift; sourceTree = "<group>"; };
+		520502111BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MuscleGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
+		520502121BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MuscleGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
+		520502131BF51B85007BAF65 /* MuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuscleGroup.h; sourceTree = "<group>"; };
+		520502141BF51B85007BAF65 /* MuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuscleGroup.m; sourceTree = "<group>"; };
+		520502151BF51B85007BAF65 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
+		520502161BF51B85007BAF65 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
+		520502171BF51B85007BAF65 /* Rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rep.h; sourceTree = "<group>"; };
+		520502181BF51B85007BAF65 /* Rep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rep.m; sourceTree = "<group>"; };
+		520502191BF51B85007BAF65 /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5205021A1BF51B85007BAF65 /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5205021B1BF51B85007BAF65 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercice.h; sourceTree = "<group>"; };
+		5205021C1BF51B85007BAF65 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercice.m; sourceTree = "<group>"; };
 		52151E031BCEA638006BC0B1 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		52151E051BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Exercice+CoreDataProperties.h"; path = "../Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Exercice+CoreDataProperties.m"; path = "../Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52151E071BCF0DEB006BC0B1 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercice.h; path = ../Exercice.h; sourceTree = "<group>"; };
-		52151E081BCF0DEB006BC0B1 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercice.m; path = ../Exercice.m; sourceTree = "<group>"; };
-		52151E091BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MuscleGroup+CoreDataProperties.h"; path = "../MuscleGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MuscleGroup+CoreDataProperties.m"; path = "../MuscleGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52151E0B1BCF0DEB006BC0B1 /* MuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuscleGroup.h; path = ../MuscleGroup.h; sourceTree = "<group>"; };
-		52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MuscleGroup.m; path = ../MuscleGroup.m; sourceTree = "<group>"; };
-		52151E0D1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Rep+CoreDataProperties.h"; path = "../Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Rep+CoreDataProperties.m"; path = "../Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52151E0F1BCF0DEB006BC0B1 /* Rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rep.h; path = ../Rep.h; sourceTree = "<group>"; };
-		52151E101BCF0DEB006BC0B1 /* Rep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rep.m; path = ../Rep.m; sourceTree = "<group>"; };
-		52151E131BCF0DEB006BC0B1 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Day.h; path = ../Day.h; sourceTree = "<group>"; };
-		52151E141BCF0DEB006BC0B1 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Day.m; path = ../Day.m; sourceTree = "<group>"; };
 		5219C3481BE5C7D4007E2C18 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
 		5219C3491BE5C7D4007E2C18 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		5219C34A1BE5C7D4007E2C18 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
@@ -109,8 +108,6 @@
 		5243444F1BDF08C20066C3DA /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		524344501BDF08C20066C3DA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		524344511BDF08C20066C3DA /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
 		526C29121BDA798F009B7D19 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		526C29181BDA7EAD009B7D19 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxTableViewController.swift; sourceTree = "<group>"; };
@@ -133,8 +130,7 @@
 		52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
 		52CA20701BD5B11C008868DC /* LastWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastWeekViewController.swift; sourceTree = "<group>"; };
 		52E667B81BD6FC970028DA8B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		52ECDC241BD3F9C900609C9B /* Day+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Day+CoreDataProperties.h"; path = "../Day+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Day+CoreDataProperties.m"; path = "../Day+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		52ECDC271BD3FC7F00609C9B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		52F21A891BDC2A3000962961 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedMaxViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +195,7 @@
 				526C29181BDA7EAD009B7D19 /* DayViewController.swift */,
 				52F21A891BDC2A3000962961 /* HistoryViewController.swift */,
 				526ED0D81BE16957001E0D19 /* HistoryTableViewController.swift */,
+				52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -217,8 +214,6 @@
 		52AFF0431BC8933D00A1115F = {
 			isa = PBXGroup;
 			children = (
-				5249754B1BD40E72004A6B54 /* Rep+CoreDataProperties.h */,
-				5249754C1BD40E72004A6B54 /* Rep+CoreDataProperties.m */,
 				52AFF04E1BC8933D00A1115F /* Liftracker */,
 				52AFF0661BC8933D00A1115F /* LiftrackerTests */,
 				52AFF0711BC8933D00A1115F /* LiftrackerUITests */,
@@ -242,6 +237,7 @@
 		52AFF04E1BC8933D00A1115F /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				5205020F1BF5076A007BAF65 /* LoaderControllerViewController.swift */,
 				52F21A741BDBFA7700962961 /* Icons */,
 				526C29171BDA7E79009B7D19 /* Adding Info */,
 				526C290B1BD9F979009B7D19 /* Assets */,
@@ -285,22 +281,18 @@
 		52AFF0821BC8955D00A1115F /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				52ECDC241BD3F9C900609C9B /* Day+CoreDataProperties.h */,
-				52ECDC251BD3F9C900609C9B /* Day+CoreDataProperties.m */,
-				52151E051BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.h */,
-				52151E061BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m */,
-				52151E071BCF0DEB006BC0B1 /* Exercice.h */,
-				52151E081BCF0DEB006BC0B1 /* Exercice.m */,
-				52151E091BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.h */,
-				52151E0A1BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m */,
-				52151E0B1BCF0DEB006BC0B1 /* MuscleGroup.h */,
-				52151E0C1BCF0DEB006BC0B1 /* MuscleGroup.m */,
-				52151E0D1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.h */,
-				52151E0E1BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m */,
-				52151E0F1BCF0DEB006BC0B1 /* Rep.h */,
-				52151E101BCF0DEB006BC0B1 /* Rep.m */,
-				52151E131BCF0DEB006BC0B1 /* Day.h */,
-				52151E141BCF0DEB006BC0B1 /* Day.m */,
+				520502111BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.h */,
+				520502121BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.m */,
+				520502131BF51B85007BAF65 /* MuscleGroup.h */,
+				520502141BF51B85007BAF65 /* MuscleGroup.m */,
+				520502151BF51B85007BAF65 /* Rep+CoreDataProperties.h */,
+				520502161BF51B85007BAF65 /* Rep+CoreDataProperties.m */,
+				520502171BF51B85007BAF65 /* Rep.h */,
+				520502181BF51B85007BAF65 /* Rep.m */,
+				520502191BF51B85007BAF65 /* Exercice+CoreDataProperties.h */,
+				5205021A1BF51B85007BAF65 /* Exercice+CoreDataProperties.m */,
+				5205021B1BF51B85007BAF65 /* Exercice.h */,
+				5205021C1BF51B85007BAF65 /* Exercice.m */,
 			);
 			name = CoreDataModels;
 			sourceTree = "<group>";
@@ -558,11 +550,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52151E171BCF0DEB006BC0B1 /* MuscleGroup+CoreDataProperties.m in Sources */,
-				52151E191BCF0DEB006BC0B1 /* Rep+CoreDataProperties.m in Sources */,
-				52151E181BCF0DEB006BC0B1 /* MuscleGroup.m in Sources */,
-				52151E161BCF0DEB006BC0B1 /* Exercice.m in Sources */,
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
+				520502211BF51B85007BAF65 /* Exercice+CoreDataProperties.m in Sources */,
 				526ED0D91BE16957001E0D19 /* HistoryTableViewController.swift in Sources */,
 				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
@@ -570,19 +559,22 @@
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
 				524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */,
 				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
+				5205021F1BF51B85007BAF65 /* Rep+CoreDataProperties.m in Sources */,
 				524344471BDEEF8A0066C3DA /* ProgressChartViewCell.swift in Sources */,
+				520502221BF51B85007BAF65 /* Exercice.m in Sources */,
 				52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */,
-				52151E151BCF0DEB006BC0B1 /* Exercice+CoreDataProperties.m in Sources */,
+				520502101BF5076A007BAF65 /* LoaderControllerViewController.swift in Sources */,
 				5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */,
+				5205021E1BF51B85007BAF65 /* MuscleGroup.m in Sources */,
 				526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */,
+				520502201BF51B85007BAF65 /* Rep.m in Sources */,
 				52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */,
-				52151E1A1BCF0DEB006BC0B1 /* Rep.m in Sources */,
+				52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */,
 				52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */,
+				5205021D1BF51B85007BAF65 /* MuscleGroup+CoreDataProperties.m in Sources */,
 				52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
-				52151E1C1BCF0DEB006BC0B1 /* Day.m in Sources */,
 				5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */,
-				52ECDC261BD3F9C900609C9B /* Day+CoreDataProperties.m in Sources */,
 				521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,8 +39,8 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Right
         
         current.view.addGestureRecognizer(doubleTapRecognizer)
-        current.view.addGestureRecognizer(leftSwipeRecognizer)
-        current.view.addGestureRecognizer(rightSwipeRecognizer)
+        view.addGestureRecognizer(leftSwipeRecognizer)
+        view.addGestureRecognizer(rightSwipeRecognizer)
     }
     
     func configureTableView(){
@@ -49,16 +49,6 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
     }
-    /*
-    func configurePageController(){
-        //pages = [left, current, right]
-        pageController = UIPageControl(frame: mainView.frame)
-        loadPages()
-        pageController.numberOfPages = 3
-        pageController.currentPage = 1
-        lock_zoom()
-    }
-    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

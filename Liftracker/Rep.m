@@ -1,13 +1,12 @@
 //
 //  Rep.m
-//  Liftracker
+//  
 //
-//  Created by John McAvey on 10/14/15.
-//  Copyright © 2015 MCApps. All rights reserved.
+//  Created by John McAvey on 11/12/15.
+//
 //
 
 #import "Rep.h"
-#import "Day.h"
 #import "Exercice.h"
 
 @implementation Rep

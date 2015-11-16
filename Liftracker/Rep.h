@@ -1,17 +1,19 @@
 //
-//  MuscleGroup.h
-//  Liftracker
+//  Rep.h
+//  
 //
-//  Created by John McAvey on 10/14/15.
-//  Copyright © 2015 MCApps. All rights reserved.
+//  Created by John McAvey on 11/12/15.
+//
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Exercice;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MuscleGroup : NSManagedObject
+@interface Rep : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -19,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "MuscleGroup+CoreDataProperties.h"
+#import "Rep+CoreDataProperties.h"
