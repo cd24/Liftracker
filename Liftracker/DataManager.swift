@@ -15,6 +15,18 @@ class DataManager {
     let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
     
     let userNameKey = "user_name", genderKey = "user_gender", claculatorKey = "max_rep_calculator", weightUnitKey = "weight_units", fluidUnitsKey = "fuild_units", backgroundColorKey = "background_color", tintColorKey = "tint_color"
+    let conversions = [1: 1,
+        2: 0.95,
+        3: 0.9,
+        4: 0.88,
+        5: 0.86,
+        6: 0.83,
+        7: 0.80,
+        8: 0.78,
+        9: 0.76,
+        10: 0.75,
+        11: 0.72,
+        12: 0.70]
 
     static func getInstance() -> DataManager {
         return manager;
@@ -183,18 +195,16 @@ class DataManager {
     }
     
     func getUnitString() -> String{
-        return NSUserDefaults.standardUserDefaults().objectForKey(weightUnitKey) as! String //todo: Use setting interface
+        return NSUserDefaults.standardUserDefaults().objectForKey(weightUnitKey) as! String
     }
     
     func getMainColor() -> UIColor {
-        //let colorString = NSUserDefaults.standardUserDefaults().objectForKey(backgroundColorKey) as! String
-        let color = UIColor(red: 192.0/255.0, green: 1, blue: 254.0/255, alpha: 1)//colorWithHexString(colorString)
+        let color = UIColor(red: 192.0/255.0, green: 1, blue: 254.0/255, alpha: 1)
         return color
     }
     
     func getTintColor() -> UIColor {
-        //let colorString = NSUserDefaults.standardUserDefaults().objectForKey(tintColorKey) as! String
-        let color = UIColor.blackColor() //colorWithHexString(colorString)
+        let color = UIColor.blackColor()
         return color
     }
     
@@ -228,7 +238,7 @@ class DataManager {
     
     func estimatedMax(ex: Exercice, reps: Int) -> Double {
         let orm = estimatedMax(ex)
-        let conversions = [1: 1, 2: 0.95, 3:0.9, 4: 0.88, 5: 0.86, 6:0.83, 7: 0.80, 8:0.78, 9:0.76, 10:0.75, 11:0.72, 12:0.70]
+        
         if reps < 12{
             return orm * conversions[reps]!
         }
@@ -248,7 +258,7 @@ class DataManager {
     }
     
     private func estimatedMaxa(rep: Rep) -> Double{
-        let formula = epley //NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String //todo: Configure settings
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
         switch (formula){
         case epley:
             return epleyMax(rep)
@@ -287,7 +297,7 @@ class DataManager {
     
     func mayhewMax(rep: Rep) -> Double{
         let (weight, numReps) = values(rep)
-        return (100*weight)/(52.2 + 41.9 * pow(2.7182, -0.055*numReps)) // couldn't find math.e, so I estimated :)
+        return (100*weight)/(52.2 + 41.9 * pow(M_E, -0.055*numReps)) //M_E == mathematical constant e
     }
     
     func values(rep: Rep) -> (Double, Double){

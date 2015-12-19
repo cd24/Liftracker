@@ -21,8 +21,8 @@ class DayViewController: UITableViewController {
         loadData()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = UIColor.whiteColor()//todo: Colors in preferences
-        self.refreshControl?.tintColor = UIColor.blackColor()//todo: Colors in prefrences
+        self.refreshControl?.backgroundColor = manager.getMainColor()
+        self.refreshControl?.tintColor = manager.getTintColor()
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
