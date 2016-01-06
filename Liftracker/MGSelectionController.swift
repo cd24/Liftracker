@@ -139,8 +139,8 @@ class MGSelectionController: UITableViewController, UISearchResultsUpdating, UIS
         if text != "" {
             groupsMatchingSearch(text)
             exercicesMatchingSearch(text)
-            tableView.reloadData()
         }
+        tableView.reloadData()
     }
     
     func searching() -> Bool {
