@@ -12,9 +12,21 @@ import UIKit
 class DataManager {
     static private var manager: DataManager = DataManager()
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
-    let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
     
-    let userNameKey = "user_name", genderKey = "user_gender", claculatorKey = "max_rep_calculator", weightUnitKey = "weight_units", fluidUnitsKey = "fuild_units", backgroundColorKey = "background_color", tintColorKey = "tint_color"
+    let epley = "Epley",
+        brzycki = "Brzycki",
+        lander = "Lander",
+        lombardi = "Lombardi",
+        mayhew = "Mahew"
+    
+    let userNameKey = "user_name",
+        genderKey = "user_gender",
+        claculatorKey = "max_rep_calculator",
+        weightUnitKey = "weight_units",
+        fluidUnitsKey = "fuild_units",
+        backgroundColorKey = "background_color",
+        tintColorKey = "tint_color"
+    
     let conversions = [1: 1,
         2: 0.95,
         3: 0.9,
@@ -99,6 +111,23 @@ class DataManager {
         fetch_request.sortDescriptors = sortDescriptorName()
         var results: [Exercice] = []
         do {
+            results = try managedContext.executeFetchRequest(fetch_request) as! [Exercice]
+        }
+        catch {
+            
+        }
+        
+        return results
+    }
+    
+    func searchExercicesForSubstring(text: String) -> [Exercice] {
+        let fetch_request = NSFetchRequest(entityName: "Exercice")
+        let predicate = NSPredicate(format: "name CONTAINS[c] '\(text.lowercaseString)'")
+        fetch_request.predicate = predicate
+        fetch_request.sortDescriptors = sortDescriptorName()
+        var results = [Exercice]()
+        
+        do{
             results = try managedContext.executeFetchRequest(fetch_request) as! [Exercice]
         }
         catch {

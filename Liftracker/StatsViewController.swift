@@ -54,7 +54,7 @@ class StatsViewController: UITableViewController {
             destinationController.estimate = true
         }
         else {
-            let destinationController = segue.destinationViewController;
+            let destinationController = segue.destinationViewController as! ChartViewController;
         }
     }
     

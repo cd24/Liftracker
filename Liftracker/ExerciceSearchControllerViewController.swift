@@ -1,18 +1,16 @@
 //
-//  ChartViewController.swift
+//  ExerciceSearchControllerViewController.swift
 //  Liftracker
 //
-//  Created by John McAvey on 1/4/16.
+//  Created by John McAvey on 1/6/16.
 //  Copyright © 2016 MCApps. All rights reserved.
 //
 
 import UIKit
 
-class ChartViewController: UIViewController {
-    
-    @IBAction func done(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+class ExerciceSearchControllerViewController: UISearchController {
+
+    var data: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +23,9 @@ class ChartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func populateData(data: [String]) {
+        self.data = data
+    }
 
     /*
     // MARK: - Navigation
@@ -35,11 +36,5 @@ class ChartViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    enum ChartType {
-        case WorkDistribution
-        case Execrice
-        case MonthDistribution
-    }
 
 }

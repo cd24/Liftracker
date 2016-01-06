@@ -30,8 +30,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save_rep");
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem]()
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save_rep"))
+        let barImage = UIImage(named: "data_bars.png")
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
         repsTemp = DataManager.getInstance().loadAllRepsFor(exercice: exercice!)
         self.title = exercice?.name
         
@@ -89,6 +91,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         weight?.keyboardType = UIKeyboardType.DecimalPad
         
         recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+    }
+    
+    func graph_view(){
+        performSegueWithIdentifier("chart", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -247,7 +253,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section > 0 && !updating{
+        if allReps.count == 0 {
+            return
+        }
+        if indexPath.section > 0 && !updating {
             updating = true
             rowUpdating = indexPath
             let repFromRowKey = repKeys[indexPath.section - 1]

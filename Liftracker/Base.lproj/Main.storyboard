@@ -50,12 +50,24 @@
                     <view key="view" contentMode="scaleToFill" id="Lkq-W7-1ZT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLa-Al-QZq">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Done" id="Iqz-Fg-Ypy">
+                                        <connections>
+                                            <action selector="done:" destination="2sO-zf-RAn" id="WnU-cl-UIc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsi-0d-Wou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="2464"/>
+            <point key="canvasLocation" x="2858" y="1681"/>
         </scene>
         <!--Estimated Max View Controller-->
         <scene sceneID="o3j-g4-NOZ">
@@ -199,11 +211,12 @@
                         <outlet property="tableView" destination="zVA-G6-nde" id="Vbi-KB-mGb"/>
                         <outlet property="weight" destination="DiY-xM-lfM" id="V6B-pw-dIG"/>
                         <outlet property="weight_stepper" destination="o81-5u-tKf" id="rZP-93-IaV"/>
+                        <segue destination="2sO-zf-RAn" kind="presentation" identifier="chart" modalPresentationStyle="currentContext" id="RKS-KS-z94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiA-pZ-upX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="1686"/>
+            <point key="canvasLocation" x="2087" y="1681"/>
         </scene>
         <!--Exercice Adder View Controller-->
         <scene sceneID="Vph-g2-YTm">
@@ -456,7 +469,6 @@
                     <navigationItem key="navigationItem" id="RQg-9x-Jxt"/>
                     <connections>
                         <segue destination="c6x-Vn-fS9" kind="show" identifier="Max" id="QdV-YM-UYx"/>
-                        <segue destination="2sO-zf-RAn" kind="show" identifier="chart" id="HcJ-Ob-taB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLk-FW-hxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -546,6 +558,7 @@
                     <connections>
                         <segue destination="hKi-Wk-QXj" kind="show" identifier="Max" id="aVE-nc-Lka"/>
                         <segue destination="ZfA-dt-mdG" kind="show" identifier="Select" id="pJZ-4u-QPW"/>
+                        <segue destination="zNP-PH-yQd" kind="show" identifier="reps" id="A1M-pE-hvs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6c-ew-vXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,7 +602,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QdV-YM-UYx"/>
-        <segue reference="IYe-LK-zW3"/>
+        <segue reference="A1M-pE-hvs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.31254817895349918" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

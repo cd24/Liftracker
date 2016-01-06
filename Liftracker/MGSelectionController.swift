@@ -9,10 +9,15 @@
 import UIKit
 import CoreData
 
-class MGSelectionController: UITableViewController {
+class MGSelectionController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
 
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
-    var muscle_group: Array<MuscleGroup> = Array();
+    let search_controller = UISearchController(searchResultsController: nil)
+    
+    var muscle_group = [MuscleGroup]()
+    var search_mg = [MuscleGroup]()
+    var search_exercices = [Exercice]()
+    
     var maxView: Bool = false
     var addDate: NSDate!
     var estimate: Bool = false
@@ -23,33 +28,52 @@ class MGSelectionController: UITableViewController {
         
         //load exercices for function
         muscle_group = DataManager.getInstance().loadAllMuscleGroups()
+        
+        //setup search controller
+        search_controller.searchResultsUpdater = self
+        search_controller.searchBar.delegate = self
+        search_controller.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = search_controller.searchBar
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1;
+        return searching() ? 2 : 1;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if searching(){
+            return section == 0 ? search_mg.count : search_exercices.count
+        }
         return muscle_group.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
-        // Configure the cell...
-        cell.textLabel?.text = muscle_group[indexPath.row].name;
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        if searching() {
+            cell.textLabel?.text = indexPath.section == 0 ?
+                                    search_mg[indexPath.row].name :
+                                    search_exercices[indexPath.row].name
+        }
+        else {
+            cell.textLabel?.text = muscle_group[indexPath.row].name;
+        }
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searching() {
+            return section == 0 ? "Muscle Groups" : "Exercices"
+        }
+        return ""
     }
     
     func addGroup(){
@@ -67,6 +91,11 @@ class MGSelectionController: UITableViewController {
             let viewController = segue.destinationViewController as! EstimatedMaxViewController
             viewController.mg = muscle_group[tableView.indexPathForSelectedRow!.row]
         }
+        else if segue.identifier == "reps" {
+            let dest_controller = segue.destinationViewController as! RepsViewController
+            dest_controller.exercice = search_exercices[tableView.indexPathForSelectedRow!.row]
+            dest_controller.addDate = addDate
+        }
     }
     
     @IBAction func dismiss(){
@@ -74,58 +103,48 @@ class MGSelectionController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if estimate {
-            performSegueWithIdentifier("Max", sender: self)
+        if indexPath.section == 0 {
+            if estimate {
+                performSegueWithIdentifier("Max", sender: self)
+            }
+            else {
+                performSegueWithIdentifier("Select", sender: self)
+            }
         }
-        else {
-            performSegueWithIdentifier("Select", sender: self)
+        else if indexPath.section == 1 {
+            performSegueWithIdentifier("reps", sender: self)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // MARK: - Search control
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        search_controller.active = false
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func groupsMatchingSearch(text: String, context: String = "All") {
+        search_mg = muscle_group.filter { mg in
+            return mg.name!.containsString(text)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func exercicesMatchingSearch(text: String, context: String = "All"){
+        search_exercices = DataManager.getInstance().searchExercicesForSubstring(text)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let text = searchController.searchBar.text!
+        if text != "" {
+            groupsMatchingSearch(text)
+            exercicesMatchingSearch(text)
+            tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func searching() -> Bool {
+        return search_controller.active && search_controller.searchBar.text != ""
     }
-    */
 
 }
