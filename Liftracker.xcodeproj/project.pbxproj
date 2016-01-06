@@ -47,6 +47,7 @@
 		52AFF0681BC8933D00A1115F /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0671BC8933D00A1115F /* LiftrackerTests.swift */; };
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
 		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
+		52CBA07D1C3B64F600552251 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBA07C1C3B64F600552251 /* ChartViewController.swift */; };
 		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; };
 		52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */; };
 		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; };
@@ -129,6 +130,7 @@
 		52AFF0741BC8933D00A1115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
 		52CA20701BD5B11C008868DC /* LastWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastWeekViewController.swift; sourceTree = "<group>"; };
+		52CBA07C1C3B64F600552251 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		52E667B81BD6FC970028DA8B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		52ECDC271BD3FC7F00609C9B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */,
 				524344441BDEE81E0066C3DA /* EstimateCell.swift */,
 				524344461BDEEF8A0066C3DA /* ProgressChartViewCell.swift */,
+				52CBA07C1C3B64F600552251 /* ChartViewController.swift */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				526ED0D91BE16957001E0D19 /* HistoryTableViewController.swift in Sources */,
 				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
+				52CBA07D1C3B64F600552251 /* ChartViewController.swift in Sources */,
 				526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
 				524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */,

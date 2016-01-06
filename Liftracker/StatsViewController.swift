@@ -42,19 +42,28 @@ class StatsViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationController = segue.destinationViewController as! MGSelectionController
         let row = tableView.indexPathForSelectedRow!.row
         if row == 0{
+            let destinationController = segue.destinationViewController as! MGSelectionController
             destinationController.estimate = false
             destinationController.maxView = true
         }
         if row == 1 {
+            let destinationController = segue.destinationViewController as! MGSelectionController
             destinationController.maxView = false
             destinationController.estimate = true
+        }
+        else {
+            let destinationController = segue.destinationViewController;
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("Max", sender: self)
+        if indexPath.row <= 1 {
+            performSegueWithIdentifier("Max", sender: self)
+        }
+        else {
+            performSegueWithIdentifier("chart", sender: self)
+        }
     }
 }
