@@ -162,10 +162,43 @@ class DataManager {
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {
-        let group = NSEntityDescription.insertNewObjectForEntityForName("MuscleGroup", inManagedObjectContext: managedContext) as! MuscleGroup
+        let group = newEntity("MuscleGroup") as! MuscleGroup
         group.name = name
         save_context()
         return group
+    }
+    
+    func addWeight(value: Int) {
+        let weightVal = newEntity("weight")
+    }
+    
+    func entityExists(name: String, entityType entity: String, nameField field: String = "name") -> Bool {
+        let fetch_request = NSFetchRequest(entityName: entity)
+        let predicate = NSPredicate(format: "\(field) == \(name)")
+        fetch_request.predicate = predicate
+        let error = NSErrorPointer()
+        let exists = managedContext.countForFetchRequest(fetch_request, error: error) > 0
+        //todo: Read up on catching errors with NSErrorPointer
+        return exists
+    }
+    
+    func newEntity(name: String) -> NSManagedObject {
+        return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: managedContext)
+    }
+    
+    func getEntity(name: String, entityType entity: String, nameField field: String = "name") -> [NSManagedObject] {
+        let fetch_request = NSFetchRequest(entityName: entity)
+        let predicate = NSPredicate(format: "\(field) == \(name)")
+        fetch_request.predicate = predicate
+        let values: [NSManagedObject]
+        do {
+            values = try managedContext.executeFetchRequest(fetch_request) as! [NSManagedObject]
+            return values
+        }
+        catch {
+            print("An error occured while fetching an \(entity) called '\(name)'.  The search field was '\(field)'")
+            return [NSManagedObject]();
+        }
     }
     
     func sortDescriptorName() -> [NSSortDescriptor]{

@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Weight+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:Weight+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:Weight.h">
+   </FileRef>
+   <FileRef
+      location = "group:Weight.m">
+   </FileRef>
+   <FileRef
       location = "group:Liftracker/MuscleGroup+CoreDataProperties.h">
    </FileRef>
    <FileRef
