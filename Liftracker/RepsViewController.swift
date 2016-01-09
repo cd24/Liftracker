@@ -134,7 +134,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if indexPath.row  == 0{
                     let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
-                cell.textLabel?.text = "Estimated ORM: \(roundedString) \(manager.getUnitString())"
+                cell.textLabel?.text = "Estimated ORM: \(roundedString) \(UserPrefs.getUnitString())"
                 }
                 else if indexPath.row == 1{
                     let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!, reps: 5))
@@ -165,7 +165,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         let date = formatter.dateFromString(key)
-        let formattedString = DataManager.getInstance().dateToString(date!)
+        let formattedString = TimeManager.dateToString(date!)
         return "\(formattedString)"
     }
     

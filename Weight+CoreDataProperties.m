@@ -2,7 +2,7 @@
 //  Weight+CoreDataProperties.m
 //  
 //
-//  Created by John McAvey on 1/6/16.
+//  Created by John McAvey on 1/9/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,7 +13,9 @@
 
 @implementation Weight (CoreDataProperties)
 
-@dynamic value;
+@dynamic date;
 @dynamic notes;
+@dynamic value;
+@dynamic published;
 
 @end

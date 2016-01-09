@@ -53,9 +53,6 @@ class StatsViewController: UITableViewController {
             destinationController.maxView = false
             destinationController.estimate = true
         }
-        else {
-            let destinationController = segue.destinationViewController as! ChartViewController;
-        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -2,7 +2,7 @@
 //  Weight+CoreDataProperties.h
 //  
 //
-//  Created by John McAvey on 1/9/16.
+//  Created by John McAvey on 1/8/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSString *notes;
 @property (nullable, nonatomic, retain) NSNumber *value;
-@property (nullable, nonatomic, retain) NSNumber *published;
 
 @end
 

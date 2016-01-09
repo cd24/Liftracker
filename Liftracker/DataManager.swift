@@ -19,14 +19,6 @@ class DataManager {
         lombardi = "Lombardi",
         mayhew = "Mahew"
     
-    let userNameKey = "user_name",
-        genderKey = "user_gender",
-        claculatorKey = "max_rep_calculator",
-        weightUnitKey = "weight_units",
-        fluidUnitsKey = "fuild_units",
-        backgroundColorKey = "background_color",
-        tintColorKey = "tint_color"
-    
     let conversions = [1: 1,
         2: 0.95,
         3: 0.9,
@@ -42,6 +34,45 @@ class DataManager {
 
     static func getInstance() -> DataManager {
         return manager;
+    }
+    
+    //MARK: - Muscle Groups Management
+    
+    func loadAllMuscleGroups() -> [MuscleGroup]{
+        return getEntities("MuscleGroup") as! [MuscleGroup]
+    }
+    
+    func newMuscleGroup(name name: String) -> MuscleGroup {
+        let group = newEntity("MuscleGroup") as! MuscleGroup
+        group.name = name
+        save_context()
+        return group
+    }
+    
+    //MARK: - Exercice Management
+    
+    func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
+        let predicate = NSPredicate(format: "muscle_group.name == '\(group.name!)'")
+        return getEntities("Exercice", predicate: predicate) as! [Exercice]
+    }
+    
+    func searchExercicesForSubstring(text: String) -> [Exercice] {
+        let predicate = NSPredicate(format: "name CONTAINS[c] '\(text.lowercaseString)'")
+        return getEntities("Exercice", predicate: predicate) as! [Exercice]
+    }
+    
+    func newExercice(name name: String, muscle_group group: MuscleGroup) -> Exercice{
+        let exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: managedContext) as! Exercice
+        exercice.name = name
+        exercice.muscle_group = group
+        save_context()
+        return exercice
+    }
+    
+    //MARK: - Rep Management
+    
+    func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice) -> Rep {
+        return newRep(weight: w, repetitions: reps, exercice: ex, date: TimeManager.getDayOfWeek())
     }
     
     func loadAllRepsFor(exercice exercice: Exercice) -> [Rep]{
@@ -61,7 +92,7 @@ class DataManager {
     
     func loadAllRepsFor(exercice exercice: Exercice, date day: NSDate) -> [Rep]{
         let fetch_request = NSFetchRequest(entityName: "Rep")
-        let cleanded_date = startOfDay(day)
+        let cleanded_date = TimeManager.startOfDay(day)
         let sort_predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)' AND date == '\(cleanded_date)'")
         fetch_request.predicate = sort_predicate
         let results: [Rep]
@@ -77,7 +108,7 @@ class DataManager {
     
     func loadAllRepsFor( date date: NSDate) -> [Rep]{
         let fetch_request = NSFetchRequest(entityName: "Rep")
-        let cleanded_date: NSDate = startOfDay(date)
+        let cleanded_date: NSDate = TimeManager.startOfDay(date)
         let sort_predicate = NSPredicate(format: "date == '\(cleanded_date)'")
         fetch_request.predicate = sort_predicate
         let results: [Rep]
@@ -91,86 +122,67 @@ class DataManager {
         return results;
     }
     
-    func loadAllMuscleGroups() -> [MuscleGroup]{
-        let fetch_request = NSFetchRequest(entityName: "MuscleGroup")
-        fetch_request.sortDescriptors = sortDescriptorName()
-        var results: [MuscleGroup] = []
-        do {
-            results = try managedContext.executeFetchRequest(fetch_request) as! [MuscleGroup]
-        }
-        catch{
-            NSLog("Error while loading muscle groups: \(error)")
-        }
-        return results
-    }
-    
-    func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
-        let fetch_request = NSFetchRequest(entityName: "Exercice")
-        let predicate = NSPredicate(format: "muscle_group.name == '\(group.name!)'")
-        fetch_request.predicate = predicate
-        fetch_request.sortDescriptors = sortDescriptorName()
-        var results: [Exercice] = []
-        do {
-            results = try managedContext.executeFetchRequest(fetch_request) as! [Exercice]
-        }
-        catch {
-            
-        }
-        
-        return results
-    }
-    
-    func searchExercicesForSubstring(text: String) -> [Exercice] {
-        let fetch_request = NSFetchRequest(entityName: "Exercice")
-        let predicate = NSPredicate(format: "name CONTAINS[c] '\(text.lowercaseString)'")
-        fetch_request.predicate = predicate
-        fetch_request.sortDescriptors = sortDescriptorName()
-        var results = [Exercice]()
-        
-        do{
-            results = try managedContext.executeFetchRequest(fetch_request) as! [Exercice]
-        }
-        catch {
-            
-        }
-        
-        return results
-    }
-    
-    func newExercice(name name: String, muscle_group group: MuscleGroup) -> Exercice{
-        let exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: managedContext) as! Exercice
-        exercice.name = name
-        exercice.muscle_group = group
-        save_context()
-        return exercice
-    }
-    
-    func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice) -> Rep {
-        return newRep(weight: w, repetitions: reps, exercice: ex, date: getDayOfWeek())
-    }
-    
     func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice, var date day: NSDate) -> Rep{
         let rep = NSEntityDescription.insertNewObjectForEntityForName("Rep", inManagedObjectContext: managedContext) as! Rep
-        day = startOfDay(day)
+        day = TimeManager.startOfDay(day)
         rep.weight = w
         rep.num_reps = reps
         rep.date = "\(day)"
         rep.exercice = ex
-        rep.unit = getUnitString()
+        rep.unit = UserPrefs.getUnitString()
         save_context()
         return rep
     }
     
-    func newMuscleGroup(name name: String) -> MuscleGroup {
-        let group = newEntity("MuscleGroup") as! MuscleGroup
-        group.name = name
-        save_context()
-        return group
+    func getRepWeightString(rep: Rep) -> String {
+        let weight = UserPrefs.getUnitString()
+        if weight == rep.unit!{
+            return "\(rep.weight!) \(weight)"
+        }
+        if weight == "Kgs" {
+            let kgsWeight = 0.453592 * rep.weight!.doubleValue
+            return "\(kgsWeight) \(weight)"
+        }
+        else {
+            let lbsWeight = 2.20462 * rep.weight!.doubleValue
+            return "\(lbsWeight) \(weight)"
+        }
     }
     
-    func addWeight(value: Int) {
-        let weightVal = newEntity("weight")
+    func deleteRep(rep: Rep){
+        managedContext.deleteObject(rep)
+        save_context()
     }
+    
+    func values(rep: Rep) -> (Double, Double){
+        return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
+    }
+    
+    //MARK: - Weight Methods
+    
+    func addWeight(value: Int, notes: String, date: NSDate) -> Weight {
+        let weightVal = newEntity("Weight") as! Weight
+        weightVal.value = value
+        weightVal.notes = notes
+        weightVal.date = date
+        
+        save_context()
+        return weightVal
+    }
+
+    func getWeights(date date: NSDate) -> [Weight] {
+        let startofDay = TimeManager.startOfDay(date),
+            endofDay = TimeManager.endOfDay(date)
+        let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", startofDay, endofDay)
+        return getEntities("Weight", predicate: predicate) as! [Weight]
+    }
+    
+    func getWeights(start: NSDate, end: NSDate) -> [Weight] {
+        let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", start, end)
+        return getEntities("Weight", predicate: predicate) as! [Weight]
+    }
+    
+    //MARK: - General Core Data
     
     func entityExists(name: String, entityType entity: String, nameField field: String = "name") -> Bool {
         let fetch_request = NSFetchRequest(entityName: entity)
@@ -178,7 +190,6 @@ class DataManager {
         fetch_request.predicate = predicate
         let error = NSErrorPointer()
         let exists = managedContext.countForFetchRequest(fetch_request, error: error) > 0
-        //todo: Read up on catching errors with NSErrorPointer
         return exists
     }
     
@@ -187,22 +198,33 @@ class DataManager {
     }
     
     func getEntity(name: String, entityType entity: String, nameField field: String = "name") -> [NSManagedObject] {
-        let fetch_request = NSFetchRequest(entityName: entity)
         let predicate = NSPredicate(format: "\(field) == \(name)")
-        fetch_request.predicate = predicate
+        return getEntities(name, predicate: predicate)
+    }
+    
+    func getEntities(name: String, predicate: NSPredicate? = nil) -> [NSManagedObject] {
+        let fetch_request = NSFetchRequest(entityName: name)
+        if let p = predicate {
+            fetch_request.predicate = p
+        }
+        
         let values: [NSManagedObject]
         do {
             values = try managedContext.executeFetchRequest(fetch_request) as! [NSManagedObject]
             return values
         }
         catch {
-            print("An error occured while fetching an \(entity) called '\(name)'.  The search field was '\(field)'")
-            return [NSManagedObject]();
+            print("An error occured while fetching \(name)'s.  The error was: \(error)")
+            return [NSManagedObject]()
         }
     }
     
     func sortDescriptorName() -> [NSSortDescriptor]{
         return [NSSortDescriptor(key: "name", ascending: true)]
+    }
+    
+    func sortDescriptorDate() -> [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "date", ascending: true)]
     }
     
     func save_context(){
@@ -215,60 +237,7 @@ class DataManager {
         }
     }
     
-    func getDayOfWeek() -> NSDate {
-        return startOfDay(NSDate())
-    }
-    
-    func startOfDay(date: NSDate) -> NSDate{
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let startOfDay = calendar.startOfDayForDate(date)
-        return startOfDay
-    }
-    
-    func dateToString(date: NSDate) -> String{
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("EdMMMyyyy", options: 0, locale: NSLocale.systemLocale())
-        formatter.timeZone = NSTimeZone.systemTimeZone()
-        return formatter.stringFromDate(date)
-    }
-    
-    func colorWithHexString (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex)
-        }
-        
-        if (cString.characters.count != 6) {
-            return UIColor.grayColor()
-        }
-
-        let rString = cString.substringToIndex(cString.startIndex.advancedBy(2))
-        let gString = cString.substringFromIndex(cString.startIndex.advancedBy(2)).substringToIndex(cString.startIndex.advancedBy(4))
-        let bString = cString.substringFromIndex(cString.startIndex.advancedBy(4)).substringToIndex(cString.startIndex.advancedBy(6))
-        
-        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
-        
-        let colour = UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1.0))
-        return colour
-    }
-    
-    func getUnitString() -> String{
-        return NSUserDefaults.standardUserDefaults().objectForKey(weightUnitKey) as! String
-    }
-    
-    func getMainColor() -> UIColor {
-        let color = UIColor(red: 192.0/255.0, green: 1, blue: 254.0/255, alpha: 1)
-        return color
-    }
-    
-    func getTintColor() -> UIColor {
-        let color = UIColor.blackColor()
-        return color
-    }
+    // MARK: - Helper Methods
     
     func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
         let reps = loadAllRepsFor(exercice: ex)
@@ -362,35 +331,50 @@ class DataManager {
         return (100*weight)/(52.2 + 41.9 * pow(M_E, -0.055*numReps)) //M_E == mathematical constant e
     }
     
-    func values(rep: Rep) -> (Double, Double){
-        return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
+    //MARK: - Useful Numbers
+    func bmi(weight: Double) -> Double {
+        let weight = UserPrefs.getUnitString() == "Lbs" ?
+                        lbsToKilograms(weight) :
+                        weight
+        let height = ftToCm(feet: UserPrefs.getHeight_ft(),
+                            inches: UserPrefs.getHeight_in())
+        return weight / pow(height, 2)
     }
     
-    func getRepWeightString(rep: Rep) -> String {
-        let weight = getUnitString()
-        if weight == rep.unit!{
-            return "\(rep.weight!) \(weight)"
-        }
-        if weight == "Kgs" {
-            let kgsWeight = 0.453592 * rep.weight!.doubleValue
-            return "\(kgsWeight) \(weight)"
-        }
-        else {
-            let lbsWeight = 2.20462 * rep.weight!.doubleValue
-            return "\(lbsWeight) \(weight)"
-        }
+    //MARK: - Unit Conversions
+    
+    func lbsToKilograms(value: Double) -> Double {
+        return value * (1/2.204)
     }
     
-    func saveToFile(){
-        
+    func kilogramsToLbs(value: Double) -> Double {
+        return value * 2.204
     }
     
-    func openShareMenu(){
-        
+    func ftInToInch(feet ft: Int, inches inn: Int) -> Int {
+        return (ft * 12) + inn
     }
     
-    func deleteRep(rep: Rep){
-        managedContext.deleteObject(rep)
-        save_context()
+    func ftToCm(feet ft: Int, inches inn: Int) -> Double {
+        return inchToCm(
+                    ftInToInch(feet: ft, inches: inn))
+    }
+    
+    func inchToCm(inches: Int) -> Double {
+        return Double(inches) * 2.54
+    }
+    
+    func cmToIn(cm: Double) -> Int {
+        return Int(cm/2.54)
+    }
+    
+    // these are rough approximations since these units do not need to be exact for any calculations I am performing.
+    
+    func galToLiter(gal: Double) -> Double {
+        return gal*3.7854118
+    }
+    
+    func literToGal(liter: Double) -> Double {
+        return liter/3.7854118
     }
 }

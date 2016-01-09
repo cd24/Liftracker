@@ -19,8 +19,8 @@ class EstimatedMaxViewController: UITableViewController {
         super.viewDidLoad()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = manager.getMainColor()
-        self.refreshControl?.tintColor = manager.getTintColor()
+        self.refreshControl?.backgroundColor = UserPrefs.getMainColor()
+        self.refreshControl?.tintColor = UserPrefs.getTintColor()
         self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
         loadData()
         
@@ -50,7 +50,7 @@ class EstimatedMaxViewController: UITableViewController {
         if exercices.keys.contains(exercice){
             let max = exercices[exercice]
             let roundedDouble = String(format: "%.2f ", max!)
-            cellText = roundedDouble + manager.getUnitString()
+            cellText = roundedDouble + UserPrefs.getUnitString()
         }
         else {
             cellText = "No Data"

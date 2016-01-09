@@ -1,5 +1,5 @@
 //
-//  Exercice+CoreDataProperties.m
+//  Weight+CoreDataProperties.m
 //  
 //
 //  Created by John McAvey on 1/8/16.
@@ -9,12 +9,12 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Exercice+CoreDataProperties.h"
+#import "Weight+CoreDataProperties.h"
 
-@implementation Exercice (CoreDataProperties)
+@implementation Weight (CoreDataProperties)
 
-@dynamic best;
-@dynamic name;
-@dynamic muscle_group;
+@dynamic date;
+@dynamic notes;
+@dynamic value;
 
 @end

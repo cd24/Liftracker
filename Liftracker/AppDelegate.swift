@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         setupDefault()
-        setupPreferenceDefaults()
         //UINavigationBar.appearance().barTintColor = DataManager.getInstance().getMainColor()
         return true
     }
@@ -72,7 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             let migrationOptions = [
                 NSMigratePersistentStoresAutomaticallyOption : true,
-                NSInferMappingModelAutomaticallyOption : true
+                NSInferMappingModelAutomaticallyOption : true,
+                NSPersistentStoreUbiquitousContentNameKey : "LiftrackerStore"
             ]
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: migrationOptions)
         } catch {
@@ -106,6 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if NSUserDefaults().boolForKey(loadOnceKey) {
                 return //Already run - should be good!
             }
+            setupPreferenceDefaults()
             let muscle_groups = values["MuscleGroup"] as! [String:Array<String>]
             for key in muscle_groups.keys{
                 let new_group = manager.newMuscleGroup(name: key)
@@ -155,6 +156,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.setObject("Liter", forKey: "fuild_units")
         defaults.setObject("#4dd6ef", forKey: "background_color")
         defaults.setObject("#ffffff", forKey: "tint_color")
+        defaults.setObject("5", forKey: "height_feet")
+        defaults.setObject("10", forKey: "height_inches")
     }
 
 }

@@ -2,6 +2,42 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Exercice+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:Exercice+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:Exercice.h">
+   </FileRef>
+   <FileRef
+      location = "group:Exercice.m">
+   </FileRef>
+   <FileRef
+      location = "group:MuscleGroup+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:MuscleGroup+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:MuscleGroup.h">
+   </FileRef>
+   <FileRef
+      location = "group:MuscleGroup.m">
+   </FileRef>
+   <FileRef
+      location = "group:Rep+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:Rep+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:Rep.h">
+   </FileRef>
+   <FileRef
+      location = "group:Rep.m">
+   </FileRef>
+   <FileRef
       location = "group:Weight+CoreDataProperties.h">
    </FileRef>
    <FileRef
@@ -12,42 +48,6 @@
    </FileRef>
    <FileRef
       location = "group:Weight.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/MuscleGroup+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/MuscleGroup+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/MuscleGroup.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/MuscleGroup.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Rep+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Rep+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Rep.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Rep.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Exercice+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Exercice+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Exercice.h">
-   </FileRef>
-   <FileRef
-      location = "group:Liftracker/Exercice.m">
    </FileRef>
    <FileRef
       location = "group:Liftracker.xcodeproj">
