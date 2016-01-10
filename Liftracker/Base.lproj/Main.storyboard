@@ -359,8 +359,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N0P-Bp-B4M">
                                 <rect key="frame" x="252" y="141" width="97" height="29"/>
                                 <segments>
-                                    <segment title="List"/>
                                     <segment title="Chart"/>
+                                    <segment title="List"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>

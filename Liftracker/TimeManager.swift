@@ -22,7 +22,7 @@ class TimeManager {
     static func startOfDay(date: NSDate) -> NSDate{
         let calendar = getCalendar()
         let startOfDay = calendar.startOfDayForDate(date)
-        return startOfDay
+        return zeroDateTime(startOfDay)
     }
     
     static func startOfWeek(date: NSDate) -> NSDate {
@@ -68,6 +68,15 @@ class TimeManager {
         formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("EdMMMyyyy", options: 0, locale: NSLocale.systemLocale())
         formatter.timeZone = NSTimeZone.systemTimeZone()
         return formatter.stringFromDate(date)
+    }
+    
+    static func zeroDateTime(date: NSDate) -> NSDate {
+        let calendar = getCalendar()
+        return calendar.dateBySettingHour(0,
+            minute: 0,
+            second: 0,
+            ofDate: date,
+            options: NSCalendarOptions(rawValue: 0))!
     }
     
     static func getCalendar() -> NSCalendar {

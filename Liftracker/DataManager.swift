@@ -160,6 +160,10 @@ class DataManager {
     
     //MARK: - Weight Methods
     
+    func getAllWeights() -> [Weight] {
+        return getEntities("Weight") as! [Weight]
+    }
+    
     func addWeight(value: Int, notes: String, date: NSDate) -> Weight {
         let weightVal = newEntity("Weight") as! Weight
         weightVal.value = value

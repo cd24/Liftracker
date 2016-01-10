@@ -41,13 +41,23 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         buildChart()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        chart_view.animate(xAxisDuration: 1.0)
+    }
+    
     func buildChart() {
         setChartViewOptions()
         chart_view.data = getLineData()
     }
     
     func buildDateStrings() {
-        days = ["M", "T", "W", "Th", "F", "S", "S"]
+        days = ["M",
+                "T",
+                "W",
+                "Th",
+                "F",
+                "S",
+                "S"]
         months = ["Jan",
                     "Feb",
                     "Mar",
@@ -68,6 +78,7 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         chart_view.noDataTextDescription = "There is no weight data yet!  Add some!"
         chart_view.noDataText = ""
         chart_view.drawGridBackgroundEnabled = false
+        chart_view.pinchZoomEnabled = true
         /*  Used for Combo chart
         chart_view.drawBarShadowEnabled = false
         
@@ -76,13 +87,14 @@ class WeightViewController: UIViewController, ChartViewDelegate {
             CombinedChartDrawOrder.Line.rawValue
         ]
         */
-        chart_view.autoScaleMinMaxEnabled = true
-        let rightAxis = chart_view.rightAxis
-        let leftAxis = chart_view.leftAxis
+        //chart_view.autoScaleMinMaxEnabled = true
         let xAxis = chart_view.xAxis
-        rightAxis.drawGridLinesEnabled = false
-        leftAxis.drawGridLinesEnabled = false
         xAxis.labelPosition = ChartXAxis.XAxisLabelPosition.BothSided
+        
+        chart_view.viewPortHandler.setMaximumScaleX(2.0)
+        chart_view.viewPortHandler.setMaximumScaleY(2.0)
+        chart_view.viewPortHandler.setMinimumScaleX(1.0)
+        chart_view.viewPortHandler.setMaximumScaleY(1.0)
     }
     
     func getData() -> CombinedChartData {
@@ -93,8 +105,7 @@ class WeightViewController: UIViewController, ChartViewDelegate {
     }
     
     func getLineData() -> LineChartData {
-        let data = LineChartData()
-        let dataColor = UIColor.greenColor()
+        let dataColor = UIColor.grayColor()
         var entries = [ChartDataEntry]()
         
         for i in 0..<weights.count {
@@ -103,11 +114,14 @@ class WeightViewController: UIViewController, ChartViewDelegate {
             entries.append(entry)
         }
         
-        let dataSet = LineChartDataSet(yVals: entries, label: "Weights")
+        let dataSet = LineChartDataSet(yVals: entries)
         dataSet.lineWidth = 2.5
         dataSet.setColor(dataColor)
         dataSet.setCircleColor(dataColor)
         dataSet.fillColor = dataColor
+        dataSet.circleRadius = 3
+        dataSet.drawCircleHoleEnabled = true
+        
         
         dataSet.drawCubicEnabled = true
         dataSet.drawValuesEnabled = true
@@ -117,7 +131,8 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         
         dataSet.axisDependency = ChartYAxis.AxisDependency.Left
         
-        data.addDataSet(dataSet)
+        let values = Array(1..<weights.count)
+        let data = LineChartData(xVals: values, dataSet: dataSet)
         
         return data
     }
@@ -151,9 +166,12 @@ class WeightViewController: UIViewController, ChartViewDelegate {
     }
     
     func updateWeightValues() {
-        let start_of_week = TimeManager.startOfWeek(NSDate()),
-            end_of_week = TimeManager.endOfWeek(NSDate())
-        weights = manager.getWeights(start_of_week, end: end_of_week)
+        var start = TimeManager.startOfWeek(NSDate()),
+            end = TimeManager.endOfWeek(NSDate())
+        start = TimeManager.startOfDay(start)
+        end = TimeManager.endOfDay(end)
+        weights = manager.getWeights(start, end: end)
+        
         buildChart()
     }
     
@@ -170,17 +188,19 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         return sum/Double(data.count)
     }
     
+    func dismissKeyboard() {
+        if weight_field.isFirstResponder() {
+            weight_field.resignFirstResponder()
+        }
+    }
+    
+    //MARK: - Chart View Delegate
+    
     func chartValueNothingSelected(chartView: ChartViewBase) {
         print("Nothing selected on the chart")
     }
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("Index \(dataSetIndex) selected.  Data = \(entry)")
-    }
-    
-    func dismissKeyboard() {
-        if weight_field.isFirstResponder() {
-            weight_field.resignFirstResponder()
-        }
     }
 }

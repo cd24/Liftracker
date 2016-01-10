@@ -45,6 +45,7 @@
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
 		52BED8781C41C4120044455B /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED8771C41C4120044455B /* TimeManager.swift */; };
 		52BED87A1C41C4960044455B /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED8791C41C4960044455B /* UserPrefs.swift */; };
+		52BED87D1C41CB270044455B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BED87C1C41CB270044455B /* HealthKit.framework */; };
 		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
 		52CBA07D1C3B64F600552251 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBA07C1C3B64F600552251 /* ChartViewController.swift */; };
 		52D062FF1C3DC34800413242 /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D062FE1C3DC34800413242 /* scale.png */; };
@@ -133,6 +134,7 @@
 		52BED8771C41C4120044455B /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		52BED8791C41C4960044455B /* UserPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
 		52BED87B1C41C87B0044455B /* Liftracker_4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker_4.xcdatamodel; sourceTree = "<group>"; };
+		52BED87C1C41CB270044455B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		52CA20701BD5B11C008868DC /* LastWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastWeekViewController.swift; sourceTree = "<group>"; };
 		52CBA07C1C3B64F600552251 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		52D062FE1C3DC34800413242 /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BED87D1C41CB270044455B /* HealthKit.framework in Frameworks */,
 				A103348417A7FF484BDB59D0 /* Pods_Liftracker.framework in Frameworks */,
 				52D063051C3F08FE00413242 /* CloudKit.framework in Frameworks */,
 			);
@@ -389,6 +392,7 @@
 		8A3AED87AC7F74D61BD5E65C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52BED87C1C41CB270044455B /* HealthKit.framework */,
 				52D063041C3F08FE00413242 /* CloudKit.framework */,
 				009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */,
 			);
@@ -468,6 +472,9 @@
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 96A6AYTS4A;
 						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
