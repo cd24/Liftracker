@@ -2,54 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Exercice+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Exercice+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Exercice.h">
-   </FileRef>
-   <FileRef
-      location = "group:Exercice.m">
-   </FileRef>
-   <FileRef
-      location = "group:MuscleGroup+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:MuscleGroup+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:MuscleGroup.h">
-   </FileRef>
-   <FileRef
-      location = "group:MuscleGroup.m">
-   </FileRef>
-   <FileRef
-      location = "group:Rep+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Rep+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Rep.h">
-   </FileRef>
-   <FileRef
-      location = "group:Rep.m">
-   </FileRef>
-   <FileRef
-      location = "group:Weight+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:Weight+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
-      location = "group:Weight.h">
-   </FileRef>
-   <FileRef
-      location = "group:Weight.m">
-   </FileRef>
-   <FileRef
       location = "group:Liftracker.xcodeproj">
    </FileRef>
    <FileRef
