@@ -10,7 +10,7 @@ import UIKit
 
 class StatsViewController: UITableViewController {
 
-    let stats = ["Existing Maxes", "Estimated Max"]
+    let stats = ["Existing Maxes", "Estimated Max", "Workout Distribution"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class StatsViewController: UITableViewController {
             performSegueWithIdentifier("Max", sender: self)
         }
         else {
-            performSegueWithIdentifier("chart", sender: self)
+            performSegueWithIdentifier("groups", sender: self)
         }
     }
 }

@@ -69,6 +69,39 @@
             </objects>
             <point key="canvasLocation" x="2856" y="1673"/>
         </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="vrq-l5-2YK">
+            <objects>
+                <viewController id="bju-IU-VES" customClass="ChartViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F6K-uf-GBt"/>
+                        <viewControllerLayoutGuide type="bottom" id="HT7-GV-UaM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WVc-nr-Voq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkn-i6-zem" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="64" width="560" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fkn-i6-zem" firstAttribute="leading" secondItem="WVc-nr-Voq" secondAttribute="leadingMargin" id="KWi-qL-Pfd"/>
+                            <constraint firstItem="HT7-GV-UaM" firstAttribute="top" secondItem="Fkn-i6-zem" secondAttribute="bottom" id="YN7-Ul-qYY"/>
+                            <constraint firstItem="Fkn-i6-zem" firstAttribute="top" secondItem="F6K-uf-GBt" secondAttribute="bottom" id="g0W-h4-YJB"/>
+                            <constraint firstItem="Fkn-i6-zem" firstAttribute="trailing" secondItem="WVc-nr-Voq" secondAttribute="trailingMargin" id="hTA-Vh-tLd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pie_view" destination="Fkn-i6-zem" id="3ih-DH-OtO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekd-FY-MUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="2476"/>
+        </scene>
         <!--Estimated Max View Controller-->
         <scene sceneID="o3j-g4-NOZ">
             <objects>
@@ -544,6 +577,7 @@
                     <navigationItem key="navigationItem" id="RQg-9x-Jxt"/>
                     <connections>
                         <segue destination="c6x-Vn-fS9" kind="show" identifier="Max" id="QdV-YM-UYx"/>
+                        <segue destination="bju-IU-VES" kind="show" identifier="groups" id="3Kr-Me-rb8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLk-FW-hxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -678,7 +712,7 @@
         <image name="weight.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kNv-in-yEe"/>
+        <segue reference="QdV-YM-UYx"/>
         <segue reference="A1M-pE-hvs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.31254817895349918" blue="1" alpha="1" colorSpace="calibratedRGB"/>

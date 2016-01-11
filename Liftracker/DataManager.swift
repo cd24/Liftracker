@@ -154,6 +154,11 @@ class DataManager {
         save_context()
     }
     
+    func repsForMuscleGroup(group: MuscleGroup) -> [Rep] {
+        let predicate = NSPredicate(format: "exercice.muscle_group.name == \(group.name)")
+        return getEntities("Rep", predicate: predicate) as! [Rep]
+    }
+    
     func values(rep: Rep) -> (Double, Double){
         return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
     }
@@ -189,12 +194,17 @@ class DataManager {
     //MARK: - General Core Data
     
     func entityExists(name: String, entityType entity: String, nameField field: String = "name") -> Bool {
-        let fetch_request = NSFetchRequest(entityName: entity)
         let predicate = NSPredicate(format: "\(field) == \(name)")
-        fetch_request.predicate = predicate
+        return entityCount(entityType: entity, predicate: predicate) > 0
+    }
+    
+    func entityCount(entityType entity: String, predicate: NSPredicate? = nil) -> Int {
+        let fetch_request = NSFetchRequest(entityName: entity)
+        if let pred = predicate {
+            fetch_request.predicate = pred
+        }
         let error = NSErrorPointer()
-        let exists = managedContext.countForFetchRequest(fetch_request, error: error) > 0
-        return exists
+        return managedContext.countForFetchRequest(fetch_request, error: error)
     }
     
     func newEntity(name: String) -> NSManagedObject {

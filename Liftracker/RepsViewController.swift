@@ -37,15 +37,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         repsTemp = DataManager.getInstance().loadAllRepsFor(exercice: exercice!)
         self.title = exercice?.name
         
-        for rep in repsTemp {
-            if allReps.keys.contains(rep.date!){
-                allReps[rep.date!]!.append(rep)
-            }
-            else {
-                allReps[rep.date!] = [rep]
-                repKeys.append(rep.date!)
-            }
-        }
+        loadReps()
         
         configureSteppers()
         configureTextFields()
@@ -64,6 +56,18 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
         matchTextBox()
         tableView?.reloadData()
+    }
+    
+    func loadReps() {
+        for rep in repsTemp {
+            if allReps.keys.contains(rep.date!){
+                allReps[rep.date!]!.append(rep)
+            }
+            else {
+                allReps[rep.date!] = [rep]
+                repKeys.append(rep.date!)
+            }
+        }
     }
     
     func fillSuggestedData(){
@@ -241,12 +245,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             let key = repKeys[indexPath.section-1]
             let rep = allReps[key]![indexPath.row]
             allReps[key]!.removeAtIndex(indexPath.row)
-            if (allReps[key]!.count == 0){
-                allReps.removeValueForKey(key)
-                repKeys.removeAtIndex(indexPath.section)
-            }
             manager.deleteRep(rep)
+            loadReps()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

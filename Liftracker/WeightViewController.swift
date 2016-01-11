@@ -28,6 +28,11 @@ class WeightViewController: UIViewController, ChartViewDelegate {
             manager.addWeight(weight, notes: "", date: NSDate())
             updateWeightValues()
         }
+        else {
+            let alertController = UIAlertController(title: "Enter a value!", message: "Enter a value into the weight field near the top of the screen then save it.  You do not need to put the unit (lbs/kg) as we have your preference saved.  If you do not want to use \(UserPrefs.getUnitString()) then please update your settings from the iOS settings page", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -90,6 +95,7 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         //chart_view.autoScaleMinMaxEnabled = true
         let xAxis = chart_view.xAxis
         xAxis.labelPosition = ChartXAxis.XAxisLabelPosition.BothSided
+        xAxis.drawGridLinesEnabled = false
         
         chart_view.viewPortHandler.setMaximumScaleX(2.0)
         chart_view.viewPortHandler.setMaximumScaleY(2.0)
@@ -105,7 +111,7 @@ class WeightViewController: UIViewController, ChartViewDelegate {
     }
     
     func getLineData() -> LineChartData {
-        let dataColor = UIColor.grayColor()
+        let dataColor = UIColor.blueColor()
         var entries = [ChartDataEntry]()
         
         for i in 0..<weights.count {
@@ -114,7 +120,7 @@ class WeightViewController: UIViewController, ChartViewDelegate {
             entries.append(entry)
         }
         
-        let dataSet = LineChartDataSet(yVals: entries)
+        let dataSet = LineChartDataSet(yVals: entries, label: "Weight")
         dataSet.lineWidth = 2.5
         dataSet.setColor(dataColor)
         dataSet.setCircleColor(dataColor)
@@ -122,16 +128,16 @@ class WeightViewController: UIViewController, ChartViewDelegate {
         dataSet.circleRadius = 3
         dataSet.drawCircleHoleEnabled = true
         
-        
         dataSet.drawCubicEnabled = true
         dataSet.drawValuesEnabled = true
+        
         
         dataSet.valueFont = UIFont.systemFontOfSize(10.0)
         dataSet.valueTextColor = dataColor
         
         dataSet.axisDependency = ChartYAxis.AxisDependency.Left
         
-        let values = Array(1..<weights.count)
+        let values = Array(0..<weights.count)
         let data = LineChartData(xVals: values, dataSet: dataSet)
         
         return data
