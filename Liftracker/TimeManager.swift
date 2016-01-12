@@ -65,7 +65,7 @@ class TimeManager {
     
     static func dateToString(date: NSDate) -> String{
         let formatter = NSDateFormatter()
-        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("EdMMMyyyy", options: 0, locale: NSLocale.systemLocale())
+        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("ddMMMyyyy", options: 0, locale: NSLocale.systemLocale())
         formatter.timeZone = NSTimeZone.systemTimeZone()
         return formatter.stringFromDate(date)
     }

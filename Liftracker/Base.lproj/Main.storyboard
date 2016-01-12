@@ -385,6 +385,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nGW-gT-I5s">
+                                <rect key="frame" x="0.0" y="189" width="600" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rYH-3I-dvm">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rYH-3I-dvm" id="lvL-y2-5kb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-qp-ad6" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="177" width="560" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -395,17 +409,24 @@
                                     <segment title="Chart"/>
                                     <segment title="List"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentToggle:" destination="eoW-rw-fyI" eventType="valueChanged" id="PeT-4f-0U8"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hez-Qt-MJu" firstAttribute="trailing" secondItem="Pq9-dy-lin" secondAttribute="trailingMargin" id="9zC-h0-5ov"/>
+                            <constraint firstItem="nGW-gT-I5s" firstAttribute="top" secondItem="N0P-Bp-B4M" secondAttribute="bottom" constant="20" id="Fe8-H9-7nD"/>
                             <constraint firstItem="hez-Qt-MJu" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" id="GwL-DW-yZD"/>
                             <constraint firstItem="b15-V3-6Xa" firstAttribute="top" secondItem="Sai-qp-ad6" secondAttribute="bottom" constant="8" id="Mu6-k5-YsE"/>
+                            <constraint firstItem="b15-V3-6Xa" firstAttribute="top" secondItem="nGW-gT-I5s" secondAttribute="bottom" id="QUn-KZ-1aM"/>
+                            <constraint firstItem="nGW-gT-I5s" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" constant="-20" id="gKj-qq-bhf"/>
                             <constraint firstItem="Sai-qp-ad6" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" id="h2y-PM-T4X"/>
                             <constraint firstItem="Sai-qp-ad6" firstAttribute="trailing" secondItem="Pq9-dy-lin" secondAttribute="trailingMargin" id="kLY-HB-aqO"/>
                             <constraint firstItem="hez-Qt-MJu" firstAttribute="top" secondItem="oO6-g9-JOS" secondAttribute="bottom" constant="8" id="kMm-Le-DIZ"/>
                             <constraint firstItem="N0P-Bp-B4M" firstAttribute="centerX" secondItem="Pq9-dy-lin" secondAttribute="centerX" id="mfp-Q9-f6m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGW-gT-I5s" secondAttribute="trailing" constant="-20" id="t44-bT-tZ7"/>
                             <constraint firstItem="Sai-qp-ad6" firstAttribute="top" secondItem="N0P-Bp-B4M" secondAttribute="bottom" constant="8" id="wWi-SQ-3Ob"/>
                         </constraints>
                     </view>
@@ -420,6 +441,7 @@
                         <outlet property="chart_view" destination="Sai-qp-ad6" id="qNM-ft-wfY"/>
                         <outlet property="view_toggler" destination="N0P-Bp-B4M" id="Q42-of-3Cw"/>
                         <outlet property="weight_field" destination="hez-Qt-MJu" id="cRZ-TA-29Y"/>
+                        <outlet property="weight_table_view" destination="nGW-gT-I5s" id="Lbr-q5-gg5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aR-ux-DEy" userLabel="First Responder" sceneMemberID="firstResponder"/>

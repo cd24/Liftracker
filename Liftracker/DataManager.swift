@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import HealthKit
 
 class DataManager {
     static private var manager: DataManager = DataManager()
@@ -191,6 +192,27 @@ class DataManager {
         return getEntities("Weight", predicate: predicate) as! [Weight]
     }
     
+    func hkToWeight(samples: [HKQuantitySample]) -> [Weight] {
+        var data = [Weight]()
+        samples.forEach{ w in
+            let wt = Weight()
+            wt.value = w.quantity.doubleValueForUnit(UserPrefs.getHKWeightUnit())
+            wt.date = w.startDate
+            data.append(wt)
+        }
+        return data
+    }
+    
+    func weightToSampels(weights: [Weight]) -> [HKQuantitySample] {
+        let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)!
+        return weights.map { w in
+            return HKQuantitySample(type: weight,
+                                    quantity: HKQuantity(unit: UserPrefs.getHKWeightUnit(), doubleValue: Double(w.value!)),
+                                    startDate: w.date!,
+                                    endDate: w.date!)
+        }
+    }
+    
     //MARK: - General Core Data
     
     func entityExists(name: String, entityType entity: String, nameField field: String = "name") -> Bool {
@@ -351,8 +373,10 @@ class DataManager {
                         lbsToKilograms(weight) :
                         weight
         let height = ftToCm(feet: UserPrefs.getHeight_ft(),
-                            inches: UserPrefs.getHeight_in())
-        return weight / pow(height, 2)
+                            inches: UserPrefs.getHeight_in()) / 100
+        let bmi = weight / pow(height, 2)
+        print("Weight: \(weight) and height \(height).  BMI = \(bmi)")
+        return bmi
     }
     
     //MARK: - Unit Conversions
@@ -390,5 +414,11 @@ class DataManager {
     
     func literToGal(liter: Double) -> Double {
         return liter/3.7854118
+    }
+}
+
+extension HKQuantitySample {
+    func getWeightValue() -> Double {
+        return self.quantity.doubleValueForUnit(UserPrefs.getHKWeightUnit())
     }
 }

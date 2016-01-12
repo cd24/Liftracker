@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import HealthKit
 
 class UserPrefs {
     static let userNameKey = "user_name",
@@ -42,5 +43,9 @@ class UserPrefs {
     static func getHeight_in() -> Int {
         let height = NSUserDefaults.standardUserDefaults().objectForKey(height_in) as! String
         return Int(height)!
+    }
+    
+    static func getHKWeightUnit() -> HKUnit {
+        return getUnitString() == "Lbs" ? HKUnit.poundUnit() : HKUnit.gramUnit()
     }
 }
