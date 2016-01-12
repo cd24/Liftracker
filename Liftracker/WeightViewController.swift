@@ -21,9 +21,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     let manager = DataManager.getInstance()
     var weights = [HKQuantitySample]()
     
-    var days = [NSObject]()
-    var months = [NSObject]()
-    
     @IBAction func save(sender: AnyObject) {
         if let weight = Double(weight_field.text!) {
             HealthKitManager.addWeight(weight, date: NSDate())
@@ -42,13 +39,12 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         weight_table_view.hidden = true
         weight_table_view.dataSource = self
         weight_table_view.delegate = self
-        weight_table_view.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        //weight_table_view.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         
         recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(recognizer)
         
         updateWeightValues()
-        buildDateStrings()
         buildChart()
     }
     
@@ -59,28 +55,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     func buildChart() {
         setChartViewOptions()
         chart_view.data = getWeightData()
-    }
-    
-    func buildDateStrings() {
-        days = ["M",
-                "T",
-                "W",
-                "Th",
-                "F",
-                "S",
-                "S"]
-        months = ["Jan",
-                    "Feb",
-                    "Mar",
-                    "Apr",
-                    "May",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Sep",
-                    "Oct",
-                    "Nov",
-                    "Dec"]
     }
     
     func setChartViewOptions() {
@@ -286,7 +260,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     //MAKR: - Table View Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weights.count
+        return weights.count + 1
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -294,10 +268,17 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = weight_table_view.dequeueReusableCellWithIdentifier("Cell")!
-        let data = weights[indexPath.row]
-        
-        cell.textLabel?.text = "(\(TimeManager.dateToString(data.startDate))) - \(data.getWeightValue()) \(UserPrefs.getUnitString())"
+        let cell = weight_table_view.dequeueReusableCellWithIdentifier("Cell") as! LeftRightTableViewCell
+        if indexPath.row == 0 {
+            //header
+            cell.leftText.text = "Date"
+            cell.rightText.text = "Weight"
+        }
+        else {
+            let data = weights[indexPath.row - 1]
+            cell.leftText.text = TimeManager.dateToString(data.startDate)
+            cell.rightText.text = "\(data.getWeightValue()) \(UserPrefs.getUnitString())"
+        }
         return cell
     }
 
