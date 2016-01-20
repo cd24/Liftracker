@@ -1,5 +1,5 @@
 //
-//  Exercice.h
+//  TimedRep.h
 //  
 //
 //  Created by John McAvey on 1/19/16.
@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class MuscleGroup, Rep;
+@class Exercice;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Exercice : NSManagedObject
+@interface TimedRep : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -21,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Exercice+CoreDataProperties.h"
+#import "TimedRep+CoreDataProperties.h"

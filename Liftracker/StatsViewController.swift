@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Charts
 
 class StatsViewController: UITableViewController {
 
     let stats = ["Existing Maxes", "Estimated Max", "Workout Distribution"]
+    let manager = DataManager.getInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,11 @@ class StatsViewController: UITableViewController {
             destinationController.maxView = false
             destinationController.estimate = true
         }
+        if row == 2 {
+            let destinationController = segue.destinationViewController as! PieChartViewController
+            destinationController.pieData = pieData
+            destinationController.data_changed = true
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -62,5 +69,31 @@ class StatsViewController: UITableViewController {
         else {
             performSegueWithIdentifier("groups", sender: self)
         }
+    }
+    
+    func pieData() -> PieChartData {
+        var reps = [BarChartDataEntry]()
+        var xVals = [String]()
+        var mgs = manager.loadAllMuscleGroups()
+        for i in 0..<mgs.count {
+            let mg = mgs[i]
+            let predicate = NSPredicate(format: "exercice.muscle_group.name == '\(mg.name!)'")
+            let count = manager.entityCount(entityType: "Rep", predicate: predicate)
+            if count > 0 {
+                reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
+                xVals.append(mg.name!)
+            }
+        }
+        
+        let dataSet = PieChartDataSet(yVals: reps, label: "Muscle Group Breakdown")
+        dataSet.sliceSpace = 2.0
+        dataSet.colors = manager.chartColors()
+        
+        let data = PieChartData(xVals: xVals, dataSet: dataSet)
+        data.setValueFormatter(manager.percentNumberFormatter())
+        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 11.0))
+        data.setValueTextColor(UIColor.blackColor())
+        
+        return data
     }
 }

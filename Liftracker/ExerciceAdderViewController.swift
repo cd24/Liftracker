@@ -15,6 +15,8 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     var selectedIndex: Int = 0
     @IBOutlet var picker_view: UIPickerView!
     @IBOutlet var name_field: UITextField!
+    @IBOutlet var timed_switch: UISwitch!
+    
     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
@@ -28,12 +30,6 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         
         name_field.delegate = self
         
-        /*
-        let index = groups!.indexOf(currentGroup)!
-        picker_view?.selectedRowInComponent(index)
-        */
-
-        // Do any additional setup after loading the view.
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save");
     }
 
@@ -73,6 +69,7 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         let new_exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: context) as! Exercice
         new_exercice.name = name_field?.text
         new_exercice.muscle_group = groups![selectedIndex]
+        new_exercice.isTimed = timed_switch.on
         do{
             try context.save()
         }
@@ -85,14 +82,14 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     func validData() -> Bool{
-        //todo: Validate field
-        let exercices = DataManager.getInstance().loadExercicesFor(muscle_group: groups![selectedIndex])
+        /*let exercices = DataManager.getInstance().loadExercicesFor(muscle_group: groups![selectedIndex])
         for exercice in exercices {
             if exercice.name! == name_field.text! {
                 return false
             }
-        }
-        return name_field?.text != ""
+        } */
+        let predicate = NSPredicate(format: "name == '%@' AND muscle_group == '%@'", name_field.text!, groups![selectedIndex].name!)
+        return name_field?.text != "" && DataManager.getInstance().entityCount(entityType: "Exercice", predicate: predicate) == 0
     }
     
     @IBAction func dismiss(){

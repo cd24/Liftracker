@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         setupDefault()
-        //UINavigationBar.appearance().barTintColor = DataManager.getInstance().getMainColor()
         return true
     }
 
@@ -119,7 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserDefaults().setBool(true, forKey: loadOnceKey)
         }
         manager.save_context()
-        
     }
     
     func readInDefaults() -> NSDictionary? {

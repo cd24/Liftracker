@@ -6,3 +6,4 @@
 #import "Exercice.h"
 #import "MuscleGroup.h"
 #import "Weight.h"
+#import "TimedRep.h"

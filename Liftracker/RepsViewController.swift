@@ -13,9 +13,8 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var exercice: Exercice?
     
-    var repsTemp: [Rep] = []
-    var allReps = [String: [Rep]]()
-    var repKeys = [String]()
+    var allReps = [NSDate: [Rep]]()
+    var repKeys = [NSDate]()
     var updating = false
     var rowUpdating: NSIndexPath?
     let manager = DataManager.getInstance()
@@ -32,42 +31,43 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem]()
         self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save_rep"))
-        let barImage = UIImage(named: "data_bars.png")
-        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
-        repsTemp = DataManager.getInstance().loadAllRepsFor(exercice: exercice!)
+        //let bars = UIImage(named: "data_bars.png")
+        //self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: bars, landscapeImagePhone: bars, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
+        
         self.title = exercice?.name
         
         loadReps()
-        
+        sortKeys()
         configureSteppers()
         configureTextFields()
         fillSuggestedData()
-        repKeys.sortInPlace({(ele1: String, ele2: String) -> Bool in
-            let formatter = NSDateFormatter()
-            formatter.locale = NSLocale.systemLocale()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-            let date1 = formatter.dateFromString(ele1)
-            let date2 = formatter.dateFromString(ele2)
-            if date1 == nil || date2 == nil{
-                return false
-            }
-            let before = date1!.compare(date2!)
-            return before == NSComparisonResult.OrderedDescending
-        })
         matchTextBox()
         tableView?.reloadData()
     }
     
     func loadReps() {
+        repKeys = [NSDate]()
+        allReps = [NSDate:[Rep]]()
+        let repsTemp = manager.loadAllRepsFor(exercice: exercice!)
+        print("Reps temp length: \(repsTemp.count)")
         for rep in repsTemp {
-            if allReps.keys.contains(rep.date!){
-                allReps[rep.date!]!.append(rep)
+            let start = TimeManager.zeroDateTime(rep.date!)
+            if repKeys.contains(start){
+                allReps[start]!.append(rep)
             }
             else {
-                allReps[rep.date!] = [rep]
-                repKeys.append(rep.date!)
+                allReps[start] = [rep]
+                repKeys.append(start)
             }
         }
+        print("repKeyCount: \(repKeys.count)")
+    }
+    
+    func sortKeys() {
+        repKeys.sortInPlace({(date1: NSDate, date2: NSDate) -> Bool in
+            let before = date1.compare(date2)
+            return before == NSComparisonResult.OrderedDescending
+        })
     }
     
     func fillSuggestedData(){
@@ -79,7 +79,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func configureSteppers(){
-        repKeys.sortInPlace()
+        sortKeys()
         weight_stepper.minimumValue = 0
         weight_stepper.maximumValue = Double.infinity
         rep_stepper.minimumValue = 0
@@ -109,33 +109,31 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if allReps.keys.count == 0 {
-            return 1
-        }
-        return allReps.keys.count + 1
+        return repKeys.count + 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if allReps.keys.count == 0 {
+        if repKeys.count == 0 {
             return 1
         }
-        if section > 0{
-            let key = repKeys[section - 1]
-            return allReps[key]!.count
+        if section == 0 {
+            return 3
         }
-        return 3
+        let reps = repKeys[section - 1]
+        return allReps[reps]!.count
     }
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        if allReps.keys.count == 0 {
+        if repKeys.count == 0 {
             cell.textLabel?.text = "No Reps Found"
         }
         else {
-            if indexPath.section == 0{
-                
+            let section = indexPath.section
+            
+            if section == 0{
                 if indexPath.row  == 0{
                     let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
                 cell.textLabel?.text = "Estimated ORM: \(roundedString) \(UserPrefs.getUnitString())"
@@ -150,10 +148,11 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             else {
-                let key = repKeys[indexPath.section - 1]
+                let key = repKeys[section - 1]
                 let rep = allReps[key]![indexPath.row]
                 cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(manager.getRepWeightString(rep))"
             }
+
         }
         return cell
     }
@@ -166,11 +165,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             return "Estimated Max"
         }
         let key = repKeys[section - 1]
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-        let date = formatter.dateFromString(key)
-        let formattedString = TimeManager.dateToString(date!)
-        return "\(formattedString)"
+        return "\(TimeManager.dateToString(key))"
     }
     
     @IBAction func save_rep(){
@@ -190,18 +185,19 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     updating = false
                 }
                 else{
-                    if addDate == nil{
-                        addDate = NSDate()
+                    var date = NSDate()
+                    if let day = addDate {
+                        date = day
                     }
-                    let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: addDate)
+                    let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: date)
                     addRep(repetition: new_rep)
                 }
-                tableView!.reloadData()
+                tableView?.reloadData()
             }
         }
     }
     
-    func orderByDate(reps reps: [Rep]) -> [String:[Rep]]{
+    func orderByDate(reps reps: [Rep]) -> [NSDate:[Rep]]{
         for rep in reps {
             addRep(repetition: rep)
         }
@@ -209,7 +205,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func addRep(repetition rep: Rep){
-        let date = rep.date!
+        let date = TimeManager.zeroDateTime(rep.date!)
         if allReps.keys.contains(date){
             allReps[date]?.append(rep)
         }
@@ -217,48 +213,25 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             allReps[date] = [rep]
             repKeys.append(date)
         }
-        repKeys.sortInPlace({(ele1: String, ele2: String) -> Bool in
-            let formatter = NSDateFormatter()
-            formatter.locale = NSLocale.systemLocale()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-            let date1 = formatter.dateFromString(ele1)
-            let date2 = formatter.dateFromString(ele2)
-            if date1 == nil || date2 == nil{
-                return false
-            }
-            let before = date1!.compare(date2!)
-            return before == NSComparisonResult.OrderedAscending ? false: true
-        })
-    }
-
-    
-    // Override to support conditional editing of the table view.
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return indexPath.section > 0
+        sortKeys()
     }
     
     // Override to support editing the table view.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            let key = repKeys[indexPath.section-1]
+            let key = repKeys[indexPath.section - 1]
             let rep = allReps[key]![indexPath.row]
-            allReps[key]!.removeAtIndex(indexPath.row)
             manager.deleteRep(rep)
             loadReps()
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if allReps.count == 0 {
             return
         }
-        if indexPath.section > 0 && !updating {
+        if indexPath.section > 0 {
             updating = true
             rowUpdating = indexPath
             let repFromRowKey = repKeys[indexPath.section - 1]
@@ -266,6 +239,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.weight?.text = "\(repFromRow.weight!.doubleValue)"
             self.num_reps?.text = "\(repFromRow.num_reps!.doubleValue)"
             matchTextBox()
+        }
+        if indexPath.row == tableView.indexPathForSelectedRow?.row && updating {
+            updating = false
+            
         }
         else {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)

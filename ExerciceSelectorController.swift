@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import Charts
 
 class ExerciceSelectorController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating {
     
@@ -16,7 +16,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     var group: MuscleGroup!
     var maxView: Bool?
     var addDate: NSDate!
-    let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let manager = DataManager.getInstance()
     let search_controller = UISearchController(searchResultsController: nil)
     
     
@@ -29,6 +29,8 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         self.title = group.name
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addExercice");
+        let barImage = UIImage(named: "data_bars.png")
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
         
         //configure search controller
         search_controller.searchResultsUpdater = self
@@ -65,6 +67,20 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "graph" {
+            let destinationController = segue.destinationViewController as! PieChartViewController
+            destinationController.pieData = mgPieInfo
+            destinationController.data_changed = true
+            return
+        }
+        if segue.identifier == "AddExercice" {
+            let destination = segue.destinationViewController as! ExerciceAdderViewController
+            destination.tableView = self
+            //destination.currentGroup = group!
+            return
+        }
+        
+        //otherwise its a tableview move
         let selected_index = tableView.indexPathForSelectedRow!.row
         let selected_exercice = valueAtIndex(selected_index)
         
@@ -74,16 +90,14 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
             let reps = DataManager.getInstance().loadAllRepsFor(exercice: selected_exercice)
             destination.results = getMaxForAllReps(exercice: selected_exercice, reps: reps)
         }
-        if segue.identifier == "AddExercice" {
-            let destination = segue.destinationViewController as! ExerciceAdderViewController
-            destination.tableView = self
-            destination.currentGroup = group!
-        }
-        
         if segue.identifier == "Reps" {
-            let destination = segue.destinationViewController as! RepsViewController;
-            destination.exercice = exercices[tableView.indexPathForSelectedRow!.row];
+            let destination = segue.destinationViewController as! RepsViewController
+            destination.exercice = exercices[tableView.indexPathForSelectedRow!.row]
             destination.addDate = addDate
+        }
+        if segue.identifier == "timed" {
+            let destination = segue.destinationViewController as! TimedRepViewController
+            destination.exercice = exercices[tableView.indexPathForSelectedRow!.row]
         }
     }
     
@@ -96,17 +110,23 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
             performSegueWithIdentifier("Max", sender: self)
         }
         else {
-            performSegueWithIdentifier("Reps", sender: self)
+            let exercice = exercices[indexPath.row]
+            if exercice.isTimed!.boolValue {
+                performSegueWithIdentifier("timed", sender: self)
+            }
+            else{
+                performSegueWithIdentifier("Reps", sender: self)
+            }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func load_data(){
-        exercices = DataManager.getInstance().loadExercicesFor(muscle_group: group)
+        exercices = manager.loadExercicesFor(muscle_group: group)
     }
     
     func getMaxForAllReps(exercice ex: Exercice, reps: [Rep]) -> [Int:Rep]{
-        let reps = DataManager.getInstance().loadAllRepsFor(exercice: ex)
+        let reps = manager.loadAllRepsFor(exercice: ex)
         var map = [Int:Rep]()
         for rep in reps {
             let (weight, num_reps) = intValues(rep)
@@ -148,5 +168,37 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     
     func valueAtIndex(index: Int) -> Exercice {
         return searching() ? filtered_exercices[index] : exercices[index]
+    }
+    
+    //MARK: - Pie Data Generator
+    
+    func mgPieInfo() -> PieChartData {
+        var reps = [BarChartDataEntry]()
+        var xVals = [String]()
+        var exercices = manager.loadExercicesFor(muscle_group: group)
+        for i in 0..<exercices.count {
+            let exercice = exercices[i]
+            let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
+            let count = manager.entityCount(entityType: "Rep", predicate: predicate)
+            if count > 0 {
+                reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
+                xVals.append(exercice.name!)
+            }
+        }
+        
+        let dataSet = PieChartDataSet(yVals: reps, label: "Muscle Group Breakdown")
+        dataSet.sliceSpace = 2.0
+        dataSet.colors = manager.chartColors()
+        
+        let data = PieChartData(xVals: xVals, dataSet: dataSet)
+        data.setValueFormatter(manager.percentNumberFormatter())
+        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 11.0))
+        data.setValueTextColor(UIColor.blackColor())
+        
+        return data
+    }
+    
+    func graph_view() {
+        performSegueWithIdentifier("graph", sender: self)
     }
 }

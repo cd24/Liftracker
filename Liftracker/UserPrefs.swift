@@ -26,7 +26,7 @@ class UserPrefs {
     }
     
     static func getMainColor() -> UIColor {
-        let color = UIColor(red: 192.0/255.0, green: 1, blue: 254.0/255, alpha: 1)
+        let color = UIColor.whiteColor()
         return color
     }
     

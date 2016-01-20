@@ -70,6 +70,13 @@ class TimeManager {
         return formatter.stringFromDate(date)
     }
     
+    static func dateToStringWithTime(date: NSDate) -> String{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("ddMMyyyy hh:mm", options: 0, locale: NSLocale.systemLocale())
+        formatter.timeZone = NSTimeZone.systemTimeZone()
+        return formatter.stringFromDate(date)
+    }
+    
     static func zeroDateTime(date: NSDate) -> NSDate {
         let calendar = getCalendar()
         return calendar.dateBySettingHour(0,
@@ -81,5 +88,15 @@ class TimeManager {
     
     static func getCalendar() -> NSCalendar {
         return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    }
+    
+    static func getDuration(start: NSDate, end: NSDate) -> (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+        let calendar = getCalendar()
+        let unitFlags = NSCalendarUnit(rawValue: UInt.max)
+        let components = calendar.components(unitFlags,
+                                    fromDate: start,
+                                    toDate: end,
+                                    options: NSCalendarOptions(rawValue: 0))
+        return (components.year, components.month, components.day, components.hour, components.minute, components.second)
     }
 }

@@ -114,4 +114,9 @@ class HealthKitManager {
         }
         return false
     }
+    
+    static func shouldRequestPermission(type: HKObjectType =
+                                              HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)!) -> Bool {
+        return store?.authorizationStatusForType(type) == .NotDetermined
+    }
 }

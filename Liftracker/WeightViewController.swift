@@ -22,16 +22,29 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     var weights = [HKQuantitySample]()
     
     @IBAction func save(sender: AnyObject) {
-        if let weight = Double(weight_field.text!) {
-            HealthKitManager.addWeight(weight, date: NSDate())
-            updateWeightValues()
-            weight_field.text = ""
-        }
-        else {
-            let alertController = UIAlertController(title: "Enter a value!", message: "Enter a value into the weight field near the top of the screen then save it.  You do not need to put the unit (lbs/kg) as we have your preference saved.  If you do not want to use \(UserPrefs.getUnitString()) then please update your settings from the iOS settings page", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Cancel, handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
+        requestWeight()
+    }
+    
+    func requestWeight() {
+        let alert = UIAlertController(title: "Add Weight", message: "Enter the weight to add.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
+            textField.placeholder = "Weight"
+            textField.keyboardType = UIKeyboardType.DecimalPad
+            textField.clearButtonMode = UITextFieldViewMode.Always
+        })
+        
+        let accept = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: {action in
+            if let weight = Double(alert.textFields![0].text!) {
+                HealthKitManager.addWeight(weight)
+                self.updateWeightValues()
+            }
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        alert.addAction(accept)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -39,10 +52,12 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         weight_table_view.hidden = true
         weight_table_view.dataSource = self
         weight_table_view.delegate = self
-        //weight_table_view.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         
         recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(recognizer)
+        
+        //let downImage = UIImage(named: "download.png")
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Export Image", style: UIBarButtonItemStyle.Plain, target: self, action: "saveImage")
         
         updateWeightValues()
         buildChart()
@@ -60,19 +75,11 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     func setChartViewOptions() {
         chart_view.delegate = self
         chart_view.descriptionText = "Weight (\(UserPrefs.getUnitString()))"
-        chart_view.noDataTextDescription = "There is no weight data yet!  Add some!"
+        chart_view.noDataText = "Loading Data"
         chart_view.noDataText = ""
         chart_view.drawGridBackgroundEnabled = false
         chart_view.pinchZoomEnabled = true
-        /*  Used for Combo chart
-        chart_view.drawBarShadowEnabled = false
         
-        chart_view.drawOrder = [
-            CombinedChartDrawOrder.Bar.rawValue,
-            CombinedChartDrawOrder.Line.rawValue
-        ]
-        */
-        //chart_view.autoScaleMinMaxEnabled = true
         let xAxis = chart_view.xAxis
         xAxis.labelPosition = ChartXAxis.XAxisLabelPosition.BothSided
         xAxis.drawGridLinesEnabled = false
@@ -86,9 +93,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     func getWeightData() -> LineChartData {
         let xVals = Array(0..<weights.count)
         
-        /*weights.map{ w in
-            return w.startDate
-        } */
         let data = LineChartData(xVals: xVals, dataSets: [weightDataSet(), getBMIDataSet()])
         return data
     }
@@ -136,34 +140,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         
         dataSet.axisDependency = ChartYAxis.AxisDependency.Left
         return dataSet
-    }
-    
-    func getBarData() -> BarChartData {
-        let data = BarChartData()
-        let dataColor = UIColor.blueColor()
-        var entries = [BarChartDataEntry]()
-        
-        let today = NSDate()
-        for i in 0..<7 {
-            let current_date = TimeManager.timeTravel(steps: i, base: today)
-            let weight_average = averageForDay(current_date)
-            let BMI = manager.bmi(weight_average)
-            print(BMI)
-            let entry = BarChartDataEntry(value: BMI, xIndex: i, data: current_date)
-            entries.append(entry)
-        }
-        
-        let dataSet = BarChartDataSet(yVals: entries, label: "BMI")
-        
-        dataSet.setColor(dataColor)
-        dataSet.valueTextColor = dataColor
-        dataSet.valueFont = UIFont.systemFontOfSize(10.0)
-        
-        dataSet.axisDependency = ChartYAxis.AxisDependency.Left
-        
-        data.addDataSet(dataSet)
-        
-        return data
     }
     
     func updateWeightValues() {
@@ -219,11 +195,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         return sum/Double(data.count)
     }
     
-    func dismissKeyboard() {
-        if weight_field.isFirstResponder() {
-            weight_field.resignFirstResponder()
-        }
-    }
     @IBAction func segmentToggle(sender: UISegmentedControl) {
         if view_toggler.selectedSegmentIndex == 0 {
             //hide table show chart

@@ -2,7 +2,7 @@
 //  Exercice+CoreDataProperties.m
 //  
 //
-//  Created by John McAvey on 1/8/16.
+//  Created by John McAvey on 1/19/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,6 +15,8 @@
 
 @dynamic best;
 @dynamic name;
+@dynamic isTimed;
 @dynamic muscle_group;
+@dynamic rep;
 
 @end

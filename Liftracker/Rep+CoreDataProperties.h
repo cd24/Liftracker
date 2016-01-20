@@ -2,7 +2,7 @@
 //  Rep+CoreDataProperties.h
 //  
 //
-//  Created by John McAvey on 1/8/16.
+//  Created by John McAvey on 1/18/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Rep (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *date;
+@property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSNumber *num_reps;
 @property (nullable, nonatomic, retain) NSString *unit;
 @property (nullable, nonatomic, retain) NSNumber *weight;
