@@ -30,8 +30,6 @@ class ExerciceAdderViewController: XLFormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     func save(){
         
         let values = formValues()
@@ -51,7 +49,6 @@ class ExerciceAdderViewController: XLFormViewController {
         
         
     }
-
     
     func getForm() -> XLFormDescriptor {
         let descriptor = XLFormDescriptor(title: "Add Exercice")

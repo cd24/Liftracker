@@ -10,7 +10,7 @@ import UIKit
 
 class TodayViewController: UITableViewController {
     
-    var todaysReps: [Exercice:[Rep]] = [Exercice:[Rep]]()
+    var todaysReps: [Exercice:[AnyObject]] = [Exercice:[AnyObject]]()
     var keys: [Exercice] = []
     let manager = DataManager.getInstance()
     let reuseIdentifier = "Cell"
@@ -50,16 +50,28 @@ class TodayViewController: UITableViewController {
     func loadData(){
         let muscle_groups = manager.loadAllMuscleGroups()
         let today = NSDate()
-        todaysReps = [Exercice:[Rep]]()
+        todaysReps = [Exercice:[AnyObject]]()
         keys = []
         for mg in muscle_groups{
             let exercices = manager.loadExercicesFor(muscle_group: mg)
-            for exercice in exercices{
-                let reps = manager.loadAllRepsFor(exercice: exercice, date: today)
-                if reps.count == 0{
-                    continue
+            for exercice in exercices {
+                let isTimed = exercice.isTimed!.boolValue
+                if isTimed {
+                    let eod = TimeManager.endOfDay(today)
+                    let sod = TimeManager.startOfDay(today)
+                    let reps = manager.timedRepsFor(exercice, start: sod, end: eod)
+                    if reps.count == 0 {
+                        continue
+                    }
+                    todaysReps[exercice] = reps
                 }
-                todaysReps[exercice] = reps
+                else {
+                    let reps = manager.loadAllRepsFor(exercice: exercice, date: today)
+                    if reps.count == 0{
+                        continue
+                    }
+                    todaysReps[exercice] = reps
+                }
                 keys.append(exercice)
             }
         }
@@ -85,12 +97,18 @@ class TodayViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
-
-        // Configure the cell...
-        let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-
+        
+        let key = keys[indexPath.section]
+        let row = indexPath.row
+        if key.isTimed!.boolValue {
+            let rep = todaysReps[key]![row] as! TimedRep
+            cell.textLabel?.text = "Time: \(rep.duration_hours!):\(rep.duration_minutes!):\(rep.duration_seconds!), Weight: \(rep.weight!)"
+        }
+        else {
+            let rep = todaysReps[key]![row] as! Rep
+            cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
+        }
         return cell
     }
     
@@ -103,15 +121,29 @@ class TodayViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("Rep", sender: self)
+        let key = keys[indexPath.section]
+        if key.isTimed!.boolValue {
+            performSegueWithIdentifier("timedRep", sender: self)
+        }
+        else {
+            performSegueWithIdentifier("Rep", sender: self)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "Rep" {
             let indexPath = tableView.indexPathForSelectedRow!
             let controller = segue.destinationViewController as! RepsViewController
             controller.exercice = keys[indexPath.section]
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+        if segue.identifier == "timedRep" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let controller = segue.destinationViewController as! TimedRepViewController
+            controller.exercice = keys[indexPath.section]
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        
     }
 }

@@ -179,6 +179,11 @@ class DataManager {
         return rep
     }
     
+    func timedRepsFor(exercice: Exercice, start: NSDate, end: NSDate) -> [TimedRep] {
+        let predicate = NSPredicate(format: "exercice.name == %@ AND (start_time >= %@) AND (end_time <= %@)", exercice.name!, start, end)
+        return getEntities(timedRepKey, predicate: predicate) as! [TimedRep]
+    }
+    
     func timedRepsFor(exercice: Exercice) -> [TimedRep] {
         let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
         return getEntities(timedRepKey, predicate: predicate) as! [TimedRep]

@@ -43,6 +43,8 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.reloadData()
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         
+        let recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(recognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,11 +80,12 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func update_timer() {
-        elapsed_time += time_interval
-        let seconds = numberFormatter.stringFromNumber(Int((elapsed_time/1000)%60))!
-        let minutes = numberFormatter.stringFromNumber(Int((elapsed_time/1000/60)%60))!
-        let hours = numberFormatter.stringFromNumber(Int((elapsed_time/1000/60/60)%60))!
-        time_label.text = "\(hours):\(minutes):\(seconds)"
+        let now = NSDate()
+        let duration = TimeManager.getDuration(start, end: now)
+        let hr = numberFormatter.stringFromNumber(duration.hour)
+        let min = numberFormatter.stringFromNumber(duration.minute)
+        let sec = numberFormatter.stringFromNumber(duration.second)
+        time_label.text = "\(hr!):\(min!):\(sec!)"
     }
     
     func loadReps() {
@@ -123,6 +126,12 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         }
         loadReps()
     }
+    
+    func dismissKeyboard() {
+        if weight_field.isFirstResponder() {
+            weight_field.resignFirstResponder()
+        }
+    }
 
     //MARK: - Table View Delegate
     
@@ -142,7 +151,10 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Table View Data Source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        print("Keys Count: \(reps.keys.count)")
+        if reps.keys.count == 0{
+            return 1
+        }
+        
         for key in reps.keys {
             print(key)
         }
@@ -150,13 +162,21 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if reps.keys.count == 0 {
+            return 1
+        }
         let key = keys[section]
         return reps[key]!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
-        print(indexPath.section)
+        
+        if reps.keys.count == 0 {
+            cell.textLabel?.text = "No reps found for this exercice"
+            return cell
+        }
+        
         let key = keys[indexPath.section]
         let rep_list = reps[key]!
         let rep = rep_list[indexPath.row]
@@ -169,6 +189,9 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if reps.keys.count == 0 {
+            return ""
+        }
         let date = keys[section]
         return TimeManager.dateToString(date)
     }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Exercice" representedClassName="Exercice" syncable="YES">
+        <attribute name="best" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="isTimed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="muscle_group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MuscleGroup" syncable="YES"/>
+    </entity>
+    <entity name="MuscleGroup" representedClassName="MuscleGroup" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercices" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Rep" representedClassName="Rep" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="num_reps" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="TimedRep" representedClassName="TimedRep" syncable="YES">
+        <attribute name="duration_hours" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="duration_minutes" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="duration_seconds" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="start_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Weight" representedClassName="Weight" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Exercice" positionX="-198" positionY="-36" width="128" height="103"/>
+        <element name="MuscleGroup" positionX="-425" positionY="42" width="128" height="75"/>
+        <element name="Rep" positionX="-56" positionY="159" width="128" height="120"/>
+        <element name="TimedRep" positionX="-351" positionY="129" width="128" height="150"/>
+        <element name="Weight" positionX="-639" positionY="129" width="128" height="105"/>
+    </elements>
+</model>
