@@ -20,6 +20,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     var recognizer: UITapGestureRecognizer!
     let manager = DataManager.getInstance()
     var weights = [HKQuantitySample]()
+    var first_key = "first_weight"
     
     @IBAction func save(sender: AnyObject) {
         requestWeight()
@@ -39,6 +40,11 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
                 self.weights.append(HealthKitManager.addWeight(weight))
                 self.chart_view.notifyDataSetChanged()
                 self.updateWeightValues()
+                if NSUserDefaults().boolForKey(self.first_key) {}
+                else {
+                    self.showConfirmDialogue()
+                    UserPrefs.putAtKey(true, key: self.first_key)
+                }
             }
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -46,6 +52,12 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         alert.addAction(accept)
         alert.addAction(cancel)
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showConfirmDialogue() {
+        let alert = UIAlertController(title: "Weight recieved", message: "This is the first time you have added weight.  Please note that it can take several seconds for weights to appear in the graph.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

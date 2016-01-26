@@ -23,8 +23,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableView: UITableView?
     @IBOutlet var num_reps: UITextField?
     @IBOutlet var weight: UITextField?
-    @IBOutlet var weight_stepper: UIStepper!
-    @IBOutlet var rep_stepper: UIStepper!
+    @IBOutlet var unit_label: UILabel!
     
     
     override func viewDidLoad() {
@@ -35,13 +34,12 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         //self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: bars, landscapeImagePhone: bars, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
         
         self.title = exercice?.name
+        self.unit_label.text = UserPrefs.getUnitString()
         
         loadReps()
         sortKeys()
-        configureSteppers()
         configureTextFields()
         fillSuggestedData()
-        matchTextBox()
         tableView?.reloadData()
     }
     
@@ -75,17 +73,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tenMax = manager.estimatedMax(exercice!, reps: repSuggestion)
         weight?.text = "\(tenMax)"
         num_reps?.text = "\(repSuggestion)"
-        rep_stepper.value = Double(repSuggestion)
-    }
-    
-    func configureSteppers(){
-        sortKeys()
-        weight_stepper.minimumValue = 0
-        weight_stepper.maximumValue = Double.infinity
-        rep_stepper.minimumValue = 0
-        rep_stepper.maximumValue = Double.infinity
-        rep_stepper.stepValue = 1
-        weight_stepper.stepValue = 2.5
     }
     
     func configureTextFields(){
@@ -238,7 +225,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             let repFromRow = allReps[repFromRowKey]![indexPath.row]
             self.weight?.text = "\(repFromRow.weight!.doubleValue)"
             self.num_reps?.text = "\(repFromRow.num_reps!.doubleValue)"
-            matchTextBox()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         if indexPath.row == tableView.indexPathForSelectedRow?.row && updating {
             updating = false
@@ -257,17 +244,11 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return indexPath.section > 0
     }
     
-    @IBAction func valueChanged(sender: UIStepper){
-        if sender == rep_stepper {
-            num_reps?.text = "\(sender.value)"
-        }
-        else if sender == weight_stepper{
-            weight?.text = "\(sender.value)"
-        }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return indexPath.section > 0
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        matchTextBox()
         self.view.removeGestureRecognizer(recognizer)
     }
     
@@ -282,21 +263,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if num_reps!.isFirstResponder(){
             num_reps!.resignFirstResponder()
-        }
-    }
-    
-    func matchTextBox() {
-        if let value = Double(weight!.text!){
-            weight_stepper.value = value
-        }
-        else {
-            weight_stepper.value = 0
-        }
-        if let value = Double(num_reps!.text!){
-            rep_stepper.value = value
-        }
-        else {
-            rep_stepper.value = 0
         }
     }
 }

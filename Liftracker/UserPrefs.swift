@@ -22,7 +22,7 @@ class UserPrefs {
         height_in = "height_inches"
     
     static func getUnitString() -> String{
-        return NSUserDefaults.standardUserDefaults().objectForKey(weightUnitKey) as! String
+        return getForKey(weightUnitKey) as! String
     }
     
     static func getMainColor() -> UIColor {
@@ -36,13 +36,22 @@ class UserPrefs {
     }
     
     static func getHeight_ft() -> Int {
-        let height = NSUserDefaults.standardUserDefaults().objectForKey(height_ft) as! String
+        let height = getForKey(height_ft) as! String
         return Int(height)!
     }
     
     static func getHeight_in() -> Int {
-        let height = NSUserDefaults.standardUserDefaults().objectForKey(height_in) as! String
+        let height = getForKey(height_in) as! String
         return Int(height)!
+    }
+    
+    static func getForKey(key: String) -> AnyObject{
+        let result = NSUserDefaults.standardUserDefaults().objectForKey(key)
+        return result!
+    }
+    
+    static func putAtKey(obj: AnyObject, key: String) {
+        NSUserDefaults.standardUserDefaults().setObject(obj, forKey: key)
     }
     
     static func getHKWeightUnit() -> HKUnit {
