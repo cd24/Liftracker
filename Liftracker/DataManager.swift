@@ -26,6 +26,7 @@ class DataManager {
         repKey = "Rep",
         weightKey = "Weight",
         timedRepKey = "TimedRep"
+    
     //conversions are used for calculating estimated maxes
     let conversions = [1: 1,
         2: 0.95,
@@ -57,6 +58,16 @@ class DataManager {
         return group
     }
     
+    func mgForName(name: String) -> MuscleGroup? {
+        let mgs = loadAllMuscleGroups()
+        for mg in mgs {
+            if mg.name == name {
+                return mg
+            }
+        }
+        return nil
+    }
+    
     //MARK: - Exercice Management
     
     func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
@@ -69,12 +80,22 @@ class DataManager {
         return getEntities(exerciceKey, predicate: predicate) as! [Exercice]
     }
     
-    func newExercice(name name: String, muscle_group group: MuscleGroup) -> Exercice{
-        let exercice = NSEntityDescription.insertNewObjectForEntityForName(exerciceKey, inManagedObjectContext: managedContext) as! Exercice
+    func newExercice(name name: String, muscle_group group: MuscleGroup, isTimed: Bool = false) -> Exercice{
+        let exercice = newEntity("Exercice") as! Exercice
         exercice.name = name
         exercice.muscle_group = group
+        exercice.isTimed = isTimed
         save_context()
         return exercice
+    }
+    
+    func exerciceForName(name: String) -> Exercice? {
+        let predicate = NSPredicate(format: "name == '%@'", name)
+        let entities = getEntities(exerciceKey, predicate: predicate)
+        if entities.count > 0 {
+            return entities[0] as? Exercice
+        }
+        return nil
     }
     
     //MARK: - Rep Management
@@ -158,6 +179,15 @@ class DataManager {
         return rep
     }
     
+    func timedRepsFor(exercice: Exercice) -> [TimedRep] {
+        let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
+        return getEntities(timedRepKey, predicate: predicate) as! [TimedRep]
+    }
+    
+    func allTimedReps() -> [TimedRep] {
+        return getEntities(timedRepKey) as! [TimedRep]
+    }
+    
     //MARK: - Weight Methods
     
     func getAllWeights() -> [Weight] {
@@ -224,18 +254,21 @@ class DataManager {
         return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: managedContext)
     }
     
-    func getEntityWithFieldValue(value: String, entityType entity: String, valueField field: String = "name") -> [NSManagedObject] {
+    func getEntityWithValue(value: String, entityType entity: String, valueField field: String = "name") -> [AnyObject] {
         let predicate = NSPredicate(format: "\(field) == \(value)")
         return getEntities(entity, predicate: predicate)
     }
     
-    func getEntities(name: String, predicate: NSPredicate? = nil) -> [NSManagedObject] {
+    func getEntities(name: String, predicate: NSPredicate? = nil) -> [AnyObject] {
         let fetch_request = NSFetchRequest(entityName: name)
-        fetch_request.predicate = predicate
+        if let pred = predicate {
+            print("Using predicate (\(pred)) while fetching \(name)")
+            fetch_request.predicate = pred
+        }
         
-        let values: [NSManagedObject]
+        let values: [AnyObject]
         do {
-            values = try managedContext.executeFetchRequest(fetch_request) as! [NSManagedObject]
+            values = try managedContext.executeFetchRequest(fetch_request)
             return values
         }
         catch {
@@ -252,7 +285,7 @@ class DataManager {
             if let root_controller = getCurrentViewController() {
                 root_controller.presentViewController(alertView, animated: true, completion: nil)
             }
-            return [NSManagedObject]()
+            return [AnyObject]()
         }
     }
     

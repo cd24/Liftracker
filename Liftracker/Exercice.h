@@ -2,14 +2,14 @@
 //  Exercice.h
 //  
 //
-//  Created by John McAvey on 1/19/16.
+//  Created by John McAvey on 1/24/16.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class MuscleGroup, Rep;
+@class MuscleGroup;
 
 NS_ASSUME_NONNULL_BEGIN
 

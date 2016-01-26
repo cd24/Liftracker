@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Liftracker' do
 pod 'Charts'
+pod 'XLForm', '~> 3.0'
 end
 
 target 'LiftrackerTests' do

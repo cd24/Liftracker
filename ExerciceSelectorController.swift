@@ -16,6 +16,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     var group: MuscleGroup!
     var maxView: Bool?
     var addDate: NSDate!
+    var shouldReload = true
     let manager = DataManager.getInstance()
     let search_controller = UISearchController(searchResultsController: nil)
     
@@ -38,6 +39,14 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         definesPresentationContext = true
         self.tableView.tableHeaderView = search_controller.searchBar
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if shouldReload {
+            shouldReload = false
+            load_data()
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,8 +84,8 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         }
         if segue.identifier == "AddExercice" {
             let destination = segue.destinationViewController as! ExerciceAdderViewController
-            destination.tableView = self
-            //destination.currentGroup = group!
+            destination.currentGroup = group!
+            shouldReload = true
             return
         }
         

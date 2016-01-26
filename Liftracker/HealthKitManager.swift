@@ -36,7 +36,7 @@ class HealthKitManager {
         //todo: Implement
     }
     
-    static func addWeight(weight: Double, date: NSDate = NSDate()) {
+    static func addWeight(weight: Double, date: NSDate = NSDate()) -> HKQuantitySample {
         let wt = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
         let unit = UserPrefs.getUnitString() == "Lbs" ? HKUnit.poundUnit() : HKUnit.gramUnit()
         let value = HKQuantity(unit: unit, doubleValue: weight)
@@ -45,6 +45,7 @@ class HealthKitManager {
                                         startDate: date,
                                         endDate: date)
         writeToHK(sample, type: wt!)
+        return sample
     }
     
     static func getWeights(var storeLocation: [Weight], numEntries: Int = 50, predicate: NSPredicate? = nil) -> [HKQuantitySample] {

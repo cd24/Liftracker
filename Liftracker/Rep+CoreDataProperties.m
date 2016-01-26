@@ -2,7 +2,7 @@
 //  Rep+CoreDataProperties.m
 //  
 //
-//  Created by John McAvey on 1/18/16.
+//  Created by John McAvey on 1/24/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

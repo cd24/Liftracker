@@ -14,10 +14,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XLForm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A69E3F833AF1689B606016DC62C043C2</key>
+		<key>0108FE02FD9A4FA27BDCA59A209BFFFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28ADC95B949923A954F2A2E054112FD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

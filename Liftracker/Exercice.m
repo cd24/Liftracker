@@ -2,13 +2,12 @@
 //  Exercice.m
 //  
 //
-//  Created by John McAvey on 1/19/16.
+//  Created by John McAvey on 1/24/16.
 //
 //
 
 #import "Exercice.h"
 #import "MuscleGroup.h"
-#import "Rep.h"
 
 @implementation Exercice
 

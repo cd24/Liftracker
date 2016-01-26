@@ -8,20 +8,22 @@
 
 import UIKit
 
-class TimedRepViewController: UIViewController {
+class TimedRepViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var time_label: UILabel!
     @IBOutlet weak var ss_button: UIButton!
-    @IBOutlet weak var stop_button: UIButton!
     @IBOutlet weak var weight_field: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var unit_label: UILabel!
     
     var timer: NSTimer!
     var exercice: Exercice!
     var start: NSDate!, stop: NSDate!
     var elapsed_time = 0.0
+    var reps = [NSDate:[TimedRep]]()
+    var keys = [NSDate]()
     
-    var time_interval = 0.1 //in MS
+    var time_interval = 0.1 //in seconds
     var timing = false
     var numberFormatter = NSNumberFormatter()
     let manager = DataManager.getInstance()
@@ -29,41 +31,49 @@ class TimedRepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         numberFormatter.paddingPosition = NSNumberFormatterPadPosition.BeforePrefix
         numberFormatter.paddingCharacter = "0"
         numberFormatter.minimumIntegerDigits = 2
         self.title = exercice.name!
-        // Do any additional setup after loading the view.
+        unit_label.text = UserPrefs.getUnitString()
+        loadReps()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+        tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func toggleTimer() {
         if timing {
-            stop_timer()
+            stopTimer()
         }
         else {
-            start_timer()
+            startTimer()
         }
     }
     
-    func start_timer() {
+    func startTimer() {
         start = NSDate()
         elapsed_time = 0
         timer = NSTimer(timeInterval: 0, target: self, selector: "update_timer", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         ss_button.setTitle("Stop", forState: UIControlState.Normal)
+        ss_button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         timing = true
     }
     
-    func stop_timer() {
+    func stopTimer() {
         stop = NSDate()
         timer.invalidate()
         save_rep()
         ss_button.setTitle("Start", forState: UIControlState.Normal)
+        ss_button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         timing = false
     }
     
@@ -75,18 +85,92 @@ class TimedRepViewController: UIViewController {
         time_label.text = "\(hours):\(minutes):\(seconds)"
     }
     
+    func loadReps() {
+        reps = [NSDate:[TimedRep]]()
+        keys = [NSDate]()
+        if let ex = exercice {
+            let ar = manager.timedRepsFor(ex)
+            for rep in ar {
+                let date = TimeManager.startOfDay(rep.start_time!)
+                if reps.keys.contains(date) {
+                    reps[date]!.append(rep)
+                }
+                else {
+                    reps[date] = [rep]
+                    keys.append(date)
+                }
+            }
+            keys.sortInPlace { date1, date2 in
+                return date1.compare(date2) == NSComparisonResult.OrderedDescending
+            }
+        }
+        tableView.reloadData()
+    }
+    
     func save_rep(){
-        if let val = weight_field.text {
-            if let value = Double(val) {
-                manager.newTimedRep(start, end: stop, weight: value, exercice: exercice)
+        let text = weight_field?.text
+        if let val = Double(text!) {
+            print(val)
+            if val > 0 {
+                manager.newTimedRep(start, end: stop, weight: val, exercice: exercice)
+            }
+            else {
+                manager.newTimedRep(start, end: stop, exercice: exercice)
             }
         }
         else {
             manager.newTimedRep(start, end: stop, exercice: exercice)
         }
+        loadReps()
     }
 
     //MARK: - Table View Delegate
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false //todo: Implement deleting reps
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        //todo: Implement deleting reps
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        //todo: Implement resume
+    }
+    
     //MARK: - Table View Data Source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        print("Keys Count: \(reps.keys.count)")
+        for key in reps.keys {
+            print(key)
+        }
+        return reps.keys.count
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let key = keys[section]
+        return reps[key]!.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
+        print(indexPath.section)
+        let key = keys[indexPath.section]
+        let rep_list = reps[key]!
+        let rep = rep_list[indexPath.row]
+        let hrs = numberFormatter.stringFromNumber(rep.duration_hours!)
+        let minutes = numberFormatter.stringFromNumber(rep.duration_minutes!)
+        let seconds = numberFormatter.stringFromNumber(rep.duration_seconds!)
+        cell.textLabel?.text = "Time: \(hrs!):\(minutes!):\(seconds!), Weight: \(rep.weight!)"
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let date = keys[section]
+        return TimeManager.dateToString(date)
+    }
 
 }

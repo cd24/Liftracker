@@ -7,30 +7,22 @@
 //
 
 import UIKit
+import XLForm
 
-class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIAlertViewDelegate {
+class ExerciceAdderViewController: XLFormViewController {
     var groups: Array<MuscleGroup>?
-    var tableView: ExerciceSelectorController?
     var currentGroup: MuscleGroup!
     var selectedIndex: Int = 0
-    @IBOutlet var picker_view: UIPickerView!
-    @IBOutlet var name_field: UITextField!
-    @IBOutlet var timed_switch: UISwitch!
     
     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let manager = DataManager.getInstance()
+    var name_row, exercice_row, timed_row: XLFormRowDescriptor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        groups = DataManager.getInstance().loadAllMuscleGroups()
-        
-        picker_view.delegate = self
-        picker_view.dataSource = self
-        picker_view.reloadAllComponents()
-        
-        name_field.delegate = self
-        
+        form = getForm()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save");
+        title = "Add Exercice"
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,76 +30,83 @@ class ExerciceAdderViewController: UIViewController, UIPickerViewDataSource, UIP
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1;
-    }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return groups!.count;
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if groups?.count <= row {
-            return ""
-        }
-        return groups![row].name;
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedIndex = row;
-    }
     
     func save(){
-        if (!validData()){
-            let alert = UIAlertController(title: "Invalid Data", message: "The data you entered either exists already or is empty.  Please enter a value which is not already entered to save", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK!", style: UIAlertActionStyle.Cancel, handler: {action in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
-        let new_exercice = NSEntityDescription.insertNewObjectForEntityForName("Exercice", inManagedObjectContext: context) as! Exercice
-        new_exercice.name = name_field?.text
-        new_exercice.muscle_group = groups![selectedIndex]
-        new_exercice.isTimed = timed_switch.on
-        do{
-            try context.save()
-        }
-        catch{}
         
-        tableView!.load_data()
-        tableView!.tableView.reloadData()
-        dismissViewControllerAnimated(false, completion: nil)
-        self.navigationController?.popViewControllerAnimated(true)
+        let values = formValues()
+        let name = values["name"] as! String
+        let mg = manager.mgForName(values["group"] as! String)
+        let isTimed = values["timed"]!.boolValue
+        if valid(mg!, name: name) {
+            manager.newExercice(name: name, muscle_group: mg!, isTimed: isTimed)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        else {
+            let alert = UIAlertController(title: "Existing Exercice", message: "You already have an exercice named \(name) in \(mg!.name!).  Change the muscle group or name to add this exercice.  If you need, return to the muscle group selector page to search for the exercice", preferredStyle: UIAlertControllerStyle.Alert)
+            let accept = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(accept)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
+
+    
+    func getForm() -> XLFormDescriptor {
+        let descriptor = XLFormDescriptor(title: "Add Exercice")
+        var filler = XLFormSectionDescriptor()
+        descriptor.addFormSection(filler)
+        let section = XLFormSectionDescriptor()
+        section.title = "Add Exercice"
+        name_row = XLFormRowDescriptor(tag: "name", rowType: XLFormRowDescriptorTypeText, title: "Name:")
+        name_row.value = "Exercice Name"
+        //name_row.cellConfigAtConfigure["textField.placehold"] = "My Exercice"
+        name_row.addValidator(nameValidator())
+        section.addFormRow(name_row)
+        
+        exercice_row = XLFormRowDescriptor(tag: "group", rowType: XLFormRowDescriptorTypeSelectorPush, title: "Muscle Group: ")
+        let vals = manager.loadAllMuscleGroups().map { mg in
+            return mg.name!
+        }
+        exercice_row.addValidator(nonEmptyValidator())
+        exercice_row.selectorOptions = vals
+        exercice_row.value = currentGroup.name!
+        //exercice_row.select(currentGroup.name!)
+        section.addFormRow(exercice_row)
+        
+        timed_row = XLFormRowDescriptor(tag: "timed", rowType: XLFormRowDescriptorTypeBooleanSwitch, title: "Timed")
+        timed_row.value = false
+        section.addFormRow(timed_row)
+        
+        descriptor.addFormSection(section)
+        return descriptor
     }
     
-    func validData() -> Bool{
-        /*let exercices = DataManager.getInstance().loadExercicesFor(muscle_group: groups![selectedIndex])
-        for exercice in exercices {
-            if exercice.name! == name_field.text! {
+    func valid(mg: MuscleGroup, name: String) -> Bool {
+        let exs = manager.loadExercicesFor(muscle_group: mg)
+        for ex in exs {
+            if ex.name == name {
                 return false
             }
-        } */
-        let predicate = NSPredicate(format: "name == '%@' AND muscle_group == '%@'", name_field.text!, groups![selectedIndex].name!)
-        return name_field?.text != "" && DataManager.getInstance().entityCount(entityType: "Exercice", predicate: predicate) == 0
+        }
+        return name != ""
     }
     
-    @IBAction func dismiss(){
-        dismissViewControllerAnimated(true, completion: nil)
+    class nameValidator : NSObject, XLFormValidatorProtocol {
+        @objc func isValid(row: XLFormRowDescriptor!) -> XLFormValidationStatus! {
+            let stringVal = row.value?.valueData() as! String
+            let predicate = NSPredicate(format: "name == '%@'", stringVal)
+            let valid = stringVal != "" && DataManager.getInstance().entityCount(entityType: "Exercice", predicate: predicate) == 0
+            return XLFormValidationStatus(msg: "OK", status: valid, rowDescriptor: row)
+        }
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        textField.selectAll(self)
+    class nonEmptyValidator: NSObject, XLFormValidatorProtocol {
+        @objc func isValid(row: XLFormRowDescriptor!) -> XLFormValidationStatus! {
+            let val = (row.valueData() as! String).characters.count > 0
+            return XLFormValidationStatus(msg: "valid?", status: val, rowDescriptor: row)
+        }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

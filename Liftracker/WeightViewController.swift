@@ -36,7 +36,8 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         
         let accept = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: {action in
             if let weight = Double(alert.textFields![0].text!) {
-                HealthKitManager.addWeight(weight)
+                self.weights.append(HealthKitManager.addWeight(weight))
+                self.chart_view.notifyDataSetChanged()
                 self.updateWeightValues()
             }
         })
@@ -154,8 +155,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         else {
             manager.getWeights(start, end: end)
         }
-        
-        buildChart()
     }
     
     func getFromHealthKit(start: NSDate, end: NSDate, numEntries: Int = 50) {

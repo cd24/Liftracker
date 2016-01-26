@@ -1,10 +1,13 @@
 PODS:
   - Charts (2.1.4)
+  - XLForm (3.1.0)
 
 DEPENDENCIES:
   - Charts
+  - XLForm (~> 3.0)
 
 SPEC CHECKSUMS:
   Charts: 870589b6b4bf8468baacea8869c28983d71f602c
+  XLForm: 754b061f9f4b249a7ab7548efb22f1b586e26740
 
 COCOAPODS: 0.39.0

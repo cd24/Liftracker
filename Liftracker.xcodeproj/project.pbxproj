@@ -14,6 +14,8 @@
 		5219C34B1BE5C7D4007E2C18 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C3481BE5C7D4007E2C18 /* history.png */; };
 		5219C34C1BE5C7D4007E2C18 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C3491BE5C7D4007E2C18 /* home.png */; };
 		5219C34D1BE5C7D4007E2C18 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5219C34A1BE5C7D4007E2C18 /* weight.png */; };
+		521CEADD1C52A2DA00482D36 /* TimedRep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 521CEADA1C52A2DA00482D36 /* TimedRep+CoreDataProperties.m */; };
+		521CEADE1C52A2DA00482D36 /* TimedRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 521CEADC1C52A2DA00482D36 /* TimedRep.m */; };
 		521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521F4A081BC8B06400FA6E02 /* DefaultData.plist */; };
 		521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */; };
 		521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */; };
@@ -29,6 +31,10 @@
 		524344591BDF08C20066C3DA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5243444F1BDF08C20066C3DA /* Icon@2x.png */; };
 		5243445A1BDF08C20066C3DA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 524344501BDF08C20066C3DA /* iTunesArtwork.png */; };
 		5243445B1BDF08C20066C3DA /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 524344511BDF08C20066C3DA /* iTunesArtwork@2x.png */; };
+		524514F81C553F2E00D4AD07 /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 524514F11C553F2E00D4AD07 /* Exercice+CoreDataProperties.m */; };
+		524514F91C553F2E00D4AD07 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 524514F31C553F2E00D4AD07 /* Exercice.m */; };
+		524514FA1C553F2E00D4AD07 /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 524514F51C553F2E00D4AD07 /* Rep+CoreDataProperties.m */; };
+		524514FB1C553F2E00D4AD07 /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 524514F71C553F2E00D4AD07 /* Rep.m */; };
 		526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29121BDA798F009B7D19 /* StatsViewController.swift */; };
 		526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C29181BDA7EAD009B7D19 /* DayViewController.swift */; };
 		526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */; };
@@ -51,13 +57,7 @@
 		52C0E0421C4C07C9007E2777 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C0E0411C4C07C9007E2777 /* download.png */; };
 		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
 		52CBA07D1C3B64F600552251 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBA07C1C3B64F600552251 /* PieChartViewController.swift */; };
-		52CF7B181C4F0BC60014C54B /* TimedRep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B151C4F0BC60014C54B /* TimedRep+CoreDataProperties.m */; };
-		52CF7B191C4F0BC60014C54B /* TimedRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B171C4F0BC60014C54B /* TimedRep.m */; };
 		52CF7B1B1C4F0E6B0014C54B /* TimedRepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B1A1C4F0E6B0014C54B /* TimedRepViewController.swift */; };
-		52CF7B201C4F0F470014C54B /* Exercice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B1D1C4F0F470014C54B /* Exercice+CoreDataProperties.m */; };
-		52CF7B211C4F0F470014C54B /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B1F1C4F0F470014C54B /* Exercice.m */; };
-		52CFBDA01C4DA690008AAD7B /* Rep+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBD9D1C4DA690008AAD7B /* Rep+CoreDataProperties.m */; };
-		52CFBDA11C4DA690008AAD7B /* Rep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBD9F1C4DA690008AAD7B /* Rep.m */; };
 		52D062FF1C3DC34800413242 /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D062FE1C3DC34800413242 /* scale.png */; };
 		52D063051C3F08FE00413242 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D063041C3F08FE00413242 /* CloudKit.framework */; };
 		52D063071C3F0A2F00413242 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D063061C3F0A2F00413242 /* WeightViewController.swift */; };
@@ -101,6 +101,10 @@
 		5219C3481BE5C7D4007E2C18 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
 		5219C3491BE5C7D4007E2C18 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		5219C34A1BE5C7D4007E2C18 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
+		521CEAD91C52A2DA00482D36 /* TimedRep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TimedRep+CoreDataProperties.h"; sourceTree = "<group>"; };
+		521CEADA1C52A2DA00482D36 /* TimedRep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TimedRep+CoreDataProperties.m"; sourceTree = "<group>"; };
+		521CEADB1C52A2DA00482D36 /* TimedRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedRep.h; sourceTree = "<group>"; };
+		521CEADC1C52A2DA00482D36 /* TimedRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedRep.m; sourceTree = "<group>"; };
 		521F4A081BC8B06400FA6E02 /* DefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultData.plist; sourceTree = "<group>"; };
 		521F4A0A1BCA061200FA6E02 /* ExerciceAdderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceAdderViewController.swift; sourceTree = "<group>"; };
 		521F4A151BCB3EDF00FA6E02 /* RepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,14 @@
 		5243444F1BDF08C20066C3DA /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		524344501BDF08C20066C3DA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		524344511BDF08C20066C3DA /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		524514F01C553F2E00D4AD07 /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		524514F11C553F2E00D4AD07 /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		524514F21C553F2E00D4AD07 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercice.h; sourceTree = "<group>"; };
+		524514F31C553F2E00D4AD07 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercice.m; sourceTree = "<group>"; };
+		524514F41C553F2E00D4AD07 /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
+		524514F51C553F2E00D4AD07 /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
+		524514F61C553F2E00D4AD07 /* Rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rep.h; sourceTree = "<group>"; };
+		524514F71C553F2E00D4AD07 /* Rep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rep.m; sourceTree = "<group>"; };
 		526C29121BDA798F009B7D19 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		526C29181BDA7EAD009B7D19 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		526C291A1BDA834A009B7D19 /* MaxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxTableViewController.swift; sourceTree = "<group>"; };
@@ -148,19 +160,7 @@
 		52CA20701BD5B11C008868DC /* LastWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastWeekViewController.swift; sourceTree = "<group>"; };
 		52CBA07C1C3B64F600552251 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		52CF7B071C4F07800014C54B /* Liftracker_ 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Liftracker_ 6.xcdatamodel"; sourceTree = "<group>"; };
-		52CF7B141C4F0BC60014C54B /* TimedRep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TimedRep+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52CF7B151C4F0BC60014C54B /* TimedRep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TimedRep+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52CF7B161C4F0BC60014C54B /* TimedRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimedRep.h; sourceTree = "<group>"; };
-		52CF7B171C4F0BC60014C54B /* TimedRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimedRep.m; sourceTree = "<group>"; };
 		52CF7B1A1C4F0E6B0014C54B /* TimedRepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedRepViewController.swift; sourceTree = "<group>"; };
-		52CF7B1C1C4F0F470014C54B /* Exercice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Exercice+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52CF7B1D1C4F0F470014C54B /* Exercice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Exercice+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52CF7B1E1C4F0F470014C54B /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercice.h; sourceTree = "<group>"; };
-		52CF7B1F1C4F0F470014C54B /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercice.m; sourceTree = "<group>"; };
-		52CFBD9C1C4DA690008AAD7B /* Rep+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rep+CoreDataProperties.h"; sourceTree = "<group>"; };
-		52CFBD9D1C4DA690008AAD7B /* Rep+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rep+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52CFBD9E1C4DA690008AAD7B /* Rep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rep.h; sourceTree = "<group>"; };
-		52CFBD9F1C4DA690008AAD7B /* Rep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rep.m; sourceTree = "<group>"; };
 		52D062FE1C3DC34800413242 /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
 		52D063001C3E1F5E00413242 /* Liftracker_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker_2.xcdatamodel; sourceTree = "<group>"; };
 		52D063031C3F08E300413242 /* Liftracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Liftracker.entitlements; sourceTree = "<group>"; };
@@ -340,18 +340,18 @@
 		52AFF0821BC8955D00A1115F /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				52CF7B1C1C4F0F470014C54B /* Exercice+CoreDataProperties.h */,
-				52CF7B1D1C4F0F470014C54B /* Exercice+CoreDataProperties.m */,
-				52CF7B1E1C4F0F470014C54B /* Exercice.h */,
-				52CF7B1F1C4F0F470014C54B /* Exercice.m */,
-				52CF7B141C4F0BC60014C54B /* TimedRep+CoreDataProperties.h */,
-				52CF7B151C4F0BC60014C54B /* TimedRep+CoreDataProperties.m */,
-				52CF7B161C4F0BC60014C54B /* TimedRep.h */,
-				52CF7B171C4F0BC60014C54B /* TimedRep.m */,
-				52CFBD9C1C4DA690008AAD7B /* Rep+CoreDataProperties.h */,
-				52CFBD9D1C4DA690008AAD7B /* Rep+CoreDataProperties.m */,
-				52CFBD9E1C4DA690008AAD7B /* Rep.h */,
-				52CFBD9F1C4DA690008AAD7B /* Rep.m */,
+				524514F01C553F2E00D4AD07 /* Exercice+CoreDataProperties.h */,
+				524514F11C553F2E00D4AD07 /* Exercice+CoreDataProperties.m */,
+				524514F21C553F2E00D4AD07 /* Exercice.h */,
+				524514F31C553F2E00D4AD07 /* Exercice.m */,
+				524514F41C553F2E00D4AD07 /* Rep+CoreDataProperties.h */,
+				524514F51C553F2E00D4AD07 /* Rep+CoreDataProperties.m */,
+				524514F61C553F2E00D4AD07 /* Rep.h */,
+				524514F71C553F2E00D4AD07 /* Rep.m */,
+				521CEAD91C52A2DA00482D36 /* TimedRep+CoreDataProperties.h */,
+				521CEADA1C52A2DA00482D36 /* TimedRep+CoreDataProperties.m */,
+				521CEADB1C52A2DA00482D36 /* TimedRep.h */,
+				521CEADC1C52A2DA00482D36 /* TimedRep.m */,
 				52E580511C4006810029FEFC /* MuscleGroup+CoreDataProperties.h */,
 				52E580521C4006810029FEFC /* MuscleGroup+CoreDataProperties.m */,
 				52E580531C4006810029FEFC /* MuscleGroup.h */,
@@ -633,43 +633,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */,
-				52CF7B201C4F0F470014C54B /* Exercice+CoreDataProperties.m in Sources */,
+				524514FA1C553F2E00D4AD07 /* Rep+CoreDataProperties.m in Sources */,
 				526ED0D91BE16957001E0D19 /* HistoryTableViewController.swift in Sources */,
 				526C29131BDA798F009B7D19 /* StatsViewController.swift in Sources */,
 				521F4A0B1BCA061200FA6E02 /* ExerciceAdderViewController.swift in Sources */,
+				521CEADD1C52A2DA00482D36 /* TimedRep+CoreDataProperties.m in Sources */,
 				52BED8781C41C4120044455B /* TimeManager.swift in Sources */,
 				52CBA07D1C3B64F600552251 /* PieChartViewController.swift in Sources */,
 				526C291B1BDA834A009B7D19 /* MaxTableViewController.swift in Sources */,
+				524514FB1C553F2E00D4AD07 /* Rep.m in Sources */,
 				52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */,
 				520332211C3D73B800A7685C /* ExerciceSearchControllerViewController.swift in Sources */,
 				524344451BDEE81E0066C3DA /* EstimateCell.swift in Sources */,
 				52CF7B1B1C4F0E6B0014C54B /* TimedRepViewController.swift in Sources */,
 				520C54031C41947400365B0B /* HealthKitManager.swift in Sources */,
 				52E580641C4006810029FEFC /* Weight.m in Sources */,
-				52CF7B181C4F0BC60014C54B /* TimedRep+CoreDataProperties.m in Sources */,
 				52E580601C4006810029FEFC /* MuscleGroup.m in Sources */,
+				521CEADE1C52A2DA00482D36 /* TimedRep.m in Sources */,
 				52151E041BCEA638006BC0B1 /* DataManager.swift in Sources */,
 				524344471BDEEF8A0066C3DA /* ProgressChartViewCell.swift in Sources */,
 				52E580631C4006810029FEFC /* Weight+CoreDataProperties.m in Sources */,
 				52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */,
 				529F07641C4C3CE00002A3D4 /* RepStatsViewController.swift in Sources */,
 				520502101BF5076A007BAF65 /* LoaderControllerViewController.swift in Sources */,
-				52CFBDA01C4DA690008AAD7B /* Rep+CoreDataProperties.m in Sources */,
 				5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */,
-				52CF7B211C4F0F470014C54B /* Exercice.m in Sources */,
 				526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */,
-				52CF7B191C4F0BC60014C54B /* TimedRep.m in Sources */,
 				52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */,
 				52E5805F1C4006810029FEFC /* MuscleGroup+CoreDataProperties.m in Sources */,
 				52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */,
-				52CFBDA11C4DA690008AAD7B /* Rep.m in Sources */,
 				52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */,
 				52D063071C3F0A2F00413242 /* WeightViewController.swift in Sources */,
 				52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */,
 				527AE19C1C458EBB000CD118 /* LeftRightTableViewCell.swift in Sources */,
+				524514F81C553F2E00D4AD07 /* Exercice+CoreDataProperties.m in Sources */,
 				52BED87A1C41C4960044455B /* UserPrefs.swift in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
 				5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */,
+				524514F91C553F2E00D4AD07 /* Exercice.m in Sources */,
 				521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
