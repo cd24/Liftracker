@@ -55,7 +55,7 @@ class ExerciceAdderViewController: XLFormViewController {
     
     func getForm() -> XLFormDescriptor {
         let descriptor = XLFormDescriptor(title: "Add Exercice")
-        var filler = XLFormSectionDescriptor()
+        let filler = XLFormSectionDescriptor()
         descriptor.addFormSection(filler)
         let section = XLFormSectionDescriptor()
         section.title = "Add Exercice"
