@@ -109,28 +109,49 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
                     keys.append(date)
                 }
             }
-            keys.sortInPlace { date1, date2 in
-                return date1.compare(date2) == NSComparisonResult.OrderedDescending
-            }
+            sortKeys()
         }
         tableView.reloadData()
     }
     
+    func sortKeys(){
+        keys.sortInPlace { date1, date2 in
+            return date1.compare(date2) == NSComparisonResult.OrderedDescending
+        }
+    }
+    
     func save_rep(){
         let text = weight_field?.text
+        let sod = TimeManager.startOfDay(NSDate())
+        if !(reps.keys.contains(sod)){
+            reps[sod] = []
+            keys.append(sod)
+            sortKeys()
+        }
         if let val = Double(text!) {
             print(val)
             if val > 0 {
-                manager.newTimedRep(start, end: stop, weight: val, exercice: exercice)
+                reps[sod]!.append(manager.newTimedRep(start, end: stop, weight: val, exercice: exercice))
             }
             else {
-                manager.newTimedRep(start, end: stop, exercice: exercice)
+                reps[sod]!.append(manager.newTimedRep(start, end: stop, exercice: exercice))
             }
         }
         else {
-            manager.newTimedRep(start, end: stop, exercice: exercice)
+            reps[sod]!.append(manager.newTimedRep(start, end: stop, exercice: exercice))
         }
-        loadReps()
+        
+        
+        let section = keys.indexOf(sod)!
+        let indexPath = NSIndexPath(forRow: 0, inSection: section)
+        if reps[keys[section]]!.count == 1 {
+            tableView?.insertSections(NSIndexSet(index: section), withRowAnimation: .Right)
+        }
+        else {
+            tableView?.beginUpdates()
+            tableView?.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            tableView?.endUpdates()
+        }
     }
     
     func dismissKeyboard() {
@@ -157,31 +178,16 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Table View Data Source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if reps.keys.count == 0{
-            return 1
-        }
-        
-        for key in reps.keys {
-            print(key)
-        }
-        return reps.keys.count
+        return keys.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if reps.keys.count == 0 {
-            return 1
-        }
         let key = keys[section]
         return reps[key]!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
-        
-        if reps.keys.count == 0 {
-            cell.textLabel?.text = "No reps found for this exercice"
-            return cell
-        }
         
         let key = keys[indexPath.section]
         let rep_list = reps[key]!

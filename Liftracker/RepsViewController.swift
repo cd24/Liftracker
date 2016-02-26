@@ -115,7 +115,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
         if repKeys.count == 0 {
-            cell.textLabel?.text = "No Reps Found"
+            cell.textLabel?.text = "No reps found for this exercice"
         }
         else {
             let section = indexPath.section
