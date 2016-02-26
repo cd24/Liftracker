@@ -20,6 +20,8 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     let manager = DataManager.getInstance()
     var addDate: NSDate!
     var recognizer: UITapGestureRecognizer!
+    var prev_weight = "",
+        prev_reps = ""
     @IBOutlet var tableView: UITableView?
     @IBOutlet var num_reps: UITextField?
     @IBOutlet var weight: UITextField?
@@ -47,7 +49,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         repKeys = [NSDate]()
         allReps = [NSDate:[Rep]]()
         let repsTemp = manager.loadAllRepsFor(exercice: exercice!)
-        print("Reps temp length: \(repsTemp.count)")
         for rep in repsTemp {
             let start = TimeManager.zeroDateTime(rep.date!)
             if repKeys.contains(start){
@@ -58,7 +59,6 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 repKeys.append(start)
             }
         }
-        print("repKeyCount: \(repKeys.count)")
     }
     
     func sortKeys() {
@@ -73,6 +73,9 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tenMax = manager.estimatedMax(exercice!, reps: repSuggestion)
         weight?.text = "\(tenMax)"
         num_reps?.text = "\(repSuggestion)"
+        
+        prev_weight = weight!.text!
+        prev_reps = num_reps!.text!
     }
     
     func configureTextFields(){
@@ -96,17 +99,14 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return repKeys.count + 1
+        return repKeys.count
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if repKeys.count == 0 {
             return 1
         }
-        if section == 0 {
-            return 3
-        }
-        let reps = repKeys[section - 1]
+        let reps = repKeys[section]
         return allReps[reps]!.count
     }
 
@@ -119,51 +119,29 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else {
             let section = indexPath.section
-            
-            if section == 0{
-                if indexPath.row  == 0{
-                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!))
-                cell.textLabel?.text = "Estimated ORM: \(roundedString) \(UserPrefs.getUnitString())"
-                }
-                else if indexPath.row == 1{
-                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!, reps: 5))
-                    cell.textLabel?.text = "Estimated 5 Rep Max: \(roundedString)"
-                }
-                else if indexPath.row == 2{
-                    let roundedString = String(format: "%.2f", manager.estimatedMax(exercice!, reps: 10))
-                    cell.textLabel?.text = "Estimated 10 Rep Max: \(roundedString)"
-                }
-            }
-            else {
-                let key = repKeys[section - 1]
-                let rep = allReps[key]![indexPath.row]
-                cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(manager.getRepWeightString(rep))"
-            }
-
+            let key = repKeys[section]
+            let rep = allReps[key]![indexPath.row]
+            cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(manager.getRepWeightString(rep))"
         }
         return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if allReps.keys.count == 0 {
+        if repKeys.count == 0 {
             return ""
         }
-        if section == 0{
-            return "Estimated Max"
-        }
-        let key = repKeys[section - 1]
+        let key = repKeys[section]
         return "\(TimeManager.dateToString(key))"
     }
     
-    @IBAction func save_rep(){
+    func save_rep(){
         let manager = DataManager.getInstance()
         weight?.resignFirstResponder()
         num_reps?.resignFirstResponder()
-        
         if let w = Double(weight!.text!) {
             if let r = Double(num_reps!.text!){
                 if updating {
-                    let repFromRowKey = repKeys[rowUpdating!.section - 1]
+                    let repFromRowKey = repKeys[rowUpdating!.section]
                     let repFromRow = allReps[repFromRowKey]![rowUpdating!.row]
                     repFromRow.num_reps = r
                     repFromRow.weight = w
@@ -178,8 +156,19 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                     let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: date)
                     addRep(repetition: new_rep)
+                    let sod = TimeManager.zeroDateTime(date)
+                    let section = repKeys.indexOf(sod)!
+                    let indexPath = NSIndexPath(forRow: 0, inSection: section)
+                    
+                    if allReps[repKeys[section]]!.count == 1 {
+                        tableView?.insertSections(NSIndexSet(index: section), withRowAnimation: .Right)
+                    }
+                    else {
+                        tableView?.beginUpdates()
+                        tableView?.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+                        tableView?.endUpdates()
+                    }
                 }
-                tableView?.reloadData()
             }
         }
     }
@@ -194,23 +183,33 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func addRep(repetition rep: Rep){
         let date = TimeManager.zeroDateTime(rep.date!)
         if allReps.keys.contains(date){
-            allReps[date]?.append(rep)
+            allReps[date]?.insert(rep, atIndex: 0)
         }
         else {
             allReps[date] = [rep]
             repKeys.append(date)
+            sortKeys()
         }
-        sortKeys()
     }
     
     // Override to support editing the table view.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let key = repKeys[indexPath.section - 1]
+            let key = repKeys[indexPath.section]
             let rep = allReps[key]![indexPath.row]
             manager.deleteRep(rep)
             loadReps()
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            if let _ = allReps[key]{
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            }
+            else {
+                tableView.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: .Left)
+            }
+            updating = false
+        }
+        
+        if editingStyle == .Insert {
+            print("In the insert call")
         }
     }
     
@@ -218,21 +217,18 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if allReps.count == 0 {
             return
         }
-        if indexPath.section > 0 {
+        if !updating {
             updating = true
             rowUpdating = indexPath
-            let repFromRowKey = repKeys[indexPath.section - 1]
+            let repFromRowKey = repKeys[indexPath.section]
             let repFromRow = allReps[repFromRowKey]![indexPath.row]
             self.weight?.text = "\(repFromRow.weight!.doubleValue)"
             self.num_reps?.text = "\(repFromRow.num_reps!.doubleValue)"
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         if indexPath.row == tableView.indexPathForSelectedRow?.row && updating {
-            updating = false
-            
-        }
-        else {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
         }
     }
     
@@ -240,21 +236,29 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         updating = false
     }
     
-    func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return indexPath.section > 0
-    }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return indexPath.section > 0
-    }
-    
     func textFieldDidEndEditing(textField: UITextField) {
+        if textField.text!.characters.count == 0{
+            if textField == weight {
+                weight!.text = "\(prev_weight)"
+            }
+            if textField == num_reps {
+                num_reps!.text = "\(prev_reps)"
+            }
+        }
+        
         self.view.removeGestureRecognizer(recognizer)
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == weight {
+            prev_weight = "\(textField.text!)"
+        }
+        else {
+            prev_reps = "\(textField.text!)"
+        }
         self.view.addGestureRecognizer(recognizer)
         textField.selectAll(self)
+        textField.text = ""
     }
     
     func dismissKeyboard(){

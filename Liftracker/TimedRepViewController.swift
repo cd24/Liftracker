@@ -51,6 +51,12 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        if let _ = timer {
+            timer.invalidate()
+        }
+    }
+    
     @IBAction func toggleTimer() {
         if timing {
             stopTimer()

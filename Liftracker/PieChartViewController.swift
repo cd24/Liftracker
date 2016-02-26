@@ -15,6 +15,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     var chart_type: ChartType!
     var exercice: Exercice!
     var month: NSDate!
+    var center_text: String!
     var pieData: (() -> PieChartData)!
     var data_changed = true
     
@@ -77,7 +78,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
     }
     
     func getCenterText() -> NSMutableAttributedString {
-        return NSMutableAttributedString(string: "Exercice Distribution\n\tby Muscle Group")
+        return NSMutableAttributedString(string: center_text)
     }
     
     func updateData() {

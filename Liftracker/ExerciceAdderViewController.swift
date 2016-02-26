@@ -27,7 +27,6 @@ class ExerciceAdderViewController: XLFormViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func save(){
@@ -46,8 +45,6 @@ class ExerciceAdderViewController: XLFormViewController {
             alert.addAction(accept)
             presentViewController(alert, animated: true, completion: nil)
         }
-        
-        
     }
     
     func getForm() -> XLFormDescriptor {
@@ -57,8 +54,7 @@ class ExerciceAdderViewController: XLFormViewController {
         let section = XLFormSectionDescriptor()
         section.title = "Add Exercice"
         name_row = XLFormRowDescriptor(tag: "name", rowType: XLFormRowDescriptorTypeText, title: "Name:")
-        name_row.value = "Exercice Name"
-        //name_row.cellConfigAtConfigure["textField.placehold"] = "My Exercice"
+        name_row.value = "Exercise Name"
         name_row.addValidator(nameValidator())
         section.addFormRow(name_row)
         
@@ -66,6 +62,7 @@ class ExerciceAdderViewController: XLFormViewController {
         let vals = manager.loadAllMuscleGroups().map { mg in
             return mg.name!
         }
+        
         exercice_row.addValidator(nonEmptyValidator())
         exercice_row.selectorOptions = vals
         exercice_row.value = currentGroup.name!
@@ -105,5 +102,11 @@ class ExerciceAdderViewController: XLFormViewController {
             return XLFormValidationStatus(msg: "valid?", status: val, rowDescriptor: row)
         }
     }
-
+    
+    //MARK: - UITextFieldDelegate
+    
+    override func textFieldDidBeginEditing(textField: UITextField) {
+        textField.selectAll(self);
+        textField.autocapitalizationType = UITextAutocapitalizationType.Words
+    }
 }

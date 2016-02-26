@@ -80,6 +80,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
             let destinationController = segue.destinationViewController as! PieChartViewController
             destinationController.pieData = mgPieInfo
             destinationController.data_changed = true
+            destinationController.center_text = "Repetition Distribution\n\tby Exercice"
             return
         }
         if segue.identifier == "AddExercice" {
@@ -184,11 +185,12 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     func mgPieInfo() -> PieChartData {
         var reps = [BarChartDataEntry]()
         var xVals = [String]()
-        var exercices = manager.loadExercicesFor(muscle_group: group)
+        var exercices: [AnyObject] = manager.loadExercicesFor(muscle_group: group)
+        
         for i in 0..<exercices.count {
             let exercice = exercices[i]
             let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-            let count = manager.entityCount(entityType: "Rep", predicate: predicate)
+            let count = manager.entityCount(entityType: "Rep", predicate: predicate) + manager.entityCount(entityType: "TimedRep", predicate: predicate)
             if count > 0 {
                 reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
                 xVals.append(exercice.name!)

@@ -44,6 +44,7 @@
 		5297B53A1BC8963F004CE0CA /* ExerciceSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */; };
 		5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */; };
 		529F07641C4C3CE00002A3D4 /* RepStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F07631C4C3CE00002A3D4 /* RepStatsViewController.swift */; };
+		52A70AB91C7119A4000A601A /* QuickLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A70AB81C7119A4000A601A /* QuickLaunch.swift */; };
 		52AFF0501BC8933D00A1115F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF04F1BC8933D00A1115F /* AppDelegate.swift */; };
 		52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF0531BC8933D00A1115F /* Main.storyboard */; };
 		52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0561BC8933D00A1115F /* Liftracker.xcdatamodeld */; };
@@ -57,6 +58,7 @@
 		52C0E0421C4C07C9007E2777 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 52C0E0411C4C07C9007E2777 /* download.png */; };
 		52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA20701BD5B11C008868DC /* LastWeekViewController.swift */; };
 		52CBA07D1C3B64F600552251 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CBA07C1C3B64F600552251 /* PieChartViewController.swift */; };
+		52CE9A611C7E842A00273C1B /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE9A601C7E842A00273C1B /* HeadCell.swift */; };
 		52CF7B1B1C4F0E6B0014C54B /* TimedRepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7B1A1C4F0E6B0014C54B /* TimedRepViewController.swift */; };
 		52D062FF1C3DC34800413242 /* scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D062FE1C3DC34800413242 /* scale.png */; };
 		52D063051C3F08FE00413242 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D063041C3F08FE00413242 /* CloudKit.framework */; };
@@ -66,7 +68,6 @@
 		52E580631C4006810029FEFC /* Weight+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E5805A1C4006810029FEFC /* Weight+CoreDataProperties.m */; };
 		52E580641C4006810029FEFC /* Weight.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E5805C1C4006810029FEFC /* Weight.m */; };
 		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; };
-		52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */; };
 		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; };
 		52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A891BDC2A3000962961 /* HistoryViewController.swift */; };
 		52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */; };
@@ -138,6 +139,7 @@
 		5297B5391BC8963F004CE0CA /* ExerciceSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciceSelectorController.swift; path = ../ExerciceSelectorController.swift; sourceTree = "<group>"; };
 		5297B53B1BC8A87D004CE0CA /* MGSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSelectionController.swift; sourceTree = "<group>"; };
 		529F07631C4C3CE00002A3D4 /* RepStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepStatsViewController.swift; sourceTree = "<group>"; };
+		52A70AB81C7119A4000A601A /* QuickLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLaunch.swift; sourceTree = "<group>"; };
 		52AFF04C1BC8933D00A1115F /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AFF04F1BC8933D00A1115F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AFF0541BC8933D00A1115F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		52C0E0411C4C07C9007E2777 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
 		52CA20701BD5B11C008868DC /* LastWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastWeekViewController.swift; sourceTree = "<group>"; };
 		52CBA07C1C3B64F600552251 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		52CE9A601C7E842A00273C1B /* HeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		52CF7B071C4F07800014C54B /* Liftracker_ 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Liftracker_ 6.xcdatamodel"; sourceTree = "<group>"; };
 		52CF7B1A1C4F0E6B0014C54B /* TimedRepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedRepViewController.swift; sourceTree = "<group>"; };
 		52D062FE1C3DC34800413242 /* scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale.png; sourceTree = "<group>"; };
@@ -176,7 +179,6 @@
 		52E5805B1C4006810029FEFC /* Weight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weight.h; sourceTree = "<group>"; };
 		52E5805C1C4006810029FEFC /* Weight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weight.m; sourceTree = "<group>"; };
 		52E667B81BD6FC970028DA8B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		52ECDC271BD3FC7F00609C9B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		52F21A891BDC2A3000962961 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedMaxViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		52151E021BCEA627006BC0B1 /* Data Management */ = {
 			isa = PBXGroup;
 			children = (
+				52A70AB81C7119A4000A601A /* QuickLaunch.swift */,
 				52151E031BCEA638006BC0B1 /* DataManager.swift */,
 				520C54021C41947400365B0B /* HealthKitManager.swift */,
 				52BED8771C41C4120044455B /* TimeManager.swift */,
@@ -249,7 +252,7 @@
 				526C29181BDA7EAD009B7D19 /* DayViewController.swift */,
 				52F21A891BDC2A3000962961 /* HistoryViewController.swift */,
 				526ED0D81BE16957001E0D19 /* HistoryTableViewController.swift */,
-				52E6C6931BEEF8F00090147F /* HistoryTableViewCell.swift */,
+				52CE9A601C7E842A00273C1B /* HeadCell.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -660,7 +663,6 @@
 				526C29191BDA7EAD009B7D19 /* DayViewController.swift in Sources */,
 				52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */,
 				52E5805F1C4006810029FEFC /* MuscleGroup+CoreDataProperties.m in Sources */,
-				52E6C6941BEEF8F00090147F /* HistoryTableViewCell.swift in Sources */,
 				52CA20711BD5B11C008868DC /* LastWeekViewController.swift in Sources */,
 				52D063071C3F0A2F00413242 /* WeightViewController.swift in Sources */,
 				52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */,
@@ -668,6 +670,8 @@
 				524514F81C553F2E00D4AD07 /* Exercice+CoreDataProperties.m in Sources */,
 				52BED87A1C41C4960044455B /* UserPrefs.swift in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
+				52A70AB91C7119A4000A601A /* QuickLaunch.swift in Sources */,
+				52CE9A611C7E842A00273C1B /* HeadCell.swift in Sources */,
 				5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */,
 				524514F91C553F2E00D4AD07 /* Exercice.m in Sources */,
 				521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */,

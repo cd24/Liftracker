@@ -59,6 +59,7 @@ class StatsViewController: UITableViewController {
             let destinationController = segue.destinationViewController as! PieChartViewController
             destinationController.pieData = pieData
             destinationController.data_changed = true
+            destinationController.center_text = "Exercice Distribution\n\tby Muscle Group"
         }
     }
     
@@ -78,7 +79,7 @@ class StatsViewController: UITableViewController {
         for i in 0..<mgs.count {
             let mg = mgs[i]
             let predicate = NSPredicate(format: "exercice.muscle_group.name == '\(mg.name!)'")
-            let count = manager.entityCount(entityType: "Rep", predicate: predicate)
+            let count = manager.entityCount(entityType: "Rep", predicate: predicate) + manager.entityCount(entityType: "TimedRep", predicate: predicate)
             if count > 0 {
                 reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
                 xVals.append(mg.name!)

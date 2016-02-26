@@ -38,8 +38,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         let accept = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler: {action in
             if let weight = Double(alert.textFields![0].text!) {
                 self.weights.append(HealthKitManager.addWeight(weight))
-                self.chart_view.notifyDataSetChanged()
-                self.updateWeightValues()
+                self.chart_view.data = self.getWeightData()
                 if NSUserDefaults().boolForKey(self.first_key) {}
                 else {
                     self.showConfirmDialogue()
@@ -156,10 +155,8 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     }
     
     func updateWeightValues() {
-        var start = TimeManager.startOfWeek(NSDate()),
-            end = TimeManager.endOfWeek(NSDate())
-        start = TimeManager.startOfDay(start)
-        end = TimeManager.endOfDay(end)
+        var start = TimeManager.startOfDay(NSDate()),
+            end = TimeManager.timeTravel(steps: 30, base: start, component: NSCalendarUnit.Day)
         
         if HealthKitManager.hasPermission() {
             getFromHealthKit(start, end: end)
@@ -176,6 +173,30 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
         let weight_query = HKSampleQuery(sampleType: weight!,
             predicate: predicate,
+            limit: numEntries,
+            sortDescriptors: nil,
+            resultsHandler: {(query, results, error) in
+                if let results = results as? [HKQuantitySample] {
+                    self.weights = results
+                    self.chart_view.data = self.getWeightData()
+                    self.chart_view.notifyDataSetChanged()
+                    self.weight_table_view.reloadData()
+                    self.chart_view.noDataText = "No Data!  Add some at your leisure"
+                }
+                else {
+                    print("There was a problem accessing health kits weight data \n\(error)")
+                }
+        })
+        HealthKitManager.executeQuery(weight_query)
+    }
+    
+    func getFromHealthKit(numEntries: Int = 50) {
+        weights = [HKQuantitySample]()
+        
+        let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+
+        let weight_query = HKSampleQuery(sampleType: weight!,
+            predicate: nil,
             limit: numEntries,
             sortDescriptors: nil,
             resultsHandler: {(query, results, error) in

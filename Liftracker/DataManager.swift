@@ -52,6 +52,11 @@ class DataManager {
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {
+        let pred = NSPredicate(format: "name == '\(name)'")
+        let count = entityCount(entityType: mgKey, predicate: pred)
+        if count != 0{
+            return getEntities(mgKey, predicate: pred)[0] as! MuscleGroup
+        }
         let group = newEntity(mgKey) as! MuscleGroup
         group.name = name
         save_context()
@@ -81,6 +86,11 @@ class DataManager {
     }
     
     func newExercice(name name: String, muscle_group group: MuscleGroup, isTimed: Bool = false) -> Exercice{
+        let pred = NSPredicate(format: "name == '\(name)' AND muscle_group.name == '\(group.name!)'")
+        let count = entityCount(entityType: exerciceKey, predicate: pred)
+        if count != 0 {
+            return getEntities(exerciceKey, predicate: pred)[0] as! Exercice
+        }
         let exercice = newEntity("Exercice") as! Exercice
         exercice.name = name
         exercice.muscle_group = group

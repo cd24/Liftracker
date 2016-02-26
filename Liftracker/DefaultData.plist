@@ -6,6 +6,12 @@
 	<false/>
 	<key>MuscleGroup</key>
 	<dict>
+		<key>Cardio</key>
+		<array>
+			<string>Elliptical</string>
+			<string>Row Machine</string>
+			<string>Treadmill</string>
+		</array>
 		<key>Legs</key>
 		<array>
 			<string>Calf Leg Press Raise</string>
@@ -30,10 +36,8 @@
 		<key>Abs</key>
 		<array>
 			<string>Ab Wheel</string>
-			<string>Flat Plank</string>
 			<string>Side Leans</string>
 			<string>Leg Lifts</string>
-			<string>Side Planks</string>
 			<string>Ab Machine Crunch</string>
 		</array>
 		<key>Back</key>

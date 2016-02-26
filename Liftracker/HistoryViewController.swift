@@ -10,8 +10,8 @@ import UIKit
 
 class HistoryViewController: UIViewController,UIScrollViewDelegate {
 
-    var current = HistoryTableViewController(style: UITableViewStyle.Grouped),
-        shifter = HistoryTableViewController(style: UITableViewStyle.Grouped) // Used for animating left and right transitions.
+    var current: HistoryTableViewController!,
+        shifter: HistoryTableViewController!// Used for animating left and right transitions.
     var pages: [HistoryTableViewController] = []
     let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     var dayFocus = NSDate()
@@ -22,6 +22,9 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        current = HistoryTableViewController(style: UITableViewStyle.Grouped, parent: self)
+        shifter = HistoryTableViewController(style: UITableViewStyle.Grouped, parent: self)
+        
         configureTableView()
         configureGestures()
         loadAllData()

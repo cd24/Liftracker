@@ -37,6 +37,12 @@ class TimeManager {
         return calendar.dateFromComponents(components)!
     }
     
+    static func startOfYear(date: NSDate) -> NSDate{
+        let calendar = getCalendar()
+        let components = calendar.components([.Year], fromDate: date)
+        return calendar.dateFromComponents(components)!
+    }
+    
     static func endOfDay(date: NSDate) -> NSDate {
         let calendar = getCalendar()
         let startOfTomorrow = calendar.startOfDayForDate(timeTravel(steps: 1, base: date))
@@ -57,6 +63,12 @@ class TimeManager {
         let daysInMonth = calendar.rangeOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.Month, forDate: date).length - 1
         return timeTravel(steps: daysInMonth,
             base: startOfMonth(date))
+    }
+    
+    static func endOfYear(date: NSDate) -> NSDate{
+        let calendar = getCalendar()
+        let daysInYear = calendar.rangeOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.Year, forDate: date).length - 1
+        return timeTravel(steps: daysInYear, base: startOfMonth(date))
     }
     
     static func getDayOfWeek() -> NSDate {
