@@ -40,6 +40,8 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: "shiftBackward")
         leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Left
         rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Right
+        leftSwipeRecognizer.cancelsTouchesInView = true
+        rightSwipeRecognizer.cancelsTouchesInView = true
         
         current.view.addGestureRecognizer(doubleTapRecognizer)
         view.addGestureRecognizer(leftSwipeRecognizer)

@@ -410,17 +410,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgX-VP-qcy">
-                                                    <rect key="frame" x="14" y="11" width="297" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7Gl-1Y-h9b" firstAttribute="leading" secondItem="IgX-VP-qcy" secondAttribute="trailing" constant="10" id="1tn-XH-hCI"/>
-                                                <constraint firstItem="7Gl-1Y-h9b" firstAttribute="leading" secondItem="IgX-VP-qcy" secondAttribute="trailing" constant="17" id="6P9-Ag-Mck"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="7Gl-1Y-h9b" secondAttribute="trailing" constant="8" id="VQ6-TN-nuS"/>
-                                                <constraint firstItem="IgX-VP-qcy" firstAttribute="leading" secondItem="lvL-y2-5kb" secondAttribute="leadingMargin" constant="6" id="evw-BC-O5R"/>
+                                                <constraint firstItem="IgX-VP-qcy" firstAttribute="leading" secondItem="lvL-y2-5kb" secondAttribute="leadingMargin" id="2e4-i4-Ouv"/>
+                                                <constraint firstItem="7Gl-1Y-h9b" firstAttribute="leading" secondItem="IgX-VP-qcy" secondAttribute="trailing" constant="8" id="G54-CV-524"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Gl-1Y-h9b" secondAttribute="trailing" constant="5" id="xCp-nk-ZBD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -433,14 +432,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Sai-qp-ad6" firstAttribute="trailing" secondItem="Pq9-dy-lin" secondAttribute="trailingMargin" id="5at-S2-xpj"/>
+                            <constraint firstItem="Sai-qp-ad6" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" id="8Ib-Gr-uOI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nGW-gT-I5s" secondAttribute="trailing" constant="-20" id="CQl-Aq-7YJ"/>
+                            <constraint firstItem="Sai-qp-ad6" firstAttribute="top" secondItem="oO6-g9-JOS" secondAttribute="bottom" id="E3L-KP-sZH"/>
                             <constraint firstItem="nGW-gT-I5s" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" constant="-20" id="Usu-Ly-KaR"/>
                             <constraint firstItem="nGW-gT-I5s" firstAttribute="top" secondItem="oO6-g9-JOS" secondAttribute="bottom" id="gNY-2K-t1h"/>
-                            <constraint firstItem="Sai-qp-ad6" firstAttribute="leading" secondItem="Pq9-dy-lin" secondAttribute="leadingMargin" id="jUr-Zj-UnH"/>
+                            <constraint firstItem="Sai-qp-ad6" firstAttribute="trailing" secondItem="Pq9-dy-lin" secondAttribute="trailingMargin" id="hRz-hm-CQo"/>
                             <constraint firstItem="b15-V3-6Xa" firstAttribute="top" secondItem="nGW-gT-I5s" secondAttribute="bottom" id="mwD-JM-knY"/>
-                            <constraint firstItem="Sai-qp-ad6" firstAttribute="top" secondItem="oO6-g9-JOS" secondAttribute="bottom" id="qyr-C0-xUb"/>
-                            <constraint firstItem="b15-V3-6Xa" firstAttribute="top" secondItem="Sai-qp-ad6" secondAttribute="bottom" id="r8S-p7-Hoa"/>
+                            <constraint firstItem="b15-V3-6Xa" firstAttribute="top" secondItem="Sai-qp-ad6" secondAttribute="bottom" id="wKK-XN-zdJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" prompt="Weight" id="Rqc-P0-FnQ">
@@ -706,6 +705,7 @@
                         <segue destination="hKi-Wk-QXj" kind="show" identifier="Max" id="aVE-nc-Lka"/>
                         <segue destination="ZfA-dt-mdG" kind="show" identifier="Select" id="pJZ-4u-QPW"/>
                         <segue destination="zNP-PH-yQd" kind="show" identifier="reps" id="A1M-pE-hvs"/>
+                        <segue destination="bju-IU-VES" kind="show" identifier="distribution" id="N57-Tq-HAY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6c-ew-vXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -838,10 +838,10 @@
         <image name="weight.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="QdV-YM-UYx"/>
+        <segue reference="A1M-pE-hvs"/>
+        <segue reference="N57-Tq-HAY"/>
         <segue reference="5vi-jY-a4D"/>
-        <segue reference="45R-Xg-NLQ"/>
-        <segue reference="1xJ-Hr-6X7"/>
-        <segue reference="y0H-dc-NhL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.31254817895349918" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

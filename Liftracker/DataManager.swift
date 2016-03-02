@@ -48,7 +48,7 @@ class DataManager {
     //MARK: - Muscle Groups Management
     
     func loadAllMuscleGroups() -> [MuscleGroup]{
-        return getEntities(mgKey) as! [MuscleGroup]
+        return getEntities(mgKey, predicate:nil, sortdesc: sortDescriptorName()) as! [MuscleGroup]
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {
@@ -77,7 +77,7 @@ class DataManager {
     
     func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
         let predicate = NSPredicate(format: "muscle_group.name == '\(group.name!)'")
-        return getEntities(exerciceKey, predicate: predicate) as! [Exercice]
+        return getEntities(exerciceKey, predicate: predicate, sortdesc: sortDescriptorName()) as! [Exercice]
     }
     
     func searchExercicesForSubstring(text: String) -> [Exercice] {
@@ -274,11 +274,13 @@ class DataManager {
         return getEntities(entity, predicate: predicate)
     }
     
-    func getEntities(name: String, predicate: NSPredicate? = nil) -> [AnyObject] {
+    func getEntities(name: String, predicate: NSPredicate? = nil, sortdesc: [NSSortDescriptor]? = nil) -> [AnyObject] {
         let fetch_request = NSFetchRequest(entityName: name)
         if let pred = predicate {
-            print("Using predicate (\(pred)) while fetching \(name)")
             fetch_request.predicate = pred
+        }
+        if let sd = sortdesc {
+            fetch_request.sortDescriptors = sd
         }
         
         let values: [AnyObject]
@@ -424,7 +426,6 @@ class DataManager {
         let height = DataManager.ftToCm(feet: UserPrefs.getHeight_ft(),
                             inches: UserPrefs.getHeight_in()) / 100
         let bmi = weight / pow(height, 2)
-        print("Weight: \(weight) and height \(height).  BMI = \(bmi)")
         return bmi
     }
     

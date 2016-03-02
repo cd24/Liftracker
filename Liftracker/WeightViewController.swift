@@ -17,7 +17,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     @IBOutlet weak var chart_view: LineChartView!
     @IBOutlet weak var view_toggler: UISegmentedControl!
     
-    var recognizer: UITapGestureRecognizer!
     let manager = DataManager.getInstance()
     var weights = [HKQuantitySample]()
     var first_key = "first_weight"
@@ -64,9 +63,6 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
         weight_table_view.hidden = true
         weight_table_view.dataSource = self
         weight_table_view.delegate = self
-        
-        recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        self.view.addGestureRecognizer(recognizer)
         
         //let downImage = UIImage(named: "download.png")
         //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Export Image", style: UIBarButtonItemStyle.Plain, target: self, action: "saveImage")
@@ -155,9 +151,8 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     }
     
     func updateWeightValues() {
-        var start = TimeManager.startOfDay(NSDate()),
-            end = TimeManager.timeTravel(steps: 30, base: start, component: NSCalendarUnit.Day)
-        
+        let start = TimeManager.startOfDay(NSDate()),
+            end = TimeManager.timeTravel(steps: -30, base: start, component: NSCalendarUnit.Day)
         if HealthKitManager.hasPermission() {
             getFromHealthKit(start, end: end)
         }
@@ -168,7 +163,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     
     func getFromHealthKit(start: NSDate, end: NSDate, numEntries: Int = 50) {
         weights = [HKQuantitySample]()
-        let predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@)", start, end)
+        let predicate = NSPredicate(format: "(startDate <= %@) AND (endDate >= %@)", start, end)
 
         let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
         let weight_query = HKSampleQuery(sampleType: weight!,
@@ -247,11 +242,10 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     //MARK: - Chart View Delegate
     
     func chartValueNothingSelected(chartView: ChartViewBase) {
-        print("Nothing selected on the chart")
     }
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print("Index \(dataSetIndex) selected.  Data = \(entry)")
+        //print("Index \(dataSetIndex) selected.  Data = \(entry)")
     }
     
     //MARK: - Table View Delegate

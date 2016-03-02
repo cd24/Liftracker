@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Charts
 import CoreData
 
 class MGSelectionController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
 
     let managed_context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     let search_controller = UISearchController(searchResultsController: nil)
+    let manager = DataManager.getInstance()
     
     var muscle_group = [MuscleGroup]()
     var search_mg = [MuscleGroup]()
     var search_exercices = [Exercice]()
+    var viewing: MuscleGroup!
     
     var maxView: Bool = false
+    var distribution_view = false
     var addDate: NSDate!
     var estimate: Bool = false
     
@@ -81,7 +85,20 @@ class MGSelectionController: UITableViewController, UISearchResultsUpdating, UIS
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Select"{
+        if segue.identifier == "distribution" {
+            let dest_controller = segue.destinationViewController as! PieChartViewController
+            if searching() {
+                viewing = search_mg[tableView.indexPathForSelectedRow!.row]
+            }
+            else {
+                viewing = muscle_group[tableView.indexPathForSelectedRow!.row]
+            }
+            dest_controller.pieData = mgPieInfo
+            dest_controller.data_changed = true
+            dest_controller.center_text = "Repetition Distribution\n\tby Exercice"
+            dest_controller.title = viewing.name!
+        }
+        else if segue.identifier == "Select"{
             let viewController = segue.destinationViewController as! ExerciceSelectorController;
             viewController.group = muscle_group[tableView.indexPathForSelectedRow!.row]
             viewController.maxView = maxView
@@ -106,6 +123,9 @@ class MGSelectionController: UITableViewController, UISearchResultsUpdating, UIS
         if indexPath.section == 0 {
             if estimate {
                 performSegueWithIdentifier("Max", sender: self)
+            }
+            else if distribution_view {
+                performSegueWithIdentifier("distribution", sender: self)
             }
             else {
                 performSegueWithIdentifier("Select", sender: self)
@@ -145,6 +165,33 @@ class MGSelectionController: UITableViewController, UISearchResultsUpdating, UIS
     
     func searching() -> Bool {
         return search_controller.active && search_controller.searchBar.text != ""
+    }
+    
+    func mgPieInfo() -> PieChartData {
+        var reps = [BarChartDataEntry]()
+        var xVals = [String]()
+        var exercices: [AnyObject] = manager.loadExercicesFor(muscle_group: viewing)
+        
+        for i in 0..<exercices.count {
+            let exercice = exercices[i]
+            let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
+            let count = manager.entityCount(entityType: "Rep", predicate: predicate) + manager.entityCount(entityType: "TimedRep", predicate: predicate)
+            if count > 0 {
+                reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
+                xVals.append(exercice.name!)
+            }
+        }
+        
+        let dataSet = PieChartDataSet(yVals: reps, label: "Muscle Group Breakdown")
+        dataSet.sliceSpace = 2.0
+        dataSet.colors = manager.chartColors()
+        
+        let data = PieChartData(xVals: xVals, dataSet: dataSet)
+        data.setValueFormatter(manager.percentNumberFormatter())
+        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 11.0))
+        data.setValueTextColor(UIColor.blackColor())
+        
+        return data
     }
 
 }

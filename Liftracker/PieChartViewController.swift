@@ -39,7 +39,7 @@ class PieChartViewController: UIViewController, ChartViewDelegate {
             data_changed = false
         }
         pie_view.animate(xAxisDuration: 1.4, yAxisDuration: 1.4)
-        pie_view.noDataText = "No data added!\nRecord some data to get your information!"
+        pie_view.noDataText = "No data added!\nAdd some exercices!"
     }
 
     override func didReceiveMemoryWarning() {

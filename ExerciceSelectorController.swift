@@ -81,6 +81,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
             destinationController.pieData = mgPieInfo
             destinationController.data_changed = true
             destinationController.center_text = "Repetition Distribution\n\tby Exercice"
+            destinationController.title = group.name!
             return
         }
         if segue.identifier == "AddExercice" {

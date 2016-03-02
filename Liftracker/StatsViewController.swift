@@ -11,7 +11,10 @@ import Charts
 
 class StatsViewController: UITableViewController {
 
-    let stats = ["Existing Maxes", "Estimated Max", "Workout Distribution"]
+    let stats = ["Existing Maxes",
+                 "Estimated Max",
+                 "Workout Distribution",
+                 "Exercice Frequency by Group"]
     let manager = DataManager.getInstance()
     
     override func viewDidLoad() {
@@ -61,14 +64,24 @@ class StatsViewController: UITableViewController {
             destinationController.data_changed = true
             destinationController.center_text = "Exercice Distribution\n\tby Muscle Group"
         }
+        if row == 3 {
+            let destinationController = segue.destinationViewController as! MGSelectionController
+            destinationController.distribution_view = true
+            destinationController.maxView = false
+            destinationController.estimate = false
+        }
+        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row <= 1 {
+        if indexPath.row == 1 || indexPath.row == 0 {
             performSegueWithIdentifier("Max", sender: self)
         }
-        else {
+        if indexPath.row == 2 {
             performSegueWithIdentifier("groups", sender: self)
+        }
+        if indexPath.row == 3{
+            performSegueWithIdentifier("Max", sender: self)
         }
     }
     

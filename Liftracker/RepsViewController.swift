@@ -148,6 +148,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     manager.save_context()
                     tableView!.deselectRowAtIndexPath(rowUpdating!, animated: true)
                     updating = false
+                    tableView?.reloadData()
                 }
                 else{
                     var date = NSDate()
