@@ -3,7 +3,7 @@
 //  Liftracker
 //
 //  Created by John McAvey on 10/26/15.
-//  Copyright © 2015 MCApps. All rights reserved.
+//  Copyright © 2015 John McAvey. All rights reserved.
 //
 
 import UIKit

@@ -493,7 +493,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = MCApps;
+				ORGANIZATIONNAME = "John McAvey";
 				TargetAttributes = {
 					52AFF04B1BC8933D00A1115F = {
 						CreatedOnToolsVersion = 7.0.1;
