@@ -329,7 +329,7 @@
         <scene sceneID="fc4-KV-NPo">
             <objects>
                 <navigationController id="OIp-tm-JUP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" image="home.png" id="mN3-EN-fdG"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="1091-weights.png" id="mN3-EN-fdG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ibW-8n-YJr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -346,7 +346,7 @@
         <scene sceneID="Ow9-oi-q2U">
             <objects>
                 <navigationController id="DUg-jt-Cha" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="weight.png" id="sVG-s7-7OE"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="1035-pie-chart.png" id="sVG-s7-7OE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HmE-JL-cW5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -363,7 +363,7 @@
         <scene sceneID="Yu7-6N-eEQ">
             <objects>
                 <navigationController id="GDY-d0-jHP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="history.png" id="B7U-Un-7nL"/>
+                    <tabBarItem key="tabBarItem" title="History" image="961-book-32.png" id="B7U-Un-7nL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bvm-9c-ZpF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -474,7 +474,7 @@
         <scene sceneID="JL4-Za-9bq">
             <objects>
                 <navigationController id="Bdp-B4-Cxb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Weight" image="scale.png" id="WPm-YL-g1A"/>
+                    <tabBarItem key="tabBarItem" title="Weight" image="419-scale.png" id="WPm-YL-g1A"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ppZ-vs-bNC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -831,11 +831,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1035-pie-chart.png" width="28" height="28"/>
+        <image name="1091-weights.png" width="28" height="28"/>
+        <image name="419-scale.png" width="26" height="26"/>
+        <image name="961-book-32.png" width="20" height="28"/>
         <image name="bars.png" width="31" height="31"/>
-        <image name="history.png" width="29" height="26"/>
-        <image name="home.png" width="28" height="28"/>
-        <image name="scale.png" width="28" height="28"/>
-        <image name="weight.png" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QdV-YM-UYx"/>

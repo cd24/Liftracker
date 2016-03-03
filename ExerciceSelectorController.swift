@@ -30,7 +30,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         self.title = group.name
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addExercice");
-        let barImage = UIImage(named: "data_bars.png")
+        let barImage = UIImage(named: "1035-pie-chart@3x.png")
         self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
         
         //configure search controller

@@ -52,6 +52,10 @@
 		52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */; };
 		52AFF0681BC8933D00A1115F /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0671BC8933D00A1115F /* LiftrackerTests.swift */; };
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
+		52B8CAA71C88DA4500C62314 /* 1091-weights@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAA61C88DA4500C62314 /* 1091-weights@3x.png */; };
+		52B8CAA91C88DA7300C62314 /* 1035-pie-chart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAA81C88DA7300C62314 /* 1035-pie-chart@3x.png */; };
+		52B8CAAB1C88DA8200C62314 /* 961-book-32@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAAA1C88DA8200C62314 /* 961-book-32@3x.png */; };
+		52B8CAAD1C88DAB000C62314 /* 419-scale@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAAC1C88DAB000C62314 /* 419-scale@3x.png */; };
 		52BED8781C41C4120044455B /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED8771C41C4120044455B /* TimeManager.swift */; };
 		52BED87A1C41C4960044455B /* UserPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED8791C41C4960044455B /* UserPrefs.swift */; };
 		52BED87D1C41CB270044455B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BED87C1C41CB270044455B /* HealthKit.framework */; };
@@ -154,6 +158,10 @@
 		52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
 		52AFF0741BC8933D00A1115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		52B8CAA61C88DA4500C62314 /* 1091-weights@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1091-weights@3x.png"; sourceTree = "<group>"; };
+		52B8CAA81C88DA7300C62314 /* 1035-pie-chart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1035-pie-chart@3x.png"; sourceTree = "<group>"; };
+		52B8CAAA1C88DA8200C62314 /* 961-book-32@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "961-book-32@3x.png"; sourceTree = "<group>"; };
+		52B8CAAC1C88DAB000C62314 /* 419-scale@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "419-scale@3x.png"; sourceTree = "<group>"; };
 		52BED8771C41C4120044455B /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		52BED8791C41C4960044455B /* UserPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPrefs.swift; sourceTree = "<group>"; };
 		52BED87B1C41C87B0044455B /* Liftracker_4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker_4.xcdatamodel; sourceTree = "<group>"; };
@@ -236,6 +244,10 @@
 		526C290B1BD9F979009B7D19 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				52B8CAAC1C88DAB000C62314 /* 419-scale@3x.png */,
+				52B8CAA61C88DA4500C62314 /* 1091-weights@3x.png */,
+				52B8CAA81C88DA7300C62314 /* 1035-pie-chart@3x.png */,
+				52B8CAAA1C88DA8200C62314 /* 961-book-32@3x.png */,
 				52C0E0411C4C07C9007E2777 /* download.png */,
 				52D062FE1C3DC34800413242 /* scale.png */,
 				528044801C3CDC2A00C86B40 /* data_bars.png */,
@@ -544,6 +556,7 @@
 			files = (
 				5219C34B1BE5C7D4007E2C18 /* history.png in Resources */,
 				524344531BDF08C20066C3DA /* Icon-60.png in Resources */,
+				52B8CAAD1C88DAB000C62314 /* 419-scale@3x.png in Resources */,
 				5243445A1BDF08C20066C3DA /* iTunesArtwork.png in Resources */,
 				524344591BDF08C20066C3DA /* Icon@2x.png in Resources */,
 				52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */,
@@ -559,7 +572,10 @@
 				524344561BDF08C20066C3DA /* Icon-Small-50.png in Resources */,
 				5243445B1BDF08C20066C3DA /* iTunesArtwork@2x.png in Resources */,
 				521F4A091BC8B06400FA6E02 /* DefaultData.plist in Resources */,
+				52B8CAA91C88DA7300C62314 /* 1035-pie-chart@3x.png in Resources */,
 				524344581BDF08C20066C3DA /* Icon.png in Resources */,
+				52B8CAA71C88DA4500C62314 /* 1091-weights@3x.png in Resources */,
+				52B8CAAB1C88DA8200C62314 /* 961-book-32@3x.png in Resources */,
 				52AFF0551BC8933D00A1115F /* Main.storyboard in Resources */,
 				528044811C3CDC2A00C86B40 /* data_bars.png in Resources */,
 				5219C34D1BE5C7D4007E2C18 /* weight.png in Resources */,
