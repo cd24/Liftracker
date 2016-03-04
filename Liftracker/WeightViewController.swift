@@ -43,6 +43,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
                     self.showConfirmDialogue()
                     UserPrefs.putAtKey(true, key: self.first_key)
                 }
+                self.weight_table_view.reloadData()
             }
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -53,7 +54,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     }
     
     func showConfirmDialogue() {
-        let alert = UIAlertController(title: "Weight recieved", message: "This is the first time you have added weight.  Please note that it can take several seconds for weights to appear in the graph.", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Weight recieved", message: "This app uses your stored height to calculate BMI.  If you have not set your weight, go to the settings page to get an accurate BMI!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
@@ -73,6 +74,7 @@ class WeightViewController: UIViewController, ChartViewDelegate, UITableViewDele
     
     override func viewWillAppear(animated: Bool) {
         chart_view.animate(xAxisDuration: 1.0)
+        weight_table_view.reloadData()
     }
     
     func buildChart() {

@@ -63,6 +63,7 @@ class StatsViewController: UITableViewController {
             destinationController.pieData = pieData
             destinationController.data_changed = true
             destinationController.center_text = "Exercice Distribution\n\tby Muscle Group"
+            destinationController.title = "Muscle Groups"
         }
         if row == 3 {
             let destinationController = segue.destinationViewController as! MGSelectionController

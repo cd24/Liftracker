@@ -28,18 +28,16 @@ class TodayViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
         title = "Today"
         
-        if
-            HealthKitManager.shouldRequestPermission()  {
+        if HealthKitManager.shouldRequestPermission() {
             //tell user why we need permissions
             let alert = UIAlertController(title: "Health Kit", message: "Hello! Welcome to Liftracker.  Before we begin, we hope you will allow us to use Apples HealthKit to store and manage your data.  Enabling this will make your data as poratable as possible.  Please select 'allow all' so that we can keep your data in health kit.", preferredStyle: UIAlertControllerStyle.Alert)
             let accept = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
-                print("Firing")
                 HealthKitManager.requestPermission()
             })
             let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             alert.addAction(accept)
             alert.addAction(cancel)
-            presentViewController(alert, animated: true, completion: nil)
+            presentViewController(alert, animated: false, completion: nil)
         }
     }
     
