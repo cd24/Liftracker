@@ -57,6 +57,12 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if timing {
+            startTimer()
+        }
+    }
+    
     @IBAction func toggleTimer() {
         if timing {
             stopTimer()

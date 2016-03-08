@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23512221E677CE0768E123E5 /* WeightEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235123873C5156297FEFDCFD /* WeightEstimator.swift */; };
+		235124131B9DFF3500D62DF9 /* MayhewEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23512F5E4F83D3DDD8FA4DE5 /* MayhewEstimator.swift */; };
+		2351245840C1FAFC41C54D63 /* EplyEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351246BAEF17203987883F2 /* EplyEstimator.swift */; };
+		23512624F9FC7028D6C5B8CB /* LombardiEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235122F47405E73AD378C7B6 /* LombardiEstimator.swift */; };
+		235126389D567AFD3E9403C1 /* BrzyckiEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23512EC49BB5F2766FF41809 /* BrzyckiEstimator.swift */; };
+		23512DCE3F193E8696A42FC4 /* LanderEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351260B74B2E840949688F7 /* LanderEstimator.swift */; };
 		520332211C3D73B800A7685C /* ExerciceSearchControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520332201C3D73B800A7685C /* ExerciceSearchControllerViewController.swift */; };
 		520502101BF5076A007BAF65 /* LoaderControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205020F1BF5076A007BAF65 /* LoaderControllerViewController.swift */; };
 		520C54031C41947400365B0B /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C54021C41947400365B0B /* HealthKitManager.swift */; };
@@ -52,6 +58,7 @@
 		52AFF05D1BC8933D00A1115F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AFF05B1BC8933D00A1115F /* LaunchScreen.storyboard */; };
 		52AFF0681BC8933D00A1115F /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0671BC8933D00A1115F /* LiftrackerTests.swift */; };
 		52AFF0731BC8933D00A1115F /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */; };
+		52B28F471C8B7CFD00B5DD2C /* LTObjejct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B28F461C8B7CFD00B5DD2C /* LTObjejct.swift */; };
 		52B8CAA71C88DA4500C62314 /* 1091-weights@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAA61C88DA4500C62314 /* 1091-weights@3x.png */; };
 		52B8CAA91C88DA7300C62314 /* 1035-pie-chart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAA81C88DA7300C62314 /* 1035-pie-chart@3x.png */; };
 		52B8CAAB1C88DA8200C62314 /* 961-book-32@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CAAA1C88DA8200C62314 /* 961-book-32@3x.png */; };
@@ -98,6 +105,12 @@
 
 /* Begin PBXFileReference section */
 		009028ECEFF2E4BA929BBAE4 /* Pods_Liftracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Liftracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		235122F47405E73AD378C7B6 /* LombardiEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LombardiEstimator.swift; sourceTree = "<group>"; };
+		235123873C5156297FEFDCFD /* WeightEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightEstimator.swift; sourceTree = "<group>"; };
+		2351246BAEF17203987883F2 /* EplyEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EplyEstimator.swift; sourceTree = "<group>"; };
+		2351260B74B2E840949688F7 /* LanderEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanderEstimator.swift; sourceTree = "<group>"; };
+		23512EC49BB5F2766FF41809 /* BrzyckiEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrzyckiEstimator.swift; sourceTree = "<group>"; };
+		23512F5E4F83D3DDD8FA4DE5 /* MayhewEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MayhewEstimator.swift; sourceTree = "<group>"; };
 		28909FDAD5E8270DAD0EE282 /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		520332201C3D73B800A7685C /* ExerciceSearchControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceSearchControllerViewController.swift; sourceTree = "<group>"; };
 		5205020F1BF5076A007BAF65 /* LoaderControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderControllerViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +171,7 @@
 		52AFF0721BC8933D00A1115F /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
 		52AFF0741BC8933D00A1115F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AFF0831BC8958800A1115F /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		52B28F461C8B7CFD00B5DD2C /* LTObjejct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTObjejct.swift; sourceTree = "<group>"; };
 		52B8CAA61C88DA4500C62314 /* 1091-weights@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1091-weights@3x.png"; sourceTree = "<group>"; };
 		52B8CAA81C88DA7300C62314 /* 1035-pie-chart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1035-pie-chart@3x.png"; sourceTree = "<group>"; };
 		52B8CAAA1C88DA8200C62314 /* 961-book-32@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "961-book-32@3x.png"; sourceTree = "<group>"; };
@@ -222,6 +236,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		235125B94604ABC7664FB617 /* Estimators */ = {
+			isa = PBXGroup;
+			children = (
+				2351246BAEF17203987883F2 /* EplyEstimator.swift */,
+				23512EC49BB5F2766FF41809 /* BrzyckiEstimator.swift */,
+				2351260B74B2E840949688F7 /* LanderEstimator.swift */,
+				235122F47405E73AD378C7B6 /* LombardiEstimator.swift */,
+				23512F5E4F83D3DDD8FA4DE5 /* MayhewEstimator.swift */,
+			);
+			path = Estimators;
+			sourceTree = "<group>";
+		};
 		52151E021BCEA627006BC0B1 /* Data Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +256,9 @@
 				520C54021C41947400365B0B /* HealthKitManager.swift */,
 				52BED8771C41C4120044455B /* TimeManager.swift */,
 				52BED8791C41C4960044455B /* UserPrefs.swift */,
+				52B28F461C8B7CFD00B5DD2C /* LTObjejct.swift */,
+				235123873C5156297FEFDCFD /* WeightEstimator.swift */,
+				235125B94604ABC7664FB617 /* Estimators */,
 			);
 			name = "Data Management";
 			sourceTree = "<group>";
@@ -687,10 +716,17 @@
 				52BED87A1C41C4960044455B /* UserPrefs.swift in Sources */,
 				52AFF0581BC8933D00A1115F /* Liftracker.xcdatamodeld in Sources */,
 				52A70AB91C7119A4000A601A /* QuickLaunch.swift in Sources */,
+				52B28F471C8B7CFD00B5DD2C /* LTObjejct.swift in Sources */,
 				52CE9A611C7E842A00273C1B /* HeadCell.swift in Sources */,
 				5297B53C1BC8A87D004CE0CA /* MGSelectionController.swift in Sources */,
 				524514F91C553F2E00D4AD07 /* Exercice.m in Sources */,
 				521F4A161BCB3EDF00FA6E02 /* RepsViewController.swift in Sources */,
+				23512221E677CE0768E123E5 /* WeightEstimator.swift in Sources */,
+				2351245840C1FAFC41C54D63 /* EplyEstimator.swift in Sources */,
+				235126389D567AFD3E9403C1 /* BrzyckiEstimator.swift in Sources */,
+				23512DCE3F193E8696A42FC4 /* LanderEstimator.swift in Sources */,
+				23512624F9FC7028D6C5B8CB /* LombardiEstimator.swift in Sources */,
+				235124131B9DFF3500D62DF9 /* MayhewEstimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -91,7 +91,7 @@ class ExerciceAdderViewController: XLFormViewController {
         @objc func isValid(row: XLFormRowDescriptor!) -> XLFormValidationStatus! {
             let stringVal = row.value?.valueData() as! String
             let predicate = NSPredicate(format: "name == '%@'", stringVal)
-            let valid = stringVal != "" && DataManager.getInstance().entityCount(entityType: "Exercice", predicate: predicate) == 0
+            let valid = stringVal != "" && DataManager.getInstance().entityCount(entityType: .Exercice, predicate: predicate) == 0
             return XLFormValidationStatus(msg: "OK", status: valid, rowDescriptor: row)
         }
     }

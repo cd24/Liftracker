@@ -69,7 +69,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func fillSuggestedData(){
-        let repSuggestion = 10
+        let repSuggestion = 10.0
         let tenMax = manager.estimatedMax(exercice!, reps: repSuggestion)
         weight?.text = "\(tenMax)"
         num_reps?.text = "\(repSuggestion)"
@@ -199,6 +199,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             let key = repKeys[indexPath.section]
             let rep = allReps[key]![indexPath.row]
             manager.deleteRep(rep)
+            allReps[key]!.removeAtIndex(indexPath.row)
             loadReps()
             if let _ = allReps[key]{
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)

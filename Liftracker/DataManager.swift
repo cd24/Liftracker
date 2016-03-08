@@ -15,31 +15,19 @@ class DataManager {
     static private var manager: DataManager = DataManager()
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     
-    let epley = "Epley",
+    static let epley = "Epley",
         brzycki = "Brzycki",
         lander = "Lander",
         lombardi = "Lombardi",
         mayhew = "Mahew"
-    
-    let mgKey = "MuscleGroup",
-        exerciceKey = "Exercice",
-        repKey = "Rep",
-        weightKey = "Weight",
-        timedRepKey = "TimedRep"
-    
-    //conversions are used for calculating estimated maxes
-    let conversions = [1: 1,
-        2: 0.95,
-        3: 0.9,
-        4: 0.88,
-        5: 0.86,
-        6: 0.83,
-        7: 0.80,
-        8: 0.78,
-        9: 0.76,
-        10: 0.75,
-        11: 0.72,
-        12: 0.70]
+
+    let estimators = [
+            DataManager.epley     : EplyEstimator(),
+            DataManager.brzycki   : BrzyckiEstimator(),
+            DataManager.lander    : LanderEstimator(),
+            DataManager.lombardi  : LombardiEstimator(),
+            DataManager.mayhew    : MayhewEstimator()
+    ]
 
     static func getInstance() -> DataManager {
         return manager;
@@ -48,16 +36,16 @@ class DataManager {
     //MARK: - Muscle Groups Management
     
     func loadAllMuscleGroups() -> [MuscleGroup]{
-        return getEntities(mgKey, predicate:nil, sortdesc: sortDescriptorName()) as! [MuscleGroup]
+        return getEntities(LTObject.MuscleGroup, predicate:nil, sortdesc: sortDescriptorName()) as! [MuscleGroup]
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {
         let pred = NSPredicate(format: "name == '\(name)'")
-        let count = entityCount(entityType: mgKey, predicate: pred)
+        let count = entityCount(entityType: .MuscleGroup, predicate: pred)
         if count != 0{
-            return getEntities(mgKey, predicate: pred)[0] as! MuscleGroup
+            return getEntities(.MuscleGroup, predicate: pred)[0] as! MuscleGroup
         }
-        let group = newEntity(mgKey) as! MuscleGroup
+        let group = newEntity(.MuscleGroup) as! MuscleGroup
         group.name = name
         save_context()
         return group
@@ -77,21 +65,21 @@ class DataManager {
     
     func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
         let predicate = NSPredicate(format: "muscle_group.name == '\(group.name!)'")
-        return getEntities(exerciceKey, predicate: predicate, sortdesc: sortDescriptorName()) as! [Exercice]
+        return getEntities(.Exercice, predicate: predicate, sortdesc: sortDescriptorName()) as! [Exercice]
     }
     
     func searchExercicesForSubstring(text: String) -> [Exercice] {
         let predicate = NSPredicate(format: "name CONTAINS[c] '\(text.lowercaseString)'")
-        return getEntities(exerciceKey, predicate: predicate) as! [Exercice]
+        return getEntities(.Exercice, predicate: predicate) as! [Exercice]
     }
     
     func newExercice(name name: String, muscle_group group: MuscleGroup, isTimed: Bool = false) -> Exercice{
         let pred = NSPredicate(format: "name == '\(name)' AND muscle_group.name == '\(group.name!)'")
-        let count = entityCount(entityType: exerciceKey, predicate: pred)
+        let count = entityCount(entityType: .Exercice, predicate: pred)
         if count != 0 {
-            return getEntities(exerciceKey, predicate: pred)[0] as! Exercice
+            return getEntities(.Exercice, predicate: pred)[0] as! Exercice
         }
-        let exercice = newEntity("Exercice") as! Exercice
+        let exercice = newEntity(.Exercice) as! Exercice
         exercice.name = name
         exercice.muscle_group = group
         exercice.isTimed = isTimed
@@ -101,7 +89,7 @@ class DataManager {
     
     func exerciceForName(name: String) -> Exercice? {
         let predicate = NSPredicate(format: "name == '%@'", name)
-        let entities = getEntities(exerciceKey, predicate: predicate)
+        let entities = getEntities(.Exercice, predicate: predicate)
         if entities.count > 0 {
             return entities[0] as? Exercice
         }
@@ -111,7 +99,7 @@ class DataManager {
     //MARK: - Rep Management
     
     func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice, date: NSDate = NSDate()) -> Rep{
-        let rep = newEntity(repKey) as! Rep
+        let rep = newEntity(.Rep) as! Rep
         rep.weight = w
         rep.num_reps = reps
         rep.date = date
@@ -123,7 +111,7 @@ class DataManager {
     
     func loadAllRepsFor(exercice exercice: Exercice) -> [Rep]{
         let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-        return getEntities(repKey, predicate: predicate) as! [Rep]
+        return getEntities(.Rep, predicate: predicate) as! [Rep]
     }
     
     func loadAllRepsFor(exercice exercice: Exercice, date: NSDate) -> [Rep]{
@@ -133,13 +121,13 @@ class DataManager {
                         exercice.name!,
                         start,
                         end)
-        return getEntities(repKey, predicate: predicate) as! [Rep]
+        return getEntities(.Rep, predicate: predicate) as! [Rep]
     }
     
     func loadAllRepsFor(date date: NSDate) -> [Rep]{
         let cleanded_date: NSDate = TimeManager.startOfDay(date)
         let predicate = NSPredicate(format: "date == '\(cleanded_date)'")
-        return getEntities(repKey, predicate: predicate) as! [Rep]
+        return getEntities(.Rep, predicate: predicate) as! [Rep]
     }
     
     func getRepWeightString(rep: Rep) -> String {
@@ -163,7 +151,7 @@ class DataManager {
     
     func repsForMuscleGroup(group: MuscleGroup) -> [Rep] {
         let predicate = NSPredicate(format: "exercice.muscle_group.name == \(group.name)")
-        return getEntities(repKey, predicate: predicate) as! [Rep]
+        return getEntities(.Rep, predicate: predicate) as! [Rep]
     }
     
     func values(rep: Rep) -> (Double, Double){
@@ -173,7 +161,7 @@ class DataManager {
     //MARK: - Timed Rep Management
     
     func newTimedRep(start: NSDate, end: NSDate, weight: Double = 0, exercice: Exercice) -> TimedRep {
-        let rep = newEntity(timedRepKey) as! TimedRep
+        let rep = newEntity(.TimedRep) as! TimedRep
         
         let duration = TimeManager.getDuration(start, end: end)
         rep.duration_seconds = duration.second
@@ -191,26 +179,26 @@ class DataManager {
     
     func timedRepsFor(exercice: Exercice, start: NSDate, end: NSDate) -> [TimedRep] {
         let predicate = NSPredicate(format: "exercice.name == %@ AND (start_time >= %@) AND (end_time <= %@)", exercice.name!, start, end)
-        return getEntities(timedRepKey, predicate: predicate) as! [TimedRep]
+        return getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
     }
     
     func timedRepsFor(exercice: Exercice) -> [TimedRep] {
         let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-        return getEntities(timedRepKey, predicate: predicate) as! [TimedRep]
+        return getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
     }
     
     func allTimedReps() -> [TimedRep] {
-        return getEntities(timedRepKey) as! [TimedRep]
+        return getEntities(.TimedRep) as! [TimedRep]
     }
     
     //MARK: - Weight Methods
     
     func getAllWeights() -> [Weight] {
-        return getEntities(weightKey) as! [Weight]
+        return getEntities(.Weight) as! [Weight]
     }
     
     func addWeight(value: Int, notes: String, date: NSDate) -> Weight {
-        let weightVal = newEntity(weightKey) as! Weight
+        let weightVal = newEntity(.Weight) as! Weight
         weightVal.value = value
         weightVal.notes = notes
         weightVal.date = date
@@ -227,12 +215,12 @@ class DataManager {
     
     func getWeights(start: NSDate, end: NSDate) -> [Weight] {
         let predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", start, end)
-        return getEntities(weightKey, predicate: predicate) as! [Weight]
+        return getEntities(.Weight, predicate: predicate) as! [Weight]
     }
     
     func hkToWeight(samples: [HKQuantitySample]) -> [Weight] {
         var data = [Weight]()
-        samples.forEach{ w in
+        samples.forEach { w in
             let wt = Weight()
             wt.value = w.getWeightValue()
             wt.date = w.startDate
@@ -253,29 +241,29 @@ class DataManager {
     
     //MARK: - General Core Data
     
-    func entityExists(name: String, entityType entity: String, nameField field: String = "name") -> Bool {
+    func entityExists(name: String, entityType entity: LTObject, nameField field: String = "name") -> Bool {
         let predicate = NSPredicate(format: "\(field) == \(name)")
         return entityCount(entityType: entity, predicate: predicate) > 0
     }
     
-    func entityCount(entityType entity: String, predicate: NSPredicate? = nil) -> Int {
-        let fetch_request = NSFetchRequest(entityName: entity)
+    func entityCount(entityType entity: LTObject, predicate: NSPredicate? = nil) -> Int {
+        let fetch_request = NSFetchRequest(entityName: entity.rawValue)
         fetch_request.predicate = predicate
         let error = NSErrorPointer()
         return managedContext.countForFetchRequest(fetch_request, error: error)
     }
     
-    func newEntity(name: String) -> NSManagedObject {
-        return NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: managedContext)
+    func newEntity(name: LTObject) -> NSManagedObject {
+        return NSEntityDescription.insertNewObjectForEntityForName(name.rawValue, inManagedObjectContext: managedContext)
     }
     
-    func getEntityWithValue(value: String, entityType entity: String, valueField field: String = "name") -> [AnyObject] {
+    func getEntityWithValue(value: String, entityType entity: LTObject, valueField field: String = "name") -> [AnyObject] {
         let predicate = NSPredicate(format: "\(field) == \(value)")
         return getEntities(entity, predicate: predicate)
     }
     
-    func getEntities(name: String, predicate: NSPredicate? = nil, sortdesc: [NSSortDescriptor]? = nil) -> [AnyObject] {
-        let fetch_request = NSFetchRequest(entityName: name)
+    func getEntities(name: LTObject, predicate: NSPredicate? = nil, sortdesc: [NSSortDescriptor]? = nil) -> [AnyObject] {
+        let fetch_request = NSFetchRequest(entityName: name.rawValue)
         if let pred = predicate {
             fetch_request.predicate = pred
         }
@@ -319,103 +307,44 @@ class DataManager {
             try managedContext.save()
         }
         catch{
-            //todo: Catch any errors
-            NSLog("Error Occurred \n\(error)")
+            //todo: Find a logging library
         }
     }
     
     // MARK: - Helper Methods
     
-    func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
-        let reps = loadAllRepsFor(exercice: ex)
-        var max: Rep?
-        for rep in reps {
-            if max != nil {
-                max = rep;
-            }
-            else if rep.num_reps == reps && max!.weight?.integerValue > rep.weight?.integerValue {
-                max = rep
-            }
+    func estimatedMax(ex: Exercice, reps: Double) -> Double {
+        let exrep = loadAllRepsFor(exercice: ex)
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMax(exrep, targeted_reps: reps)
         }
-        return max!
-    }
-    
-    func getMaxFor(exercice ex: Exercice) -> Rep{
-        let reps = loadAllRepsFor(exercice: ex)
-        var max: Rep?
-        for rep in reps {
-            if max != nil {
-                max = rep;
-            }
-            else if max!.weight?.integerValue < rep.weight?.integerValue {
-                max = rep
-            }
+        else {
+            return estimators[DataManager.epley]!.estimatedMax(exrep, targeted_reps: reps)
         }
-        return max!
-    }
-    
-    func estimatedMax(ex: Exercice, reps: Int) -> Double {
-        let orm = estimatedMax(ex)
-        
-        if reps < 12{
-            return orm * conversions[reps]!
-        }
-        return orm*0.6
     }
     
     func estimatedMax(ex: Exercice) -> Double{
-        var max: Double = 0.0;
-        let reps = loadAllRepsFor(exercice: ex)
-        for rep in reps{
-            let temp_max = estimatedMaxa(rep)
-            if temp_max > max {
-                max = temp_max
-            }
-        }
-        return max
-    }
-    
-    private func estimatedMaxa(rep: Rep) -> Double{
         let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        switch (formula){
-        case epley:
-            return epleyMax(rep)
-        case brzycki:
-            return brzyckiMax(rep)
-        case lander:
-            return landerMax(rep)
-        case lombardi:
-            return lombardiMax(rep)
-        case mayhew:
-            return mayhewMax(rep)
-        default:
-            return epleyMax(rep)
+        let reps = loadAllRepsFor(exercice: ex)
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMaxFor(reps)
+        }
+        else {
+            return estimators[DataManager.epley]!.estimatedMaxFor(reps)
         }
     }
     
-    func epleyMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * ( 1 + numReps/30)
-    }
-    
-    func brzyckiMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return weight * (36 / (37 - numReps))
-    }
-    
-    func landerMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return (100 * weight) / (101.3 - 2.67123*numReps)
-    }
-    
-    func lombardiMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * pow(numReps, 0.10)
-    }
-    
-    func mayhewMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return (100*weight)/(52.2 + 41.9 * pow(M_E, -0.055*numReps)) //M_E == mathematical constant e
+    func estimatedMax(rep: Rep) -> Double{
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
+        let (weight, reps) = (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMaxFor(weight, num_reps: reps)
+        }
+        else {
+            return estimators[DataManager.epley]!.estimatedMaxFor(weight, num_reps: reps)
+        }
+
     }
     
     //MARK: - Useful Numbers
