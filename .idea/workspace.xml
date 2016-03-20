@@ -26,30 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44500526-f475-4104-9057-dd9ab4301cc3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Estimators/BrzyckiEstimator.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Estimators/EplyEstimator.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Estimators/LanderEstimator.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Estimators/LombardiEstimator.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Estimators/MayhewEstimator.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/LTObjejct.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WeightEstimator.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Liftracker.iml" afterPath="$PROJECT_DIR$/.idea/Liftracker.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExerciceSelectorController.swift" afterPath="$PROJECT_DIR$/ExerciceSelectorController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Liftracker.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/DataManager.swift" afterPath="$PROJECT_DIR$/Liftracker/DataManager.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/ExerciceAdderViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/ExerciceAdderViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Info.plist" afterPath="$PROJECT_DIR$/Liftracker/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/MGSelectionController.swift" afterPath="$PROJECT_DIR$/Liftracker/MGSelectionController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/RepsViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/RepsViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Settings.bundle/Root.plist" afterPath="$PROJECT_DIR$/Liftracker/Settings.bundle/Root.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/StatsViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/StatsViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/TimedRepViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/TimedRepViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Charts.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Charts.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Pods-Liftracker.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Pods-Liftracker.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/XLForm.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/XLForm.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard" />
     </list>
     <ignored path="Liftracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +48,7 @@
     <favorites_list name="Liftracker" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40436682">
+    <splitter split-orientation="horizontal" split-proportion="0.4737197">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.71395075">
           <split-first>
@@ -77,7 +56,7 @@
               <file leaf-file-name="LTObjejct.swift" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.6332454">
+                    <state vertical-scroll-proportion="0.35502958">
                       <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
                       <folding />
                     </state>
@@ -87,11 +66,11 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file leaf-file-name="WeightEstimator.swift" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.44117647">
+                    <state vertical-scroll-proportion="0.46666667">
                       <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
                       <folding />
                     </state>
@@ -103,12 +82,12 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DataManager.swift" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Liftracker/DataManager.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.59381044">
-                  <caret line="315" column="28" selection-start-line="315" selection-start-column="28" selection-end-line="315" selection-end-column="28" />
+                <state vertical-scroll-proportion="0.48125">
+                  <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -144,8 +123,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="43" />
+    <option name="y" value="23" />
+    <option name="width" value="1877" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -172,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,11 +220,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FullScreen" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Liftracker" />
@@ -268,6 +248,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -325,29 +310,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="43" y="23" width="1877" height="1057" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18167289" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2048611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -366,15 +351,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Liftracker/RepsViewController.swift">
+    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="83" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liftracker/WeightViewController.swift">
+    <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/DataManager.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -382,11 +375,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/RepsViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="83" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/WeightViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pods/Charts/Charts/Classes/Renderers/LineChartRenderer.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -394,7 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -402,7 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -410,7 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -418,7 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -426,7 +428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -434,7 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="9.418181">
           <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,7 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6533333">
           <caret line="168" column="54" selection-start-line="168" selection-start-column="54" selection-end-line="168" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -458,7 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.090909">
           <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -466,7 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018181818">
           <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -474,7 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10909091">
           <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8727273">
           <caret line="177" column="127" selection-start-line="177" selection-start-column="127" selection-end-line="177" selection-end-column="127" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -526,26 +520,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
+    <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6332454">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.46666667">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
+    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44117647">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.35502958">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Liftracker/DataManager.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59381044">
-          <caret line="315" column="28" selection-start-line="315" selection-start-column="28" selection-end-line="315" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.48125">
+          <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
           <folding />
         </state>
       </provider>

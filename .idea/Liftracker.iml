@@ -15,8 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/HistoryViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/EstimateCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/DataManager.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/WeightEstimator.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/Settings.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/home.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Estimators/BrzyckiEstimator.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Estimators/MayhewEstimator.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Estimators/LanderEstimator.swift" isTestSource="false" />
@@ -25,13 +24,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/EstimatedMaxViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/961-book-32@3x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/1091-weights@3x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/1035-pie-chart@3x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/history.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Rep+CoreDataProperties.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimedRep.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Rep+CoreDataProperties.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimedRep.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/WeightViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/UserPrefs.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimedRepViewController.swift" isTestSource="false" />
@@ -43,19 +42,19 @@
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/MuscleGroup+CoreDataProperties.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/download.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/StatsViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/MuscleGroup+CoreDataProperties.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/Settings.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimedRep.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimeManager.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Icon-Small-50.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/weight.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/RepsViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/scale.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/RepStatsViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/StatCalculator.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/UserPrefs.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/data_bars.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Icon.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/1035-pie-chart@3x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Weight.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/LastWeekViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Weight.h" isTestSource="false" />
@@ -79,10 +78,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/Icon-Small-50@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/TimedRep+CoreDataProperties.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/LeftRightTableViewCell.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/419-scale@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/WeightEstimator.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/TodayViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/HistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/home.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/MuscleGroup+CoreDataProperties.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/419-scale@3x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/ProgressChartViewCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/DayViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/QuickLaunch.swift" isTestSource="false" />
@@ -90,7 +90,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/ExerciceSearchControllerViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/MuscleGroup.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/HealthKitManager.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Liftracker/data_bars.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liftracker/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/MuscleGroup.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/LTObjejct.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Liftracker/DefaultData.plist" isTestSource="false" />
@@ -114,10 +114,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Validation/XLFormValidationStatus.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Validation/XLFormValidator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Validation/XLFormValidationStatus.h" isTestSource="false" />
@@ -132,9 +132,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Controllers/XLFormViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Controllers/XLFormOptionsViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Controllers/XLFormOptionsViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSObject+XLFormAdditions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSPredicate+XLFormAdditions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormRightDetailCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormRightImageButton.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormRightDetailCell.h" isTestSource="false" />
@@ -143,49 +142,50 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormRowNavigationAccessoryView.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormRightImageButton.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/Views/XLFormTextView.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSArray+XLFormAdditions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSArray+XLFormAdditions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSPredicate+XLFormAdditions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSExpression+XLFormAdditions.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSPredicate+XLFormAdditions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/UIView+XLFormAdditions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSObject+XLFormAdditions.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSObject+XLFormAdditions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSString+XLFormAdditions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Helpers/NSExpression+XLFormAdditions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormBaseCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormBaseCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormStepCounterCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSwitchCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSliderCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormInlineSelectorCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSegmentedCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSwitchCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSliderCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDatePickerCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSegmentedCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormInlineRowDescriptorCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDatePickerCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormPickerCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormImageCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormButtonCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormPickerCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormImageCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormButtonCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormImageCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormButtonCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDateCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormImageCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormStepCounterCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormTextViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDateCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormStepCounterCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormInlineSelectorCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormTextViewCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormTextFieldCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDescriptorCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormCheckCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormTextFieldCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDescriptorCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormLeftRightSelectorCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSelectorCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormCheckCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSelectorCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormCheckCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSelectorCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSegmentedCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormSliderCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Cell/XLFormDatePickerCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/XLForm.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/XLForm.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/XLForm/XLForm/XL/Descriptors/XLFormRowDescriptor.h" isTestSource="false" />
@@ -202,72 +202,74 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Highlight/HorizontalBarChartHighlighter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Highlight/BarChartHighlighter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Highlight/ChartRange.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/PieChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/BarChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/BubbleChartRenderer.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ScatterChartRenderer.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRenderer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/CandleStickChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/CombinedChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartLegendRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartRendererBase.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartAxisRendererBase.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ScatterChartRenderer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRendererHorizontalBarChart.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/HorizontalBarChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/LineChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartYAxisRendererHorizontalBarChart.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartYAxisRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartDataRendererBase.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRendererRadarChart.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRendererHorizontalBarChart.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/LineScatterCandleRadarChartRenderer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRenderer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/PieChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartXAxisRendererBarChart.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/LineScatterCandleRadarChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/ChartYAxisRendererRadarChart.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/RadarChartRenderer.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Renderers/CandleStickChartRenderer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ChartDataEntry.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/CandleChartDataEntry.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/PieChartData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarLineScatterCandleBubbleChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/CandleChartData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BubbleChartDataEntry.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarLineScatterCandleBubbleChartDataSet.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineScatterCandleChartDataSet.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/CandleChartDataEntry.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineChartDataSet.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ScatterChartData.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/PieChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/CombinedChartData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineRadarChartDataSet.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineScatterCandleChartDataSet.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarChartDataEntry.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BubbleChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BubbleChartDataSet.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/CandleChartDataSet.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/PieChartDataSet.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BubbleChartDataEntry.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/LineRadarChartDataSet.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ScatterChartDataSet.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarLineScatterCandleBubbleChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/RadarChartData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BubbleChartData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/RadarChartDataSet.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ChartData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/BarChartDataEntry.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartColorTemplates.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Data/ScatterChartData.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Animation/ChartAnimator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Animation/ChartAnimationEasing.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartViewPortHandler.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/CALayer+Extensions.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartTransformerHorizontalBarChart.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartSelectionDetail.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartViewPortHandler.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartColorTemplates.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartTransformer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/ChartUtils.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Utils/UIGraphics+Extensions.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BarLineChartViewBase.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/PieChartView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/CandleStickChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/CombinedChartView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BarChartView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/CandleStickChartView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/ScatterChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/LineChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/RadarChartView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BubbleChartView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BarLineChartViewBase.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/HorizontalBarChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/PieRadarChartViewBase.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BarChartView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/BubbleChartView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/PieChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/ChartViewBase.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Charts/ScatterChartView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Components/ChartComponentBase.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Components/ChartMarker.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Components/ChartYAxis.swift" isTestSource="false" />
@@ -278,8 +280,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Formatters/ChartFillFormatter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Formatters/ChartXAxisValueFormatter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Formatters/ChartDefaultXAxisValueFormatter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Animation/ChartAnimator.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Animation/ChartAnimationEasing.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Filters/ChartDataBaseFilter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Charts/Charts/Classes/Filters/ChartDataApproximatorFilter.swift" isTestSource="false" />
     </content>

@@ -80,6 +80,7 @@
 		52E580641C4006810029FEFC /* Weight.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E5805C1C4006810029FEFC /* Weight.m */; };
 		52E667B91BD6FC970028DA8B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E667B81BD6FC970028DA8B /* TodayViewController.swift */; };
 		52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52ECDC271BD3FC7F00609C9B /* Settings.bundle */; };
+		52EE10A81C9F503600A7A750 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 52EE10A71C9F503600A7A750 /* .travis.yml */; };
 		52F21A8A1BDC2A3000962961 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A891BDC2A3000962961 /* HistoryViewController.swift */; };
 		52F21A8C1BDC2E9100962961 /* EstimatedMaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */; };
 		52FFB3A81BD95CF100CFF0FC /* StatCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */; };
@@ -202,6 +203,7 @@
 		52E5805C1C4006810029FEFC /* Weight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weight.m; sourceTree = "<group>"; };
 		52E667B81BD6FC970028DA8B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		52ECDC271BD3FC7F00609C9B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		52EE10A71C9F503600A7A750 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		52F21A891BDC2A3000962961 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52F21A8B1BDC2E9100962961 /* EstimatedMaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedMaxViewController.swift; sourceTree = "<group>"; };
 		52FFB3A71BD95CF100CFF0FC /* StatCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatCalculator.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		52AFF0431BC8933D00A1115F = {
 			isa = PBXGroup;
 			children = (
+				52EE10A71C9F503600A7A750 /* .travis.yml */,
 				52AFF04E1BC8933D00A1115F /* Liftracker */,
 				52AFF0661BC8933D00A1115F /* LiftrackerTests */,
 				52AFF0711BC8933D00A1115F /* LiftrackerUITests */,
@@ -597,6 +600,7 @@
 				524344541BDF08C20066C3DA /* Icon-72.png in Resources */,
 				52ECDC281BD3FC7F00609C9B /* Settings.bundle in Resources */,
 				524344521BDF08C20066C3DA /* AppIcon.appiconset in Resources */,
+				52EE10A81C9F503600A7A750 /* .travis.yml in Resources */,
 				52D062FF1C3DC34800413242 /* scale.png in Resources */,
 				524344561BDF08C20066C3DA /* Icon-Small-50.png in Resources */,
 				5243445B1BDF08C20066C3DA /* iTunesArtwork@2x.png in Resources */,
