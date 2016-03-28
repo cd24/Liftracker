@@ -7,3 +7,5 @@ liftrackerapp@gmail.com
 
 ### Data Policy
 We do not record or back up any data you enter into this app.  We do not claim responsibility for loss of data.  We store data you enter in the device using HealthKit.  
+
+Download the app from the app store: https://itunes.apple.com/us/app/liftracker/id1074527528?ls=1&mt=8
