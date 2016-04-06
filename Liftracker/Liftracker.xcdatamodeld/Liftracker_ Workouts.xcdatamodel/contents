@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Exercice" representedClassName="Exercice" syncable="YES">
+        <attribute name="best" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="isTimed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="muscle_group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MuscleGroup" inverseName="exercices" inverseEntity="MuscleGroup" syncable="YES"/>
+        <relationship name="timed_reps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimedRep" inverseName="exercice" inverseEntity="TimedRep" syncable="YES"/>
+        <relationship name="weighted_reps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeightRep" inverseName="exercice" inverseEntity="WeightRep" syncable="YES"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercices" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="MuscleGroup" representedClassName="MuscleGroup" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="exercices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercice" inverseName="muscle_group" inverseEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Rep" representedClassName="Rep" syncable="YES">
+        <attribute name="start_time" attributeType="Date" syncable="YES"/>
+        <attribute name="unit" attributeType="String" syncable="YES"/>
+        <attribute name="weight" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight_incr" attributeType="Integer 16" defaultValueString="1" syncable="YES"/>
+    </entity>
+    <entity name="TimedRep" representedClassName="TimedRep" parentEntity="Rep" syncable="YES">
+        <attribute name="end_time" attributeType="Date" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" inverseName="timed_reps" inverseEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Weight" representedClassName="Weight" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="value" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="WeightRep" representedClassName="WeightRep" parentEntity="Rep" syncable="YES">
+        <attribute name="reps" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" inverseName="weighted_reps" inverseEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="created" attributeType="Date" syncable="YES"/>
+        <relationship name="exercices" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Exercice" inverseName="workouts" inverseEntity="Exercice" syncable="YES"/>
+        <relationship name="meta_data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutMetaData" inverseName="workout" inverseEntity="WorkoutMetaData" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutMetaData" representedClassName=".WorkoutMetaData" syncable="YES">
+        <attribute name="duration_hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="duration_minute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="duration_second" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="target_reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="meta_data" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Exercice" positionX="-198" positionY="-36" width="128" height="148"/>
+        <element name="MuscleGroup" positionX="-387" positionY="18" width="128" height="73"/>
+        <element name="Rep" positionX="79" positionY="189" width="128" height="105"/>
+        <element name="TimedRep" positionX="-92" positionY="198" width="128" height="73"/>
+        <element name="Weight" positionX="-560" positionY="39" width="128" height="103"/>
+        <element name="WeightRep" positionX="79" positionY="6" width="128" height="73"/>
+        <element name="Workout" positionX="-387" positionY="180" width="128" height="90"/>
+        <element name="WorkoutMetaData" positionX="-351" positionY="99" width="128" height="120"/>
+    </elements>
+</model>
