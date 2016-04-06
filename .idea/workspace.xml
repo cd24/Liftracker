@@ -26,9 +26,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44500526-f475-4104-9057-dd9ab4301cc3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/750-home@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WeightRep+CoreDataProperties.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WeightRep+CoreDataProperties.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WeightRep.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WeightRep.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Workout+CoreDataProperties.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/Workout+CoreDataProperties.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Liftracker/WorkoutsTableViewController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WorkoutsTableViewController.swift" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimedRep+CoreDataProperties.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TimedRep+CoreDataProperties.m" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Liftracker/TimedRep.h" afterPath="$PROJECT_DIR$/Liftracker/Workout.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Liftracker/TimedRep.m" afterPath="$PROJECT_DIR$/Liftracker/Workout.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Liftracker.xcworkspace/xcuserdata/john.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Liftracker.iml" afterPath="$PROJECT_DIR$/.idea/Liftracker.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExerciceSelectorController.swift" afterPath="$PROJECT_DIR$/ExerciceSelectorController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Liftracker.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker.xcworkspace/contents.xcworkspacedata" afterPath="$PROJECT_DIR$/Liftracker.xcworkspace/contents.xcworkspacedata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/AppDelegate.swift" afterPath="$PROJECT_DIR$/Liftracker/AppDelegate.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Base.lproj/LaunchScreen.storyboard" afterPath="$PROJECT_DIR$/Liftracker/Base.lproj/LaunchScreen.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/DataManager.swift" afterPath="$PROJECT_DIR$/Liftracker/DataManager.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/DayViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/DayViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/EstimatedMaxViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/EstimatedMaxViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Exercice+CoreDataProperties.h" afterPath="$PROJECT_DIR$/Liftracker/Exercice+CoreDataProperties.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Exercice+CoreDataProperties.m" afterPath="$PROJECT_DIR$/Liftracker/Exercice+CoreDataProperties.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Exercice.h" afterPath="$PROJECT_DIR$/Liftracker/Exercice.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Exercice.m" afterPath="$PROJECT_DIR$/Liftracker/Exercice.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/HealthKitManager.swift" afterPath="$PROJECT_DIR$/Liftracker/HealthKitManager.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/HistoryViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/HistoryViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/LTObjejct.swift" afterPath="$PROJECT_DIR$/Liftracker/LTObjejct.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Liftracker.xcdatamodeld/.xccurrentversion" afterPath="$PROJECT_DIR$/Liftracker/Liftracker.xcdatamodeld/.xccurrentversion" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Liftracker.xcdatamodeld/Liftracker_ 6.xcdatamodel/contents" afterPath="$PROJECT_DIR$/Liftracker/Liftracker.xcdatamodeld/Liftracker_ 6.xcdatamodel/contents" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/MuscleGroup+CoreDataProperties.h" afterPath="$PROJECT_DIR$/Liftracker/MuscleGroup+CoreDataProperties.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/MuscleGroup+CoreDataProperties.m" afterPath="$PROJECT_DIR$/Liftracker/MuscleGroup+CoreDataProperties.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/MuscleGroup.h" afterPath="$PROJECT_DIR$/Liftracker/MuscleGroup.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/MuscleGroup.m" afterPath="$PROJECT_DIR$/Liftracker/MuscleGroup.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/ProgressChartViewCell.swift" afterPath="$PROJECT_DIR$/Liftracker/ProgressChartViewCell.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Rep+CoreDataProperties.h" afterPath="$PROJECT_DIR$/Liftracker/Rep+CoreDataProperties.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Rep+CoreDataProperties.m" afterPath="$PROJECT_DIR$/Liftracker/Rep+CoreDataProperties.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Rep.h" afterPath="$PROJECT_DIR$/Liftracker/Rep.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Rep.m" afterPath="$PROJECT_DIR$/Liftracker/Rep.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/RepsViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/RepsViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/StatCalculator.swift" afterPath="$PROJECT_DIR$/Liftracker/StatCalculator.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/TimedRep+CoreDataProperties.h" afterPath="$PROJECT_DIR$/Liftracker/TimedRep+CoreDataProperties.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/TimedRep+CoreDataProperties.m" afterPath="$PROJECT_DIR$/Liftracker/TimedRep+CoreDataProperties.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/TodayViewController.swift" afterPath="$PROJECT_DIR$/Liftracker/TodayViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Weight+CoreDataProperties.h" afterPath="$PROJECT_DIR$/Liftracker/Weight+CoreDataProperties.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Weight+CoreDataProperties.m" afterPath="$PROJECT_DIR$/Liftracker/Weight+CoreDataProperties.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Weight.h" afterPath="$PROJECT_DIR$/Liftracker/Weight.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/Weight.m" afterPath="$PROJECT_DIR$/Liftracker/Weight.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Liftracker/WeightEstimator.swift" afterPath="$PROJECT_DIR$/Liftracker/WeightEstimator.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Pods-Liftracker.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/Pods-Liftracker.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/XLForm.xcscheme" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/XLForm.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/john.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-acknowledgements.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.debug.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig" />
     </list>
     <ignored path="Liftracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,21 +105,41 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6s_9.2_x86_64_1" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6_9.2_x86_64_1" />
   <component name="FavoritesManager">
     <favorites_list name="Liftracker" />
   </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.4737197">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.71395075">
+        <splitter split-orientation="vertical" split-proportion="0.65">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="LTObjejct.swift" pinned="false" current-in-tab="true">
+              <file leaf-file-name="LTObjejct.swift" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.35502958">
-                      <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+                    <state vertical-scroll-proportion="0.0">
+                      <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Podfile" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Podfile">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.0">
+                      <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/Liftracker/AppDelegate.swift">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.90983605">
+                      <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
                       <folding />
                     </state>
                   </provider>
@@ -70,8 +152,8 @@
               <file leaf-file-name="WeightEstimator.swift" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.46666667">
-                      <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+                    <state vertical-scroll-proportion="0.08201893">
+                      <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
                       <folding />
                     </state>
                   </provider>
@@ -86,8 +168,8 @@
           <file leaf-file-name="DataManager.swift" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Liftracker/DataManager.swift">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.48125">
-                  <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.45502093">
+                  <caret line="153" column="35" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -112,7 +194,10 @@
         <option value="$PROJECT_DIR$/Liftracker/Estimators/LombardiEstimator.swift" />
         <option value="$PROJECT_DIR$/Liftracker/Estimators/MayhewEstimator.swift" />
         <option value="$PROJECT_DIR$/Liftracker/LTObjejct.swift" />
+        <option value="$PROJECT_DIR$/Liftracker/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/Liftracker/WeightEstimator.swift" />
+        <option value="$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard" />
         <option value="$PROJECT_DIR$/Liftracker/DataManager.swift" />
       </list>
     </option>
@@ -123,10 +208,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="23" />
-    <option name="width" value="1877" />
-    <option name="height" value="1057" />
+    <option name="x" value="1920" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -153,7 +238,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,20 +266,6 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Products" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Liftracker" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Liftracker" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
@@ -214,16 +284,17 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data Management" />
+              <option name="myItemId" value="Liftracker.xcdatamodeld" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="CocoaPods" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Liftracker" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -261,13 +332,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Liftracker" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Liftracker" TARGET_NAME="Liftracker" CONFIG_NAME="Debug" SCHEME_NAME="Liftracker" RUN_TARGET_PROJECT_NAME="Liftracker" RUN_TARGET_NAME="Liftracker" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
     <configuration default="false" name="Charts" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Charts" CONFIG_NAME="Debug" SCHEME_NAME="Charts" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -289,11 +353,19 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="4">
+    <configuration default="false" name="CocoaLumberjack" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="CocoaLumberjack" CONFIG_NAME="Debug" SCHEME_NAME="CocoaLumberjack" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Liftracker" />
       <item index="1" class="java.lang.String" itemvalue="Application.Charts" />
       <item index="2" class="java.lang.String" itemvalue="Application.Pods-Liftracker" />
       <item index="3" class="java.lang.String" itemvalue="Application.XLForm" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CocoaLumberjack" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -310,29 +382,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="23" width="1877" height="1057" extended-state="6" />
+    <frame x="1920" y="25" width="1920" height="1053" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18167289" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -351,6 +423,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -520,26 +608,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
+    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46666667">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liftracker/LTObjejct.swift">
+    <entry file="appcode.project-settings://15fb6774">
+      <provider selected="true" editor-type-id="AppCode.ProjectSettings">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35502958">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker.xcodeproj/project.pbxproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3322785">
+          <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/WeightEstimator.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08201893">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/Base.lproj/Main.storyboard">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3218884">
+          <caret line="884" column="21" selection-start-line="884" selection-start-column="21" selection-end-line="884" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/Liftracker.xcdatamodeld/Liftracker_ Workouts.xcdatamodel/contents">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Liftracker/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.90983605">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Liftracker/DataManager.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48125">
-          <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.45502093">
+          <caret line="153" column="35" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
           <folding />
         </state>
       </provider>

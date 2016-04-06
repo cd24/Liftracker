@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import CocoaLumberjack
 
 //This class contains helper methods to do fun stuff with time.  
 class TimeManager {
+    static var timers = [Int:NSTimer]()
+    static var timer_starts = [Int:NSDate]()
+    static var last = 0;
+    
     //travels steps days in time (negative to go back in time).  Defualts to days, but can be adjusted by added an NSCalendarUnit to the component parameter.
     static func timeTravel(steps step: Int, base: NSDate, component: NSCalendarUnit = NSCalendarUnit.Day) -> NSDate {
         let calendar = getCalendar()
@@ -110,5 +115,43 @@ class TimeManager {
                                     toDate: end,
                                     options: NSCalendarOptions(rawValue: 0))
         return (components.year, components.month, components.day, components.hour, components.minute, components.second)
+    }
+    
+    static func getProcessKey() -> Int {
+        last += 1
+        return last
+    }
+    
+    static func startTimer(target: AnyObject, selector: Selector, fireDate: NSDate = NSDate(), repeats: Bool = true, interval: Double = 0.1) -> Int {
+        let key = getProcessKey()
+        startTimer(key, target: target, selector: selector, repeats: repeats, interval: interval, fireDate: fireDate)
+        return key
+    }
+    
+    static func startTimer(id: Int, target: AnyObject, selector: Selector, repeats: Bool, interval: Double, fireDate: NSDate){
+        let timer = NSTimer(fireDate: fireDate, interval: interval, target: target, selector: selector, userInfo: nil, repeats: repeats)
+        timers[id] = timer
+        timer_starts[id] = NSDate()
+        NSRunLoop.currentRunLoop().addTimer(timers[id]!, forMode: NSRunLoopCommonModes)
+    }
+    
+    static func invalidateTimer(id: Int) {
+        timers[id]?.invalidate()
+        timers.removeValueForKey(id)
+        timer_starts.removeValueForKey(id)
+    }
+    
+    static func getElapsedForTimer(id: Int) -> (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+        if let timer_start = timer_starts[id] {
+            return getDuration(timer_start, end: NSDate())
+        }
+        else {
+            DDLogError("Attempted to access unavailable timer at ID: \(id)")
+            return (0, 0, 0, 0, 0, 0)
+        }
+    }
+    
+    static func timerStart(id: Int) -> NSDate{
+        return timer_starts[id]!
     }
 }

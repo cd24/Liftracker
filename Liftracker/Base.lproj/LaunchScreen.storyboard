@@ -22,17 +22,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2016." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyh-iJ-dMw">
-                                <rect key="frame" x="224" y="505" width="151" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="vdj-X8-ulp"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights Reserved." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJx-4j-Ayc">
+                                <rect key="frame" x="224" y="534" width="153" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All Rights Reserved." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJx-4j-Ayc">
-                                <rect key="frame" x="224" y="534" width="153" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) John McAvey 2016." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyh-iJ-dMw">
+                                <rect key="frame" x="171" y="505" width="259" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vdj-X8-ulp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,11 +43,11 @@
                             <constraint firstItem="yZl-B6-6T6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="657-5V-lkX"/>
                             <constraint firstItem="YJx-4j-Ayc" firstAttribute="top" secondItem="Cyh-iJ-dMw" secondAttribute="bottom" constant="8" symbolic="YES" id="Arq-gn-yc5"/>
                             <constraint firstItem="yZl-B6-6T6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ifs-t9-1ai"/>
-                            <constraint firstItem="YJx-4j-Ayc" firstAttribute="baseline" secondItem="Cyh-iJ-dMw" secondAttribute="baseline" id="Jh1-Mn-5M7"/>
+                            <constraint firstItem="YJx-4j-Ayc" firstAttribute="baseline" secondItem="Cyh-iJ-dMw" secondAttribute="baseline" constant="29" id="Jh1-Mn-5M7"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YJx-4j-Ayc" secondAttribute="bottom" constant="45" id="NDs-kQ-SWc"/>
                             <constraint firstItem="Cyh-iJ-dMw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="O0b-Cm-vhV"/>
                             <constraint firstItem="YJx-4j-Ayc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hGG-va-8ct"/>
-                            <constraint firstItem="YJx-4j-Ayc" firstAttribute="leading" secondItem="Cyh-iJ-dMw" secondAttribute="leading" id="sp4-kn-jx0"/>
+                            <constraint firstItem="YJx-4j-Ayc" firstAttribute="leading" secondItem="Cyh-iJ-dMw" secondAttribute="leading" constant="53" id="sp4-kn-jx0"/>
                         </constraints>
                     </view>
                 </viewController>

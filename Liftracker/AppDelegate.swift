@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        setupLogger()
         setupDefault()
         if let shortcut = launchOptions?[UIApplicationLaunchOptionsShortcutItemKey] as? UIApplicationShortcutItem {
             LaunchAddExercice(shortcut)
@@ -156,6 +158,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.setObject("5", forKey: "height_feet")
         defaults.setObject("10", forKey: "height_inches")
     }
+
+    func setupLogger() {
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.addLogger(DDASLLogger.sharedInstance())
+
+        let fileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = 60*60*24
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger)
+        DDTTYLogger.sharedInstance().colorsEnabled = true
+        setLoggerColors()
+    }
+    
+    func setLoggerColors() {
+        let background = UIColor.whiteColor()
+        let info_color = UIColor.darkGrayColor()
+        let verbose_color = UIColor.cyanColor()
+        let debug_color = UIColor.blueColor()
+        let setup: [UIColor:DDLogFlag] = [
+            info_color: .Info,
+            debug_color: .Debug,
+            verbose_color: .Verbose
+        ]
+        
+        for (color, level) in setup {
+            //TODO: Figure out how this works now!
+            //DDTTYLogger.sharedInstance().setForegroundColor(color, backgroundColor: background, forTag: level)
+        }
+    }
     
     func LaunchAddExercice(shortCutItem: UIApplicationShortcutItem) -> Bool {
         let scid = shortCutItem.type
@@ -165,11 +196,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         switch launch_type{
         case .AddExercice:
-            print("Add Exercice")
+            DDLogInfo("Opening Add Exercice View from App Shortcut Launch")
         case .OpenStats:
-            print("Open Stats")
+            DDLogInfo("Opening Statistics View from App Shortcut Launch")
         case .OpenHistory:
-            print("Open History")
+            DDLogInfo("Opening History View from App Shortcut Launch")
         }
         
         return true

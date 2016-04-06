@@ -31,7 +31,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem]()
-        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save_rep"))
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(save_rep)))
         //let bars = UIImage(named: "data_bars.png")
         //self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: bars, landscapeImagePhone: bars, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
         
@@ -48,9 +48,9 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadReps() {
         repKeys = [NSDate]()
         allReps = [NSDate:[Rep]]()
-        let repsTemp = manager.loadAllRepsFor(exercice: exercice!)
+        let repsTemp = manager.loadAllWeightedRepsFor(exercice: exercice!)
         for rep in repsTemp {
-            let start = TimeManager.zeroDateTime(rep.date!)
+            let start = TimeManager.zeroDateTime(rep.start_time!)
             if repKeys.contains(start){
                 allReps[start]!.append(rep)
             }
@@ -69,9 +69,10 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func fillSuggestedData(){
+        //TODO: Find a way to suggest the number of reps
         let repSuggestion = 10.0
-        let tenMax = manager.estimatedMax(exercice!, reps: repSuggestion)
-        weight?.text = "\(tenMax)"
+        let tenMax = StatCalculator.estimatedMax(exercice!, reps: repSuggestion)
+        weight?.text = String(format: "%.02f", tenMax)
         num_reps?.text = "\(repSuggestion)"
         
         prev_weight = weight!.text!
@@ -84,7 +85,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         weight?.delegate = self
         weight?.keyboardType = UIKeyboardType.DecimalPad
         
-        recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        recognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     }
     
     func graph_view(){
@@ -120,8 +121,8 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             let section = indexPath.section
             let key = repKeys[section]
-            let rep = allReps[key]![indexPath.row]
-            cell.textLabel?.text = "Reps: \(rep.num_reps!), weight: \(manager.getRepWeightString(rep))"
+            let rep = allReps[key]![indexPath.row] as!WeightRep
+            cell.textLabel?.text = "Reps: \(rep.reps!), weight: \(manager.getRepWeightString(rep))"
         }
         return cell
     }
@@ -142,8 +143,8 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let r = Double(num_reps!.text!){
                 if updating {
                     let repFromRowKey = repKeys[rowUpdating!.section]
-                    let repFromRow = allReps[repFromRowKey]![rowUpdating!.row]
-                    repFromRow.num_reps = r
+                    let repFromRow = allReps[repFromRowKey]![rowUpdating!.row] as! WeightRep
+                    repFromRow.reps = r
                     repFromRow.weight = w
                     manager.save_context()
                     tableView!.deselectRowAtIndexPath(rowUpdating!, animated: true)
@@ -155,7 +156,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     if let day = addDate {
                         date = day
                     }
-                    let new_rep = manager.newRep(weight: w, repetitions: r, exercice: exercice!, date: date)
+                    let new_rep = manager.newWeightedRep(weight: w, repetitions: r, exercice: exercice!, date: date)
                     addRep(repetition: new_rep)
                     let sod = TimeManager.zeroDateTime(date)
                     let section = repKeys.indexOf(sod)!
@@ -182,7 +183,7 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func addRep(repetition rep: Rep){
-        let date = TimeManager.zeroDateTime(rep.date!)
+        let date = TimeManager.zeroDateTime(rep.start_time!)
         if allReps.keys.contains(date){
             allReps[date]?.insert(rep, atIndex: 0)
         }
@@ -223,9 +224,9 @@ class RepsViewController: UIViewController, UITableViewDelegate, UITableViewData
             updating = true
             rowUpdating = indexPath
             let repFromRowKey = repKeys[indexPath.section]
-            let repFromRow = allReps[repFromRowKey]![indexPath.row]
-            self.weight?.text = "\(repFromRow.weight!.doubleValue)"
-            self.num_reps?.text = "\(repFromRow.num_reps!.doubleValue)"
+            let repFromRow = allReps[repFromRowKey]![indexPath.row] as! WeightRep
+            self.weight?.text = "\(repFromRow.getWeight())"
+            self.num_reps?.text = "\(repFromRow.getReps())"
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         if indexPath.row == tableView.indexPathForSelectedRow?.row && updating {

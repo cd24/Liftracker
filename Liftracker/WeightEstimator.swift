@@ -7,6 +7,8 @@ import Foundation
 
 class WeightEstimator {
     func getConversionConstant(num_reps: Double) -> Double{
+        //This function is the best fit for data found on the internet
+        //If you have a better constant for rep estimates, let me know!
         return -0.000172235 * pow(num_reps, 3) +
                 0.00445998 * pow(num_reps, 2) -
                 0.0579785 * num_reps +
@@ -17,19 +19,19 @@ class WeightEstimator {
         return weight * ( 1 + num_reps/30)
     }
 
-    func estimatedMaxFor(reps: [Rep]) -> Double{
-        var max_val: Double = Double.infinity
-        try! reps.forEach({ rep in
+    func estimatedMaxFor(reps: [WeightRep]) -> Double{
+        var max_val: Double = -1
+        reps.forEach({ rep in
             let weight = rep.weight!.doubleValue
-            let num_reps = rep.num_reps!.doubleValue
-            let curr_max = estimatedMaxFor(weight, num_reps: num_reps)
+            let num_reps = rep.reps!.doubleValue
+            let curr_max = self.estimatedMaxFor(weight, num_reps: num_reps)
             max_val = max(curr_max, max_val)
         })
         return max_val
     }
 
-    func estimatedMax(sources: [Rep], targeted_reps: Double) -> Double {
-        return estimatedMaxFor(sources) *
+    func estimatedMax(sources: [WeightRep], targeted_reps: Double) -> Double {
+        return self.estimatedMaxFor(sources) *
                 getConversionConstant(targeted_reps)
     }
 }

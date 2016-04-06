@@ -14,14 +14,13 @@ class ExerciceAdderViewController: XLFormViewController {
     var currentGroup: MuscleGroup!
     var selectedIndex: Int = 0
     
-    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     let manager = DataManager.getInstance()
     var name_row, exercice_row, timed_row: XLFormRowDescriptor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         form = getForm()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "save");
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(save));
         title = "Add Exercice"
     }
 

@@ -28,7 +28,7 @@ class ProgressChartViewCell: UICollectionViewCell {
         if loadedEx != nil || loadedEx != exercice{
             //redraw
             var dataArray: [Int] = []
-            let reps = manager.loadAllRepsFor(exercice: exercice)
+            let reps = manager.loadAllWeightedRepsFor(exercice: exercice)
             for rep in reps{
                 dataArray.append(rep.weight!.integerValue)
             }

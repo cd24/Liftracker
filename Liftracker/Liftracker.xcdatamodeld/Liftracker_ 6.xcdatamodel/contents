@@ -33,7 +33,7 @@
         <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercice" positionX="-198" positionY="-36" width="128" height="103"/>
+        <element name="Exercice" positionX="-198" positionY="-36" width="128" height="105"/>
         <element name="MuscleGroup" positionX="-425" positionY="42" width="128" height="75"/>
         <element name="Rep" positionX="-56" positionY="159" width="128" height="120"/>
         <element name="TimedRep" positionX="-351" positionY="129" width="128" height="150"/>

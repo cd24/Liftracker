@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Liftracker/Charts.framework"
+  install_framework "Pods-Liftracker/CocoaLumberjack.framework"
   install_framework "Pods-Liftracker/XLForm.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Liftracker/Charts.framework"
+  install_framework "Pods-Liftracker/CocoaLumberjack.framework"
   install_framework "Pods-Liftracker/XLForm.framework"
 fi

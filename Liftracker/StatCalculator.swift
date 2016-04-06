@@ -9,87 +9,65 @@
 import Foundation
 
 class StatCalculator {
-    let manager = DataManager.getInstance();
-    let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
+    static let manager = DataManager.getInstance();
+    static let epley = "Epley", brzycki = "Brzycki", lander = "Lander", lombardi = "Lombardi", mayhew = "Mahew"
+    static let estimators = [
+        StatCalculator.epley     : EplyEstimator(),
+        StatCalculator.brzycki   : BrzyckiEstimator(),
+        StatCalculator.lander    : LanderEstimator(),
+        StatCalculator.lombardi  : LombardiEstimator(),
+        StatCalculator.mayhew    : MayhewEstimator()
+    ]
     
-    func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
-        let reps = manager.loadAllRepsFor(exercice: ex)
+    static func getMaxFor(exercice ex: Exercice, num_reps reps: Int) -> Rep{
+        let reps = manager.loadAllWeightedRepsFor(exercice: ex)
         var max: Rep?
         for rep in reps {
             if max != nil {
                 max = rep;
             }
-            else if rep.num_reps == reps && max!.weight?.integerValue > rep.weight?.integerValue {
+            else if rep.reps == reps && max!.weight?.integerValue > rep.weight?.integerValue {
                 max = rep
             }
         }
         return max!;
     }
     
-    func getMaxForAllReps(exercice ex: Exercice) -> [Int:Rep]{
-        let reps = manager.loadAllRepsFor(exercice: ex)
-        var map = [Int:Rep]()
-        for rep in reps {
-            let (weight, num_reps) = intValues(rep)
-            if weight > map[num_reps]!.weight?.integerValue {
-                map[num_reps] = rep
-            }
-            else {
-                map[num_reps] = rep
-            }
+    static func estimatedMax(ex: Exercice, reps: Double) -> Double {
+        let exrep = manager.loadAllWeightedRepsFor(exercice: ex)
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMax(exrep, targeted_reps: reps)
+        }
+        else {
+            return estimators[DataManager.epley]!.estimatedMax(exrep, targeted_reps: reps)
+        }
+    }
+    
+    static func estimatedMax(ex: Exercice) -> Double{
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
+        let reps = manager.loadAllWeightedRepsFor(exercice: ex)
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMaxFor(reps)
+        }
+        else {
+            return defaultEstimator().estimatedMaxFor(reps)
+        }
+    }
+    
+    static func estimatedMax(rep: WeightRep) -> Double{
+        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
+        let (weight, reps) = (rep.weight!.doubleValue, rep.reps!.doubleValue)
+        if let estimator = estimators[formula] {
+            return estimator.estimatedMaxFor(weight, num_reps: reps)
+        }
+        else {
+            return defaultEstimator().estimatedMaxFor(weight, num_reps: reps)
         }
         
-        return map
     }
     
-    func estimatedMax(rep: Rep) -> Double{
-        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        switch (formula){
-        case epley:
-            return epleyMax(rep)
-        case brzycki:
-            return brzyckiMax(rep)
-        case lander:
-            return landerMax(rep)
-        case lombardi:
-            return lombardiMax(rep)
-        case mayhew:
-            return mayhewMax(rep)
-        default:
-            return epleyMax(rep)
-        }
-    }
-    
-    func epleyMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * ( 1 + numReps/30)
-    }
-    
-    func brzyckiMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return weight * (36 / (37 - numReps))
-    }
-    
-    func landerMax(rep: Rep) -> Double {
-        let (weight, numReps) = values(rep)
-        return (100 * weight) / (101.3 - 2.67123*numReps)
-    }
-    
-    func lombardiMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return weight * pow(numReps, 0.10)
-    }
-    
-    func mayhewMax(rep: Rep) -> Double{
-        let (weight, numReps) = values(rep)
-        return (100*weight)/(52.2 + 41.9 * pow(2.7182, -0.055*numReps)) // couldn't find math.e, so I estimated :) 
-    }
-    
-    func values(rep: Rep) -> (Double, Double){
-        return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
-    }
-    
-    func intValues(rep: Rep) -> (Int, Int){
-        return (rep.weight!.integerValue, rep.num_reps!.integerValue)
+    private static func defaultEstimator() -> WeightEstimator {
+        return estimators[DataManager.epley]!
     }
 }

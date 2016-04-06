@@ -59,7 +59,7 @@ class HistoryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let title = TimeManager.dateToString(day)
-        if keys.count == 0{
+        if keys.count == 0 {
             return getHeadCell(tableView, indexPath: indexPath, title: title)
         }
         if indexPath.section == 0 {
@@ -69,7 +69,13 @@ class HistoryTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
             let key = keys[indexPath.section - 1]
             let rep = data[key]![indexPath.row]
-            cell.textLabel?.text = "Weight: \(rep.weight!), Num Reps: \(rep.num_reps!)"
+            if let rp = rep as? TimedRep {
+                let time_comps = TimeManager.getDuration(rp.start_time!, end: rp.end_time!)
+                cell.textLabel?.text = "Time: \(time_comps.hour) : \(time_comps.minute) : \(time_comps.second)"
+            }
+            else if let rp = rep as? WeightRep {
+                cell.textLabel?.text = "Weight: \(rp.weight!), Num Reps: \(rp.reps!)"
+            }
             return cell
         }
     }
@@ -77,8 +83,8 @@ class HistoryTableViewController: UITableViewController {
     func getHeadCell(tableView: UITableView, indexPath: NSIndexPath, title: String) -> HeadCell {
         let cl = tableView.dequeueReusableCellWithIdentifier("headCell", forIndexPath: indexPath) as! HeadCell
         cl.label.text = title
-        cl.forward.addTarget(parent, action: "shiftForward", forControlEvents: UIControlEvents.TouchDown)
-        cl.backward.addTarget(parent, action: "shiftBackward", forControlEvents: UIControlEvents.TouchDown)
+        cl.forward.addTarget(parent, action: Selector("shiftForward"), forControlEvents: UIControlEvents.TouchDown)
+        cl.backward.addTarget(parent, action: Selector("shiftBackward"), forControlEvents: UIControlEvents.TouchDown)
         return cl
     }
     

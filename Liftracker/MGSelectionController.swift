@@ -175,7 +175,8 @@ class MGSelectionController: UITableViewController, UISearchResultsUpdating, UIS
         for i in 0..<exercices.count {
             let exercice = exercices[i]
             let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-            let count = manager.entityCount(entityType: .Rep, predicate: predicate) + manager.entityCount(entityType: .TimedRep, predicate: predicate)
+            let count = manager.entityCount(entityType: .WeightRep, predicate: predicate) +
+                        manager.entityCount(entityType: .TimedRep, predicate: predicate)
             if count > 0 {
                 reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
                 xVals.append(exercice.name!)

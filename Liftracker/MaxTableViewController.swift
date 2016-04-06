@@ -66,10 +66,15 @@ class MaxTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let rep = results![self.keys[indexPath.row]]
         if keys.count > 0 {
-            NSLog("IndexPath.row: \(indexPath.row), key: \(self.keys[indexPath.row])")
-            let rep = results![self.keys[indexPath.row]]
-            cell.textLabel?.text = "Reps: \(rep!.num_reps!) \t Weight: \(rep!.weight!) \(UserPrefs.getUnitString())" //append weight units to the end of the string.
+            if let set = rep as? WeightRep {
+                cell.textLabel?.text = "Reps: \(set.reps!) \t Weight: \(set.weight!) \(UserPrefs.getUnitString())" //append weight units to the end of the string.
+            }
+            else if let set = rep as? TimedRep {
+                let elapsed = TimeManager.getDuration(set.start_time!, end: set.end_time!)
+                cell.textLabel?.text = "Time: \(elapsed.hour) : \(elapsed.minute) : \(elapsed.second)"
+            }
         }
         else {
             cell.textLabel?.text = "You haven't done this exercice yet!"

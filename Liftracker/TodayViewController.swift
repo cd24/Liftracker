@@ -21,11 +21,11 @@ class TodayViewController: UITableViewController {
         loadData()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl?.backgroundColor = UserPrefs.getMainColor()
         self.refreshControl?.tintColor = UserPrefs.getTintColor()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(add_reps));
         title = "Today"
         
         if HealthKitManager.shouldRequestPermission() {
@@ -64,7 +64,7 @@ class TodayViewController: UITableViewController {
                     todaysReps[exercice] = reps
                 }
                 else {
-                    let reps = manager.loadAllRepsFor(exercice: exercice, date: today)
+                    let reps = manager.loadAllWeightedRepsFor(exercice: exercice, date: today)
                     if reps.count == 0{
                         continue
                     }
@@ -101,11 +101,11 @@ class TodayViewController: UITableViewController {
         let row = indexPath.row
         if key.isTimed!.boolValue {
             let rep = todaysReps[key]![row] as! TimedRep
-            cell.textLabel?.text = "Time: \(rep.duration_hours!):\(rep.duration_minutes!):\(rep.duration_seconds!), Weight: \(rep.weight!)"
+            cell.textLabel?.text = "Time: \(rep.getTimeString())"
         }
         else {
-            let rep = todaysReps[key]![row] as! Rep
-            cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
+            let rep = todaysReps[key]![row] as! WeightRep
+            cell.textLabel?.text = "Reps: \(rep.reps!),\tWeight: \(manager.getRepWeightString(rep))"
         }
         return cell
     }

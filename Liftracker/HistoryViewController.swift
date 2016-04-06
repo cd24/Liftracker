@@ -33,11 +33,11 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func configureGestures() {
-        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "today")
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(today))
         doubleTapRecognizer.numberOfTapsRequired = 2
         
-        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: "shiftForward")
-        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: "shiftBackward")
+        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(shiftForward))
+        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(shiftBackward))
         leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Left
         rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirection.Right
         leftSwipeRecognizer.cancelsTouchesInView = true
@@ -96,7 +96,7 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         for mg in muscle_groups{
             let exercices = manager.loadExercicesFor(muscle_group: mg)
             for exercice in exercices{
-                let reps = manager.loadAllRepsFor(exercice: exercice, date: day)
+                let reps = manager.loadAllWeightedRepsFor(exercice: exercice, date: day)
                 if reps.count == 0{
                     continue
                 }

@@ -29,9 +29,9 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         load_data()
         self.title = group.name
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addExercice");
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(addExercice));
         let barImage = UIImage(named: "1035-pie-chart@3x.png")
-        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: "graph_view"))
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(image: barImage, style: UIBarButtonItemStyle.Plain, target: self, action: #selector(graph_view)))
         
         //configure search controller
         search_controller.searchResultsUpdater = self
@@ -98,7 +98,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         if segue.identifier == "Max"{
             let destination = segue.destinationViewController as! MaxTableViewController
             destination.exercice = selected_exercice
-            let reps = DataManager.getInstance().loadAllRepsFor(exercice: selected_exercice)
+            let reps = DataManager.getInstance().loadAllWeightedRepsFor(exercice: selected_exercice)
             destination.results = getMaxForAllReps(exercice: selected_exercice, reps: reps)
         }
         if segue.identifier == "Reps" {
@@ -137,7 +137,7 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
     }
     
     func getMaxForAllReps(exercice ex: Exercice, reps: [Rep]) -> [Int:Rep]{
-        let reps = manager.loadAllRepsFor(exercice: ex)
+        let reps = manager.loadAllWeightedRepsFor(exercice: ex)
         var map = [Int:Rep]()
         for rep in reps {
             let (weight, num_reps) = intValues(rep)
@@ -152,8 +152,8 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         return map
     }
     
-    func intValues(rep: Rep) -> (Int, Int){
-        return (rep.weight!.integerValue, rep.num_reps!.integerValue)
+    func intValues(rep: WeightRep) -> (Int, Int){
+        return (rep.weight!.integerValue, rep.reps!.integerValue)
     }
 
     //MARK: - search controller 
@@ -191,7 +191,8 @@ class ExerciceSelectorController: UITableViewController, UISearchControllerDeleg
         for i in 0..<exercices.count {
             let exercice = exercices[i]
             let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-            let count = manager.entityCount(entityType: .Rep, predicate: predicate) + manager.entityCount(entityType: .TimedRep, predicate: predicate)
+            let count = manager.entityCount(entityType: .WeightRep, predicate: predicate) +
+                        manager.entityCount(entityType: .TimedRep, predicate: predicate)
             if count > 0 {
                 reps.append(BarChartDataEntry(value: Double(count), xIndex: i))
                 xVals.append(exercice.name!)

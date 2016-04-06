@@ -48,7 +48,7 @@ class HealthKitManager {
         return sample
     }
     
-    static func getWeights(var storeLocation: [Weight], numEntries: Int = 50, predicate: NSPredicate? = nil) -> [HKQuantitySample] {
+    static func getWeights(inout storeLocation: [Weight], numEntries: Int = 50, predicate: NSPredicate? = nil) -> [HKQuantitySample] {
         let weight = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
         var values = [HKQuantitySample]()
         let weight_query = HKSampleQuery(sampleType: weight!,
@@ -96,7 +96,7 @@ class HealthKitManager {
     }
     
     static func executeQuery(query: HKSampleQuery) {
-        if hasPermission(query.sampleType) {
+        if hasPermission(query.sampleType!) {
             store?.executeQuery(query)
         }
     }
@@ -120,4 +120,5 @@ class HealthKitManager {
                                               HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)!) -> Bool {
         return store?.authorizationStatusForType(type) == .NotDetermined
     }
+    
 }

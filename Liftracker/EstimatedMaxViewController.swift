@@ -21,7 +21,7 @@ class EstimatedMaxViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UserPrefs.getMainColor()
         self.refreshControl?.tintColor = UserPrefs.getTintColor()
-        self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
         loadData()
         
         title = "\(mg!.name!)"
@@ -66,9 +66,9 @@ class EstimatedMaxViewController: UITableViewController {
         exercices = [Exercice:Double]()
         let ex = manager.loadExercicesFor(muscle_group: mg!)
         for exercice in ex {
-            let reps = manager.loadAllRepsFor(exercice: exercice)
+            let reps = manager.loadAllWeightedRepsFor(exercice: exercice)
             if reps.count > 0{
-                let max = manager.estimatedMax(exercice)
+                let max = StatCalculator.estimatedMax(exercice)
                 exercices[exercice] = max
                 keys.append(exercice)
             }

@@ -23,9 +23,9 @@ class DayViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UserPrefs.getMainColor()
         self.refreshControl?.tintColor = UserPrefs.getTintColor()
-        self.refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: UIControlEvents.ValueChanged)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: "add_reps");
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Exercice", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(add_reps));
         title = "Today"
     }
     
@@ -35,7 +35,7 @@ class DayViewController: UITableViewController {
         for mg in muscle_groups{
             let exercices = manager.loadExercicesFor(muscle_group: mg)
             for exercice in exercices{
-                let reps = manager.loadAllRepsFor(exercice: exercice, date: day)
+                let reps = manager.loadAllWeightedRepsFor(exercice: exercice, date: day)
                 if reps.count == 0{
                     continue
                 }
@@ -67,8 +67,8 @@ class DayViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
         
         // Configure the cell...
-        let rep = todaysReps[keys[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = "Reps: \(rep.num_reps!), Weight: \(manager.getRepWeightString(rep))"
+        let rep = todaysReps[keys[indexPath.section]]![indexPath.row] as! WeightRep
+        cell.textLabel?.text = "Reps: \(rep.reps!), Weight: \(manager.getRepWeightString(rep))"
         
         return cell
     }

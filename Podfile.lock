@@ -1,13 +1,22 @@
 PODS:
   - Charts (2.1.4)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (2.2.0):
+    - CocoaLumberjack/Extensions
   - XLForm (3.1.0)
 
 DEPENDENCIES:
   - Charts
+  - CocoaLumberjack/Swift
   - XLForm (~> 3.0)
 
 SPEC CHECKSUMS:
   Charts: 870589b6b4bf8468baacea8869c28983d71f602c
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   XLForm: 754b061f9f4b249a7ab7548efb22f1b586e26740
 
 COCOAPODS: 0.39.0

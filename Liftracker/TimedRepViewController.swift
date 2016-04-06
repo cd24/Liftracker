@@ -22,8 +22,8 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     var elapsed_time = 0.0
     var reps = [NSDate:[TimedRep]]()
     var keys = [NSDate]()
+    var timer_id: Int!
     
-    var time_interval = 0.1 //in seconds
     var timing = false
     var numberFormatter = NSNumberFormatter()
     let manager = DataManager.getInstance()
@@ -43,7 +43,7 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.reloadData()
         tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         
-        let recognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(recognizer)
     }
 
@@ -52,15 +52,9 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillDisappear(animated: Bool) {
-        if let _ = timer {
-            timer.invalidate()
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if timing {
-            startTimer()
-        }
     }
     
     @IBAction func toggleTimer() {
@@ -73,31 +67,30 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func startTimer() {
-        start = NSDate()
-        elapsed_time = 0
-        timer = NSTimer(timeInterval: 0, target: self, selector: "update_timer", userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        
+        timer_id = TimeManager.startTimer(self, selector: #selector(update_timer))
         ss_button.setTitle("Stop", forState: UIControlState.Normal)
         ss_button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         timing = true
     }
     
     func stopTimer() {
+        start = TimeManager.timerStart(timer_id)
         stop = NSDate()
-        timer.invalidate()
-        save_rep()
+        
+        TimeManager.invalidateTimer(timer_id)
         ss_button.setTitle("Start", forState: UIControlState.Normal)
         ss_button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         timing = false
+        save_rep()
     }
     
     func update_timer() {
-        let now = NSDate()
-        let duration = TimeManager.getDuration(start, end: now)
-        let hr = numberFormatter.stringFromNumber(duration.hour)
-        let min = numberFormatter.stringFromNumber(duration.minute)
-        let sec = numberFormatter.stringFromNumber(duration.second)
-        time_label.text = "\(hr!):\(min!):\(sec!)"
+        let duration = TimeManager.getElapsedForTimer(timer_id)
+        let hr = numberFormatter.stringFromNumber(duration.hour)!
+        let min = numberFormatter.stringFromNumber(duration.minute)!
+        let sec = numberFormatter.stringFromNumber(duration.second)!
+        time_label.text = "\(hr):\(min):\(sec)"
     }
     
     func loadReps() {
@@ -197,11 +190,9 @@ class TimedRepViewController: UIViewController, UITableViewDelegate, UITableView
         
         let key = keys[indexPath.section]
         let rep_list = reps[key]!
-        let rep = rep_list[indexPath.row]
-        let hrs = numberFormatter.stringFromNumber(rep.duration_hours!)
-        let minutes = numberFormatter.stringFromNumber(rep.duration_minutes!)
-        let seconds = numberFormatter.stringFromNumber(rep.duration_seconds!)
-        cell.textLabel?.text = "Time: \(hrs!):\(minutes!):\(seconds!), Weight: \(rep.weight!)"
+        let set = rep_list[indexPath.row]
+        
+        cell.textLabel?.text = set.getTimeString()
         
         return cell
     }

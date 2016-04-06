@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import HealthKit
+import CocoaLumberjack
+import CoreData
 import Charts
 
 class DataManager {
@@ -21,14 +23,6 @@ class DataManager {
         lombardi = "Lombardi",
         mayhew = "Mahew"
 
-    let estimators = [
-            DataManager.epley     : EplyEstimator(),
-            DataManager.brzycki   : BrzyckiEstimator(),
-            DataManager.lander    : LanderEstimator(),
-            DataManager.lombardi  : LombardiEstimator(),
-            DataManager.mayhew    : MayhewEstimator()
-    ]
-
     static func getInstance() -> DataManager {
         return manager;
     }
@@ -36,13 +30,15 @@ class DataManager {
     //MARK: - Muscle Groups Management
     
     func loadAllMuscleGroups() -> [MuscleGroup]{
-        return getEntities(LTObject.MuscleGroup, predicate:nil, sortdesc: sortDescriptorName()) as! [MuscleGroup]
+        return getEntities(.MuscleGroup, predicate:nil, sortdesc: sortDescriptorName()) as! [MuscleGroup]
     }
     
     func newMuscleGroup(name name: String) -> MuscleGroup {
+        DDLogInfo("Creating new mucle group called '\(name)'")
         let pred = NSPredicate(format: "name == '\(name)'")
         let count = entityCount(entityType: .MuscleGroup, predicate: pred)
         if count != 0{
+            DDLogWarn("Muscle group named '\(name)' already existed, returning existing entitty instead")
             return getEntities(.MuscleGroup, predicate: pred)[0] as! MuscleGroup
         }
         let group = newEntity(.MuscleGroup) as! MuscleGroup
@@ -58,12 +54,14 @@ class DataManager {
                 return mg
             }
         }
+        DDLogDebug("No Muscle Group by the name '\(name)' exists in the database")
         return nil
     }
     
     //MARK: - Exercice Management
     
     func loadExercicesFor(muscle_group group: MuscleGroup) -> [Exercice] {
+        DDLogVerbose("Loading exercices for muscle group '\(group.name!)'")
         let predicate = NSPredicate(format: "muscle_group.name == '\(group.name!)'")
         return getEntities(.Exercice, predicate: predicate, sortdesc: sortDescriptorName()) as! [Exercice]
     }
@@ -98,39 +96,42 @@ class DataManager {
     
     //MARK: - Rep Management
     
-    func newRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice, date: NSDate = NSDate()) -> Rep{
-        let rep = newEntity(.Rep) as! Rep
+    func newWeightedRep(weight w: Double, repetitions reps: Double, exercice ex: Exercice, date: NSDate = NSDate()) -> WeightRep {
+        let rep = newEntity(.WeightRep) as! WeightRep
+        DDLogVerbose("Created new rep with weight: \(w), repetitions: \(reps), for exercice: \(ex.name!) on \(date)")
         rep.weight = w
-        rep.num_reps = reps
-        rep.date = date
+        rep.reps = reps
+        rep.start_time = date
         rep.exercice = ex
         rep.unit = UserPrefs.getUnitString()
         save_context()
         return rep
     }
     
-    func loadAllRepsFor(exercice exercice: Exercice) -> [Rep]{
+    func loadAllWeightedRepsFor(exercice exercice: Exercice) -> [WeightRep]{
         let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-        return getEntities(.Rep, predicate: predicate) as! [Rep]
+        let reps = getEntities(.WeightRep, predicate: predicate) as! [WeightRep]
+        DDLogDebug("Retrievied \(reps.count) reps from the model while querying all")
+        return reps
     }
     
-    func loadAllRepsFor(exercice exercice: Exercice, date: NSDate) -> [Rep]{
+    func loadAllWeightedRepsFor(exercice exercice: Exercice, date: NSDate) -> [WeightRep]{
         let start = TimeManager.startOfDay(date)
         let end = TimeManager.endOfDay(date)
-        let predicate = NSPredicate(format: "exercice.name == %@ AND (date >= %@) AND (date <= %@)",
+        let predicate = NSPredicate(format: "exercice.name == %@ AND (start_time >= %@) AND (start_time <= %@)",
                         exercice.name!,
                         start,
                         end)
-        return getEntities(.Rep, predicate: predicate) as! [Rep]
+        return getEntities(.WeightRep, predicate: predicate) as! [WeightRep]
     }
     
-    func loadAllRepsFor(date date: NSDate) -> [Rep]{
+    func loadAllWeightedRepsFor(date date: NSDate) -> [Rep]{
         let cleanded_date: NSDate = TimeManager.startOfDay(date)
-        let predicate = NSPredicate(format: "date == '\(cleanded_date)'")
-        return getEntities(.Rep, predicate: predicate) as! [Rep]
+        let predicate = NSPredicate(format: "start_time == '\(cleanded_date)'")
+        return getEntities(.WeightRep, predicate: predicate) as! [Rep]
     }
     
-    func getRepWeightString(rep: Rep) -> String {
+    func getRepWeightString(rep: WeightRep) -> String {
         let weight = UserPrefs.getUnitString()
         var val = rep.weight!.doubleValue
         if rep.unit! != weight {
@@ -154,40 +155,44 @@ class DataManager {
         return getEntities(.Rep, predicate: predicate) as! [Rep]
     }
     
-    func values(rep: Rep) -> (Double, Double){
-        return (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
-    }
-    
     //MARK: - Timed Rep Management
     
     func newTimedRep(start: NSDate, end: NSDate, weight: Double = 0, exercice: Exercice) -> TimedRep {
+        DDLogDebug("Creating new timed rep")
         let rep = newEntity(.TimedRep) as! TimedRep
+        DDLogVerbose("Created new entity of type Timed Rep")
         
-        let duration = TimeManager.getDuration(start, end: end)
-        rep.duration_seconds = duration.second
-        rep.duration_minutes = duration.minute
-        rep.duration_hours = duration.hour
         rep.weight = weight
         rep.exercice = exercice
         rep.start_time = start
         rep.end_time = end
+        rep.unit = UserPrefs.getUnitString()
         
+        DDLogDebug("Added attributes to the object... preparing to save")
         save_context()
+        DDLogInfo("Created new timed rep for start \(start) and end \(end), weight = \(weight)")
         
         return rep
     }
     
     func timedRepsFor(exercice: Exercice, start: NSDate, end: NSDate) -> [TimedRep] {
         let predicate = NSPredicate(format: "exercice.name == %@ AND (start_time >= %@) AND (end_time <= %@)", exercice.name!, start, end)
-        return getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
+        DDLogDebug("Fetching timed reps for predicate '\(predicate)'")
+        let reps = getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
+        DDLogVerbose("Retrievied \(reps.count) timed reps between \(start) and \(end) for \(exercice.name!)")
+        return reps
     }
     
     func timedRepsFor(exercice: Exercice) -> [TimedRep] {
         let predicate = NSPredicate(format: "exercice.name == '\(exercice.name!)'")
-        return getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
+        DDLogVerbose("Fetching timed reps for predicate '\(predicate)'")
+        let values = getEntities(.TimedRep, predicate: predicate) as! [TimedRep]
+        DDLogVerbose("Retrieved \(values.count) timed reps for exercice \(exercice.name!)")
+        return values
     }
     
     func allTimedReps() -> [TimedRep] {
+        DDLogDebug("Loading all timed reps")
         return getEntities(.TimedRep) as! [TimedRep]
     }
     
@@ -243,18 +248,30 @@ class DataManager {
     
     func entityExists(name: String, entityType entity: LTObject, nameField field: String = "name") -> Bool {
         let predicate = NSPredicate(format: "\(field) == \(name)")
-        return entityCount(entityType: entity, predicate: predicate) > 0
+        let exists = entityCount(entityType: entity, predicate: predicate) > 0
+        DDLogDebug("Entity \(entity) exists where \(field) == \(name)?: \(exists)")
+        return exists
     }
     
     func entityCount(entityType entity: LTObject, predicate: NSPredicate? = nil) -> Int {
         let fetch_request = NSFetchRequest(entityName: entity.rawValue)
         fetch_request.predicate = predicate
-        let error = NSErrorPointer()
-        return managedContext.countForFetchRequest(fetch_request, error: error)
+        let error: NSErrorPointer = nil
+        var count = managedContext.countForFetchRequest(fetch_request, error: error)
+        if (error != nil) {
+            DDLogError("Encountered an error while counting objects of type \(entity).\nError: \(error.debugDescription)")
+            count = 0
+        }
+        else {
+            DDLogDebug("Counted \(count) objects for type \(entity)")
+        }
+        return count
     }
     
     func newEntity(name: LTObject) -> NSManagedObject {
-        return NSEntityDescription.insertNewObjectForEntityForName(name.rawValue, inManagedObjectContext: managedContext)
+        DDLogVerbose("Creating new entity for type \(name)")
+        let object = NSEntityDescription.insertNewObjectForEntityForName(name.rawValue, inManagedObjectContext: managedContext)
+        return object
     }
     
     func getEntityWithValue(value: String, entityType entity: LTObject, valueField field: String = "name") -> [AnyObject] {
@@ -264,32 +281,25 @@ class DataManager {
     
     func getEntities(name: LTObject, predicate: NSPredicate? = nil, sortdesc: [NSSortDescriptor]? = nil) -> [AnyObject] {
         let fetch_request = NSFetchRequest(entityName: name.rawValue)
+        DDLogVerbose("Fetching entities of type \(name)")
         if let pred = predicate {
             fetch_request.predicate = pred
+            DDLogVerbose("with predicate \(pred)")
         }
         if let sd = sortdesc {
             fetch_request.sortDescriptors = sd
+            DDLogVerbose("with sort descriptors \(sd)")
         }
         
         let values: [AnyObject]
         do {
+            DDLogDebug("Attempting to retrieve objects...")
             values = try managedContext.executeFetchRequest(fetch_request)
+            DDLogVerbose("Retrieved \(values.count) objects.")
             return values
         }
         catch {
-            print("An error occured while fetching an \(name).  The error was: \(error)")
-            let alertView = UIAlertController(title: "Error Loading Data",
-                message: "Sorry to say, but we ran into a problem loading your data from the device.  would you like to report this error?",
-                preferredStyle: UIAlertControllerStyle.Alert)
-            let email_action = UIAlertAction(title: "Report", style: UIAlertActionStyle.Default, handler: {act in
-                self.reportError(error)
-            })
-            let cancel_action = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
-            alertView.addAction(email_action)
-            alertView.addAction(cancel_action)
-            if let root_controller = getCurrentViewController() {
-                root_controller.presentViewController(alertView, animated: true, completion: nil)
-            }
+            DDLogError("An error occured while fetching an \(name).  The error was: \(error)")
             return [AnyObject]()
         }
     }
@@ -304,99 +314,33 @@ class DataManager {
     
     func save_context(){
         do {
+            DDLogDebug("Saving context")
             try managedContext.save()
         }
         catch{
-            //todo: Find a logging library
+            reportError(error)
         }
-    }
-    
-    // MARK: - Helper Methods
-    
-    func estimatedMax(ex: Exercice, reps: Double) -> Double {
-        let exrep = loadAllRepsFor(exercice: ex)
-        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        if let estimator = estimators[formula] {
-            return estimator.estimatedMax(exrep, targeted_reps: reps)
-        }
-        else {
-            return estimators[DataManager.epley]!.estimatedMax(exrep, targeted_reps: reps)
-        }
-    }
-    
-    func estimatedMax(ex: Exercice) -> Double{
-        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        let reps = loadAllRepsFor(exercice: ex)
-        if let estimator = estimators[formula] {
-            return estimator.estimatedMaxFor(reps)
-        }
-        else {
-            return estimators[DataManager.epley]!.estimatedMaxFor(reps)
-        }
-    }
-    
-    func estimatedMax(rep: Rep) -> Double{
-        let formula = NSUserDefaults.standardUserDefaults().valueForKey("max_rep_calculator") as! String
-        let (weight, reps) = (rep.weight!.doubleValue, rep.num_reps!.doubleValue)
-        if let estimator = estimators[formula] {
-            return estimator.estimatedMaxFor(weight, num_reps: reps)
-        }
-        else {
-            return estimators[DataManager.epley]!.estimatedMaxFor(weight, num_reps: reps)
-        }
-
     }
     
     //MARK: - Useful Numbers
     func bmi(weight: Double) -> Double {
         let weight = UserPrefs.getUnitString() == "Lbs" ?
-                        DataManager.lbsToKilograms(weight) :
+                        UnitCalculator.lbsToKilograms(weight) :
                         weight
-        let height = DataManager.ftToCm(feet: UserPrefs.getHeight_ft(),
+        let height = UnitCalculator.ftToCm(feet: UserPrefs.getHeight_ft(),
                             inches: UserPrefs.getHeight_in()) / 100
         let bmi = weight / pow(height, 2)
         return bmi
     }
     
-    //MARK: - Unit Conversions
-    
-    static func lbsToKilograms(value: Double) -> Double {
-        return value * (1/2.204)
-    }
-    
-    static func kilogramsToLbs(value: Double) -> Double {
-        return value * 2.204
-    }
-    
-    static func ftInToInch(feet ft: Int, inches inn: Int) -> Int {
-        return (ft * 12) + inn
-    }
-    
-    static func ftToCm(feet ft: Int, inches inn: Int) -> Double {
-        return inchToCm(
-                    ftInToInch(feet: ft, inches: inn))
-    }
-    
-    static func inchToCm(inches: Int) -> Double {
-        return Double(inches) * 2.54
-    }
-    
-    static func cmToIn(cm: Double) -> Int {
-        return Int(cm/2.54)
-    }
-    
-    static func galToLiter(gal: Double) -> Double {
-        return gal*3.7854118
-    }
-    
-    static func literToGal(liter: Double) -> Double {
-        return liter/3.7854118
-    }
-    
     //MARK: - Error Reporting via Network
     
     func reportError(error: ErrorType) {
-        //todo: Write the error to an email and send it.
+        DDLogError("Encountered an error - error information:")
+        DDLogError("\(error)")
+        for err in NSThread.callStackSymbols() {
+            DDLogError(err)
+        }
     }
     
     func getCurrentViewController() -> UIViewController? {
