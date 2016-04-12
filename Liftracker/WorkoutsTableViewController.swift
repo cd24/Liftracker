@@ -33,6 +33,7 @@ class WorkoutsTableViewController: UITableViewController {
     
     @IBAction func add_workout(item: UIBarButtonItem) {
         DDLogInfo("Add Workout")
+        performSegueWithIdentifier("addWorkout", sender: self)
     }
 
     // MARK: - Table view data source

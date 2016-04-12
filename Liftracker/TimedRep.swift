@@ -2,7 +2,7 @@
 //  TimedRep.swift
 //  
 //
-//  Created by John McAvey on 4/3/16.
+//  Created by John McAvey on 4/6/16.
 //
 //
 
@@ -11,28 +11,10 @@ import CoreData
 
 @objc(TimedRep)
 class TimedRep: Rep {
-    let numberFormatter = NSNumberFormatter()
-    var formatterConfigured: Bool = false
-    
-    func getTimeString() -> String {
-        if !formatterConfigured {
-            setupFormatter()
-        }
-        
-        let elapsed = TimeManager.getDuration(start_time!, end: end_time!)
-        
-        let hr = numberFormatter.stringFromNumber(elapsed.hour)!
-        let min = numberFormatter.stringFromNumber(elapsed.minute)!
-        let sec = numberFormatter.stringFromNumber(elapsed.second)!
-        
-        return "\(hr):\(min):\(sec),\tWeight: \(weight!.doubleValue)"
-    }
-    
-    private func setupFormatter() {
-        numberFormatter.paddingPosition = NSNumberFormatterPadPosition.BeforePrefix
-        numberFormatter.paddingCharacter = "0"
-        numberFormatter.minimumIntegerDigits = 2
-        
-        formatterConfigured = true
+
+// Insert code here to add functionality to your managed object subclass
+    func getTimeString() -> String{
+        let duration = TimeManager.getDuration(self.start_time!, end: self.end_time!)
+        return String(format: "%02d:%02d:%02d", duration.hour, duration.minute, duration.second)
     }
 }

@@ -14,7 +14,7 @@ import CocoaLumberjack
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let loadOnceKey = "DefaultDataLoad_2"
+    let loadOnceKey = "DefaultDataLoad_3"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

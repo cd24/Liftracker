@@ -96,7 +96,13 @@ class HistoryViewController: UIViewController,UIScrollViewDelegate {
         for mg in muscle_groups{
             let exercices = manager.loadExercicesFor(muscle_group: mg)
             for exercice in exercices{
-                let reps = manager.loadAllWeightedRepsFor(exercice: exercice, date: day)
+                let reps: [Rep]
+                if exercice.isTimed!.boolValue {
+                    reps = manager.timedRepsFor(exercice, start: TimeManager.startOfDay(day), end: TimeManager.endOfDay(day))
+                }
+                else {
+                    reps = manager.loadAllWeightedRepsFor(exercice: exercice, date: day)
+                }
                 if reps.count == 0{
                     continue
                 }

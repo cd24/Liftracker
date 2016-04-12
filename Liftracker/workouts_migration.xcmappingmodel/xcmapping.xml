@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>06B347A3-EF56-4EAA-BB18-37758A12233C</UUID>
-        <nextObjectID>153</nextObjectID>
+        <nextObjectID>160</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -85,7 +85,7 @@ cBIAAYagrxEDlQAHAAgAFwAzADQANQBLAEwATQBOAE8AUABRAFIAUwBuAG8AcAB2AHcAgwCZAJoAmwCc
         <attribute name="destinationname" type="string">TimedRep</attribute>
         <attribute name="autogenerateexpression" type="bool">1</attribute>
         <relationship name="mappingmodel" type="1/1" destination="XDDEVMAPPINGMODEL" idrefs="z105"></relationship>
-        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z128 z131 z133 z108"></relationship>
+        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z128 z131 z108 z133"></relationship>
         <relationship name="relationshipmappings" type="0/0" destination="XDDEVRELATIONSHIPMAPPING" idrefs="z135"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z108">
@@ -305,7 +305,7 @@ CA8QVSRudWxs0wkKCwwNDl8QD05TQ29uc3RhbnRWYWx1ZV8QEE5TRXhwcmVzc2lvblR5cGVWJGNsYXNz
         <attribute name="destinationname" type="string">WeightRep</attribute>
         <attribute name="autogenerateexpression" type="bool">1</attribute>
         <relationship name="mappingmodel" type="1/1" destination="XDDEVMAPPINGMODEL" idrefs="z105"></relationship>
-        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z146 z151 z148 z149"></relationship>
+        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z149 z148 z151 z146"></relationship>
         <relationship name="relationshipmappings" type="0/0" destination="XDDEVRELATIONSHIPMAPPING" idrefs="z150"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z148">
@@ -345,5 +345,27 @@ CBMUGRoiJywtMDRVJG51bGzVCQoLDA0ODxAREllOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4
         <relationship name="mappingmodel" type="1/1" destination="XDDEVMAPPINGMODEL"></relationship>
         <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING"></relationship>
         <relationship name="relationshipmappings" type="0/0" destination="XDDEVRELATIONSHIPMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z154">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z155">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z156">
+        <attribute name="name" type="string">reps</attribute>
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z157">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z158">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z159">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVATTRIBUTEMAPPING" id="z160">
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
     </object>
 </database>

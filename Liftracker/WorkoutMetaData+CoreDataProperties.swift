@@ -2,7 +2,7 @@
 //  WorkoutMetaData+CoreDataProperties.swift
 //  
 //
-//  Created by John McAvey on 4/3/16.
+//  Created by John McAvey on 4/6/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -19,5 +19,6 @@ extension WorkoutMetaData {
     @NSManaged var duration_second: NSNumber?
     @NSManaged var target_reps: NSNumber?
     @NSManaged var workout: Workout?
+    @NSManaged var exercice: Exercice?
 
 }

@@ -470,7 +470,7 @@
             </objects>
             <point key="canvasLocation" x="-365" y="3240"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Workouts-->
         <scene sceneID="SVu-qC-meZ">
             <objects>
                 <tableViewController id="CKn-JS-nT0" customClass="WorkoutsTableViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -493,11 +493,32 @@
                             <outlet property="delegate" destination="CKn-JS-nT0" id="cfw-5s-oHk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kb8-j0-Jtx"/>
+                    <navigationItem key="navigationItem" title="Workouts" id="kb8-j0-Jtx"/>
+                    <connections>
+                        <segue destination="uik-6R-7XN" kind="show" identifier="addWorkout" id="C55-iL-gqp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaM-8t-RMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="3940"/>
+            <point key="canvasLocation" x="-426" y="3940"/>
+        </scene>
+        <!--Workout Edit View Controller-->
+        <scene sceneID="ppb-TC-sVK">
+            <objects>
+                <viewController id="uik-6R-7XN" customClass="WorkoutEditViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Ka-t4-yZh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wsy-fO-bsR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sz4-2h-5S0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nne-Ko-Alp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="4663"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="yUt-ht-5HL">

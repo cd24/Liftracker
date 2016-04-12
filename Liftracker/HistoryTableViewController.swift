@@ -70,8 +70,7 @@ class HistoryTableViewController: UITableViewController {
             let key = keys[indexPath.section - 1]
             let rep = data[key]![indexPath.row]
             if let rp = rep as? TimedRep {
-                let time_comps = TimeManager.getDuration(rp.start_time!, end: rp.end_time!)
-                cell.textLabel?.text = "Time: \(time_comps.hour) : \(time_comps.minute) : \(time_comps.second)"
+                cell.textLabel?.text = "Time: \(rp.getTimeString())"
             }
             else if let rp = rep as? WeightRep {
                 cell.textLabel?.text = "Weight: \(rp.weight!), Num Reps: \(rp.reps!)"

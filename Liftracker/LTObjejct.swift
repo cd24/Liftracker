@@ -16,4 +16,5 @@ enum LTObject : String {
     case Exercice = "Exercice"
     case Weight = "Weight"
     case Workout = "Workout"
+    case WorkoutMetaData = "WorkoutMetaData"
 }

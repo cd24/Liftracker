@@ -244,6 +244,57 @@ class DataManager {
         }
     }
     
+    //MARK: - Workout methods
+    
+    func allWorkouts() -> [Workout]{
+        return getEntities(.Workout) as! [Workout]
+    }
+    
+    func newWorkout(info: [WorkoutMetaData]) -> Workout {
+        let workout = newEntity(.Workout) as! Workout
+        let set = NSMutableSet()
+        for meta in info {
+            meta.workout = workout
+            set.addObject(meta)
+        }
+        workout.meta_data = set
+        workout.created = NSDate()
+        save_context()
+        
+        return workout
+    }
+    
+    func newTimedMetaData(exercice: Exercice, hour: Int, minute: Int, second: Int) -> WorkoutMetaData {
+        let meta = newEntity(.WorkoutMetaData) as! WorkoutMetaData
+        meta.exercice = exercice
+        meta.duration_hour = hour
+        meta.duration_minute = minute
+        meta.duration_second = second
+        meta.target_reps = 1
+        save_context()
+        return meta
+    }
+    
+    func newWeightMetaData(exercice: Exercice, reps: Int) -> WorkoutMetaData {
+        let meta = newEntity(.WorkoutMetaData) as! WorkoutMetaData
+        meta.exercice = exercice
+        meta.duration_hour = 0
+        meta.duration_minute = 0
+        meta.duration_second = 0
+        meta.target_reps = reps
+        save_context()
+        return meta
+    }
+    
+    func deleteWorkout(workout: Workout) {
+        let workouts = workout.meta_data
+        managedContext.deleteObject(workout)
+        for work in workouts! {
+            managedContext.deleteObject(work as! NSManagedObject)
+        }
+        save_context()
+    }
+    
     //MARK: - General Core Data
     
     func entityExists(name: String, entityType entity: LTObject, nameField field: String = "name") -> Bool {
