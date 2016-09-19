@@ -2,8 +2,8 @@
 //  LiftrackerUITests.swift
 //  LiftrackerUITests
 //
-//  Created by John McAvey on 10/9/15.
-//  Copyright © 2015 John McAvey. All rights reserved.
+//  Created by John McAvey on 9/18/16.
+//  Copyright © 2016 John McAvey. All rights reserved.
 //
 
 import XCTest

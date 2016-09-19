@@ -2,8 +2,8 @@
 //  LiftrackerTests.swift
 //  LiftrackerTests
 //
-//  Created by John McAvey on 10/9/15.
-//  Copyright © 2015 John McAvey. All rights reserved.
+//  Created by John McAvey on 9/18/16.
+//  Copyright © 2016 John McAvey. All rights reserved.
 //
 
 import XCTest
@@ -28,7 +28,7 @@ class LiftrackerTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

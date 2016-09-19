@@ -1,19 +1,24 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '9.0'
-# Uncomment this line if you're using Swift
-use_frameworks!
+# platform :ios, '9.0'
 
 target 'Liftracker' do
-pod 'Charts'
-pod 'XLForm', '~> 3.0'
-pod 'CocoaLumberjack/Swift'
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Liftracker
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'Realm'
+  pod 'Realm/Headers'
+
+  target 'LiftrackerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'LiftrackerUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end
-
-target 'LiftrackerTests' do
-
-end
-
-target 'LiftrackerUITests' do
-
-end
-
