@@ -23,6 +23,17 @@
 		52BAB0C11D8F6F360051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
 		52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
 		52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
+		52BAB0C61D8F728D0051B064 /* ScheduleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleHelper.swift */; };
+		52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */; };
+		52BAB0C91D8F7B700051B064 /* ScheduleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleHelper.swift */; };
+		52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
+		52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
+		52BAB0CC1D8F7C2C0051B064 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
+		52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
+		52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
+		52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
+		52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
+		52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +86,8 @@
 		52BAB0B91D8F6F360051B064 /* WorkoutRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutRep.m; path = RealmModels/WorkoutRep.m; sourceTree = "<group>"; };
 		52BAB0BA1D8F6F360051B064 /* WorkoutSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSet.h; path = RealmModels/WorkoutSet.h; sourceTree = "<group>"; };
 		52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSet.m; path = RealmModels/WorkoutSet.m; sourceTree = "<group>"; };
+		52BAB0C51D8F728D0051B064 /* ScheduleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleHelper.swift; sourceTree = "<group>"; };
+		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		7CEDB3EB968199C2D9AE4B99 /* Pods-LiftrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +152,7 @@
 		52BAB07A1D8F5DCB0051B064 /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				52BAB0C41D8F727E0051B064 /* Utilities */,
 				52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */,
 				52BAB0AA1D8F67C40051B064 /* Realm Models */,
 				52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */,
@@ -156,6 +170,7 @@
 			children = (
 				52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */,
 				52BAB0921D8F5DCB0051B064 /* Info.plist */,
+				52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */,
 			);
 			path = LiftrackerTests;
 			sourceTree = "<group>";
@@ -190,6 +205,14 @@
 				52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */,
 			);
 			name = "Realm Models";
+			sourceTree = "<group>";
+		};
+		52BAB0C41D8F727E0051B064 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				52BAB0C51D8F728D0051B064 /* ScheduleHelper.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		ACF5FE732F1FDCF829BEEBBE /* Pods */ = {
@@ -503,6 +526,7 @@
 				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
 				52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */,
 				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,
+				52BAB0C61D8F728D0051B064 /* ScheduleHelper.swift in Sources */,
 				52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */,
 				52BAB0C01D8F6F360051B064 /* Type.m in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
@@ -515,7 +539,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BAB0CC1D8F7C2C0051B064 /* Schedule.m in Sources */,
+				52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */,
+				52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */,
+				52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */,
+				52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */,
+				52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */,
+				52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
+				52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */,
+				52BAB0C91D8F7B700051B064 /* ScheduleHelper.swift in Sources */,
+				52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
