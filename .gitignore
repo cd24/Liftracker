@@ -3,3 +3,4 @@ Liftracker.xcodeproj/project.xcworkspace/*
 Liftracker.xcworkspace/*
 Pods
 .DS_Store
+Podfile.lock
