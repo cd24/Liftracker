@@ -15,6 +15,14 @@
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */; };
 		52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */; };
+		52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
+		52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
+		52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
+		52BAB0BF1D8F6F360051B064 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
+		52BAB0C01D8F6F360051B064 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
+		52BAB0C11D8F6F360051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
+		52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
+		52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +58,23 @@
 		52BAB0971D8F5DCB0051B064 /* LiftrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
 		52BAB09D1D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		52BAB0AC1D8F6F360051B064 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercice.h; path = RealmModels/Exercice.h; sourceTree = "<group>"; };
+		52BAB0AD1D8F6F360051B064 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercice.m; path = RealmModels/Exercice.m; sourceTree = "<group>"; };
+		52BAB0AE1D8F6F360051B064 /* Repetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repetition.h; path = RealmModels/Repetition.h; sourceTree = "<group>"; };
+		52BAB0AF1D8F6F360051B064 /* Repetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repetition.m; path = RealmModels/Repetition.m; sourceTree = "<group>"; };
+		52BAB0B01D8F6F360051B064 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Schedule.h; path = RealmModels/Schedule.h; sourceTree = "<group>"; };
+		52BAB0B11D8F6F360051B064 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Schedule.m; path = RealmModels/Schedule.m; sourceTree = "<group>"; };
+		52BAB0B21D8F6F360051B064 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = RealmModels/Set.h; sourceTree = "<group>"; };
+		52BAB0B31D8F6F360051B064 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Set.m; path = RealmModels/Set.m; sourceTree = "<group>"; };
+		52BAB0B41D8F6F360051B064 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Type.h; path = RealmModels/Type.h; sourceTree = "<group>"; };
+		52BAB0B51D8F6F360051B064 /* Type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Type.m; path = RealmModels/Type.m; sourceTree = "<group>"; };
+		52BAB0B61D8F6F360051B064 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Workout.h; path = RealmModels/Workout.h; sourceTree = "<group>"; };
+		52BAB0B71D8F6F360051B064 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Workout.m; path = RealmModels/Workout.m; sourceTree = "<group>"; };
+		52BAB0B81D8F6F360051B064 /* WorkoutRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutRep.h; path = RealmModels/WorkoutRep.h; sourceTree = "<group>"; };
+		52BAB0B91D8F6F360051B064 /* WorkoutRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutRep.m; path = RealmModels/WorkoutRep.m; sourceTree = "<group>"; };
+		52BAB0BA1D8F6F360051B064 /* WorkoutSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSet.h; path = RealmModels/WorkoutSet.h; sourceTree = "<group>"; };
+		52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSet.m; path = RealmModels/WorkoutSet.m; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		7CEDB3EB968199C2D9AE4B99 /* Pods-LiftrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +139,8 @@
 		52BAB07A1D8F5DCB0051B064 /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */,
+				52BAB0AA1D8F67C40051B064 /* Realm Models */,
 				52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */,
 				52BAB07D1D8F5DCB0051B064 /* ViewController.swift */,
 				52BAB07F1D8F5DCB0051B064 /* Main.storyboard */,
@@ -140,6 +167,29 @@
 				52BAB09D1D8F5DCB0051B064 /* Info.plist */,
 			);
 			path = LiftrackerUITests;
+			sourceTree = "<group>";
+		};
+		52BAB0AA1D8F67C40051B064 /* Realm Models */ = {
+			isa = PBXGroup;
+			children = (
+				52BAB0AC1D8F6F360051B064 /* Exercice.h */,
+				52BAB0AD1D8F6F360051B064 /* Exercice.m */,
+				52BAB0AE1D8F6F360051B064 /* Repetition.h */,
+				52BAB0AF1D8F6F360051B064 /* Repetition.m */,
+				52BAB0B01D8F6F360051B064 /* Schedule.h */,
+				52BAB0B11D8F6F360051B064 /* Schedule.m */,
+				52BAB0B21D8F6F360051B064 /* Set.h */,
+				52BAB0B31D8F6F360051B064 /* Set.m */,
+				52BAB0B41D8F6F360051B064 /* Type.h */,
+				52BAB0B51D8F6F360051B064 /* Type.m */,
+				52BAB0B61D8F6F360051B064 /* Workout.h */,
+				52BAB0B71D8F6F360051B064 /* Workout.m */,
+				52BAB0B81D8F6F360051B064 /* WorkoutRep.h */,
+				52BAB0B91D8F6F360051B064 /* WorkoutRep.m */,
+				52BAB0BA1D8F6F360051B064 /* WorkoutSet.h */,
+				52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */,
+			);
+			name = "Realm Models";
 			sourceTree = "<group>";
 		};
 		ACF5FE732F1FDCF829BEEBBE /* Pods */ = {
@@ -243,6 +293,7 @@
 					52BAB0771D8F5DCB0051B064 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VPWANFCTRJ;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					52BAB08B1D8F5DCB0051B064 = {
@@ -447,8 +498,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BAB0BF1D8F6F360051B064 /* Set.m in Sources */,
+				52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */,
+				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
 				52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */,
+				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,
+				52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */,
+				52BAB0C01D8F6F360051B064 /* Type.m in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
+				52BAB0C11D8F6F360051B064 /* Workout.m in Sources */,
+				52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,11 +658,14 @@
 			baseConfigurationReference = 9AB41938C40E927E8DB13011 /* Pods-Liftracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker/Liftracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -613,11 +675,13 @@
 			baseConfigurationReference = 5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker/Liftracker-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
