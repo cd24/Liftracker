@@ -6,8 +6,8 @@
 //  Copyright © 2016 John McAvey. All rights reserved.
 //
 
-import Foundation
 import XCTest
+@testable import Liftracker
 
 class ScheduleTests : XCTestCase {
     
@@ -40,23 +40,23 @@ class ScheduleTests : XCTestCase {
         var teusFromScheduler: Date = Date()
         
         self.measure {
-            teusFromScheduler = ScheduleHelper.getNextOccurance(day: .Teusday, fromDate: startDate)
+            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: startDate)
             XCTAssert( self.isSameDay(date1: teusday, date2: teusFromScheduler) )
         }
         
-        let wedFromScheduler = ScheduleHelper.getNextOccurance(day: .Wednesday, fromDate: startDate)
+        let wedFromScheduler = ScheduleUtil.getNextOccurance(day: .Wednesday, fromDate: startDate)
         XCTAssert( isSameDay(date1: wednesday, date2: wedFromScheduler) )
         
-        let thurFromScheduler = ScheduleHelper.getNextOccurance(day: .Thursday, fromDate: startDate)
+        let thurFromScheduler = ScheduleUtil.getNextOccurance(day: .Thursday, fromDate: startDate)
         XCTAssert( isSameDay(date1: thursday, date2: thurFromScheduler) )
         
-        let friFromScheduler = ScheduleHelper.getNextOccurance(day: .Friday, fromDate: startDate)
+        let friFromScheduler = ScheduleUtil.getNextOccurance(day: .Friday, fromDate: startDate)
         XCTAssert( isSameDay(date1: friday, date2: friFromScheduler) )
         
-        let satFromScheduler = ScheduleHelper.getNextOccurance(day: .Saturday, fromDate: startDate)
+        let satFromScheduler = ScheduleUtil.getNextOccurance(day: .Saturday, fromDate: startDate)
         XCTAssert( isSameDay(date1: saturday, date2: satFromScheduler) )
         
-        let sunFromScheduler = ScheduleHelper.getNextOccurance(day: .Sunday, fromDate: startDate)
+        let sunFromScheduler = ScheduleUtil.getNextOccurance(day: .Sunday, fromDate: startDate)
         XCTAssert( isSameDay(date1: sunday, date2: sunFromScheduler) )
     }
     
@@ -75,26 +75,26 @@ class ScheduleTests : XCTestCase {
         
         // get the dates from the utility and check against the dates
         
-        let mondayFromScheduler = ScheduleHelper.getNextOccurance(day: .Monday, fromDate: startDate)
+        let mondayFromScheduler = ScheduleUtil.getNextOccurance(day: .Monday, fromDate: startDate)
         XCTAssert( isSameDay(date1: mondayFromScheduler, date2: monday))
         
         var teusFromScheduler: Date = Date()
         
         self.measure {
-            teusFromScheduler = ScheduleHelper.getNextOccurance(day: .Teusday, fromDate: startDate)
+            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: startDate)
             XCTAssert( self.isSameDay(date1: teusday, date2: teusFromScheduler) )
         }
         
-        let wedFromScheduler = ScheduleHelper.getNextOccurance(day: .Wednesday, fromDate: startDate)
+        let wedFromScheduler = ScheduleUtil.getNextOccurance(day: .Wednesday, fromDate: startDate)
         XCTAssert( isSameDay(date1: wednesday, date2: wedFromScheduler) )
         
-        let thurFromScheduler = ScheduleHelper.getNextOccurance(day: .Thursday, fromDate: startDate)
+        let thurFromScheduler = ScheduleUtil.getNextOccurance(day: .Thursday, fromDate: startDate)
         XCTAssert( isSameDay(date1: thursday, date2: thurFromScheduler) )
         
-        let friFromScheduler = ScheduleHelper.getNextOccurance(day: .Friday, fromDate: startDate)
+        let friFromScheduler = ScheduleUtil.getNextOccurance(day: .Friday, fromDate: startDate)
         XCTAssert( isSameDay(date1: friday, date2: friFromScheduler) )
         
-        let satFromScheduler = ScheduleHelper.getNextOccurance(day: .Saturday, fromDate: startDate)
+        let satFromScheduler = ScheduleUtil.getNextOccurance(day: .Saturday, fromDate: startDate)
         XCTAssert( isSameDay(date1: saturday, date2: satFromScheduler) )
     }
     

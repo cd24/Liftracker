@@ -11,7 +11,6 @@
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
 		52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07D1D8F5DCB0051B064 /* ViewController.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
-		52BAB0831D8F5DCB0051B064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */; };
 		52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */; };
@@ -34,8 +33,17 @@
 		52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
 		52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
 		52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
+		52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
+		52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */; };
+		52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */; };
 		52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */; };
 		52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */; };
+		52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2201DA95275005CB27B /* ReflectionTests.swift */; };
+		52F5A2221DA95524005CB27B /* ReflectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */; };
+		52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */; };
+		52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
+		52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
+		52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,8 +98,14 @@
 		52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSet.m; path = RealmModels/WorkoutSet.m; sourceTree = "<group>"; };
 		52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleUtil.swift; sourceTree = "<group>"; };
 		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
+		52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerNotification.swift; sourceTree = "<group>"; };
+		52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNotification.swift; sourceTree = "<group>"; };
 		52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionUtil.swift; sourceTree = "<group>"; };
+		52F5A2201DA95275005CB27B /* ReflectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionTests.swift; sourceTree = "<group>"; };
+		52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
+		52F5A2251DAAA2D6005CB27B /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
+		52F5A2271DAAA528005CB27B /* BaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUtil.swift; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		7CEDB3EB968199C2D9AE4B99 /* Pods-LiftrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +205,7 @@
 				52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */,
 				52BAB0921D8F5DCB0051B064 /* Info.plist */,
 				52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */,
+				52F5A2201DA95275005CB27B /* ReflectionTests.swift */,
 			);
 			path = LiftrackerTests;
 			sourceTree = "<group>";
@@ -233,6 +248,9 @@
 				52F5A21D1DA941FA005CB27B /* Notifications */,
 				52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */,
 				52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */,
+				52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */,
+				52F5A2251DAAA2D6005CB27B /* FileUtil.swift */,
+				52F5A2271DAAA528005CB27B /* BaseUtil.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -241,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */,
+				52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */,
+				52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -388,8 +408,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */,
 				52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */,
-				52BAB0831D8F5DCB0051B064 /* Assets.xcassets in Resources */,
 				52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,12 +573,17 @@
 			files = (
 				52BAB0BF1D8F6F360051B064 /* Set.m in Sources */,
 				52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */,
+				52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */,
+				52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */,
 				52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */,
 				52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */,
 				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
 				52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */,
 				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,
+				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
+				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
+				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
 				52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */,
 				52BAB0C01D8F6F360051B064 /* Type.m in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
@@ -572,11 +597,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BAB0CC1D8F7C2C0051B064 /* Schedule.m in Sources */,
+				52F5A2221DA95524005CB27B /* ReflectionUtil.swift in Sources */,
 				52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */,
+				52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */,
 				52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */,
 				52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */,
 				52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */,
 				52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */,
+				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
 				52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
 				52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */,

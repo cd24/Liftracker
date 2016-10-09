@@ -10,6 +10,7 @@ target 'Liftracker' do
   pod 'Crashlytics'
   pod 'Realm'
   pod 'Realm/Headers'
+  pod 'SwiftyBeaver'
 
   target 'LiftrackerTests' do
     inherit! :search_paths

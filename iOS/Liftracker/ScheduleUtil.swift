@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ScheduleUtil {
+class ScheduleUtil : BaseUtil {
 
     
     // Attempts to return the next occurance of this date after
