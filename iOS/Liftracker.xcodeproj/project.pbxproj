@@ -13,7 +13,6 @@
 		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
 		522F04001DADE85D00560EBF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FF1DADE85D00560EBF /* RLMSupport.swift */; };
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
-		52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07D1D8F5DCB0051B064 /* ViewController.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */; };
@@ -82,7 +81,6 @@
 		522F03FF1DADE85D00560EBF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		52BAB0781D8F5DCB0051B064 /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52BAB07D1D8F5DCB0051B064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52BAB0801D8F5DCB0051B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52BAB0821D8F5DCB0051B064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52BAB0851D8F5DCB0051B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				52BAB07F1D8F5DCB0051B064 /* Main.storyboard */,
-				52BAB07D1D8F5DCB0051B064 /* ViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -648,7 +645,6 @@
 				52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */,
 				52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */,
 				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
-				52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */,
 				52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */,
 				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
 				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,

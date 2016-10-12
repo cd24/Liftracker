@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSr-IQ-M0b" id="BoI-A6-Ac2">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -39,7 +39,7 @@
         <scene sceneID="XHF-zQ-4sE">
             <objects>
                 <navigationController id="pGh-Sm-rZq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workouts" selectedImage="icon-barbell" id="82z-Kc-hLx"/>
+                    <tabBarItem key="tabBarItem" title="Workouts" image="icon-barbell" selectedImage="icon-barbell" id="82z-Kc-hLx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCM-ll-GZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -65,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="22e-7n-WrK" id="Dvb-65-NkT">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -85,7 +85,7 @@
         <scene sceneID="ad5-gD-Mej">
             <objects>
                 <navigationController id="X0R-lp-i8U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Analytics" selectedImage="icon-calculator" id="cGU-dt-4jT"/>
+                    <tabBarItem key="tabBarItem" title="Analytics" image="icon-calculator" selectedImage="icon-calculator" id="cGU-dt-4jT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0LP-BY-9Q7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFj-KW-Tka" id="HpG-y6-1er">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -127,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="1238" y="1022"/>
         </scene>
-        <!--Scores-->
+        <!--Statistics-->
         <scene sceneID="oHL-dF-5HU">
             <objects>
                 <navigationController id="5ka-xc-vtq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scores" selectedImage="icon-clipboard" id="dPP-rG-pOc"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="icon-clipboard" selectedImage="icon-clipboard" id="dPP-rG-pOc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fNk-db-NQW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -157,7 +157,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vhe-Zl-BQr" id="z31-K4-HW0">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -177,7 +177,7 @@
         <scene sceneID="82Q-cG-teW">
             <objects>
                 <navigationController id="oFj-Tp-00I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Weight" selectedImage="icon-scale" id="crJ-le-p7o"/>
+                    <tabBarItem key="tabBarItem" title="Weight" image="icon-scale" selectedImage="icon-scale" id="crJ-le-p7o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fnw-mf-A2w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -203,7 +203,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eM9-Pm-PQT" id="u24-xz-l42">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -223,7 +223,7 @@
         <scene sceneID="twc-jG-jvE">
             <objects>
                 <navigationController id="NAr-tJ-eaD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="icon-home" id="Egr-vU-wsM"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon-home" selectedImage="icon-home" id="Egr-vU-wsM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VYY-GT-d3i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
