@@ -10,11 +10,17 @@ import Foundation
 
 class ScheduleUtil : BaseUtil {
 
-    
-    // Attempts to return the next occurance of this date after
-    // the provided date.
-    // If retrieving the calendar or components fails, returns 
-    // today.
+    /**
+     Attempts to return the next occurance of this date after
+     the provided date.
+     If retrieving the calendar or components fails, returns 
+     today.
+     
+     @paramter day - The day which the schedule is supposed to occur
+     @paramter fromDate - the base date - finds the next date after this field.  Defaults to now
+     
+     @return - the next occurance from the provided date.
+     */
     static func getNextOccurance( day: Day, fromDate date: Date = Date() ) -> Date {
         
         if let calendar = NSCalendar(identifier: .gregorian) {

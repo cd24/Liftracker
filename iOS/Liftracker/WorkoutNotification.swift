@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 
+@available(iOS 10.0, *)
 class WorkoutNotification : LiftrackerNotification {
     
     required init(incoming: UNNotificationResponse) {

@@ -32,7 +32,7 @@ class LoggingUtil : BaseUtil {
     
     static func setFormat(dest: BaseDestination) {
         
-        dest.format = "$Dhh:mm:ss MM:dd:yyyy$d $M ($F:$l)"
+        dest.format = "[$Dhh:mm:ss MM:dd:yyyy$d | $N.$F:$l] $M"
     }
 }
 

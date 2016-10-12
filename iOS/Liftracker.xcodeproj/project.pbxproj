@@ -36,6 +36,14 @@
 		52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
 		52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */; };
 		52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */; };
+		52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1D1DAB193500269460 /* AnalyticsUtil.swift */; };
+		52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF201DAB389000269460 /* AnalystProtocols.swift */; };
+		52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF251DAB4FEB00269460 /* GroupAnalyst.swift */; };
+		52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF271DAB502C00269460 /* PieChartArtist.swift */; };
+		52E1DF2C1DADC65500269460 /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
+		52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
+		52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */; };
+		52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
 		52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */; };
 		52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */; };
 		52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2201DA95275005CB27B /* ReflectionTests.swift */; };
@@ -100,6 +108,12 @@
 		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
 		52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerNotification.swift; sourceTree = "<group>"; };
 		52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNotification.swift; sourceTree = "<group>"; };
+		52E1DF1D1DAB193500269460 /* AnalyticsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsUtil.swift; sourceTree = "<group>"; };
+		52E1DF201DAB389000269460 /* AnalystProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalystProtocols.swift; sourceTree = "<group>"; };
+		52E1DF251DAB4FEB00269460 /* GroupAnalyst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAnalyst.swift; sourceTree = "<group>"; };
+		52E1DF271DAB502C00269460 /* PieChartArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartArtist.swift; sourceTree = "<group>"; };
+		52E1DF2B1DADC65500269460 /* Judge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Judge.swift; sourceTree = "<group>"; };
+		52E1DF2D1DADC98D00269460 /* JudgePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgePool.swift; sourceTree = "<group>"; };
 		52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionUtil.swift; sourceTree = "<group>"; };
 		52F5A2201DA95275005CB27B /* ReflectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionTests.swift; sourceTree = "<group>"; };
@@ -189,8 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				5222DCA61DA8A9350072A4E1 /* Data */,
+				52E1DF2A1DADC60600269460 /* Scoring */,
 				5222DCA51DA8A92D0072A4E1 /* UI */,
-				52BAB0C41D8F727E0051B064 /* Utilities */,
+				52E1DF1F1DAB194400269460 /* Analytics */,
+				52F5A21D1DA941FA005CB27B /* Notifications */,
+				52BAB0C41D8F727E0051B064 /* Misc Utilities */,
 				52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */,
 				52BAB0821D8F5DCB0051B064 /* Assets.xcassets */,
 				52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */,
@@ -242,17 +259,52 @@
 			name = "Realm Models";
 			sourceTree = "<group>";
 		};
-		52BAB0C41D8F727E0051B064 /* Utilities */ = {
+		52BAB0C41D8F727E0051B064 /* Misc Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				52F5A21D1DA941FA005CB27B /* Notifications */,
 				52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */,
 				52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */,
 				52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */,
 				52F5A2251DAAA2D6005CB27B /* FileUtil.swift */,
 				52F5A2271DAAA528005CB27B /* BaseUtil.swift */,
 			);
-			name = Utilities;
+			name = "Misc Utilities";
+			sourceTree = "<group>";
+		};
+		52E1DF1F1DAB194400269460 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				52E1DF291DAB50D800269460 /* Artists */,
+				52E1DF241DAB4FCE00269460 /* Analysts */,
+				52E1DF201DAB389000269460 /* AnalystProtocols.swift */,
+				52E1DF1D1DAB193500269460 /* AnalyticsUtil.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		52E1DF241DAB4FCE00269460 /* Analysts */ = {
+			isa = PBXGroup;
+			children = (
+				52E1DF251DAB4FEB00269460 /* GroupAnalyst.swift */,
+			);
+			name = Analysts;
+			sourceTree = "<group>";
+		};
+		52E1DF291DAB50D800269460 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				52E1DF271DAB502C00269460 /* PieChartArtist.swift */,
+			);
+			name = Artists;
+			sourceTree = "<group>";
+		};
+		52E1DF2A1DADC60600269460 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				52E1DF2B1DADC65500269460 /* Judge.swift */,
+				52E1DF2D1DADC98D00269460 /* JudgePool.swift */,
+			);
+			name = Scoring;
 			sourceTree = "<group>";
 		};
 		52F5A21D1DA941FA005CB27B /* Notifications */ = {
@@ -572,6 +624,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BAB0BF1D8F6F360051B064 /* Set.m in Sources */,
+				52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */,
+				52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */,
 				52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */,
 				52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */,
 				52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */,
@@ -579,8 +633,12 @@
 				52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */,
 				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
 				52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */,
+				52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */,
+				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
 				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,
+				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
+				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
@@ -603,6 +661,7 @@
 				52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */,
 				52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */,
 				52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */,
+				52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */,
 				52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */,
 				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
 				52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */,
@@ -610,6 +669,7 @@
 				52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */,
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
 				52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */,
+				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

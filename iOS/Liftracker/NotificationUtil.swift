@@ -68,6 +68,12 @@ class NotificationUtil: BaseUtil {
     
     /**
         Schedules a notification with the current notification center with the specified parameters.  If a `LiftrackerNotification` with the specified identifier is found, and instance of that notification will be created, otherwise a local notification with the parameters will be created and displayed.
+     
+        @parameter title - The notification title displayed at the top of the notification
+        @parameter body - The message content to display, provides context for the notification
+        @parameter identifier - The identifier of the type of notification to user.  If using a custom `LiftrackerNotification` use it's identifier
+        @parameter info - and additional info to provide.  This will be rendered to the notification handler when the user taps on the notification
+        @parameter delay - the amount of time to wait to present the notification
     */
     static func scheduleNotification(title: String, body: String, identifier: String, info: [AnyHashable:Any] = [:], delay: Double = 5) {
         
