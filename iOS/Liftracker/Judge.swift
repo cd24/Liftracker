@@ -15,6 +15,8 @@ import Foundation
     
     /**
      This function is used to distinguish judges in the judge pool.  This will be used to cache and update the judges results.
+    
+     - Returns: The unique identifer for this judge
      */
     static func identifier() -> String
     
@@ -26,7 +28,7 @@ import Foundation
     /**
      This function is expected to be long running - and will be run on a background thread.  At the end of this function, the object will be deallocated.
      
-     @parameter completionHandler - Caches and display the result of this calculation.
+     - parameter completionHandler: Display the result of this calculation.
     */
     func score(completionHandler: (Double) -> Void)
 }

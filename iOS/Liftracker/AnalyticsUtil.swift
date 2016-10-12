@@ -19,6 +19,9 @@ class AnalyticsUtil : BaseUtil {
         self.analysts = []
         super.init()
         
+    }
+    
+    func setup() {
         retrieveAnalysts()
         log.info("Analytics Util created with Analysts: ")
         self.analysts.forEach() { log.info( $0.getTitle() ) }

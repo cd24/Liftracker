@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4757E533F1AB3CC390549063 /* Pods_LiftrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */; };
+		522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
+		522F03FB1DADD10000560EBF /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
+		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
+		522F04001DADE85D00560EBF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FF1DADE85D00560EBF /* RLMSupport.swift */; };
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
 		52BAB07E1D8F5DCB0051B064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07D1D8F5DCB0051B064 /* ViewController.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
@@ -74,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		522F03FD1DADDFB700560EBF /* SectionedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedResult.swift; sourceTree = "<group>"; };
+		522F03FF1DADE85D00560EBF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		52BAB0781D8F5DCB0051B064 /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BAB07D1D8F5DCB0051B064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,10 +177,19 @@
 		5222DCA61DA8A9350072A4E1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				522F03FF1DADE85D00560EBF /* RLMSupport.swift */,
 				52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */,
 				52BAB0AA1D8F67C40051B064 /* Realm Models */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		522F03FC1DADDF5D00560EBF /* Standard Result Types */ = {
+			isa = PBXGroup;
+			children = (
+				522F03FD1DADDFB700560EBF /* SectionedResult.swift */,
+			);
+			name = "Standard Result Types";
 			sourceTree = "<group>";
 		};
 		52BAB06F1D8F5DCB0051B064 = {
@@ -274,6 +289,7 @@
 		52E1DF1F1DAB194400269460 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				522F03FC1DADDF5D00560EBF /* Standard Result Types */,
 				52E1DF291DAB50D800269460 /* Artists */,
 				52E1DF241DAB4FCE00269460 /* Analysts */,
 				52E1DF201DAB389000269460 /* AnalystProtocols.swift */,
@@ -640,11 +656,13 @@
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
+				522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
 				52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */,
 				52BAB0C01D8F6F360051B064 /* Type.m in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
+				522F04001DADE85D00560EBF /* RLMSupport.swift in Sources */,
 				52BAB0C11D8F6F360051B064 /* Workout.m in Sources */,
 				52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */,
 			);
@@ -665,10 +683,12 @@
 				52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */,
 				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
 				52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */,
+				522F03FB1DADD10000560EBF /* Judge.swift in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
 				52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */,
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
 				52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */,
+				522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */,
 				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

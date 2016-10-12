@@ -18,7 +18,9 @@ import UIKit
     init()
     
     /**
-        This method will be invoked when the view is requested, and will be executed on a background thread.  If an error is encountered during processing, pas nil to the completion handler.  THis will display an error page to the user.
+        This method will be invoked when the view is requested, and will be executed on a background thread.  However, this operation will still provide a waiting experience for the user.  Taking too long may cause them to exit the view, which will interrupt the operation.  If an error is encountered during processing, pass nil to the completion handler.  This will display an error page to the user.
+     
+        - parameter completion: Invoke at the end of your calculations to display the result to the user.
     */
     func analyze( completion: (AnalystResult?) -> Void )
     
@@ -49,7 +51,11 @@ import UIKit
     init()
     
     /**
-        This method should take the results provided and render a view to display to the user. Invoking the completion handle with a view will update the display accordingly. If the completion handler is invoked with nil, then the controller will present a standard error page to the user
+        This method should take the results provided and render a view to display to the user. Invoking the completion handle with a view will update the display accordingly. If the completion handler is invoked with nil, then the controller will present a standard error page to the user. View size may change, so the use of layout constraints is encouraged.
+     
+        - Parameters:
+            - result: The results of the calulcations which should be rendered
+            - completion: This method adds the new view to the parent view.
     */
     func render(result: AnalystResult, completion: (UIView?) -> Void)
 }

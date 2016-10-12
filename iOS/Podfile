@@ -11,6 +11,7 @@ target 'Liftracker' do
   pod 'Realm'
   pod 'Realm/Headers'
   pod 'SwiftyBeaver'
+  # pod 'Charts' Pending 3.0 release
 
   target 'LiftrackerTests' do
     inherit! :search_paths

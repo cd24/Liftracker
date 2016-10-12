@@ -16,22 +16,20 @@ class ReflectionUtil: BaseUtil {
     /**
         Retrieve all the class of the declared protocol.  Protocols being used for this MUST declare `@objc` to be used.  Otherwise, there will be a compile time error.
         
-        @parameter p: The protocol to search for.  Must be an objective-c protocol
+        - parameter p: The protocol to search for.  Must be an objective-c protocol
      
-        @return - A list of classes which conform to the provided protocol
+        - Returns: A list of classes which conform to the provided protocol
     */
     static func getImplementing(_ p: Protocol) -> [AnyClass] {
         
-        log.verbose( "Retrieving classes of type \(p)" )
         let values = getAllClasses().filter({ class_conformsToProtocol($0, p)})
-        log.verbose( "Retrieved \(values.count) classes of type \(p)" )
         return values
     }
     
     /**
         Retrieves all objective-c classes from the current application space.
      
-        @return - A list containing all classes which extend NSObject or implement an Objective-C protocol
+        - Returns: A list containing all classes which extend NSObject or implement an Objective-C protocol
     */
     static func getAllClasses() -> [AnyClass] {
         let expectedCount = Int(objc_getClassList(nil, 0))

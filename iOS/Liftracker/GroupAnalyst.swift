@@ -32,6 +32,6 @@ class GroupAnalyst : Analyst {
     }
     
     func getDescription() -> String {
-        return "Shows the breakdown of time spent on each muscle group by number of sets."
+        return "Shows a radar chart of the time spent on each Muscle Group.  The score is relative to other groups."
     }
 }
