@@ -14,16 +14,17 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let notFirstRun = "First Run"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         Fabric.with([Crashlytics.self])
-        
-        LoggingUtil.configure()
-        NotificationUtil.shared.register()
+        LoggingUtil.setup( SwiftyLogger.self )
         AnalyticsUtil.shared.setup()
+        NotificationUtil.shared.register()
+        
+        LaunchActions.execute()
         
         return true
     }

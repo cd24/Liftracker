@@ -14,20 +14,25 @@ class SectionedResult<T> : AnalystResult {
 		
     
     init(data: [Section<T>]) {
+        log.verbose("Creating section data")
+        log.debug("Section Data: \(data)")
         self.data = data
     }
     
     override init() {
+        log.verbose("Creating empty section data")
         self.data = []
     }
     
     func sectionCount() -> Int {
-        return data.count
+        let count = data.count
+        log.debug("Current section count: \(count)")
+        return count
     }
     
     func data(forSection section: Int) -> Section<T> {
         
-        log.verbose( "Retrieving value for sectioned data for section \(section)" )
+        log.debug( "Retrieving value for sectioned data for section \(section)" )
         
         if section > self.data.count {
             log.error("Attempted to access section \(section) which is out of bounds for data (\(self.data.count))s")

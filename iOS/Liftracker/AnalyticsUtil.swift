@@ -23,22 +23,26 @@ class AnalyticsUtil : BaseUtil {
     
     func setup() {
         retrieveAnalysts()
-        log.info("Analytics Util created with Analysts: ")
-        self.analysts.forEach() { log.info( $0.getTitle() ) }
+        log.verbose("Analytics Util created ")
+        log.debug("Analysts registered with utils: ")
+        self.analysts.forEach() { log.debug( $0.getTitle() ) }
     }
     
     func retrieveAnalysts() {
         
+        log.info("Retrieving analysts")
         var array = [Analyst]()
         if let analystClasses = ReflectionUtil.getImplementing( Analyst.self ) as? [Analyst.Type] {
             
             for analyst in analystClasses {
                 
+                log.debug("Retrieved analyst: \(analyst)")
                 let instance: Analyst = analyst.init()
+                log.debug("\(analyst) instantiated")
                 array.append( instance )
             }
         }
-        
+        log.info("Finished retrieving analysts.")
         self.analysts = array
     }
 }

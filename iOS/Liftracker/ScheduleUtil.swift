@@ -37,6 +37,9 @@ class ScheduleUtil : BaseUtil {
     
 }
 
+/**
+ This representation provides a human-readable interaction with the schedule interface of the app.  The raw value of this enum corosponds to the database representation used throughout the app.
+*/
 enum Day: Int {
     
     case Sunday = 1

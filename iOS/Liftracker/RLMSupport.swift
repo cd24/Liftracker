@@ -29,21 +29,26 @@ import Realm
             return version
         }
         
-        func write(block: (RLMRealm)->Void) {
+        func write(block: (RLMRealm)->Void, complete: (()->Void)? = nil) {
             
             self.beginWriteTransaction()
+            log.debug("Realm write begun")
             
             block( self )
             
             do {
                 
                 try self.commitWriteTransaction()
+                log.debug("Realm write committed")
             } catch {
                 
                 log.error("Could not commit write transaction")
                 log.error("Error comitting transaction: \(error)")
                 self.cancelWriteTransaction()
+                log.debug("Realm write aborted")
             }
+            
+            complete?()
         }
     }
 

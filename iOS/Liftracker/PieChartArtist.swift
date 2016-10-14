@@ -15,7 +15,7 @@ import UIKit
 class PieChartArtist : Artist {
     
     required init() {
-        
+        log.verbose("Initalized a PieChartArtist")
     }
     
     /**
@@ -26,6 +26,9 @@ class PieChartArtist : Artist {
             - completion: callback to recieve the rendered view.
     */
     func render(result: AnalystResult, completion: (UIView?) -> Void) {
+        
+        log.verbose("Rendering pie chart view")
+        log.debug("Rendering from \(result)")
         
         if let pieResult = result as? SectionedResult<Double> {
             // TODO: render a pie chart and display the data.

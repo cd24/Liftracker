@@ -45,7 +45,7 @@ class NotificationUtil: BaseUtil {
                 let id = notification.getID()
                 notification.register()
                 
-                log.verbose("Retrieved \(notification) with id \(id)")
+                log.debug("Retrieved \(notification) with id \(id)")
                 
                 self.knownTypes[id] = notification
                 
@@ -54,7 +54,8 @@ class NotificationUtil: BaseUtil {
             log.error("Unable to retrieve objects implementing \(LiftrackerNotification.self)")
         }
         
-        log.verbose("Retrieved \(self.knownTypes)")
+        log.verbose("Retrieved notification types")
+        log.debug("Retrieved \(self.knownTypes)")
     }
     
     /**
@@ -78,8 +79,8 @@ class NotificationUtil: BaseUtil {
     */
     static func scheduleNotification(title: String, body: String, identifier: String, info: [AnyHashable:Any] = [:], delay: Double = 5) {
         
-        
-        log.verbose("Scheduling notification with title: \(title), body: \(body), identifier: \(identifier), info: \(info), delay: \(delay)")
+        log.info("Scheduling notification")
+        log.verbose("Title: \(title), Body: \(body), Identifier: \(identifier), Info: \(info), Delay: \(delay)")
         
         let content = UNMutableNotificationContent()
         content.title = title
@@ -94,7 +95,7 @@ class NotificationUtil: BaseUtil {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
             if let err = error {
-                log.info("Encountered error scheduling notification: \(err)")
+                log.error("Encountered error scheduling notification: \(err)")
             } else {
                 log.info("Notification scheduled successfully.")
             }
