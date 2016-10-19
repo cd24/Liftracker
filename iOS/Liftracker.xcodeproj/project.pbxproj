@@ -28,14 +28,6 @@
 		52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
 		52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */; };
 		52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
-		52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
-		52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
-		52BAB0CC1D8F7C2C0051B064 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
-		52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
-		52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
-		52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
-		52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
-		52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
 		52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */; };
 		52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */; };
@@ -62,6 +54,22 @@
 		52F8B5F01DB170BF00B21EE0 /* FirstRunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5EF1DB170BF00B21EE0 /* FirstRunAction.swift */; };
 		52F8B5F21DB177E700B21EE0 /* AddDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */; };
 		52F8B5F41DB17BE500B21EE0 /* ExerciceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5F31DB17BE500B21EE0 /* ExerciceTableViewController.swift */; };
+		52F8B5F61DB30CF100B21EE0 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
+		52F8B5F71DB30CF100B21EE0 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
+		52F8B5F81DB30CF100B21EE0 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
+		52F8B5F91DB30CF100B21EE0 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
+		52F8B5FA1DB30CF100B21EE0 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
+		52F8B5FB1DB30CF100B21EE0 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
+		52F8B5FC1DB30CF100B21EE0 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
+		52F8B5FD1DB30CF100B21EE0 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
+		52F8B5FE1DB30CF200B21EE0 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
+		52F8B5FF1DB30CF200B21EE0 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
+		52F8B6001DB30CF200B21EE0 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
+		52F8B6011DB30CF200B21EE0 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
+		52F8B6021DB30CF200B21EE0 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
+		52F8B6031DB30CF200B21EE0 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
+		52F8B6041DB30CF200B21EE0 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
+		52F8B6051DB30CF200B21EE0 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -720,24 +728,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BAB0CC1D8F7C2C0051B064 /* Schedule.m in Sources */,
 				52F5A2221DA95524005CB27B /* ReflectionUtil.swift in Sources */,
 				52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */,
+				52F8B6011DB30CF200B21EE0 /* Set.m in Sources */,
 				52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */,
-				52BAB0CF1D8F7C2C0051B064 /* Workout.m in Sources */,
-				52BAB0CD1D8F7C2C0051B064 /* Set.m in Sources */,
-				52BAB0D11D8F7C2C0051B064 /* WorkoutSet.m in Sources */,
 				52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */,
-				52BAB0CE1D8F7C2C0051B064 /* Type.m in Sources */,
+				52F8B6041DB30CF200B21EE0 /* WorkoutRep.m in Sources */,
 				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
-				52BAB0CA1D8F7C2C0051B064 /* Exercice.m in Sources */,
 				522F03FB1DADD10000560EBF /* Judge.swift in Sources */,
+				52F8B5FF1DB30CF200B21EE0 /* Repetition.m in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
-				52BAB0D01D8F7C2C0051B064 /* WorkoutRep.m in Sources */,
+				52F8B6051DB30CF200B21EE0 /* WorkoutSet.m in Sources */,
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
-				52BAB0CB1D8F7C2C0051B064 /* Repetition.m in Sources */,
+				52F8B6021DB30CF200B21EE0 /* Type.m in Sources */,
+				52F8B6001DB30CF200B21EE0 /* Schedule.m in Sources */,
+				52F8B5FE1DB30CF200B21EE0 /* Exercice.m in Sources */,
 				522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */,
 				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
+				52F8B6031DB30CF200B21EE0 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +753,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F8B5F71DB30CF100B21EE0 /* Repetition.m in Sources */,
+				52F8B5FD1DB30CF100B21EE0 /* WorkoutSet.m in Sources */,
+				52F8B5FC1DB30CF100B21EE0 /* WorkoutRep.m in Sources */,
+				52F8B5FA1DB30CF100B21EE0 /* Type.m in Sources */,
+				52F8B5FB1DB30CF100B21EE0 /* Workout.m in Sources */,
 				52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */,
+				52F8B5F81DB30CF100B21EE0 /* Schedule.m in Sources */,
+				52F8B5F91DB30CF100B21EE0 /* Set.m in Sources */,
+				52F8B5F61DB30CF100B21EE0 /* Exercice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
