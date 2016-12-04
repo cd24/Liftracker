@@ -18,10 +18,9 @@ class AddDefaults: LaunchItem {
         log.info("Adding default items")
         log.verbose("Adding default workouts")
         
-        WorkoutHelper.addDefaultWorkouts()
+        // WorkoutHelper.addDefaultWorkouts()
         
         log.info("Completed adding defaults")
-        // TODO: Add default items
     }
     
     func firstRunOnly() -> Bool {

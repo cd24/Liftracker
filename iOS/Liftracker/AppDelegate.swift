@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AnalyticsUtil.shared.setup()
         NotificationUtil.shared.register()
         
-        LaunchActions.execute()
+        LaunchActions.shared.configure()
         
         return true
     }

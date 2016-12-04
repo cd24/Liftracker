@@ -11,20 +11,14 @@
 		522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
 		522F03FB1DADD10000560EBF /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
 		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
-		522F04001DADE85D00560EBF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FF1DADE85D00560EBF /* RLMSupport.swift */; };
+		52838C921DF49BF500A940BA /* LaunchCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C911DF49BF500A940BA /* LaunchCondition.swift */; };
+		52838C941DF49C0300A940BA /* FirstRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C931DF49C0300A940BA /* FirstRun.swift */; };
+		52838C991DF49CD600A940BA /* LaunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C981DF49CD600A940BA /* LaunchItem.swift */; };
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */; };
 		52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */; };
-		52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
-		52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
-		52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
-		52BAB0BF1D8F6F360051B064 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
-		52BAB0C01D8F6F360051B064 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
-		52BAB0C11D8F6F360051B064 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
-		52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
-		52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
 		52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */; };
 		52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
@@ -40,9 +34,6 @@
 		52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */; };
 		52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
 		52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB95401DB1306600B01799 /* SwiftyLogger.swift */; };
-		52EB95431DB15A2C00B01799 /* WorkoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB95421DB15A2C00B01799 /* WorkoutHelper.swift */; };
-		52EB95461DB160FA00B01799 /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB95451DB160FA00B01799 /* WorkoutsTableViewController.swift */; };
-		52EB95481DB1614A00B01799 /* RealmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB95471DB1614A00B01799 /* RealmTableViewController.swift */; };
 		52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */; };
 		52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */; };
 		52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2201DA95275005CB27B /* ReflectionTests.swift */; };
@@ -51,25 +42,8 @@
 		52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
 		52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
 		52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
-		52F8B5F01DB170BF00B21EE0 /* FirstRunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5EF1DB170BF00B21EE0 /* FirstRunAction.swift */; };
+		52F8B5F01DB170BF00B21EE0 /* LaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */; };
 		52F8B5F21DB177E700B21EE0 /* AddDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */; };
-		52F8B5F41DB17BE500B21EE0 /* ExerciceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5F31DB17BE500B21EE0 /* ExerciceTableViewController.swift */; };
-		52F8B5F61DB30CF100B21EE0 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
-		52F8B5F71DB30CF100B21EE0 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
-		52F8B5F81DB30CF100B21EE0 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
-		52F8B5F91DB30CF100B21EE0 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
-		52F8B5FA1DB30CF100B21EE0 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
-		52F8B5FB1DB30CF100B21EE0 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
-		52F8B5FC1DB30CF100B21EE0 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
-		52F8B5FD1DB30CF100B21EE0 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
-		52F8B5FE1DB30CF200B21EE0 /* Exercice.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AD1D8F6F360051B064 /* Exercice.m */; };
-		52F8B5FF1DB30CF200B21EE0 /* Repetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0AF1D8F6F360051B064 /* Repetition.m */; };
-		52F8B6001DB30CF200B21EE0 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B11D8F6F360051B064 /* Schedule.m */; };
-		52F8B6011DB30CF200B21EE0 /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B31D8F6F360051B064 /* Set.m */; };
-		52F8B6021DB30CF200B21EE0 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B51D8F6F360051B064 /* Type.m */; };
-		52F8B6031DB30CF200B21EE0 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B71D8F6F360051B064 /* Workout.m */; };
-		52F8B6041DB30CF200B21EE0 /* WorkoutRep.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0B91D8F6F360051B064 /* WorkoutRep.m */; };
-		52F8B6051DB30CF200B21EE0 /* WorkoutSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,7 +67,9 @@
 
 /* Begin PBXFileReference section */
 		522F03FD1DADDFB700560EBF /* SectionedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedResult.swift; sourceTree = "<group>"; };
-		522F03FF1DADE85D00560EBF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		52838C911DF49BF500A940BA /* LaunchCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCondition.swift; sourceTree = "<group>"; };
+		52838C931DF49C0300A940BA /* FirstRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRun.swift; sourceTree = "<group>"; };
+		52838C981DF49CD600A940BA /* LaunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchItem.swift; sourceTree = "<group>"; };
 		52BAB0781D8F5DCB0051B064 /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BAB0801D8F5DCB0051B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,23 +82,6 @@
 		52BAB0971D8F5DCB0051B064 /* LiftrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
 		52BAB09D1D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liftracker-Bridging-Header.h"; sourceTree = "<group>"; };
-		52BAB0AC1D8F6F360051B064 /* Exercice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercice.h; path = RealmModels/Exercice.h; sourceTree = "<group>"; };
-		52BAB0AD1D8F6F360051B064 /* Exercice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercice.m; path = RealmModels/Exercice.m; sourceTree = "<group>"; };
-		52BAB0AE1D8F6F360051B064 /* Repetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repetition.h; path = RealmModels/Repetition.h; sourceTree = "<group>"; };
-		52BAB0AF1D8F6F360051B064 /* Repetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repetition.m; path = RealmModels/Repetition.m; sourceTree = "<group>"; };
-		52BAB0B01D8F6F360051B064 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Schedule.h; path = RealmModels/Schedule.h; sourceTree = "<group>"; };
-		52BAB0B11D8F6F360051B064 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Schedule.m; path = RealmModels/Schedule.m; sourceTree = "<group>"; };
-		52BAB0B21D8F6F360051B064 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = RealmModels/Set.h; sourceTree = "<group>"; };
-		52BAB0B31D8F6F360051B064 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Set.m; path = RealmModels/Set.m; sourceTree = "<group>"; };
-		52BAB0B41D8F6F360051B064 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Type.h; path = RealmModels/Type.h; sourceTree = "<group>"; };
-		52BAB0B51D8F6F360051B064 /* Type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Type.m; path = RealmModels/Type.m; sourceTree = "<group>"; };
-		52BAB0B61D8F6F360051B064 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Workout.h; path = RealmModels/Workout.h; sourceTree = "<group>"; };
-		52BAB0B71D8F6F360051B064 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Workout.m; path = RealmModels/Workout.m; sourceTree = "<group>"; };
-		52BAB0B81D8F6F360051B064 /* WorkoutRep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutRep.h; path = RealmModels/WorkoutRep.h; sourceTree = "<group>"; };
-		52BAB0B91D8F6F360051B064 /* WorkoutRep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutRep.m; path = RealmModels/WorkoutRep.m; sourceTree = "<group>"; };
-		52BAB0BA1D8F6F360051B064 /* WorkoutSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorkoutSet.h; path = RealmModels/WorkoutSet.h; sourceTree = "<group>"; };
-		52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WorkoutSet.m; path = RealmModels/WorkoutSet.m; sourceTree = "<group>"; };
 		52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleUtil.swift; sourceTree = "<group>"; };
 		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
 		52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerNotification.swift; sourceTree = "<group>"; };
@@ -134,8 +93,6 @@
 		52E1DF2B1DADC65500269460 /* Judge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Judge.swift; sourceTree = "<group>"; };
 		52E1DF2D1DADC98D00269460 /* JudgePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgePool.swift; sourceTree = "<group>"; };
 		52EB95401DB1306600B01799 /* SwiftyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLogger.swift; sourceTree = "<group>"; };
-		52EB95421DB15A2C00B01799 /* WorkoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutHelper.swift; sourceTree = "<group>"; };
-		52EB95451DB160FA00B01799 /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
 		52EB95471DB1614A00B01799 /* RealmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTableViewController.swift; sourceTree = "<group>"; };
 		52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionUtil.swift; sourceTree = "<group>"; };
@@ -143,9 +100,8 @@
 		52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
 		52F5A2251DAAA2D6005CB27B /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		52F5A2271DAAA528005CB27B /* BaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUtil.swift; sourceTree = "<group>"; };
-		52F8B5EF1DB170BF00B21EE0 /* FirstRunAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRunAction.swift; sourceTree = "<group>"; };
+		52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAction.swift; sourceTree = "<group>"; };
 		52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDefaults.swift; sourceTree = "<group>"; };
-		52F8B5F31DB17BE500B21EE0 /* ExerciceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciceTableViewController.swift; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		7CEDB3EB968199C2D9AE4B99 /* Pods-LiftrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,10 +154,7 @@
 		5222DCA61DA8A9350072A4E1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				522F03FF1DADE85D00560EBF /* RLMSupport.swift */,
-				52BAB0AB1D8F6F360051B064 /* Liftracker-Bridging-Header.h */,
 				52BAB0AA1D8F67C40051B064 /* Realm Models */,
-				52EB95421DB15A2C00B01799 /* WorkoutHelper.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -212,6 +165,24 @@
 				522F03FD1DADDFB700560EBF /* SectionedResult.swift */,
 			);
 			name = "Standard Result Types";
+			sourceTree = "<group>";
+		};
+		52838C901DF49BE500A940BA /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				52838C911DF49BF500A940BA /* LaunchCondition.swift */,
+				52838C931DF49C0300A940BA /* FirstRun.swift */,
+			);
+			name = Conditions;
+			sourceTree = "<group>";
+		};
+		52838C971DF49CB600A940BA /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */,
+				52838C981DF49CD600A940BA /* LaunchItem.swift */,
+			);
+			name = Actions;
 			sourceTree = "<group>";
 		};
 		52BAB06F1D8F5DCB0051B064 = {
@@ -277,22 +248,6 @@
 		52BAB0AA1D8F67C40051B064 /* Realm Models */ = {
 			isa = PBXGroup;
 			children = (
-				52BAB0AC1D8F6F360051B064 /* Exercice.h */,
-				52BAB0AD1D8F6F360051B064 /* Exercice.m */,
-				52BAB0AE1D8F6F360051B064 /* Repetition.h */,
-				52BAB0AF1D8F6F360051B064 /* Repetition.m */,
-				52BAB0B01D8F6F360051B064 /* Schedule.h */,
-				52BAB0B11D8F6F360051B064 /* Schedule.m */,
-				52BAB0B21D8F6F360051B064 /* Set.h */,
-				52BAB0B31D8F6F360051B064 /* Set.m */,
-				52BAB0B41D8F6F360051B064 /* Type.h */,
-				52BAB0B51D8F6F360051B064 /* Type.m */,
-				52BAB0B61D8F6F360051B064 /* Workout.h */,
-				52BAB0B71D8F6F360051B064 /* Workout.m */,
-				52BAB0B81D8F6F360051B064 /* WorkoutRep.h */,
-				52BAB0B91D8F6F360051B064 /* WorkoutRep.m */,
-				52BAB0BA1D8F6F360051B064 /* WorkoutSet.h */,
-				52BAB0BB1D8F6F360051B064 /* WorkoutSet.m */,
 			);
 			name = "Realm Models";
 			sourceTree = "<group>";
@@ -350,8 +305,6 @@
 		52EB95441DB160E100B01799 /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
-				52EB95451DB160FA00B01799 /* WorkoutsTableViewController.swift */,
-				52F8B5F31DB17BE500B21EE0 /* ExerciceTableViewController.swift */,
 			);
 			name = Workouts;
 			sourceTree = "<group>";
@@ -377,8 +330,9 @@
 		52F8B5EE1DB170B100B21EE0 /* LaunchItems */ = {
 			isa = PBXGroup;
 			children = (
-				52F8B5EF1DB170BF00B21EE0 /* FirstRunAction.swift */,
-				52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */,
+				52838C971DF49CB600A940BA /* Actions */,
+				52838C901DF49BE500A940BA /* Conditions */,
+				52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */,
 			);
 			name = LaunchItems;
 			sourceTree = "<group>";
@@ -460,6 +414,7 @@
 				52BAB0941D8F5DCB0051B064 /* Frameworks */,
 				52BAB0951D8F5DCB0051B064 /* Resources */,
 				DE076298ABA2B62E63DD3591 /* [CP] Copy Pods Resources */,
+				B3CBCEB56A0D0B28DF7393E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -561,7 +516,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4AE39EE300179C05628A8EF9 /* [CP] Embed Pods Frameworks */ = {
@@ -604,7 +559,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		999EC2B5D24B76132026C690 /* [CP] Check Pods Manifest.lock */ = {
@@ -619,7 +574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A88DF316074F41534D087B5F /* [CP] Embed Pods Frameworks */ = {
@@ -635,6 +590,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3CBCEB56A0D0B28DF7393E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiftrackerUITests/Pods-LiftrackerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D44A5F97A74BD3185EEC14B5 /* [CP] Copy Pods Resources */ = {
@@ -689,38 +659,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BAB0BF1D8F6F360051B064 /* Set.m in Sources */,
-				52F8B5F41DB17BE500B21EE0 /* ExerciceTableViewController.swift in Sources */,
 				52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */,
 				52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */,
 				52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */,
 				52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */,
 				52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */,
-				52BAB0BE1D8F6F360051B064 /* Schedule.m in Sources */,
 				52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */,
-				52BAB0BC1D8F6F360051B064 /* Exercice.m in Sources */,
 				52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */,
 				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
-				52BAB0C31D8F6F360051B064 /* WorkoutSet.m in Sources */,
 				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
 				52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */,
-				52EB95481DB1614A00B01799 /* RealmTableViewController.swift in Sources */,
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
 				522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */,
+				52838C921DF49BF500A940BA /* LaunchCondition.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
+				52838C941DF49C0300A940BA /* FirstRun.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
-				52BAB0BD1D8F6F360051B064 /* Repetition.m in Sources */,
 				52F8B5F21DB177E700B21EE0 /* AddDefaults.swift in Sources */,
-				52BAB0C01D8F6F360051B064 /* Type.m in Sources */,
+				52838C991DF49CD600A940BA /* LaunchItem.swift in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
-				522F04001DADE85D00560EBF /* RLMSupport.swift in Sources */,
-				52EB95431DB15A2C00B01799 /* WorkoutHelper.swift in Sources */,
-				52F8B5F01DB170BF00B21EE0 /* FirstRunAction.swift in Sources */,
-				52BAB0C11D8F6F360051B064 /* Workout.m in Sources */,
-				52BAB0C21D8F6F360051B064 /* WorkoutRep.m in Sources */,
-				52EB95461DB160FA00B01799 /* WorkoutsTableViewController.swift in Sources */,
+				52F8B5F01DB170BF00B21EE0 /* LaunchAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,22 +690,14 @@
 			files = (
 				52F5A2221DA95524005CB27B /* ReflectionUtil.swift in Sources */,
 				52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */,
-				52F8B6011DB30CF200B21EE0 /* Set.m in Sources */,
 				52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */,
 				52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */,
-				52F8B6041DB30CF200B21EE0 /* WorkoutRep.m in Sources */,
 				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
 				522F03FB1DADD10000560EBF /* Judge.swift in Sources */,
-				52F8B5FF1DB30CF200B21EE0 /* Repetition.m in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
-				52F8B6051DB30CF200B21EE0 /* WorkoutSet.m in Sources */,
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
-				52F8B6021DB30CF200B21EE0 /* Type.m in Sources */,
-				52F8B6001DB30CF200B21EE0 /* Schedule.m in Sources */,
-				52F8B5FE1DB30CF200B21EE0 /* Exercice.m in Sources */,
 				522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */,
 				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
-				52F8B6031DB30CF200B21EE0 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,15 +705,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52F8B5F71DB30CF100B21EE0 /* Repetition.m in Sources */,
-				52F8B5FD1DB30CF100B21EE0 /* WorkoutSet.m in Sources */,
-				52F8B5FC1DB30CF100B21EE0 /* WorkoutRep.m in Sources */,
-				52F8B5FA1DB30CF100B21EE0 /* Type.m in Sources */,
-				52F8B5FB1DB30CF100B21EE0 /* Workout.m in Sources */,
 				52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */,
-				52F8B5F81DB30CF100B21EE0 /* Schedule.m in Sources */,
-				52F8B5F91DB30CF100B21EE0 /* Set.m in Sources */,
-				52F8B5F61DB30CF100B21EE0 /* Exercice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,7 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG INFO WARNING ERROR VERBOSE";
-				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker/Liftracker-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -924,7 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "ERROR WARNING";
-				SWIFT_OBJC_BRIDGING_HEADER = "Liftracker/Liftracker-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

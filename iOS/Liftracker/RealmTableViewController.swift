@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 /**
  Generic implementation for showing realm tables to users. Most table view settings are left as default and can be manipulated in the specific implementation. 
@@ -17,8 +18,8 @@ import UIKit
  */
 class RealmTableViewController: UITableViewController {
     
-    var results: RLMResults<RLMObject>? = nil
-    var realm: RLMRealm = RLMRealm.default()
+    var results: Results<Object>? = nil
+    var realm: Results = Realm.default()
     
     var canAdd: Bool = false
     var canEdit: Bool = true
