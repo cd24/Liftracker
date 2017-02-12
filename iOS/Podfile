@@ -12,15 +12,27 @@ target 'Liftracker' do
   pod 'SwiftyBeaver'
   pod 'Charts'
   pod 'Charts/Realm'
+  pod 'Material', '~> 2.0'
+  pod 'Alamofire', '~> 4.3'
+  pod 'Runes'
+  pod 'Curry'
 
   target 'LiftrackerTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire', '~> 4.3'
+    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
+    pod 'OHHTTPStubs/Swift'
+    
   end
 
   target 'LiftrackerUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire', '~> 4.3'
+    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
+    pod 'OHHTTPStubs/Swift'
+    
   end
 
 end

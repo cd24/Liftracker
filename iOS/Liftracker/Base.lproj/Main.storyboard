@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zMe-4l-myD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zMe-4l-myD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +19,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="dSr-IQ-M0b">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSr-IQ-M0b" id="BoI-A6-Ac2">
-                                    <frame key="frameInset" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -40,7 +43,7 @@
             <objects>
                 <navigationController id="pGh-Sm-rZq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workouts" image="icon-barbell" selectedImage="icon-barbell" id="82z-Kc-hLx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCM-ll-GZv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wCM-ll-GZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -57,7 +60,7 @@
             <objects>
                 <navigationController id="X0R-lp-i8U" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Analytics" image="icon-calculator" selectedImage="icon-calculator" id="cGU-dt-4jT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0LP-BY-9Q7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0LP-BY-9Q7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -88,40 +91,12 @@
             </objects>
             <point key="canvasLocation" x="-154" y="1021"/>
         </scene>
-        <!--Exercice Table View Controller-->
-        <scene sceneID="hER-A2-hNI">
-            <objects>
-                <tableViewController id="vsQ-IT-XTW" customClass="ExerciceTableViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C0M-3W-xdb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xfy-c5-J6b">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xfy-c5-J6b" id="XbY-ej-0HT">
-                                    <frame key="frameInset" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="vsQ-IT-XTW" id="hBg-4v-OGk"/>
-                            <outlet property="delegate" destination="vsQ-IT-XTW" id="cye-u2-yro"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5bk-hT-LXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-825" y="1657"/>
-        </scene>
         <!--Statistics-->
         <scene sceneID="oHL-dF-5HU">
             <objects>
                 <navigationController id="5ka-xc-vtq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="icon-clipboard" selectedImage="icon-clipboard" id="dPP-rG-pOc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fNk-db-NQW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fNk-db-NQW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -162,10 +137,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vhe-Zl-BQr">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vhe-Zl-BQr" id="z31-K4-HW0">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -186,7 +161,7 @@
             <objects>
                 <navigationController id="oFj-Tp-00I" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Weight" image="icon-scale" selectedImage="icon-scale" id="crJ-le-p7o"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fnw-mf-A2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fnw-mf-A2w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -199,26 +174,9 @@
             <point key="canvasLocation" x="2678" y="274"/>
         </scene>
         <!--Home-->
-        <scene sceneID="twc-jG-jvE">
-            <objects>
-                <navigationController id="NAr-tJ-eaD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icon-home" selectedImage="icon-home" id="Egr-vU-wsM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VYY-GT-d3i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Cep-F0-HAN" kind="relationship" relationship="rootViewController" id="sGG-7E-sKQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PYQ-cg-WhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2868" y="274"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="JQI-lT-LhM">
             <objects>
-                <viewController id="Cep-F0-HAN" sceneMemberID="viewController">
+                <viewController id="Cep-F0-HAN" customClass="HomeViewController" customModule="Liftracker" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ifJ-Gd-Tma"/>
                         <viewControllerLayoutGuide type="bottom" id="Ye1-7Y-BQJ"/>
@@ -226,13 +184,53 @@
                     <view key="view" contentMode="scaleToFill" id="HXM-fA-yoJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a32-GD-wZU">
+                                <rect key="frame" x="62" y="20" width="252" height="79"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liftracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elQ-st-2QU">
+                                        <rect key="frame" x="91" y="19" width="153" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="153" id="63Y-Tg-He9"/>
+                                            <constraint firstAttribute="height" constant="40" id="ddQ-M3-hpU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon-large" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-Zc-V1d">
+                                        <rect key="frame" x="8" y="8" width="75" height="62"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="4NW-DA-yxw"/>
+                                            <constraint firstAttribute="width" constant="75" id="EEV-nL-Mhd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="0mP-jt-doN"/>
+                                    <constraint firstItem="elQ-st-2QU" firstAttribute="leading" secondItem="7cG-Zc-V1d" secondAttribute="trailing" constant="8" id="1UE-95-Kxt"/>
+                                    <constraint firstItem="7cG-Zc-V1d" firstAttribute="leading" secondItem="a32-GD-wZU" secondAttribute="leading" constant="8" id="35l-Bn-5ZM"/>
+                                    <constraint firstItem="elQ-st-2QU" firstAttribute="top" secondItem="a32-GD-wZU" secondAttribute="top" constant="19" id="FD8-C3-LBf"/>
+                                    <constraint firstItem="elQ-st-2QU" firstAttribute="leading" secondItem="7cG-Zc-V1d" secondAttribute="trailing" constant="8" id="QHb-sB-nzd"/>
+                                    <constraint firstAttribute="width" constant="252" id="T9N-vR-zlB"/>
+                                    <constraint firstItem="7cG-Zc-V1d" firstAttribute="top" secondItem="a32-GD-wZU" secondAttribute="top" constant="8" id="Wpl-zd-6Xt"/>
+                                    <constraint firstItem="7cG-Zc-V1d" firstAttribute="centerY" secondItem="elQ-st-2QU" secondAttribute="centerY" id="z4t-e6-PR8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a32-GD-wZU" firstAttribute="top" secondItem="ifJ-Gd-Tma" secondAttribute="bottom" id="ImI-sf-AlL"/>
+                            <constraint firstItem="a32-GD-wZU" firstAttribute="centerX" secondItem="HXM-fA-yoJ" secondAttribute="centerX" id="Na7-4l-rdw"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon-home" id="Qi6-ti-E1B"/>
                     <navigationItem key="navigationItem" id="Tv7-Jp-Wr4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-AO-Vf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2868" y="1023"/>
+            <point key="canvasLocation" x="-2713" y="274"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="il5-sO-jwg">
@@ -244,7 +242,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NAr-tJ-eaD" kind="relationship" relationship="viewControllers" id="9vd-qz-av9"/>
+                        <segue destination="Cep-F0-HAN" kind="relationship" relationship="viewControllers" id="wtb-No-zIK"/>
                         <segue destination="pGh-Sm-rZq" kind="relationship" relationship="viewControllers" id="4ds-BN-ae8"/>
                         <segue destination="X0R-lp-i8U" kind="relationship" relationship="viewControllers" id="O2M-tW-ACw"/>
                         <segue destination="5ka-xc-vtq" kind="relationship" relationship="viewControllers" id="auA-5v-pqY"/>
@@ -257,6 +255,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app-icon-large" width="256" height="256"/>
         <image name="icon-barbell" width="28" height="28"/>
         <image name="icon-calculator" width="19" height="28"/>
         <image name="icon-clipboard" width="20" height="28"/>

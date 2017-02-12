@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Runes
 
 /**
     This class provides a single location for reflection operations in the app.  Its primary purpose is to allow the app to pull in relevant data at runtime rather than having to register all components at compile time.
@@ -36,18 +37,10 @@ class ReflectionUtil: BaseUtil {
         let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: expectedCount)
         let autoreleasingPointer = AutoreleasingUnsafeMutablePointer<AnyClass?>(allClasses)
         let actualCount: Int32 = objc_getClassList(autoreleasingPointer, Int32(expectedCount))
+        let count = Int(actualCount)
         
-        
-        
-        return  (0..<actualCount).map({ index in
-            if let curr: AnyClass = allClasses[Int(index)] {
-                return curr
-            }
-            return nil
-        })
-            .filter({ (value: AnyClass?) -> Bool in
-            return value != nil
-        }) as! [AnyClass]
-        
+        return (0..<count).map { allClasses[$0] }
+                          .filter { $0 != nil }
+        as! [AnyClass]
     }
 }

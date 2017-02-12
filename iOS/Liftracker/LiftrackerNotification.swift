@@ -21,6 +21,7 @@ import UserNotifications
     /**
      Perform and intitialization of the object required to handle the notification.  This object will be deallocated once the handler has completed.
     */
+    @available(iOS 10.0, *)
     init(incoming: UNNotificationResponse)
     
     

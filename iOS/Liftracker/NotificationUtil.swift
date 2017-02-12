@@ -13,6 +13,7 @@ import Crashlytics
 /**
     This is a utility class which facilitates scheduling and handling of notifications
  */
+@available(iOS 10.0, *)
 class NotificationUtil: BaseUtil {
     
     /**
@@ -103,6 +104,7 @@ class NotificationUtil: BaseUtil {
     }
 }
 
+@available(iOS 10.0, *)
 extension NotificationUtil : UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

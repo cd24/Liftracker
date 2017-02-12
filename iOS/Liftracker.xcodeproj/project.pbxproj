@@ -11,9 +11,20 @@
 		522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
 		522F03FB1DADD10000560EBF /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
 		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
-		52838C921DF49BF500A940BA /* LaunchCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C911DF49BF500A940BA /* LaunchCondition.swift */; };
-		52838C941DF49C0300A940BA /* FirstRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C931DF49C0300A940BA /* FirstRun.swift */; };
-		52838C991DF49CD600A940BA /* LaunchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C981DF49CD600A940BA /* LaunchItem.swift */; };
+		52470E491E50FC2F00E54878 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E481E50FC2F00E54878 /* AppAction.swift */; };
+		52470E4C1E50FF9F00E54878 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4B1E50FF9F00E54878 /* AppActions.swift */; };
+		52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */; };
+		52470E501E51076D00E54878 /* PreferencesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4F1E51076D00E54878 /* PreferencesUtil.swift */; };
+		52470E531E5107A200E54878 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E521E5107A200E54878 /* Preference.swift */; };
+		52470E551E5107CC00E54878 /* PreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E541E5107CC00E54878 /* PreferenceStore.swift */; };
+		52470E571E51081C00E54878 /* LiftrackerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E561E51081C00E54878 /* LiftrackerPreferences.swift */; };
+		52470E5A1E510A0F00E54878 /* SetDefaultsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E591E510A0F00E54878 /* SetDefaultsAction.swift */; };
+		52838C9B1DF4A18900A940BA /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9A1DF4A18900A940BA /* Workout.swift */; };
+		52838C9D1DF4A1FF00A940BA /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */; };
+		52838C9F1DF4A21E00A940BA /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9E1DF4A21E00A940BA /* Exercice.swift */; };
+		52838CA11DF4A32900A940BA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CA01DF4A32900A940BA /* Session.swift */; };
+		52838CA31DF4A51000A940BA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CA21DF4A51000A940BA /* Category.swift */; };
+		52838CAB1DF4AC1000A940BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CAA1DF4AC1000A940BA /* HomeViewController.swift */; };
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
@@ -42,8 +53,6 @@
 		52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
 		52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
 		52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
-		52F8B5F01DB170BF00B21EE0 /* LaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */; };
-		52F8B5F21DB177E700B21EE0 /* AddDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
 		E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD7FE95380F4CF4C80F64BE /* Pods_LiftrackerTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,9 +76,20 @@
 
 /* Begin PBXFileReference section */
 		522F03FD1DADDFB700560EBF /* SectionedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedResult.swift; sourceTree = "<group>"; };
-		52838C911DF49BF500A940BA /* LaunchCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCondition.swift; sourceTree = "<group>"; };
-		52838C931DF49C0300A940BA /* FirstRun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRun.swift; sourceTree = "<group>"; };
-		52838C981DF49CD600A940BA /* LaunchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchItem.swift; sourceTree = "<group>"; };
+		52470E481E50FC2F00E54878 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		52470E4B1E50FF9F00E54878 /* AppActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchAction.swift; sourceTree = "<group>"; };
+		52470E4F1E51076D00E54878 /* PreferencesUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesUtil.swift; sourceTree = "<group>"; };
+		52470E521E5107A200E54878 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		52470E541E5107CC00E54878 /* PreferenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
+		52470E561E51081C00E54878 /* LiftrackerPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerPreferences.swift; sourceTree = "<group>"; };
+		52470E591E510A0F00E54878 /* SetDefaultsAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDefaultsAction.swift; sourceTree = "<group>"; };
+		52838C9A1DF4A18900A940BA /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
+		52838C9E1DF4A21E00A940BA /* Exercice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
+		52838CA01DF4A32900A940BA /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		52838CA21DF4A51000A940BA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		52838CAA1DF4AC1000A940BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52BAB0781D8F5DCB0051B064 /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BAB0801D8F5DCB0051B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,8 +120,6 @@
 		52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
 		52F5A2251DAAA2D6005CB27B /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		52F5A2271DAAA528005CB27B /* BaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUtil.swift; sourceTree = "<group>"; };
-		52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAction.swift; sourceTree = "<group>"; };
-		52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDefaults.swift; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liftracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker.release.xcconfig"; sourceTree = "<group>"; };
 		7CEDB3EB968199C2D9AE4B99 /* Pods-LiftrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,9 +162,10 @@
 		5222DCA51DA8A92D0072A4E1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				52BAB07F1D8F5DCB0051B064 /* Main.storyboard */,
+				52838CA41DF4A59A00A940BA /* Home */,
 				52EB95491DB1614F00B01799 /* Generic */,
 				52EB95441DB160E100B01799 /* Workouts */,
-				52BAB07F1D8F5DCB0051B064 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -167,22 +186,42 @@
 			name = "Standard Result Types";
 			sourceTree = "<group>";
 		};
-		52838C901DF49BE500A940BA /* Conditions */ = {
+		52470E4A1E50FD0C00E54878 /* AppActions */ = {
 			isa = PBXGroup;
 			children = (
-				52838C911DF49BF500A940BA /* LaunchCondition.swift */,
-				52838C931DF49C0300A940BA /* FirstRun.swift */,
+				52470E581E51091C00E54878 /* Actions */,
+				52470E481E50FC2F00E54878 /* AppAction.swift */,
+				52470E4B1E50FF9F00E54878 /* AppActions.swift */,
+				52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */,
 			);
-			name = Conditions;
+			name = AppActions;
 			sourceTree = "<group>";
 		};
-		52838C971DF49CB600A940BA /* Actions */ = {
+		52470E511E51077900E54878 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				52F8B5F11DB177E700B21EE0 /* AddDefaults.swift */,
-				52838C981DF49CD600A940BA /* LaunchItem.swift */,
+				52470E4F1E51076D00E54878 /* PreferencesUtil.swift */,
+				52470E521E5107A200E54878 /* Preference.swift */,
+				52470E541E5107CC00E54878 /* PreferenceStore.swift */,
+				52470E561E51081C00E54878 /* LiftrackerPreferences.swift */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		52470E581E51091C00E54878 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				52470E591E510A0F00E54878 /* SetDefaultsAction.swift */,
 			);
 			name = Actions;
+			sourceTree = "<group>";
+		};
+		52838CA41DF4A59A00A940BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52838CAA1DF4AC1000A940BA /* HomeViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		52BAB06F1D8F5DCB0051B064 = {
@@ -210,7 +249,8 @@
 		52BAB07A1D8F5DCB0051B064 /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
-				52F8B5EE1DB170B100B21EE0 /* LaunchItems */,
+				52470E511E51077900E54878 /* Preferences */,
+				52470E4A1E50FD0C00E54878 /* AppActions */,
 				5222DCA61DA8A9350072A4E1 /* Data */,
 				52E1DF2A1DADC60600269460 /* Scoring */,
 				5222DCA51DA8A92D0072A4E1 /* UI */,
@@ -248,6 +288,11 @@
 		52BAB0AA1D8F67C40051B064 /* Realm Models */ = {
 			isa = PBXGroup;
 			children = (
+				52838C9A1DF4A18900A940BA /* Workout.swift */,
+				52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */,
+				52838C9E1DF4A21E00A940BA /* Exercice.swift */,
+				52838CA01DF4A32900A940BA /* Session.swift */,
+				52838CA21DF4A51000A940BA /* Category.swift */,
 			);
 			name = "Realm Models";
 			sourceTree = "<group>";
@@ -325,16 +370,6 @@
 				52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */,
 			);
 			name = Notifications;
-			sourceTree = "<group>";
-		};
-		52F8B5EE1DB170B100B21EE0 /* LaunchItems */ = {
-			isa = PBXGroup;
-			children = (
-				52838C971DF49CB600A940BA /* Actions */,
-				52838C901DF49BE500A940BA /* Conditions */,
-				52F8B5EF1DB170BF00B21EE0 /* LaunchAction.swift */,
-			);
-			name = LaunchItems;
 			sourceTree = "<group>";
 		};
 		ACF5FE732F1FDCF829BEEBBE /* Pods */ = {
@@ -433,7 +468,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "John McAvey";
 				TargetAttributes = {
 					52BAB0771D8F5DCB0051B064 = {
@@ -659,28 +694,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52470E571E51081C00E54878 /* LiftrackerPreferences.swift in Sources */,
+				52470E551E5107CC00E54878 /* PreferenceStore.swift in Sources */,
+				52838C9F1DF4A21E00A940BA /* Exercice.swift in Sources */,
 				52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */,
 				52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */,
 				52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */,
+				52838CAB1DF4AC1000A940BA /* HomeViewController.swift in Sources */,
 				52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */,
 				52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */,
 				52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */,
 				52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */,
 				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
+				52470E491E50FC2F00E54878 /* AppAction.swift in Sources */,
+				52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */,
+				52838C9D1DF4A1FF00A940BA /* WorkoutSet.swift in Sources */,
 				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
 				52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */,
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
+				52470E531E5107A200E54878 /* Preference.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
+				52470E5A1E510A0F00E54878 /* SetDefaultsAction.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
 				522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */,
-				52838C921DF49BF500A940BA /* LaunchCondition.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
-				52838C941DF49C0300A940BA /* FirstRun.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
-				52F8B5F21DB177E700B21EE0 /* AddDefaults.swift in Sources */,
-				52838C991DF49CD600A940BA /* LaunchItem.swift in Sources */,
+				52470E501E51076D00E54878 /* PreferencesUtil.swift in Sources */,
+				52838CA11DF4A32900A940BA /* Session.swift in Sources */,
+				52838CA31DF4A51000A940BA /* Category.swift in Sources */,
+				52838C9B1DF4A18900A940BA /* Workout.swift in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
-				52F8B5F01DB170BF00B21EE0 /* LaunchAction.swift in Sources */,
+				52470E4C1E50FF9F00E54878 /* AppActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,10 +885,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AB41938C40E927E8DB13011 /* Pods-Liftracker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
@@ -860,10 +907,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FC9D0A2544F3FD94FF0588B /* Pods-Liftracker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

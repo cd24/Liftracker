@@ -55,7 +55,7 @@ class RealmTableViewController: UITableViewController {
         
     }
     
-    func delete(index: Int) {
+    func delete(index: IndexPath) {
         log.debug( "Deleting item at index: \(index)" )
         if index < (Int(results?.count ?? 0)) && index >= 0 {
             
@@ -72,6 +72,7 @@ class RealmTableViewController: UITableViewController {
                 }, complete: {
                     DispatchQueue.main.async {
                         self.results = self.getObjects()
+                        
                         log.debug("didDelete called for index: \(index)")
                         self.didDelete( index: index )
                     }
@@ -103,7 +104,6 @@ class RealmTableViewController: UITableViewController {
     */
     func didDelete( index: Int ) {
         // TODO: add slide out animation
-        
     }
     
     /**

@@ -9,6 +9,6 @@
 import Foundation
 import SwiftyBeaver
 
-class BaseUtil: NSObject {
+public class BaseUtil: NSObject {
     
 }
