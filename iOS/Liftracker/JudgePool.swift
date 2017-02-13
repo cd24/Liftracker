@@ -38,7 +38,7 @@ class JudgePool: NSObject {
             log.debug("Retrieved \(classes.count) judges")
             log.debug("Judges: \(classes)")
             
-            classes.forEach() { judge in
+            classes.forEach { judge in
                 judges[judge.identifier()] = judge
             }
             

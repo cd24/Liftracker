@@ -8,21 +8,22 @@
 
 import Foundation
 import UIKit
+import PromiseKit
 
 /**
     This protocol is where all the fun stuff happens.  Implementations of this protocol should query for information and produce informtion for display to the user.  Instances are created when the user selects the view.  The init should not be a fast operation.  Analysts should use Realm and Realm extensions to interact with the data.  To read more about realm queries and models, visit their site (https://realm.io/docs/objc/latest/)
  */
-@objc protocol Analyst {
+protocol Analyst {
 
     
     init()
     
     /**
-        This method will be invoked when the view is requested, and will be executed on a background thread.  However, this operation will still provide a waiting experience for the user.  Taking too long may cause them to exit the view, which will interrupt the operation.  If an error is encountered during processing, pass nil to the completion handler.  This will display an error page to the user.
+        This method will be invoked when the view is requested, and will be executed on a background thread.  However, this operation will still provide a waiting experience for the user.  Taking too long may cause them to exit the view, which will interrupt the operation.  Errors encountered should be handled using the reject model of promises.
      
         - parameter completion: Invoke at the end of your calculations to display the result to the user.
     */
-    func analyze( completion: (AnalystResult?) -> Void )
+    func analyze() -> Promise<AnalystResult>
     
     /**
         This method will be invoked before the thread running analyze is killed.  This could be caused by the user navigating away, or the app being sent to the background.  If you need to do any cleanup, perform it here - you will have 5 seconds to cleanup in the thread before it is killed.
@@ -46,7 +47,7 @@ import UIKit
     Classes implementing this protocol are responsible for rendering the results from an Analyst to the user.
     It is recommended that implementations of this protocol also extend UIView, but it is not required.
  */
-@objc protocol Artist {
+protocol Artist {
     
     init()
     
@@ -55,9 +56,9 @@ import UIKit
      
         - Parameters:
             - result: The results of the calulcations which should be rendered
-            - completion: This method adds the new view to the parent view.
+        - returns: The promise which will fufill with the rendered view.
     */
-    func render(result: AnalystResult, completion: (UIView?) -> Void)
+    func render(result: AnalystResult) -> Promise<UIView>
 }
 
 /**
@@ -68,5 +69,15 @@ class AnalystResult : NSObject {
     
     var title: String?
     var desc: String?
-    
+}
+
+public enum AnalystError: Error {
+    case generic
+    case mathematicalError
+    case invalidData
+}
+
+public enum ArtistError: Error {
+    case generic
+    case unkownData
 }

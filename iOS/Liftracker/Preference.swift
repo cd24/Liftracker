@@ -12,13 +12,11 @@ import Foundation
  Preferences provide a simple way to interact with the key-value store for the application.
  To use a Preference, you need to declare the preference. Declare a preference as follows:
  ```
- extension Preference {
  static let myPreference = Preference("com.myapp.keyname")
- }
  ```
  Then interacting with your preference is as simple as:
  ```
- Preference.myPreference.set("Store this value")
+ myPreference.set("Store this value")
  let storedPhrase: String = Preference.myPreference.get() // will be "Store this value"
  ```
  */

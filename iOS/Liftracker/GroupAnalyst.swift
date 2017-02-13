@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class GroupAnalyst : Analyst {
     
@@ -14,8 +15,10 @@ class GroupAnalyst : Analyst {
         
     }
     
-    func analyze( completion: (AnalystResult?) -> Void ) {
-        
+    func analyze() -> Promise<AnalystResult> {
+        return Promise { fufill, reject in
+            reject(AnalystError.generic)
+        }
     }
     
     func interrupt() {

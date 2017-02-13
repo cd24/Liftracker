@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PromiseKit
 
 /**
     Renders Sectioned data into a pie chart.  Requires SectionResult<Double>
@@ -23,25 +24,24 @@ class PieChartArtist : Artist {
     
         - Parameters:
             - result: MUST be a SectionedResult<Double>, otherwise, an error is shown.
-            - completion: callback to recieve the rendered view.
     */
-    func render(result: AnalystResult, completion: (UIView?) -> Void) {
-        
-        log.verbose("Rendering pie chart view")
-        log.debug("Rendering from \(result)")
-        
-        if let pieResult = result as? SectionedResult<Double> {
-            // TODO: render a pie chart and display the data.
-            log.verbose("Processing pie chart data \(pieResult)")
-            let view = renderPieChart(result: pieResult)
+    func render(result: AnalystResult) -> Promise<UIView> {
+        return Promise { fufill, reject in
+            log.verbose("Rendering pie chart view")
+            log.debug("Rendering from \(result)")
             
-            if view == nil {
-                log.warning( "Unable to render pie view with data: \(pieResult)" )
+            if let pieResult = result as? SectionedResult<Double> {
+                // TODO: render a pie chart and display the data.
+                log.verbose("Processing pie chart data \(pieResult)")
+                if let view = renderPieChart(result: pieResult) {
+                    fufill( view )
+                } else {
+                    log.warning( "Unable to render pie view with data: \(pieResult)" )
+                    reject( ArtistError.generic )
+                }
+            } else {
+                reject( ArtistError.unkownData )
             }
-            
-            completion( view )
-        } else {
-            completion( nil )
         }
     }
     

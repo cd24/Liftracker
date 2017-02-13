@@ -8,8 +8,11 @@
 
 import Foundation
 
+
+/// Used as an example for setting defaults.
 class SetDefaultsAction: FirstLaunchAction {
-    override func execute() {
+    override func execute(_ upgrade: Bool) {
         log.verbose("Setting defaults")
+        log.verbose("Is upgrade: \(upgrade)")
     }
 }
