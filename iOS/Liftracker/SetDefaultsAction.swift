@@ -11,8 +11,8 @@ import Foundation
 
 /// Used as an example for setting defaults.
 class SetDefaultsAction: FirstLaunchAction {
-    override func execute(_ upgrade: Bool) {
-        log.verbose("Setting defaults")
-        log.verbose("Is upgrade: \(upgrade)")
+    override func execute(_ upgrade: VersionChange?) {
+        log.verbose("SetDefaultsAction called.")
+        log.verbose("Change: \(upgrade)")
     }
 }

@@ -20,8 +20,8 @@ import Foundation
  Example
  ```
  class SetDefaults: FirstLaunchAction {
-    override func execute(_ upgrade: Bool) {
-        if upgrade { /* do upgrade things... perform a migration or something. */ }
+    override func execute(_ upgrade: VersionChange?) {
+        if let change = upgrade { /* do upgrade things... perform a migration or something. */ }
         else { /* do first launch things */ }
     }
  }
@@ -29,14 +29,10 @@ import Foundation
  */
 open class FirstLaunchAction: AppAction {
     let launchKey: Preference
-    let upgradeKey: Preference
     
     public init() {
         let type = type(of: self)
-        let appVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)
-        let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
         launchKey = Preference("\(preferencePrefix).launch.\(type)")
-        upgradeKey = Preference("\(preferencePrefix).upgrade.\(type).\(marketingVersion).\(appVersion)")
     }
     
     public func configuration() -> AppActionConfiguration {
@@ -44,18 +40,20 @@ open class FirstLaunchAction: AppAction {
     }
     
     public func run(for type: EventType) {
-        /// Only do stuff on launch
-        let isUpgrade = !upgradeKey.bool() && launchKey.bool()
-        if case type = EventType.launch,
-           (!launchKey.bool() || !upgradeKey.bool()){
-            execute( isUpgrade )
-            launchKey.set( true )
-            upgradeKey.set( true )
+        
+        switch type {
+        case .launch( let change ):
+            if !launchKey.bool() || change != nil {
+                execute( change )
+                launchKey.set( true )
+            }
+        default:
+            return
         }
     }
     
     /// Method to execute first launch action
-    public func execute(_ upgrade: Bool) {
+    public func execute(_ upgrade: VersionChange?) {
         
     }
 }

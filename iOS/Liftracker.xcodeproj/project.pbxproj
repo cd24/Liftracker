@@ -11,6 +11,12 @@
 		522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
 		522F03FB1DADD10000560EBF /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
 		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
+		52375BB31E6241770052E119 /* Promise+Applicative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BB01E6241770052E119 /* Promise+Applicative.swift */; };
+		52375BB51E6241770052E119 /* Promise+Functor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BB11E6241770052E119 /* Promise+Functor.swift */; };
+		52375BB71E6241770052E119 /* Promise+Monad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BB21E6241770052E119 /* Promise+Monad.swift */; };
+		52375BBE1E6248610052E119 /* Promise+FunctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */; };
+		52375BC01E6249D90052E119 /* FunctionalTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */; };
+		52375BC41E62935D0052E119 /* VersionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BC31E62935D0052E119 /* VersionUtil.swift */; };
 		52470E491E50FC2F00E54878 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E481E50FC2F00E54878 /* AppAction.swift */; };
 		52470E4C1E50FF9F00E54878 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4B1E50FF9F00E54878 /* AppActions.swift */; };
 		52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */; };
@@ -76,6 +82,12 @@
 
 /* Begin PBXFileReference section */
 		522F03FD1DADDFB700560EBF /* SectionedResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedResult.swift; sourceTree = "<group>"; };
+		52375BB01E6241770052E119 /* Promise+Applicative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Applicative.swift"; sourceTree = "<group>"; };
+		52375BB11E6241770052E119 /* Promise+Functor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Functor.swift"; sourceTree = "<group>"; };
+		52375BB21E6241770052E119 /* Promise+Monad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Monad.swift"; sourceTree = "<group>"; };
+		52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+FunctorTests.swift"; sourceTree = "<group>"; };
+		52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalTestBase.swift; sourceTree = "<group>"; };
+		52375BC31E62935D0052E119 /* VersionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionUtil.swift; sourceTree = "<group>"; };
 		52470E481E50FC2F00E54878 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		52470E4B1E50FF9F00E54878 /* AppActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchAction.swift; sourceTree = "<group>"; };
@@ -186,6 +198,16 @@
 			name = "Standard Result Types";
 			sourceTree = "<group>";
 		};
+		52375BAF1E62414F0052E119 /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				52375BB01E6241770052E119 /* Promise+Applicative.swift */,
+				52375BB11E6241770052E119 /* Promise+Functor.swift */,
+				52375BB21E6241770052E119 /* Promise+Monad.swift */,
+			);
+			name = Functional;
+			sourceTree = "<group>";
+		};
 		52470E4A1E50FD0C00E54878 /* AppActions */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +271,7 @@
 		52BAB07A1D8F5DCB0051B064 /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				52375BAF1E62414F0052E119 /* Functional */,
 				52470E511E51077900E54878 /* Preferences */,
 				52470E4A1E50FD0C00E54878 /* AppActions */,
 				5222DCA61DA8A9350072A4E1 /* Data */,
@@ -272,6 +295,8 @@
 				52BAB0921D8F5DCB0051B064 /* Info.plist */,
 				52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */,
 				52F5A2201DA95275005CB27B /* ReflectionTests.swift */,
+				52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */,
+				52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */,
 			);
 			path = LiftrackerTests;
 			sourceTree = "<group>";
@@ -306,6 +331,7 @@
 				52F5A2251DAAA2D6005CB27B /* FileUtil.swift */,
 				52F5A2271DAAA528005CB27B /* BaseUtil.swift */,
 				52EB95401DB1306600B01799 /* SwiftyLogger.swift */,
+				52375BC31E62935D0052E119 /* VersionUtil.swift */,
 			);
 			name = "Misc Utilities";
 			sourceTree = "<group>";
@@ -695,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52470E571E51081C00E54878 /* LiftrackerPreferences.swift in Sources */,
+				52375BB71E6241770052E119 /* Promise+Monad.swift in Sources */,
 				52470E551E5107CC00E54878 /* PreferenceStore.swift in Sources */,
 				52838C9F1DF4A21E00A940BA /* Exercice.swift in Sources */,
 				52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */,
@@ -710,13 +737,16 @@
 				52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */,
 				52838C9D1DF4A1FF00A940BA /* WorkoutSet.swift in Sources */,
 				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
+				52375BB31E6241770052E119 /* Promise+Applicative.swift in Sources */,
 				52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */,
+				52375BB51E6241770052E119 /* Promise+Functor.swift in Sources */,
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
 				52470E531E5107A200E54878 /* Preference.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
 				52470E5A1E510A0F00E54878 /* SetDefaultsAction.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
 				522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */,
+				52375BC41E62935D0052E119 /* VersionUtil.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
 				52470E501E51076D00E54878 /* PreferencesUtil.swift in Sources */,
@@ -734,12 +764,14 @@
 			files = (
 				52F5A2221DA95524005CB27B /* ReflectionUtil.swift in Sources */,
 				52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */,
+				52375BC01E6249D90052E119 /* FunctionalTestBase.swift in Sources */,
 				52F5A2211DA95275005CB27B /* ReflectionTests.swift in Sources */,
 				52E1DF301DADCBD100269460 /* FileUtil.swift in Sources */,
 				52F5A2291DAAA584005CB27B /* BaseUtil.swift in Sources */,
 				522F03FB1DADD10000560EBF /* Judge.swift in Sources */,
 				52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */,
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
+				52375BBE1E6248610052E119 /* Promise+FunctorTests.swift in Sources */,
 				522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */,
 				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
 			);

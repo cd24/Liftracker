@@ -27,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationUtil.shared.register()
         }
         
-        AppActions.shared.trigger( .launch )
+        let diff = VersionUtil.versionDifference()
+        AppActions.shared.trigger( .launch( diff ) )
+        VersionUtil.updateVersionStore()
+        
         return true
     }
 

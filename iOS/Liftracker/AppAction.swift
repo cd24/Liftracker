@@ -39,7 +39,7 @@ public struct AppActionConfiguration {
 /// An enumeration representing the possible invocation conditions for an AppAction
 public enum EventType {
     /// Presented if this is the initial launch of the app. Equivilent to `func application(_ application:, didFinishLaunchingWithOptions:)`
-    case launch
+    case launch( VersionChange? )
     /// Presented when the app resumes from the background.
     case resume
     /// Presented when the app is preparing to enter the background. Finish tasks here within 5 seconds, or start a background task to ensure the operation is not interrupted.
