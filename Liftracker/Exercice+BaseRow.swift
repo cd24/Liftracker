@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Eureka
+//import Eureka
 
-extension ExerciceRow: BaseRow {
-    // TODO: Implement 
-}
+//extension ExerciceRow: BaseRow {
+//    // TODO: Implement 
+//}
