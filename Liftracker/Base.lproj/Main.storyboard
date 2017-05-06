@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zMe-4l-myD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zMe-4l-myD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Root View Controller-->
         <scene sceneID="Iec-UU-wbR">
             <objects>
-                <tableViewController id="TAE-sk-KVA" customClass="WorkoutsTableViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TAE-sk-KVA" customClass="WorkoutTableViewController" customModule="Liftracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="t6X-rt-hBy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSr-IQ-M0b" id="BoI-A6-Ac2">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -43,7 +43,7 @@
             <objects>
                 <navigationController id="pGh-Sm-rZq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workouts" image="icon-barbell" selectedImage="icon-barbell" id="82z-Kc-hLx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wCM-ll-GZv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCM-ll-GZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -60,7 +60,7 @@
             <objects>
                 <navigationController id="X0R-lp-i8U" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Analytics" image="icon-calculator" selectedImage="icon-calculator" id="cGU-dt-4jT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0LP-BY-9Q7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0LP-BY-9Q7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -96,7 +96,7 @@
             <objects>
                 <navigationController id="5ka-xc-vtq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="icon-clipboard" selectedImage="icon-clipboard" id="dPP-rG-pOc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fNk-db-NQW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fNk-db-NQW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -140,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vhe-Zl-BQr" id="z31-K4-HW0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -161,7 +161,7 @@
             <objects>
                 <navigationController id="oFj-Tp-00I" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Weight" image="icon-scale" selectedImage="icon-scale" id="crJ-le-p7o"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fnw-mf-A2w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fnw-mf-A2w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -8,14 +8,13 @@ target 'Liftracker' do
   # Pods for Liftracker
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'RealmSwift'
   pod 'SwiftyBeaver'
   pod 'Charts'
-  pod 'Charts/Realm'
   pod 'Alamofire', '~> 4.3'
   pod 'Runes'
   pod 'Curry'
   pod 'PromiseKit', '~> 4.1'
+  pod 'Eureka'
 
   target 'LiftrackerTests' do
     inherit! :search_paths

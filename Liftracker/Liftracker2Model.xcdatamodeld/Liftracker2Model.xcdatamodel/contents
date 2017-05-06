@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16E154a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Exercice" representedClassName="Exercice" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="Rep" representedClassName="Rep" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="datePerformed" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+    </entity>
+    <entity name="Session" representedClassName="Session" syncable="YES" codeGenerationType="class">
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="log" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="exerice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+        <relationship name="reps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rep" syncable="YES"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutSet" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedule" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="model" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutSet" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutSet" representedClassName="WorkoutSet" syncable="YES" codeGenerationType="class">
+        <attribute name="target_reps" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="target_time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="exercice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercice" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Workout" positionX="27" positionY="261" width="128" height="90"/>
+        <element name="Set" positionX="-218" positionY="75" width="128" height="105"/>
+        <element name="Exercice" positionX="-74" positionY="-108" width="128" height="90"/>
+        <element name="Rep" positionX="-380" positionY="-87" width="128" height="105"/>
+        <element name="Session" positionX="-198" positionY="261" width="128" height="90"/>
+        <element name="Category" positionX="126" positionY="18" width="128" height="60"/>
+        <element name="WorkoutSet" positionX="126" positionY="111" width="128" height="105"/>
+    </elements>
+</model>

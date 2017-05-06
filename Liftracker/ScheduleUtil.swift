@@ -35,6 +35,38 @@ class ScheduleUtil : BaseUtil {
         return Date()
     }
     
+    static func date(_ date: Date = Date(), is day: Day ) -> Bool {
+        if let calendar = NSCalendar(identifier: .gregorian) {
+            let components = calendar.components([.year, .month, .weekday, .weekOfYear], from: date)
+            let weekday = components.weekday
+            return weekday == day.rawValue
+        }
+        return false
+    }
+    
+    static func active(on date: Date = Date(), _ schedule: UInt8) -> Bool {
+        let current = NSCalendar.current.dateComponents([.weekday], from: date)
+        guard let weekday = current.weekday else {
+            log.error("Couldn't get weekday!")
+            return false
+        }
+        let offset: UInt8 = (1 << UInt8(weekday - 1))
+        let active = schedule & offset
+        return active > 0
+    }
+    
+    static func getDays(for schedule: UInt8) -> [Day] {
+        var days: [Day] = []
+        for i in 0..<8 {
+            let offset: UInt8 = 1 << UInt8(i)
+            let active = schedule & offset
+            if active > 0,
+                let day = Day(rawValue: i+1) {
+                days.append( day )
+            }
+        }
+        return days
+    }
 }
 
 /**

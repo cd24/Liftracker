@@ -10,10 +10,10 @@ import Foundation
 
 class SectionedResult<T> : AnalystResult {
     
-    var data: [Section<T>]
+    var data: [ResultSection<T>]
 		
     
-    init(data: [Section<T>]) {
+    init(data: [ResultSection<T>]) {
         log.verbose("Creating section data")
         log.debug("Section Data: \(data)")
         self.data = data
@@ -30,7 +30,7 @@ class SectionedResult<T> : AnalystResult {
         return count
     }
     
-    func data(forSection section: Int) -> Section<T> {
+    func data(forSection section: Int) -> ResultSection<T> {
         
         log.debug( "Retrieving value for sectioned data for section \(section)" )
         
@@ -44,7 +44,7 @@ class SectionedResult<T> : AnalystResult {
     }
 }
 
-struct Section<T> {
+struct ResultSection<T> {
     
     var data: T
     var label: String?

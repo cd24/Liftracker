@@ -1,13 +1,10 @@
-# Liftracker
+# Liftracker iOS
 
-Liftracker is a simple app for collecting and analyzing your weight training data.  The first release offered powerful free-form workout support.  The 2.0 release looks to improve upon the app by allowing users to use both free-form and structured workouts.  In addition, we are looking to change the way that we store data to improve performance and reliability.  In this redesign, we hope to improve the models to allow you to better control and utilize your data.  As always, everything is handled on-device and never touches our systems (granted, we don't have any servers...).  We hope you enjoy this release of the App.
+The Liftracker iOS project is designed to provide low-cost data collection and easy abstractions for developers to create tools to improve working out.  This project aims to be an open way to share data processors for consumer use.
 
-## Contributing
+Due to the sensitive nature of the data, any extensions added must be approved by the maintainer via pull request.  This is to enforce the strict no-upload policy of the environment.
 
-Liftracker is an open source project, and I would love to have the community's help in designing and implementing the app.  If there is a feature you think would make a great addition to Liftracker, please fork and edit to your hearts content!
 
-Everything is handled through fastlane and cocoapods, so you should be able to get up and running using [pods](https://cocoapods.org):
+# Setting up
 
-``` shell
-pod install
-```
+This project uses Cocoapods to manage dependencies, and Jazzy to generate it's documentation.

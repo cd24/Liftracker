@@ -17,6 +17,7 @@
 		52375BBE1E6248610052E119 /* Promise+FunctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */; };
 		52375BC01E6249D90052E119 /* FunctionalTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */; };
 		52375BC41E62935D0052E119 /* VersionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BC31E62935D0052E119 /* VersionUtil.swift */; };
+		52375BC61E634A130052E119 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BC51E634A130052E119 /* WorkoutTableViewController.swift */; };
 		52470E491E50FC2F00E54878 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E481E50FC2F00E54878 /* AppAction.swift */; };
 		52470E4C1E50FF9F00E54878 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4B1E50FF9F00E54878 /* AppActions.swift */; };
 		52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */; };
@@ -25,12 +26,12 @@
 		52470E551E5107CC00E54878 /* PreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E541E5107CC00E54878 /* PreferenceStore.swift */; };
 		52470E571E51081C00E54878 /* LiftrackerPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E561E51081C00E54878 /* LiftrackerPreferences.swift */; };
 		52470E5A1E510A0F00E54878 /* SetDefaultsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470E591E510A0F00E54878 /* SetDefaultsAction.swift */; };
-		52838C9B1DF4A18900A940BA /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9A1DF4A18900A940BA /* Workout.swift */; };
-		52838C9D1DF4A1FF00A940BA /* WorkoutSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */; };
-		52838C9F1DF4A21E00A940BA /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838C9E1DF4A21E00A940BA /* Exercice.swift */; };
-		52838CA11DF4A32900A940BA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CA01DF4A32900A940BA /* Session.swift */; };
-		52838CA31DF4A51000A940BA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CA21DF4A51000A940BA /* Category.swift */; };
 		52838CAB1DF4AC1000A940BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CAA1DF4AC1000A940BA /* HomeViewController.swift */; };
+		52841AF91E638CF300489ADF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841AF81E638CF300489ADF /* Schedule.swift */; };
+		52841AFA1E638DE300489ADF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841AF81E638CF300489ADF /* Schedule.swift */; };
+		52841AFD1E6476C900489ADF /* Liftracker2Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52841AFB1E6476C900489ADF /* Liftracker2Model.xcdatamodeld */; };
+		52841B001E647C6700489ADF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841AFF1E647C6700489ADF /* CoreDataManager.swift */; };
+		52841B041E6E491000489ADF /* AddWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841B031E6E491000489ADF /* AddWorkoutViewController.swift */; };
 		52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */; };
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 		52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */; };
 		52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
 		52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
+		52DE4BC91E6E60AF004B07EE /* Exercice+BaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */; };
 		52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */; };
 		52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */; };
 		52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1D1DAB193500269460 /* AnalyticsUtil.swift */; };
@@ -88,6 +90,7 @@
 		52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+FunctorTests.swift"; sourceTree = "<group>"; };
 		52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalTestBase.swift; sourceTree = "<group>"; };
 		52375BC31E62935D0052E119 /* VersionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionUtil.swift; sourceTree = "<group>"; };
+		52375BC51E634A130052E119 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
 		52470E481E50FC2F00E54878 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		52470E4B1E50FF9F00E54878 /* AppActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		52470E4D1E51047F00E54878 /* FirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchAction.swift; sourceTree = "<group>"; };
@@ -96,12 +99,11 @@
 		52470E541E5107CC00E54878 /* PreferenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
 		52470E561E51081C00E54878 /* LiftrackerPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerPreferences.swift; sourceTree = "<group>"; };
 		52470E591E510A0F00E54878 /* SetDefaultsAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDefaultsAction.swift; sourceTree = "<group>"; };
-		52838C9A1DF4A18900A940BA /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSet.swift; sourceTree = "<group>"; };
-		52838C9E1DF4A21E00A940BA /* Exercice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
-		52838CA01DF4A32900A940BA /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		52838CA21DF4A51000A940BA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		52838CAA1DF4AC1000A940BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52841AF81E638CF300489ADF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		52841AFC1E6476C900489ADF /* Liftracker2Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker2Model.xcdatamodel; sourceTree = "<group>"; };
+		52841AFF1E647C6700489ADF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		52841B031E6E491000489ADF /* AddWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutViewController.swift; sourceTree = "<group>"; };
 		52BAB0781D8F5DCB0051B064 /* Liftracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB07B1D8F5DCB0051B064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BAB0801D8F5DCB0051B064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		52BAB09D1D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleUtil.swift; sourceTree = "<group>"; };
 		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
+		52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercice+BaseRow.swift"; sourceTree = "<group>"; };
 		52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerNotification.swift; sourceTree = "<group>"; };
 		52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNotification.swift; sourceTree = "<group>"; };
 		52E1DF1D1DAB193500269460 /* AnalyticsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsUtil.swift; sourceTree = "<group>"; };
@@ -125,7 +128,6 @@
 		52E1DF2B1DADC65500269460 /* Judge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Judge.swift; sourceTree = "<group>"; };
 		52E1DF2D1DADC98D00269460 /* JudgePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgePool.swift; sourceTree = "<group>"; };
 		52EB95401DB1306600B01799 /* SwiftyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLogger.swift; sourceTree = "<group>"; };
-		52EB95471DB1614A00B01799 /* RealmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTableViewController.swift; sourceTree = "<group>"; };
 		52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionUtil.swift; sourceTree = "<group>"; };
 		52F5A2201DA95275005CB27B /* ReflectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionTests.swift; sourceTree = "<group>"; };
@@ -176,7 +178,6 @@
 			children = (
 				52BAB07F1D8F5DCB0051B064 /* Main.storyboard */,
 				52838CA41DF4A59A00A940BA /* Home */,
-				52EB95491DB1614F00B01799 /* Generic */,
 				52EB95441DB160E100B01799 /* Workouts */,
 			);
 			name = UI;
@@ -185,7 +186,9 @@
 		5222DCA61DA8A9350072A4E1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				52BAB0AA1D8F67C40051B064 /* Realm Models */,
+				52841AFF1E647C6700489ADF /* CoreDataManager.swift */,
+				52841AF71E638CE500489ADF /* Wrappers */,
+				52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		52841AF71E638CE500489ADF /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				52841AF81E638CF300489ADF /* Schedule.swift */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
 		52BAB06F1D8F5DCB0051B064 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +282,7 @@
 		52BAB07A1D8F5DCB0051B064 /* Liftracker */ = {
 			isa = PBXGroup;
 			children = (
+				52841AFB1E6476C900489ADF /* Liftracker2Model.xcdatamodeld */,
 				52375BAF1E62414F0052E119 /* Functional */,
 				52470E511E51077900E54878 /* Preferences */,
 				52470E4A1E50FD0C00E54878 /* AppActions */,
@@ -308,18 +320,6 @@
 				52BAB09D1D8F5DCB0051B064 /* Info.plist */,
 			);
 			path = LiftrackerUITests;
-			sourceTree = "<group>";
-		};
-		52BAB0AA1D8F67C40051B064 /* Realm Models */ = {
-			isa = PBXGroup;
-			children = (
-				52838C9A1DF4A18900A940BA /* Workout.swift */,
-				52838C9C1DF4A1FF00A940BA /* WorkoutSet.swift */,
-				52838C9E1DF4A21E00A940BA /* Exercice.swift */,
-				52838CA01DF4A32900A940BA /* Session.swift */,
-				52838CA21DF4A51000A940BA /* Category.swift */,
-			);
-			name = "Realm Models";
 			sourceTree = "<group>";
 		};
 		52BAB0C41D8F727E0051B064 /* Misc Utilities */ = {
@@ -376,16 +376,10 @@
 		52EB95441DB160E100B01799 /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
+				52375BC51E634A130052E119 /* WorkoutTableViewController.swift */,
+				52841B031E6E491000489ADF /* AddWorkoutViewController.swift */,
 			);
 			name = Workouts;
-			sourceTree = "<group>";
-		};
-		52EB95491DB1614F00B01799 /* Generic */ = {
-			isa = PBXGroup;
-			children = (
-				52EB95471DB1614A00B01799 /* RealmTableViewController.swift */,
-			);
-			name = Generic;
 			sourceTree = "<group>";
 		};
 		52F5A21D1DA941FA005CB27B /* Notifications */ = {
@@ -721,9 +715,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				52470E571E51081C00E54878 /* LiftrackerPreferences.swift in Sources */,
+				52841AFD1E6476C900489ADF /* Liftracker2Model.xcdatamodeld in Sources */,
 				52375BB71E6241770052E119 /* Promise+Monad.swift in Sources */,
+				52375BC61E634A130052E119 /* WorkoutTableViewController.swift in Sources */,
+				52841B001E647C6700489ADF /* CoreDataManager.swift in Sources */,
 				52470E551E5107CC00E54878 /* PreferenceStore.swift in Sources */,
-				52838C9F1DF4A21E00A940BA /* Exercice.swift in Sources */,
 				52E1DF261DAB4FEB00269460 /* GroupAnalyst.swift in Sources */,
 				52E1DF1E1DAB193500269460 /* AnalyticsUtil.swift in Sources */,
 				52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */,
@@ -735,24 +731,23 @@
 				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
 				52470E491E50FC2F00E54878 /* AppAction.swift in Sources */,
 				52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */,
-				52838C9D1DF4A1FF00A940BA /* WorkoutSet.swift in Sources */,
+				52841AF91E638CF300489ADF /* Schedule.swift in Sources */,
 				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
 				52375BB31E6241770052E119 /* Promise+Applicative.swift in Sources */,
 				52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */,
 				52375BB51E6241770052E119 /* Promise+Functor.swift in Sources */,
 				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
+				52841B041E6E491000489ADF /* AddWorkoutViewController.swift in Sources */,
 				52470E531E5107A200E54878 /* Preference.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
 				52470E5A1E510A0F00E54878 /* SetDefaultsAction.swift in Sources */,
+				52DE4BC91E6E60AF004B07EE /* Exercice+BaseRow.swift in Sources */,
 				52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */,
 				522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */,
 				52375BC41E62935D0052E119 /* VersionUtil.swift in Sources */,
 				52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */,
 				52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */,
 				52470E501E51076D00E54878 /* PreferencesUtil.swift in Sources */,
-				52838CA11DF4A32900A940BA /* Session.swift in Sources */,
-				52838CA31DF4A51000A940BA /* Category.swift in Sources */,
-				52838C9B1DF4A18900A940BA /* Workout.swift in Sources */,
 				52BAB07C1D8F5DCB0051B064 /* AppDelegate.swift in Sources */,
 				52470E4C1E50FF9F00E54878 /* AppActions.swift in Sources */,
 			);
@@ -773,6 +768,7 @@
 				52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */,
 				52375BBE1E6248610052E119 /* Promise+FunctorTests.swift in Sources */,
 				522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */,
+				52841AFA1E638DE300489ADF /* Schedule.swift in Sources */,
 				52E1DF2F1DADCBCC00269460 /* LoggingUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1057,6 +1053,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52841AFB1E6476C900489ADF /* Liftracker2Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52841AFC1E6476C900489ADF /* Liftracker2Model.xcdatamodel */,
+			);
+			currentVersion = 52841AFC1E6476C900489ADF /* Liftracker2Model.xcdatamodel */;
+			path = Liftracker2Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52BAB0701D8F5DCB0051B064 /* Project object */;
 }

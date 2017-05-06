@@ -11,6 +11,17 @@ import XCTest
 
 class ScheduleTests : XCTestCase {
     
+    // Sun, 11 Sep 2016 10:38:31 GMT
+    let startDate = Date(timeIntervalSince1970: 1473590311)
+    
+    // verification dates
+    let monday = Date(timeIntervalSince1970: 1473676711)
+    let teusday = Date(timeIntervalSince1970: 1473763111)
+    let wednesday = Date(timeIntervalSince1970: 1473849511)
+    let thursday = Date(timeIntervalSince1970: 1473935911)
+    let friday = Date(timeIntervalSince1970: 1474022311)
+    let saturday = Date(timeIntervalSince1970: 1474108711)
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,23 +36,12 @@ class ScheduleTests : XCTestCase {
     
     func testMondayDate() {
         
-        // Mon, 12 Sep 2016 10:38:31 GMT
-        let startDate = Date(timeIntervalSince1970: 1473676711)
-        
-        // verification dates
-        let teusday = Date(timeIntervalSince1970: 1473763111)
-        let wednesday = Date(timeIntervalSince1970: 1473849511)
-        let thursday = Date(timeIntervalSince1970: 1473935911)
-        let friday = Date(timeIntervalSince1970: 1474022311)
-        let saturday = Date(timeIntervalSince1970: 1474108711)
-        let sunday = Date(timeIntervalSince1970: 1474195111)
-        
         // get the dates from the utility and check against the dates
         var teusFromScheduler: Date = Date()
         
         self.measure {
-            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: startDate)
-            XCTAssert( self.isSameDay(date1: teusday, date2: teusFromScheduler) )
+            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: self.startDate)
+            XCTAssert( self.isSameDay(date1: self.teusday, date2: teusFromScheduler) )
         }
         
         let wedFromScheduler = ScheduleUtil.getNextOccurance(day: .Wednesday, fromDate: startDate)
@@ -57,21 +57,10 @@ class ScheduleTests : XCTestCase {
         XCTAssert( isSameDay(date1: saturday, date2: satFromScheduler) )
         
         let sunFromScheduler = ScheduleUtil.getNextOccurance(day: .Sunday, fromDate: startDate)
-        XCTAssert( isSameDay(date1: sunday, date2: sunFromScheduler) )
+        XCTAssert( isSameDay(date1: self.startDate, date2: sunFromScheduler) )
     }
     
     func testSundayDate() {
-        
-        // Sun, 11 Sep 2016 10:38:31 GMT
-        let startDate = Date(timeIntervalSince1970: 1473590311)
-        
-        // verification dates
-        let monday = Date(timeIntervalSince1970: 1473676711)
-        let teusday = Date(timeIntervalSince1970: 1473763111)
-        let wednesday = Date(timeIntervalSince1970: 1473849511)
-        let thursday = Date(timeIntervalSince1970: 1473935911)
-        let friday = Date(timeIntervalSince1970: 1474022311)
-        let saturday = Date(timeIntervalSince1970: 1474108711)
         
         // get the dates from the utility and check against the dates
         
@@ -81,8 +70,8 @@ class ScheduleTests : XCTestCase {
         var teusFromScheduler: Date = Date()
         
         self.measure {
-            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: startDate)
-            XCTAssert( self.isSameDay(date1: teusday, date2: teusFromScheduler) )
+            teusFromScheduler = ScheduleUtil.getNextOccurance(day: .Teusday, fromDate: self.startDate)
+            XCTAssert( self.isSameDay(date1: self.teusday, date2: teusFromScheduler) )
         }
         
         let wedFromScheduler = ScheduleUtil.getNextOccurance(day: .Wednesday, fromDate: startDate)
@@ -112,6 +101,55 @@ class ScheduleTests : XCTestCase {
         
         // Unable to get the calendar
         return false
+    }
+    
+    func testScheduleActive() {
+        // Mon, teus,thurs, sat (zero front padded)
+        // Remember that binary is read right to left
+        let schedule: UInt8 = 0b01010110
+        XCTAssertTrue( ScheduleUtil.active(on: monday, schedule), "Should be active on monday" )
+        XCTAssertTrue( ScheduleUtil.active(on: teusday, schedule), "Should be active on teusday" )
+        XCTAssertFalse( ScheduleUtil.active(on: wednesday, schedule), "Shouldn't be active on wednesday" )
+        XCTAssertTrue( ScheduleUtil.active(on: thursday, schedule), "Should be active on thursday")
+        XCTAssertFalse( ScheduleUtil.active(on: friday, schedule), "Shouldn't be active on friday" )
+        XCTAssertTrue( ScheduleUtil.active(on: saturday, schedule), "Should be active on saturday")
+    }
+    
+    func testScheduleToDays() {
+        // Mon, teus, thurs, fri, sat (zero front padded)
+        // Remember that binary is read right to left
+        let schedule: UInt8 = 0b01110110
+        var days = ScheduleUtil.getDays(for: schedule)
+        let answer: [Day] = [
+            .Monday,
+            .Teusday,
+            .Thursday,
+            .Friday,
+            .Saturday
+        ]
+        print(days)
+        XCTAssertEqual(days.count, answer.count)
+        answer.forEach { XCTAssert( days.contains($0) ) }
+        
+        let schedule2: UInt8 = 0b00000000
+        let answer2: [Day] = []
+        days = ScheduleUtil.getDays(for: schedule2)
+        XCTAssertEqual(days.count, 0)
+        answer2.forEach { XCTAssert( days.contains($0) ) }
+        
+        let schedule3: UInt8 = 0b11111111
+        days = ScheduleUtil.getDays(for: schedule3)
+        let answer3: [Day] = [
+            .Monday,
+            .Teusday,
+            .Wednesday,
+            .Thursday,
+            .Friday,
+            .Saturday,
+            .Sunday
+        ]
+        XCTAssertEqual(days.count, answer3.count)
+        answer3.forEach { XCTAssert( days.contains($0) ) }
     }
     
     func printWeekdayInt( date: Date) {
