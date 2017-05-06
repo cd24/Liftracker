@@ -28,7 +28,7 @@ platform :ios do
   end
   
   lane :testing do
-	match(readonly: true)
+#	match(readonly: true)
 	gym(scheme: "Liftracker")
 	scan(scheme: "Liftracker")
   end
