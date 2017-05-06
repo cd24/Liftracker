@@ -28,19 +28,6 @@ target 'Liftracker' do
     pod 'PromiseKit', '~> 4.1'
     
   end
-
-  target 'LiftrackerUITests' do
-    inherit! :search_paths
-    # Pods for testing
-    use_frameworks!
-    pod 'Alamofire', '~> 4.3'
-    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
-    pod 'OHHTTPStubs/Swift'
-    pod 'Runes'
-    pod 'Curry'
-    pod 'PromiseKit', '~> 4.1'
-    
-  end
 end
 
 post_install do |installer|

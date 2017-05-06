@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4757E533F1AB3CC390549063 /* Pods_LiftrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */; };
 		522F03FA1DADD0F000560EBF /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
 		522F03FB1DADD10000560EBF /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
 		522F03FE1DADDFB700560EBF /* SectionedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F03FD1DADDFB700560EBF /* SectionedResult.swift */; };
@@ -36,7 +35,6 @@
 		52BAB0811D8F5DCB0051B064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB07F1D8F5DCB0051B064 /* Main.storyboard */; };
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52BAB0911D8F5DCB0051B064 /* LiftrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */; };
-		52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */; };
 		52BAB0C61D8F728D0051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
 		52BAB0C81D8F78C40051B064 /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */; };
 		52BAB0C91D8F7B700051B064 /* ScheduleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */; };
@@ -67,13 +65,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		52BAB08D1D8F5DCB0051B064 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52BAB0701D8F5DCB0051B064 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52BAB0771D8F5DCB0051B064;
-			remoteInfo = Liftracker;
-		};
-		52BAB0981D8F5DCB0051B064 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52BAB0701D8F5DCB0051B064 /* Project object */;
 			proxyType = 1;
@@ -113,9 +104,6 @@
 		52BAB08C1D8F5DCB0051B064 /* LiftrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB0901D8F5DCB0051B064 /* LiftrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerTests.swift; sourceTree = "<group>"; };
 		52BAB0921D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52BAB0971D8F5DCB0051B064 /* LiftrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftrackerUITests.swift; sourceTree = "<group>"; };
-		52BAB09D1D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BAB0C51D8F728D0051B064 /* ScheduleUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleUtil.swift; sourceTree = "<group>"; };
 		52BAB0C71D8F78C40051B064 /* ScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
 		52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercice+BaseRow.swift"; sourceTree = "<group>"; };
@@ -159,14 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34FFE886250E6EA84E495B1 /* Pods_LiftrackerTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52BAB0941D8F5DCB0051B064 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4757E533F1AB3CC390549063 /* Pods_LiftrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +242,6 @@
 			children = (
 				52BAB07A1D8F5DCB0051B064 /* Liftracker */,
 				52BAB08F1D8F5DCB0051B064 /* LiftrackerTests */,
-				52BAB09A1D8F5DCB0051B064 /* LiftrackerUITests */,
 				52BAB0791D8F5DCB0051B064 /* Products */,
 				ACF5FE732F1FDCF829BEEBBE /* Pods */,
 				FF2D1F961125D4E8C30AB3E3 /* Frameworks */,
@@ -274,7 +253,6 @@
 			children = (
 				52BAB0781D8F5DCB0051B064 /* Liftracker.app */,
 				52BAB08C1D8F5DCB0051B064 /* LiftrackerTests.xctest */,
-				52BAB0971D8F5DCB0051B064 /* LiftrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,15 +289,6 @@
 				52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */,
 			);
 			path = LiftrackerTests;
-			sourceTree = "<group>";
-		};
-		52BAB09A1D8F5DCB0051B064 /* LiftrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52BAB09B1D8F5DCB0051B064 /* LiftrackerUITests.swift */,
-				52BAB09D1D8F5DCB0051B064 /* Info.plist */,
-			);
-			path = LiftrackerUITests;
 			sourceTree = "<group>";
 		};
 		52BAB0C41D8F727E0051B064 /* Misc Utilities */ = {
@@ -460,27 +429,6 @@
 			productReference = 52BAB08C1D8F5DCB0051B064 /* LiftrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52BAB0961D8F5DCB0051B064 /* LiftrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52BAB0A61D8F5DCB0051B064 /* Build configuration list for PBXNativeTarget "LiftrackerUITests" */;
-			buildPhases = (
-				999EC2B5D24B76132026C690 /* [CP] Check Pods Manifest.lock */,
-				52BAB0931D8F5DCB0051B064 /* Sources */,
-				52BAB0941D8F5DCB0051B064 /* Frameworks */,
-				52BAB0951D8F5DCB0051B064 /* Resources */,
-				DE076298ABA2B62E63DD3591 /* [CP] Copy Pods Resources */,
-				B3CBCEB56A0D0B28DF7393E0 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52BAB0991D8F5DCB0051B064 /* PBXTargetDependency */,
-			);
-			name = LiftrackerUITests;
-			productName = LiftrackerUITests;
-			productReference = 52BAB0971D8F5DCB0051B064 /* LiftrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -503,12 +451,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 52BAB0771D8F5DCB0051B064;
 					};
-					52BAB0961D8F5DCB0051B064 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VPWANFCTRJ;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 52BAB0771D8F5DCB0051B064;
-					};
 				};
 			};
 			buildConfigurationList = 52BAB0731D8F5DCB0051B064 /* Build configuration list for PBXProject "Liftracker" */;
@@ -526,7 +468,6 @@
 			targets = (
 				52BAB0771D8F5DCB0051B064 /* Liftracker */,
 				52BAB08B1D8F5DCB0051B064 /* LiftrackerTests */,
-				52BAB0961D8F5DCB0051B064 /* LiftrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -549,13 +490,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52BAB0951D8F5DCB0051B064 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -571,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4AE39EE300179C05628A8EF9 /* [CP] Embed Pods Frameworks */ = {
@@ -614,22 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		999EC2B5D24B76132026C690 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A88DF316074F41534D087B5F /* [CP] Embed Pods Frameworks */ = {
@@ -647,21 +566,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiftrackerTests/Pods-LiftrackerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3CBCEB56A0D0B28DF7393E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiftrackerUITests/Pods-LiftrackerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D44A5F97A74BD3185EEC14B5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,21 +579,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE076298ABA2B62E63DD3591 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiftrackerUITests/Pods-LiftrackerUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F12C10BD1DC2584C838512F6 /* [CP] Copy Pods Resources */ = {
@@ -773,14 +662,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52BAB0931D8F5DCB0051B064 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52BAB09C1D8F5DCB0051B064 /* LiftrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -788,11 +669,6 @@
 			isa = PBXTargetDependency;
 			target = 52BAB0771D8F5DCB0051B064 /* Liftracker */;
 			targetProxy = 52BAB08D1D8F5DCB0051B064 /* PBXContainerItemProxy */;
-		};
-		52BAB0991D8F5DCB0051B064 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52BAB0771D8F5DCB0051B064 /* Liftracker */;
-			targetProxy = 52BAB0981D8F5DCB0051B064 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -983,36 +859,6 @@
 			};
 			name = Release;
 		};
-		52BAB0A71D8F5DCB0051B064 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90C81CE81769206316660D92 /* Pods-LiftrackerUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = VPWANFCTRJ;
-				INFOPLIST_FILE = LiftrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.LiftrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Liftracker;
-			};
-			name = Debug;
-		};
-		52BAB0A81D8F5DCB0051B064 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D940BC020EA5632E6935DE2F /* Pods-LiftrackerUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = VPWANFCTRJ;
-				INFOPLIST_FILE = LiftrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.LiftrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Liftracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1039,15 +885,6 @@
 			buildConfigurations = (
 				52BAB0A41D8F5DCB0051B064 /* Debug */,
 				52BAB0A51D8F5DCB0051B064 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52BAB0A61D8F5DCB0051B064 /* Build configuration list for PBXNativeTarget "LiftrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52BAB0A71D8F5DCB0051B064 /* Debug */,
-				52BAB0A81D8F5DCB0051B064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
