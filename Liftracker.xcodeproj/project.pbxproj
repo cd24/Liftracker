@@ -443,12 +443,12 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VPWANFCTRJ;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					52BAB08B1D8F5DCB0051B064 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = VPWANFCTRJ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 52BAB0771D8F5DCB0051B064;
 					};
 				};
@@ -798,8 +798,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a333f5f4-dd13-4c5a-a4bc-f20c38627bb0";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.liftracker.2";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG INFO WARNING ERROR VERBOSE";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -815,12 +817,15 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.Liftracker.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftracker.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cd0b36a7-b70f-4c5a-a47b-7bed4f3ef5e2";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.liftracker.2";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "ERROR WARNING";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -838,6 +843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.LiftrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liftracker.app/Liftracker";
 			};
@@ -854,6 +860,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JM.LiftrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liftracker.app/Liftracker";
 			};

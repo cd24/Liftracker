@@ -10,9 +10,7 @@ type "development" # The default type, can be: appstore, adhoc or development
 
 git_url "https://github.com/cd24/match_repo"
 
-app_identifier "jm.Liftracker.2"
+app_identifier "com.liftracker.2"
 username "john@mcavey.net"
 
 # keychain_name "~/Library/Keychains/faslane_items.keychain-db"
-
-readonly true
