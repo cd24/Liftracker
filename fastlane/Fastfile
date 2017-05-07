@@ -49,7 +49,7 @@ platform :ios do
           include_bitcode: true,
           scheme: "Liftracker",
           export_method: "app-store")
-      pilot
+      # pilot # Having issues with two factor authentication.
   end
 
 
