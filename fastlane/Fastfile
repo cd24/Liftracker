@@ -1,3 +1,4 @@
+require 'date'
 # Customise this file, documentation can be found here:
 # https://github.com/fastlane/fastlane/tree/master/fastlane/docs
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
@@ -17,42 +18,44 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     cocoapods
-
+    set_version_number
   end
 
   desc "Runs all the tests"
   lane :test do
-    scan(scheme: "Liftracker")
-  end
-  
-  lane :testing do
-#	match(readonly: true)
-	gym(scheme: "Liftracker")
-	scan(scheme: "Liftracker")
+  	scan(scheme: "Liftracker")
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
-    match
+  desc "Crate a build for developer testing, will push to "
+  desc "Crashlytics Beta."
+  lane :internal do
+    scan(scheme: "Liftracker")
     gym(output_name: "Liftracker_Development",
-        clean: true) # Build your app - more options available
+        clean: true,
+        include_symbols: true,
+        include_bitcode: true,
+        scheme: "Liftracker",
+        export_method: "development")
+    crashlytics
     #pilot
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
   end
 
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym # Build your app - more options available
-    deliver(force: true)
-    # frameit
+  desc "Create a build for external testers."
+  desc "Automatically uploads to TestFlight and "
+  desc "submits for review"
+  lane :beta do
+      scan(scheme: "Liftracker")
+      gym(output_name: "Liftracker_Internal",
+          clean: true,
+          include_symbols: true,
+          include_bitcode: true,
+          scheme: "Liftracker",
+          export_method: "app-store")
+      pilot
   end
 
   # You can define as many lanes as you want
@@ -70,6 +73,12 @@ platform :ios do
     #   message: exception.message,
     #   success: false
     # )
+  end
+
+  # Helpers
+  def set_version_number
+      num = DateTime.now.strftime('%s')
+      sh "cd .. && echo $(pws) && agvtool new-version -all #{num}"
   end
 end
 
