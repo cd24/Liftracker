@@ -30,7 +30,6 @@ platform :ios do
   desc "Crate a build for developer testing, will push to "
   desc "Crashlytics Beta."
   lane :internal do
-    scan(scheme: "Liftracker")
     gym(output_name: "Liftracker_Development",
         clean: true,
         include_symbols: true,
@@ -48,7 +47,6 @@ platform :ios do
   desc "Automatically uploads to TestFlight and "
   desc "submits for review"
   lane :beta do
-      scan(scheme: "Liftracker")
       gym(output_name: "Liftracker_Internal",
           clean: true,
           include_symbols: true,
