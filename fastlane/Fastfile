@@ -36,7 +36,7 @@ platform :ios do
         include_symbols: true,
         include_bitcode: true,
         scheme: "Liftracker",
-        export_method: "adhoc")
+        export_method: "ad-hoc")
     crashlytics
     #pilot
 
