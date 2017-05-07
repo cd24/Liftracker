@@ -78,7 +78,7 @@ platform :ios do
   # Helpers
   def set_version_number
       num = DateTime.now.strftime('%s')
-      sh "cd .. && echo $(pws) && agvtool new-version -all #{num}"
+      sh "cd .. && echo $(pwd) && agvtool new-version -all #{num}"
   end
 end
 
