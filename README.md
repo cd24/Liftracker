@@ -15,6 +15,6 @@ Development: [![Build Status](https://www.bitrise.io/app/bfa11dc64583e179.svg?to
 
 This project uses Cocoapods to manage dependencies, and Jazzy to generate it's documentation.
 
-We recommend using [xcode-install](https://github.com/KrauseFx/xcode-install) to manage your xcode version.
+We recommend using [xcode-install](https://github.com/KrauseFx/xcode-install) to manage your xcode version. This project builds using XCode 8.3 and cocoapods
 
 If you want to manage your development environment manually, ensure that you've installed the gems listed in the `Gemfile` and that your XCode version is 8.3.2 or newer.
