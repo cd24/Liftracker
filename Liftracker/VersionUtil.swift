@@ -9,8 +9,8 @@
 import Foundation
 
 class VersionUtil {
-    static let lastAppVersion = Preference("\(preferencePrefix).previous.app.version")
-    static let lastMarketingVersion = Preference("\(preferencePrefix).previous.marketing.version")
+    static let lastAppVersion = Preference<Int>("\(preferencePrefix).previous.app.version")
+    static let lastMarketingVersion = Preference<String>("\(preferencePrefix).previous.marketing.version")
     
     /**
      Checks the bundle version identifiers to see if there has been a change since the previous version. If there has been, then it will return a `VersionChange` object representing the change in versions.
@@ -45,11 +45,7 @@ class VersionUtil {
     }
     
     public static func getPreviousVersion() -> AppVersion? {
-        guard let releaseStr: String = lastAppVersion.get() else {
-            return nil
-        }
-        
-        guard let release = Int(releaseStr) else {
+        guard let release = lastAppVersion.get() else {
             return nil
         }
         
@@ -63,12 +59,17 @@ class VersionUtil {
     }
     
     public static func updateVersionStore() {
-        guard let appVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) else {
+        guard let appVersionStr = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String else {
             return
         }
-        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") else {
+        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             return
         }
+        guard let appVersion = Int(appVersionStr) else {
+            log.verbose("Encountered an error casting appversion \(appVersionStr) to string.")
+            return
+        }
+        
         lastAppVersion.set( appVersion )
         lastMarketingVersion.set( marketingVersion )
     }

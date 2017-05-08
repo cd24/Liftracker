@@ -13,6 +13,6 @@ import Foundation
 class SetDefaultsAction: FirstLaunchAction {
     override func execute(_ upgrade: VersionChange?) {
         log.verbose("SetDefaultsAction called.")
-        log.verbose("Change: \(upgrade)")
+        log.verbose("Change: \(String(describing: upgrade))")
     }
 }

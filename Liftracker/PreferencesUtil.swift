@@ -13,7 +13,7 @@ public class PreferenceUtil {
     public var store: PreferenceStore = UserDefaults.standard
     public var repliateTo: [PreferenceStore] = []
 
-    public static func put(_ object: Any, for key: Preference) {
+    public static func put<T>(_ object: Any, for key: Preference<T>) {
         log.info("Settings \(object) for key \(key)")
         shared.store.put(object, for: key)
         for store in shared.repliateTo {
@@ -21,7 +21,7 @@ public class PreferenceUtil {
         }
     }
 
-    public static func get<T: Any>(for key: Preference) -> T? {
+    public static func get<T>(for key: Preference<T>) -> T? {
         return shared.store.get(for: key)
     }
 }

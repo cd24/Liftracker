@@ -9,16 +9,16 @@
 import Foundation
 
 public protocol PreferenceStore {
-    func put(_ object: Any, for key: Preference)
-    func get<T>(for key: Preference) -> T?
+    func put<T>(_ object: Any, for key: Preference<T>)
+    func get<T>(for key: Preference<T>) -> T?
 }
 
 extension UserDefaults: PreferenceStore {
-    public func put(_ object: Any, for key: Preference) {
+    public func put<T>(_ object: Any, for key: Preference<T>) {
         self.set(object, forKey: key.rawValue)
     }
     
-    public func get<T>(for key: Preference) -> T? {
+    public func get<T>(for key: Preference<T>) -> T? {
         return  self.object(forKey: key.rawValue) as? T
     }
 }

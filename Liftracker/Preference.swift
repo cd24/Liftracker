@@ -9,25 +9,17 @@
 import Foundation
 
 /**
- Preferences provide a simple way to interact with the key-value store for the application.
- To use a Preference, you need to declare the preference. Declare a preference as follows:
- ```
- static let myPreference = Preference("com.myapp.keyname")
- ```
- Then interacting with your preference is as simple as:
- ```
- myPreference.set("Store this value")
- let storedPhrase: String = Preference.myPreference.get() // will be "Store this value"
- ```
+ This struct acts as a wrapper around storing user preferences. It uses the `PreferenceUtil` class to interact with the specified user preference store.
+ Declaring the type of the preference in T allows us to compile-time check the use of preference stores. This will, however, be limited to the scope of the definition of the preference.
+ - Type T: The type of data stored in the preference.
  */
-public struct Preference: RawRepresentable, Equatable, Hashable, Comparable {
+public struct Preference<T>: RawRepresentable, Equatable, Hashable, Comparable {
     public var rawValue: String {
         didSet {
             self.hashValue = self.rawValue.hashValue
         }
     }
     public var hashValue: Int
-    
     public typealias RawValue = String
     
     public init(_ rawValue: String){
@@ -45,7 +37,7 @@ public struct Preference: RawRepresentable, Equatable, Hashable, Comparable {
      Sets the provided value for the preference.
      - parameter value: The value to set for the prefeence
      */
-    public func set(_ value: Any) {
+    public func set(_ value: T) {
         PreferenceUtil.put(value, for: self)
     }
     
@@ -53,65 +45,21 @@ public struct Preference: RawRepresentable, Equatable, Hashable, Comparable {
      Retrieves the requested value. Requires that the retrieved type is specified.
      Example
      ```
-     let myInfo: String? = Preference.myPreference.get()
+     let myInfo = myPreference.get()
      ```
+     - returns: The value at the preference, if it exists
      */
-    public func get<T: Any>() -> T? {
+    public func get() -> T? {
         return PreferenceUtil.get(for: self)
     }
     
-    /// Defaults to false
-    public func bool() -> Bool {
-        if let boolValue: Bool = self.get() {
-            return boolValue
-        }
-        return false
-    }
-    
-    /// Defaults to 0
-    public func int() -> Int {
-        if let intVal: Int = self.get() {
-            return intVal
-        }
-        return 0
-    }
-    
-    /// Defaults to 0
-    public func long() -> Int64 {
-        if let intVal: Int64 = self.get() {
-            return intVal
-        }
-        return 0
-    }
-    
-    /// Defaults to empty string
-    public func string() -> String {
-        if let strVal: String = self.get() {
-            return strVal
-        }
-        return ""
-    }
-    
-    /// If the value cannot be converted to a date (is non-numeric, non-date) then this method with return the current date
-    public func date() -> Date {
-        if let date: Date = self.get() {
-            return date
-        }
-        let ts: TimeInterval
-        if let doubleTS: Double = self.get() {
-            ts = TimeInterval( doubleTS )
-        } else if let intTS: Int = self.get() {
-            ts = TimeInterval( intTS )
-        } else if let floatTS: Float = self.get() {
-            ts = TimeInterval( floatTS )
-        } else if let intTS: Int64 = self.get() {
-            ts = TimeInterval( intTS )
-        } else if let floatTS: Float64 = self.get() {
-            ts = TimeInterval( floatTS )
-        } else {
-            ts = Date().timeIntervalSince1970
-        }
-        return Date(timeIntervalSince1970: ts)
+    /**
+     Provided for when it's inconvinient to use the `??` operator.
+     - parameter def: the value to return if the pereference is empty.
+     - returns: The preference value if possible, or the provided default value
+    */
+    public func getOrDefault(_ def: T) -> T {
+        return get() ?? def
     }
     
     // MARK: - Equatable, Comparable

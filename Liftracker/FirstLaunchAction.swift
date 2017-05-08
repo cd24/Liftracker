@@ -28,7 +28,7 @@ import Foundation
  ```
  */
 open class FirstLaunchAction: AppAction {
-    let launchKey: Preference
+    let launchKey: Preference<Bool>
     
     public init() {
         let type = type(of: self)
@@ -43,7 +43,7 @@ open class FirstLaunchAction: AppAction {
         
         switch type {
         case .launch( let change ):
-            if !launchKey.bool() || change != nil {
+            if !(launchKey.get() ?? false) || change != nil {
                 execute( change )
                 launchKey.set( true )
             }
