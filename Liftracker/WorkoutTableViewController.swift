@@ -47,7 +47,7 @@ class WorkoutTableViewController: UITableViewController {
     
     func setupMemory(for objects: [Workout]) {
         allWorkouts = objects
-        todaysWorkouts = objects.filter { ScheduleUtil.active(UInt8($0.schedule)) }
+        todaysWorkouts = objects.filter { Schedule(num: $0.schedule).active() }
     }
     
     func updateData() {
