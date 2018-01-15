@@ -8,6 +8,26 @@
 
 import Foundation
 import SwiftyBeaver
+import os.log
+
+// OS Log API
+let appLogPrefix = "com.liftracker"
+func logSystem(_ named: String) -> (String) -> OSLog {
+    return { category in
+        let system: String
+        if named == "" {
+            system = appLogPrefix
+        } else {
+            system = "\(appLogPrefix).\(named)"
+        }
+        return OSLog(subsystem: system, category: category)
+    }
+}
+
+let appSystem = logSystem("")
+
+// Old Log API
+
 
 // Defines the log level for the application.  This reduces the cost at compile time by transforming logging calls from buffer outputs to empty methods.  This prevents the need for a runtime check on logging - minisucle, but non-zero savings :)
 

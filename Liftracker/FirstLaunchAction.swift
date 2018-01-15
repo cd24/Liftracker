@@ -28,32 +28,26 @@ import Foundation
  ```
  */
 open class FirstLaunchAction: AppAction {
-    let launchKey: Preference
+    private let launchKey: KVEntry<Bool>
+    public let configuration: AppActionConfiguration = .default
+    public let execute: (VersionChange?) -> Void
     
-    public init() {
+    public init(execute: @escaping (VersionChange?) -> Void) {
         let type = type(of: self)
-        launchKey = Preference("\(preferencePrefix).launch.\(type)")
-    }
-    
-    public func configuration() -> AppActionConfiguration {
-        return .default
+        launchKey = defaultsEntry("\(preferencePrefix).launch.\(type)")
+        self.execute = execute
     }
     
     public func run(for type: EventType) {
-        
         switch type {
         case .launch( let change ):
-            if !launchKey.bool() || change != nil {
+            let launched = launchKey.get() ?? false
+            if !launched || change != nil {
                 execute( change )
                 launchKey.set( true )
             }
         default:
             return
         }
-    }
-    
-    /// Method to execute first launch action
-    public func execute(_ upgrade: VersionChange?) {
-        
     }
 }

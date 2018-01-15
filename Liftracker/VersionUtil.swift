@@ -8,9 +8,10 @@
 
 import Foundation
 
+// TODO: Better logging and more reuse
 class VersionUtil {
-    static let lastAppVersion = Preference("\(preferencePrefix).previous.app.version")
-    static let lastMarketingVersion = Preference("\(preferencePrefix).previous.marketing.version")
+    static let lastAppVersion: KVEntry<String> = defaultsEntry("\(preferencePrefix).previous.app.version")
+    static let lastMarketingVersion: KVEntry<String> = defaultsEntry("\(preferencePrefix).previous.marketing.version")
     
     /**
      Checks the bundle version identifiers to see if there has been a change since the previous version. If there has been, then it will return a `VersionChange` object representing the change in versions.
@@ -63,10 +64,10 @@ class VersionUtil {
     }
     
     public static func updateVersionStore() {
-        guard let appVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) else {
+        guard let appVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String else {
             return
         }
-        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") else {
+        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             return
         }
         lastAppVersion.set( appVersion )

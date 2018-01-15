@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import os.log
+
+public let appActionLog = appSystem("AppAction")
 
 /**
  App actions provide a mechanism for interacting with major lifecycle events without having to clutter the AppDelegate.
  Actions should be registered with the container class `ActionManager`
  */
 public protocol AppAction {
-    func configuration() -> AppActionConfiguration
+    var configuration: AppActionConfiguration { get }
     /**
      Execute the action for the given lifecycle event. Perform any work needed here. 
      - parameter type: the type of event being registered. See `EventType`
@@ -25,7 +28,6 @@ public protocol AppAction {
  Provides configuration information for an AppAction.
  */
 public struct AppActionConfiguration {
-    
     /**
      Standard configuration for an app Action. Contains the following configuration:
      - synchronous: false
@@ -44,4 +46,6 @@ public enum EventType {
     case resume
     /// Presented when the app is preparing to enter the background. Finish tasks here within 5 seconds, or start a background task to ensure the operation is not interrupted.
     case suspend
+    /// Presented when the app is being terminated.
+    case terminate
 }

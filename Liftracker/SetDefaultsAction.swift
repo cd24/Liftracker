@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
+import os.log
 
 /// Used as an example for setting defaults.
-class SetDefaultsAction: FirstLaunchAction {
-    override func execute(_ upgrade: VersionChange?) {
-        log.verbose("SetDefaultsAction called.")
-        log.verbose("Change: \(upgrade)")
+let setDefaultsAction = FirstLaunchAction() { upgrade in
+    os_log("SetDefaultsAction called.", log: appActionLog, type: .info)
+    if let update = upgrade {
+        os_log("Change %s", log: appActionLog, type: .info, "\(update)")
     }
 }
