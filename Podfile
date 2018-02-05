@@ -6,26 +6,22 @@ target 'Liftracker' do
   use_frameworks!
 
   # Pods for Liftracker
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'SwiftyBeaver'
-  pod 'Charts'
-  pod 'Alamofire', '~> 4.3'
-  pod 'Runes'
-  pod 'Curry'
+  pod 'Fabric', '~> 1.6.11'
+  pod 'Crashlytics', '~> 3.8.4'
+  pod 'SwiftyBeaver', '~>1.2.2'
+  pod 'Charts', '~>3.0.2'
+  pod 'Alamofire', '~> 4.4.0'
+  pod 'Runes', '~> 4.0.1'
+  pod 'Curry', '~> 3.0.0'
   pod 'PromiseKit', '~> 4.1'
+  pod 'Swiftx', '~> 0.5.2'
+  pod 'Swiftz', '~> 0.6.3'
   # pod 'Eureka'
 
   target 'LiftrackerTests' do
     inherit! :search_paths
     # Pods for testing
     use_frameworks!
-    pod 'Alamofire', '~> 4.3'
-    pod 'OHHTTPStubs' # Default subspecs, including support for NSURLSession & JSON etc
-    pod 'OHHTTPStubs/Swift'
-    pod 'Runes'
-    pod 'Curry'
-    pod 'PromiseKit', '~> 4.1'
     
   end
 end
