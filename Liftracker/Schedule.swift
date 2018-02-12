@@ -11,11 +11,11 @@ import Foundation
 class Schedule {
     let days: [Day]
     
-    init() {
-        days = []
+    init(_ days: [Day] = []) {
+        self.days = days
     }
     
-    init(byte: UInt8) {
+    init(_ byte: UInt8) {
         var days: [Day] = []
         for i in 0..<8 {
             let offset: UInt8 = 1 << UInt8(i)
@@ -29,14 +29,14 @@ class Schedule {
     }
     
     // Convinience for hydrating from database
-    convenience init(num: Int16) {
-        self.init(byte: UInt8(num))
+    convenience init(_ num: Int16) {
+        self.init(UInt8(num))
     }
     
     public func asByte() -> UInt8 {
         var br: UInt8 = 0
         for day in days {
-            let flag: UInt8 = UInt8(1) << UInt8(day.rawValue)
+            let flag: UInt8 = 1 << UInt8(day.rawValue - 1)
             br = br | flag
         }
         return br
@@ -46,5 +46,11 @@ class Schedule {
         return self.days.reduce(false) { accum, next in
             return accum || date.isDay(next)
         }
+    }
+    
+    public func nextOccurance(from: Date = Date()) -> Date? {
+        return self.days.flatMap { $0.nextOccurance(from: from) }
+                        .sorted { $1 > $0 }
+                        .first
     }
 }

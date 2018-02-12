@@ -9,7 +9,7 @@ target 'Liftracker' do
   pod 'Fabric', '~> 1.6.11'
   pod 'Crashlytics', '~> 3.8.4'
   pod 'SwiftyBeaver', '~>1.2.2'
-  pod 'Charts', '~>3.0.2'
+  # pod 'Charts', '~>3.0'
   pod 'Alamofire', '~> 4.4.0'
   pod 'Runes', '~> 4.0.1'
   pod 'Curry', '~> 3.0.0'
@@ -22,7 +22,8 @@ target 'Liftracker' do
     inherit! :search_paths
     # Pods for testing
     use_frameworks!
-    
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.3'
   end
 end
 
