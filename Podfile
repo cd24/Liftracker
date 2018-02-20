@@ -13,7 +13,7 @@ target 'Liftracker' do
   pod 'Alamofire', '~> 4.4.0'
   pod 'Runes', '~> 4.0.1'
   pod 'Curry', '~> 3.0.0'
-  pod 'PromiseKit', '~> 4.1'
+  pod 'PromiseKit', '~> 4.5.2'
   pod 'Swiftx', '~> 0.5.2'
   pod 'Swiftz', '~> 0.6.3'
   # pod 'Eureka'
@@ -24,6 +24,7 @@ target 'Liftracker' do
     use_frameworks!
     pod 'Quick', '~> 1.2.0'
     pod 'Nimble', '~> 7.0.3'
+    pod 'SwiftCheck', '~> 0.9.1'
   end
 end
 

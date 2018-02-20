@@ -49,12 +49,12 @@ class ScheduleSpec: QuickSpec {
                 let sch = Schedule(schedule)
                 expect(sch.asByte()).to(be(schedule))
             }
-            it("destorys the 8th position") {
+            it("destorys information in the 8th position") {
                 let schedule: UInt8 = 0b10000000
                 let sch = Schedule(schedule)
                 expect(sch.asByte()).to(be(UInt8(0)))
             }
-            it("reads Sunday correctly") {
+            it("reads Sunday from the first bit") {
                 let schedule = Schedule(UInt8(0b00000001))
                 expect(schedule.days).to(contain([Day.Sunday]))
                 expect(schedule.days).toNot(contain([Day.Monday, Day.Teusday, Day.Wednesday, Day.Thursday, Day.Friday, Day.Saturday]))
@@ -66,7 +66,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beFalse())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Monday correctly") {
+            it("reads Monday from the second bit") {
                 let schedule = Schedule(UInt8(0b00000010))
                 expect(schedule.days).to(contain([.Monday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Teusday, Day.Wednesday, Day.Thursday, Day.Friday, Day.Saturday]))
@@ -78,7 +78,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beFalse())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Tuesday correctly") {
+            it("reads Tuesday from the third bit") {
                 let schedule = Schedule(UInt8(0b00000100))
                 expect(schedule.days).to(contain([Day.Teusday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Monday, Day.Wednesday, Day.Thursday, Day.Friday, Day.Saturday]))
@@ -90,7 +90,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beFalse())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Wednesday correctly") {
+            it("reads Wednesday from the fourth bit") {
                 let schedule = Schedule(UInt8(0b00001000))
                 expect(schedule.days).to(contain([Day.Wednesday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Monday, Day.Teusday, Day.Thursday, Day.Friday, Day.Saturday]))
@@ -102,7 +102,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beFalse())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Thursday correctly") {
+            it("reads Thursday from the fifth bit") {
                 let schedule = Schedule(UInt8(0b00010000))
                 expect(schedule.days).to(contain([Day.Thursday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Monday, Day.Teusday, Day.Wednesday, Day.Friday, Day.Saturday]))
@@ -114,7 +114,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beFalse())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Friday correctly") {
+            it("reads Friday from the sixth bit") {
                 let schedule = Schedule(UInt8(0b00100000))
                 expect(schedule.days).to(contain([Day.Friday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Monday, Day.Teusday, Day.Wednesday, Day.Thursday, Day.Saturday]))
@@ -126,7 +126,7 @@ class ScheduleSpec: QuickSpec {
                 expect(schedule.active(on: self.aFriday)).to(beTrue())
                 expect(schedule.active(on: self.aSaturday)).to(beFalse())
             }
-            it("reads Saturday correctly") {
+            it("reads Saturday from the seventh bit") {
                 let schedule = Schedule(UInt8(0b01000000))
                 expect(schedule.days).to(contain([Day.Saturday]))
                 expect(schedule.days).toNot(contain([Day.Sunday, Day.Monday, Day.Teusday, Day.Wednesday, Day.Thursday, Day.Friday]))
@@ -200,7 +200,7 @@ class ScheduleSpec: QuickSpec {
                 expect(nextFromSunday).toNot(beNil())
                 expect(theWeekdayOf(nextFromSunday!)).to(be(theWeekdayOf(self.aSaturday)))
             }
-            it("only adjusts the day") {
+            it("only adjusts the day component") {
                 let saturdaySchedule = Schedule(UInt8(0b01000000))
                 let nextFromSunday = saturdaySchedule.nextOccurance(from: self.aSunday)
                 expect(nextFromSunday).toNot(beNil())
@@ -212,6 +212,7 @@ class ScheduleSpec: QuickSpec {
                 expect(component(.nanosecond, nextFromSunday!)).to(be(component(.nanosecond, self.aSunday)))
             }
         }
+        // Downstream dependencies
         describe("Date and Calendar assumptions") {
             it("can be initialized using TI since 1970") {
                 // Gregorian: Monday, September 12, 2016 10:38:31 AM

@@ -10,7 +10,7 @@ import Foundation
 import Runes
 import PromiseKit
 
-public func <*> <T, Q>(_ a: Promise<T>, _ f: Promise<(T)->Q>) -> Promise<Q> {
+public func <*> <T, Q>(_ f: Promise<(T)->Q>, _ a: Promise<T>) -> Promise<Q> {
     return a.apply( f )
 }
 

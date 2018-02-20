@@ -13,3 +13,9 @@ This project uses Cocoapods to manage dependencies, and Jazzy to generate it's d
 We recommend using [xcode-install](https://github.com/KrauseFx/xcode-install) to manage your xcode version.
 
 If you want to manage your development environment manually, ensure that you've installed the gems listed in the `Gemfile` and that your XCode version is 8.3.2 or newer.
+
+# Notable Keycodes
+
+This application uses a functional approach. This means that some operations like `compose`, `apply`...etc will use operators. Some of these are ascii accessible, but the following keycodes may be useful for writing code:
+
+compose: <option + 8> ( `•` )

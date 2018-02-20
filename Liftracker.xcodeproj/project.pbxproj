@@ -21,10 +21,10 @@
 		5247CF262027DCBC00ED119D /* KVStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CF242027DCBC00ED119D /* KVStore.swift */; };
 		5247CF272027DCBC00ED119D /* KVEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CF252027DCBC00ED119D /* KVEntry.swift */; };
 		5247CF2A2027DDDA00ED119D /* ReflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2201DA95275005CB27B /* ReflectionTests.swift */; };
-		5247CF2B2027DDDA00ED119D /* Promise+FunctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */; };
-		5247CF2C2027DDDA00ED119D /* FunctionalTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */; };
 		5247CF2E2027DEA300ED119D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CF2D2027DEA300ED119D /* Day.swift */; };
 		5247CF302027DEBA00ED119D /* UserDefaults+KVStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CF2F2027DEB900ED119D /* UserDefaults+KVStore.swift */; };
+		526250B8203A34D800E2795C /* PromiseApplicativeLaws.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250B7203A34D800E2795C /* PromiseApplicativeLaws.swift */; };
+		526250BA203B9FBA00E2795C /* PromiseMonadLaws.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250B9203B9FBA00E2795C /* PromiseMonadLaws.swift */; };
 		52838CAB1DF4AC1000A940BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CAA1DF4AC1000A940BA /* HomeViewController.swift */; };
 		52841AF91E638CF300489ADF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841AF81E638CF300489ADF /* Schedule.swift */; };
 		52841AFD1E6476C900489ADF /* Liftracker2Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52841AFB1E6476C900489ADF /* Liftracker2Model.xcdatamodeld */; };
@@ -35,6 +35,8 @@
 		52BAB0861D8F5DCB0051B064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0841D8F5DCB0051B064 /* LaunchScreen.storyboard */; };
 		52CC556F1DAAA609004211E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BAB0821D8F5DCB0051B064 /* Assets.xcassets */; };
 		52DCFD7120312BBF001D7DD0 /* ScheduleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DCFD7020312BBF001D7DD0 /* ScheduleSpec.swift */; };
+		52DCFD7420391E45001D7DD0 /* PromiseFunctorLaws.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DCFD7320391E45001D7DD0 /* PromiseFunctorLaws.swift */; };
+		52DE3E95203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE3E94203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift */; };
 		52DE4BC91E6E60AF004B07EE /* Exercice+BaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */; };
 		52E1DF1A1DAAA6D700269460 /* LiftrackerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */; };
 		52E1DF1C1DAAEBAF00269460 /* WorkoutNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */; };
@@ -69,8 +71,6 @@
 		52375BB01E6241770052E119 /* Promise+Applicative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Applicative.swift"; sourceTree = "<group>"; };
 		52375BB11E6241770052E119 /* Promise+Functor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Functor.swift"; sourceTree = "<group>"; };
 		52375BB21E6241770052E119 /* Promise+Monad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Monad.swift"; sourceTree = "<group>"; };
-		52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+FunctorTests.swift"; sourceTree = "<group>"; };
-		52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalTestBase.swift; sourceTree = "<group>"; };
 		52375BC31E62935D0052E119 /* VersionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionUtil.swift; sourceTree = "<group>"; };
 		52375BC51E634A130052E119 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
 		52470E481E50FC2F00E54878 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		5247CF252027DCBC00ED119D /* KVEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVEntry.swift; sourceTree = "<group>"; };
 		5247CF2D2027DEA300ED119D /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		5247CF2F2027DEB900ED119D /* UserDefaults+KVStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+KVStore.swift"; sourceTree = "<group>"; };
+		526250B7203A34D800E2795C /* PromiseApplicativeLaws.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseApplicativeLaws.swift; sourceTree = "<group>"; };
+		526250B9203B9FBA00E2795C /* PromiseMonadLaws.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseMonadLaws.swift; sourceTree = "<group>"; };
 		52838CAA1DF4AC1000A940BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52841AF81E638CF300489ADF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		52841AFC1E6476C900489ADF /* Liftracker2Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker2Model.xcdatamodel; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		52BAB08C1D8F5DCB0051B064 /* LiftrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BAB0921D8F5DCB0051B064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52DCFD7020312BBF001D7DD0 /* ScheduleSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSpec.swift; sourceTree = "<group>"; };
+		52DCFD7320391E45001D7DD0 /* PromiseFunctorLaws.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseFunctorLaws.swift; sourceTree = "<group>"; };
+		52DE3E94203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+SimpleEquality+Arbitrary.swift"; sourceTree = "<group>"; };
 		52DE4BC81E6E60AF004B07EE /* Exercice+BaseRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercice+BaseRow.swift"; sourceTree = "<group>"; };
 		52E1DF191DAAA6D700269460 /* LiftrackerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftrackerNotification.swift; sourceTree = "<group>"; };
 		52E1DF1B1DAAEBAF00269460 /* WorkoutNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNotification.swift; sourceTree = "<group>"; };
@@ -264,11 +268,10 @@
 		52BAB08F1D8F5DCB0051B064 /* LiftrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				52DE3E93203A279200F2F0F9 /* QuickCheck */,
 				52DCFD7220312BCB001D7DD0 /* specs */,
 				52BAB0921D8F5DCB0051B064 /* Info.plist */,
 				52F5A2201DA95275005CB27B /* ReflectionTests.swift */,
-				52375BBD1E6248610052E119 /* Promise+FunctorTests.swift */,
-				52375BBF1E6249D90052E119 /* FunctionalTestBase.swift */,
 			);
 			path = LiftrackerTests;
 			sourceTree = "<group>";
@@ -292,6 +295,17 @@
 				52DCFD7020312BBF001D7DD0 /* ScheduleSpec.swift */,
 			);
 			path = specs;
+			sourceTree = "<group>";
+		};
+		52DE3E93203A279200F2F0F9 /* QuickCheck */ = {
+			isa = PBXGroup;
+			children = (
+				52DCFD7320391E45001D7DD0 /* PromiseFunctorLaws.swift */,
+				52DE3E94203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift */,
+				526250B7203A34D800E2795C /* PromiseApplicativeLaws.swift */,
+				526250B9203B9FBA00E2795C /* PromiseMonadLaws.swift */,
+			);
+			path = QuickCheck;
 			sourceTree = "<group>";
 		};
 		52E1DF1F1DAB194400269460 /* Analytics */ = {
@@ -636,9 +650,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5247CF2A2027DDDA00ED119D /* ReflectionTests.swift in Sources */,
-				5247CF2C2027DDDA00ED119D /* FunctionalTestBase.swift in Sources */,
+				526250B8203A34D800E2795C /* PromiseApplicativeLaws.swift in Sources */,
 				52DCFD7120312BBF001D7DD0 /* ScheduleSpec.swift in Sources */,
-				5247CF2B2027DDDA00ED119D /* Promise+FunctorTests.swift in Sources */,
+				52DCFD7420391E45001D7DD0 /* PromiseFunctorLaws.swift in Sources */,
+				52DE3E95203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift in Sources */,
+				526250BA203B9FBA00E2795C /* PromiseMonadLaws.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

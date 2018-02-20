@@ -74,7 +74,7 @@ public func <-< <T, U, Z>(_ second: @escaping (U) -> Promise<Z>, _ first: @escap
 }
 
 public func >>- <T, U>(_ a: Promise<T>, _ fn: @escaping (T)->Promise<U>) -> Promise<U> {
-    return a.compose( fn )
+    return a.bind( fn )
 }
 
 public func -<< <T, U>(_ fn: @escaping (T)->Promise<U>, _ a: Promise<T>) -> Promise<U> {
@@ -90,7 +90,7 @@ public func << <T, U>(_ next: Promise<U>, _ a: Promise<T>) -> Promise<U> {
 }
 
 extension Promise {
-    public func compose<U>(_ fn: @escaping (T)->Promise<U>) -> Promise<U> {
+    public func bind<U>(_ fn: @escaping (T)->Promise<U>) -> Promise<U> {
         return self.then { value in
             return fn( value )
         }

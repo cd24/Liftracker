@@ -14,7 +14,7 @@ public func <^> <T, U>( _ f: @escaping (T) -> U, _ a: Promise<T>) -> Promise<U> 
     return a.fmap( f )
 }
 
-extension Promise where T: Any {
+extension Promise {
     public func fmap<U>(_ f: @escaping (T)->U) -> Promise<U> {
         let ret: Promise<U> = self.then { value in
             return Promise<U>(value: f(value) )
