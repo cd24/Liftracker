@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 /**
     The judge pool provides an abstraction to preload all of the Judge classes at launch, and have them ready to be used when you need them.
@@ -35,14 +36,20 @@ class JudgePool: NSObject {
      - Returns: A judge with a matching identifer and expected type or nil if the type/identifier are mismatched
     */
     func getJudge<T: Judge>(forIdentifier id: String) -> T? {
-        log.debug("Retrieving judge with identifier: \(id)")
+        os_log("Retrieving judge with identifier: %s",
+               log: ui_log,
+               type: .debug, id)
         let temp = self.judges
         let value = temp[id]
         
         if value == nil {
-            log.warning("No judge found with identifier: \(id)")
+            os_log("No judge found with identifier: %s",
+                   log: ui_log,
+                   type: .info, id)
         } else {
-            log.debug("Retrieved judge with identifier: \(id)")
+            os_log("No judge found with identifier: %s",
+                   log: ui_log,
+                   type: .debug, id)
         }
         
         return value?.init() as? T
@@ -61,10 +68,14 @@ class JudgePool: NSObject {
         - Warning: This operation will overwrite existing judge pool entries with the same identifier.
     */
     func register(type: Judge.Type) {
-        log.debug("Registering judge with identifier '\(type.identifier())' in judge pool")
+        os_log("Registering judge with identifier %s in judge pool",
+               log: ui_log,
+               type: .debug, type.identifier())
         
         if let oldTp = self.judges[type.identifier()] {
-            log.warning("Overwriting cached Judge type '\(oldTp)' with type '\(type)'")
+            os_log("Overwriting cached Judge type %s with type %s",
+                   log: ui_log,
+                   type: .info, "\(oldTp)", "\(type)")
         }
         self.judges[type.identifier()] = type
     }

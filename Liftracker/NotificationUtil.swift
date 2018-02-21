@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 import Crashlytics
+import os.log
 
 /**
     This is a utility class which facilitates scheduling and handling of notifications
@@ -34,8 +35,9 @@ class NotificationUtil: BaseUtil {
         Prepares the object for use by loading in all objects implementing LiftrackerNotification into a map for use.
     */
     func populateTypes() {
-        
-        log.verbose("Retrieving notification types")
+        os_log("Retrieving notification types",
+               log: ui_log,
+               type: .info)
         self.knownTypes = [String:LiftrackerNotification.Type]()
         
         if let notifications = ReflectionUtil.getImplementing( LiftrackerNotification.self )
@@ -46,17 +48,22 @@ class NotificationUtil: BaseUtil {
                 let id = notification.getID()
                 notification.register()
                 
-                log.debug("Retrieved \(notification) with id \(id)")
-                
+                os_log("Retrieved %s with id %d",
+                       log: notification_log,
+                       type: .debug,
+                       "\(notification)", id)
                 self.knownTypes[id] = notification
                 
             }
         } else {
-            log.error("Unable to retrieve objects implementing \(LiftrackerNotification.self)")
+            os_log("Unable to retrieve objects implementing LiftrackerNotification",
+                   log: notification_log,
+                   type: .error)
         }
-        
-        log.verbose("Retrieved notification types")
-        log.debug("Retrieved \(self.knownTypes)")
+        os_log("Retrieved notification typed: %s",
+               log: notification_log,
+               type: .debug,
+               "\(self.knownTypes)")
     }
     
     /**
@@ -65,7 +72,9 @@ class NotificationUtil: BaseUtil {
     func register() {
         
         UNUserNotificationCenter.current().delegate = self
-        log.info("Notification Util registered with Notification Center")
+        os_log("Notification Util registered with Notification Center",
+               log: notification_log,
+               type: .info)
     }
     
     /**
@@ -79,9 +88,13 @@ class NotificationUtil: BaseUtil {
             - delay: the amount of time to wait to present the notification
     */
     static func scheduleNotification(title: String, body: String, identifier: String, info: [AnyHashable:Any] = [:], delay: Double = 5) {
-        
-        log.info("Scheduling notification")
-        log.verbose("Title: \(title), Body: \(body), Identifier: \(identifier), Info: \(info), Delay: \(delay)")
+        os_log("Scheduling notification",
+               log: notification_log,
+               type: .info)
+        os_log("title: %s, body: %s, identifier: %s, info: %s, delay: %d",
+               log: notification_log,
+               type: .debug,
+               title, body, identifier, "\(info)", delay)
         
         let content = UNMutableNotificationContent()
         content.title = title
@@ -96,9 +109,13 @@ class NotificationUtil: BaseUtil {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
             if let err = error {
-                log.error("Encountered error scheduling notification: \(err)")
+                os_log("Encountered error scheduling notification: %s",
+                       log: notification_log,
+                       type: .error, "\(err)")
             } else {
-                log.info("Notification scheduled successfully.")
+                os_log("Notification scheduled successfully",
+                       log: notification_log,
+                       type: .info)
             }
         })
     }

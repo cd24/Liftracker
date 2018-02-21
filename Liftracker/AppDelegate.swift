@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Fabric.with([Crashlytics.self])
-        LoggingUtil.setup( SwiftyLogger.self )
         AnalyticsUtil.shared.setup()
         addLaunchActions()
         NotificationUtil.shared.register()

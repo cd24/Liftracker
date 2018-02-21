@@ -98,6 +98,19 @@ public struct KVEntry<T: Codable>: RawRepresentable, Equatable, Hashable, Compar
         return val
     }
     
+    public func clear() {
+        guard let store = self.store else {
+            os_log("Store not set for KVEntry named '%s'",
+                   log: entryLog,
+                   type: .error,
+                   self.rawValue)
+            return
+        }
+        if let _ = store.get(for: self) {
+            store.clear(for: self)
+        }
+    }
+    
     // MARK: - Equatable, Comparable
     
     public static func ==(lhs: KVEntry, rhs: KVEntry) -> Bool {

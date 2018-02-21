@@ -25,6 +25,8 @@
 		5247CF302027DEBA00ED119D /* UserDefaults+KVStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CF2F2027DEB900ED119D /* UserDefaults+KVStore.swift */; };
 		526250B8203A34D800E2795C /* PromiseApplicativeLaws.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250B7203A34D800E2795C /* PromiseApplicativeLaws.swift */; };
 		526250BA203B9FBA00E2795C /* PromiseMonadLaws.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250B9203B9FBA00E2795C /* PromiseMonadLaws.swift */; };
+		526250C4203D333900E2795C /* KVSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250C3203D333900E2795C /* KVSpec.swift */; };
+		526250C6203D3D9E00E2795C /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526250C5203D3D9E00E2795C /* LoggingUtil.swift */; };
 		52838CAB1DF4AC1000A940BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52838CAA1DF4AC1000A940BA /* HomeViewController.swift */; };
 		52841AF91E638CF300489ADF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52841AF81E638CF300489ADF /* Schedule.swift */; };
 		52841AFD1E6476C900489ADF /* Liftracker2Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52841AFB1E6476C900489ADF /* Liftracker2Model.xcdatamodeld */; };
@@ -46,10 +48,8 @@
 		52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF271DAB502C00269460 /* PieChartArtist.swift */; };
 		52E1DF2C1DADC65500269460 /* Judge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2B1DADC65500269460 /* Judge.swift */; };
 		52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1DF2D1DADC98D00269460 /* JudgePool.swift */; };
-		52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB95401DB1306600B01799 /* SwiftyLogger.swift */; };
 		52F5A21C1DA93EF0005CB27B /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */; };
 		52F5A21F1DA9446F005CB27B /* ReflectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */; };
-		52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */; };
 		52F5A2261DAAA2D6005CB27B /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2251DAAA2D6005CB27B /* FileUtil.swift */; };
 		52F5A2281DAAA528005CB27B /* BaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A2271DAAA528005CB27B /* BaseUtil.swift */; };
 		99A29AAC44E190BFAF28FC20 /* Pods_Liftracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B983B5DB6C47BE4DE1A7E0B9 /* Pods_Liftracker.framework */; };
@@ -84,6 +84,8 @@
 		5247CF2F2027DEB900ED119D /* UserDefaults+KVStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+KVStore.swift"; sourceTree = "<group>"; };
 		526250B7203A34D800E2795C /* PromiseApplicativeLaws.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseApplicativeLaws.swift; sourceTree = "<group>"; };
 		526250B9203B9FBA00E2795C /* PromiseMonadLaws.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseMonadLaws.swift; sourceTree = "<group>"; };
+		526250C3203D333900E2795C /* KVSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVSpec.swift; sourceTree = "<group>"; };
+		526250C5203D3D9E00E2795C /* LoggingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
 		52838CAA1DF4AC1000A940BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52841AF81E638CF300489ADF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		52841AFC1E6476C900489ADF /* Liftracker2Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Liftracker2Model.xcdatamodel; sourceTree = "<group>"; };
@@ -109,11 +111,9 @@
 		52E1DF271DAB502C00269460 /* PieChartArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartArtist.swift; sourceTree = "<group>"; };
 		52E1DF2B1DADC65500269460 /* Judge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Judge.swift; sourceTree = "<group>"; };
 		52E1DF2D1DADC98D00269460 /* JudgePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgePool.swift; sourceTree = "<group>"; };
-		52EB95401DB1306600B01799 /* SwiftyLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLogger.swift; sourceTree = "<group>"; };
 		52F5A21B1DA93EF0005CB27B /* NotificationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionUtil.swift; sourceTree = "<group>"; };
 		52F5A2201DA95275005CB27B /* ReflectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionTests.swift; sourceTree = "<group>"; };
-		52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
 		52F5A2251DAAA2D6005CB27B /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		52F5A2271DAAA528005CB27B /* BaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUtil.swift; sourceTree = "<group>"; };
 		53A9E45D9877A0CB88044751 /* Pods_LiftrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,11 +279,10 @@
 		52BAB0C41D8F727E0051B064 /* Misc Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				526250C5203D3D9E00E2795C /* LoggingUtil.swift */,
 				52F5A21E1DA9446F005CB27B /* ReflectionUtil.swift */,
-				52F5A2231DAAA1D2005CB27B /* LoggingUtil.swift */,
 				52F5A2251DAAA2D6005CB27B /* FileUtil.swift */,
 				52F5A2271DAAA528005CB27B /* BaseUtil.swift */,
-				52EB95401DB1306600B01799 /* SwiftyLogger.swift */,
 				52375BC31E62935D0052E119 /* VersionUtil.swift */,
 			);
 			name = "Misc Utilities";
@@ -293,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				52DCFD7020312BBF001D7DD0 /* ScheduleSpec.swift */,
+				526250C3203D333900E2795C /* KVSpec.swift */,
 			);
 			path = specs;
 			sourceTree = "<group>";
@@ -623,13 +623,12 @@
 				52E1DF281DAB502C00269460 /* PieChartArtist.swift in Sources */,
 				52E1DF2E1DADC98D00269460 /* JudgePool.swift in Sources */,
 				52470E491E50FC2F00E54878 /* AppAction.swift in Sources */,
+				526250C6203D3D9E00E2795C /* LoggingUtil.swift in Sources */,
 				52470E4E1E51047F00E54878 /* FirstLaunchAction.swift in Sources */,
 				52841AF91E638CF300489ADF /* Schedule.swift in Sources */,
 				52E1DF211DAB389000269460 /* AnalystProtocols.swift in Sources */,
 				52375BB31E6241770052E119 /* Promise+Applicative.swift in Sources */,
-				52EB95411DB1306600B01799 /* SwiftyLogger.swift in Sources */,
 				52375BB51E6241770052E119 /* Promise+Functor.swift in Sources */,
-				52F5A2241DAAA1D2005CB27B /* LoggingUtil.swift in Sources */,
 				52841B041E6E491000489ADF /* AddWorkoutViewController.swift in Sources */,
 				5247CF302027DEBA00ED119D /* UserDefaults+KVStore.swift in Sources */,
 				52E1DF2C1DADC65500269460 /* Judge.swift in Sources */,
@@ -654,6 +653,7 @@
 				52DCFD7120312BBF001D7DD0 /* ScheduleSpec.swift in Sources */,
 				52DCFD7420391E45001D7DD0 /* PromiseFunctorLaws.swift in Sources */,
 				52DE3E95203A302100F2F0F9 /* Promise+SimpleEquality+Arbitrary.swift in Sources */,
+				526250C4203D333900E2795C /* KVSpec.swift in Sources */,
 				526250BA203B9FBA00E2795C /* PromiseMonadLaws.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

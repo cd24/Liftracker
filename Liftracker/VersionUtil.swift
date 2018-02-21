@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 // TODO: Better logging and more reuse
 class VersionUtil {
@@ -32,7 +33,9 @@ class VersionUtil {
             return nil
         }
         guard let releaseVersion = Int(appVersionStr) else {
-            log.error("Release version must be an integer, not \(type(of: appVersionStr)) (\(appVersionStr)")
+            os_log("Release version must be an integer, not %s",
+                log: ui_log,
+                type: .error, appVersionStr)
             return nil
         }
         guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {

@@ -7,22 +7,29 @@
 //
 
 import Foundation
+import os.log
+
+private let analytics_log = appSystem("analytics")
 
 class AnalyticsUtil : BaseUtil {
-    
     static let shared = AnalyticsUtil()
-    
     public var analysts: [Analyst]
     
     override init() {
-        log.verbose("Creating Analytics Util Instance")
+        os_log("Creating Analytics Util Instance",
+               log: analytics_log,
+               type: .info)
         self.analysts = []
         super.init()
         
     }
     
     func setup() {
-        log.verbose("Analytics Util created ")
-        log.debug("Analysts registered with utils: ")
+        os_log("Analytics Util created",
+               log: analytics_log,
+               type: .info)
+        os_log("Analysts registered with utils: ",
+               log: analytics_log,
+               type: .debug)
     }
 }

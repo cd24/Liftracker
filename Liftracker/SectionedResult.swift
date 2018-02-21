@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 class SectionedResult<T> : AnalystResult {
     
@@ -14,28 +15,39 @@ class SectionedResult<T> : AnalystResult {
 		
     
     init(data: [ResultSection<T>]) {
-        log.verbose("Creating section data")
-        log.debug("Section Data: \(data)")
+        os_log("Creating section data",
+               log: ui_log,
+               type: .debug)
+        os_log("Section data: %s",
+               log: ui_log,
+               type: .debug, "\(data)")
         self.data = data
     }
     
     override init() {
-        log.verbose("Creating empty section data")
+        os_log("Creating empty section data",
+               log: ui_log,
+               type: .debug)
         self.data = []
     }
     
     func sectionCount() -> Int {
         let count = data.count
-        log.debug("Current section count: \(count)")
+        os_log("Current section count: %d",
+               log: ui_log,
+               type: .debug, count)
         return count
     }
     
     func data(forSection section: Int) -> ResultSection<T> {
-        
-        log.debug( "Retrieving value for sectioned data for section \(section)" )
+        os_log("Retrieving value for sectioned data for section: %d",
+               log: ui_log,
+               type: .debug, section)
         
         if section > self.data.count {
-            log.error("Attempted to access section \(section) which is out of bounds for data (\(self.data.count))s")
+            os_log("Attempted to access section %d which is out of bounds for data (%d)",
+                   log: ui_log,
+                   type: .error, section, self.data.count)
         }
         
         let res = data[section]

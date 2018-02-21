@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class WorkoutTableViewController: UITableViewController {
 
@@ -55,8 +56,10 @@ class WorkoutTableViewController: UITableViewController {
         .then(execute: setupMemory)
         .catch {
             // TODO: Display an error of some kind to the user
-            log.error("Unable to update workout information. Encountered error:")
-            log.error($0)
+            os_log("Unable to update workout information. Encountered error: %@",
+                   log: ui_log,
+                   type: .error,
+                   "\($0)")
         }
     }
     

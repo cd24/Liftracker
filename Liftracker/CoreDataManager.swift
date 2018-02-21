@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import PromiseKit
+import os.log
 
 class CoreDataManager: NSObject {
     var context: NSManagedObjectContext
@@ -45,15 +46,20 @@ class CoreDataManager: NSObject {
             try context.save()
             return true
         } catch {
-            log.error("Error saving context")
-            log.error(error)
+            os_log("Error saving context: %s",
+                   log: data_log,
+                   type: .error,
+                   "\(error)")
             return false
         }
     }
     
     func createObject<T: NSManagedObject>() -> T? {
         let name = nameFor(entity: T.self)
-        log.verbose("Requesting entity of type: \(name)")
+        os_log("Requesting entity of type: %s",
+               log: data_log,
+               type: .debug,
+               name)
         return NSEntityDescription.insertNewObject(forEntityName: name, into: context) as? T
     }
     

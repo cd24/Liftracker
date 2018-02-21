@@ -12,11 +12,12 @@ import os.log
 public protocol KVStore {
     func put<T>(_ object: T, for key: KVEntry<T>)
     func get<T>(for key: KVEntry<T>) -> T?
+    func clear<T>(for key: KVEntry<T>)
 }
 
 extension KVStore {
     // TODO: Document
-    public func entry<T>(_ name: String) -> KVEntry<T> {
+    public func entry<T: Codable>(_ name: String) -> KVEntry<T> {
         os_log("Creating new entry named %s in store %s",
                log: storeLog,
                type: .debug,
