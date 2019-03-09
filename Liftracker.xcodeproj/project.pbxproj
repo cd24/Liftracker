@@ -552,7 +552,6 @@
 				52BAB0751D8F5DCB0051B064 /* Frameworks */,
 				52BAB0761D8F5DCB0051B064 /* Resources */,
 				4AE39EE300179C05628A8EF9 /* [CP] Embed Pods Frameworks */,
-				52BAB0A91D8F647E0051B064 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -746,19 +745,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		52BAB0A91D8F647E0051B064 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/Fabric/run f8fa7443668ecc5324b531e74085dd3f3ebeab3d 3ca668da2af7fd3a31a7a89f089812ebd270fafdc673d68a2bd705ccc6585f58";
 		};
 		8F48F80DF3EDE3A07F23ED1E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

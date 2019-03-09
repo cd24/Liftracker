@@ -8,7 +8,6 @@
 
 import Foundation
 import UserNotifications
-import Crashlytics
 import os.log
 
 /**

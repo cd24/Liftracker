@@ -13,7 +13,6 @@ target 'Liftracker' do
   pod 'PromiseKit', '~>6.8.3'
   pod 'Runes', '~>4.1.0'
   pod 'Swiftz', '~>0.6.3'
-  pod 'Crashlytics', '~>3.12.0'
   pod 'Curry'
   abstract_target 'Tests' do
     target "LiftrackerTests"
