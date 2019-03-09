@@ -3,3 +3,4 @@ osx_image: xcode10.1
 xcode_project: Liftracker.xcodeproj
 xcode_scheme: Tests
 xcode_sdk: iphonesimulator12
+rvm: 2.2.3
