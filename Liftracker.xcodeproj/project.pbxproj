@@ -713,7 +713,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
@@ -744,7 +744,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Liftracker/Pods-Liftracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52BAB0A91D8F647E0051B064 /* ShellScript */ = {
@@ -784,7 +784,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerTests/Pods-Liftracker-Tests-LiftrackerTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerTests/Pods-Liftracker-Tests-LiftrackerTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
@@ -821,7 +821,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerTests/Pods-Liftracker-Tests-LiftrackerTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerTests/Pods-Liftracker-Tests-LiftrackerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8852735F4291B99390CBFB9 /* [CP] Embed Pods Frameworks */ = {
@@ -830,7 +830,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerUITests/Pods-Liftracker-Tests-LiftrackerUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerUITests/Pods-Liftracker-Tests-LiftrackerUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
@@ -867,7 +867,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerUITests/Pods-Liftracker-Tests-LiftrackerUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerUITests/Pods-Liftracker-Tests-LiftrackerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F23E96FC931647DDA8A24286 /* [CP] Check Pods Manifest.lock */ = {
@@ -894,7 +894,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerLongTests/Pods-Liftracker-Tests-LiftrackerLongTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerLongTests/Pods-Liftracker-Tests-LiftrackerLongTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
@@ -931,7 +931,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liftracker-Tests-LiftrackerLongTests/Pods-Liftracker-Tests-LiftrackerLongTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Liftracker-Tests-LiftrackerLongTests/Pods-Liftracker-Tests-LiftrackerLongTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1266,7 +1266,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1518407521;
+				CURRENT_PROJECT_VERSION = 1552168187;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1293,7 +1293,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1518407521;
+				CURRENT_PROJECT_VERSION = 1552168187;
 				DEVELOPMENT_TEAM = VPWANFCTRJ;
 				INFOPLIST_FILE = Liftracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
