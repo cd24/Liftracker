@@ -68,12 +68,18 @@ class VersionUtil {
     
     public static func updateVersionStore() {
         guard let appVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String else {
-            return
-        }
-        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+            os_log("Unable to determine app version.",
+                   log: ui_log,
+                   type: .error)
             return
         }
         lastAppVersion.set( appVersion )
+        guard let marketingVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
+            os_log("Unable to determine marketing version for the app.",
+                   log: ui_log,
+                   type: .error)
+            return
+        }
         lastMarketingVersion.set( marketingVersion )
     }
 }

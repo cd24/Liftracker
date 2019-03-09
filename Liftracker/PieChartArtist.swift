@@ -29,7 +29,7 @@ class PieChartArtist : Artist {
             - result: MUST be a SectionedResult<Double>, otherwise, an error is shown.
     */
     func render(result: AnalystResult) -> Promise<UIView> {
-        return Promise { fufill, reject in
+        return Promise<UIView> {
             os_log("Rendering pie chart view",
                    log: ui_log,
                    type: .info)
@@ -45,15 +45,15 @@ class PieChartArtist : Artist {
                        type: .debug,
                        "\(pieResult)")
                 if let view = renderPieChart(result: pieResult) {
-                    fufill( view )
+                    $0.fulfill( view )
                 } else {
                     os_log("Unable to render pie view with data: %s",
                            log: ui_log,
                            type: .info)
-                    reject( ArtistError.generic )
+                    $0.reject( ArtistError.generic )
                 }
             } else {
-                reject( ArtistError.unkownData )
+                $0.reject( ArtistError.unkownData )
             }
         }
     }

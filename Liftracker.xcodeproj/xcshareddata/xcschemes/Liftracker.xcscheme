@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52BAB0961D8F5DCB0051B064"
+               BlueprintIdentifier = "39E320A722345BA400FFCBCD"
                BuildableName = "LiftrackerUITests.xctest"
                BlueprintName = "LiftrackerUITests"
                ReferencedContainer = "container:Liftracker.xcodeproj">

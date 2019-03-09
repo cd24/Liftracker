@@ -1,37 +1,35 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '10.0'
+# Uncomment this line if you're using Swift
+use_frameworks!
 
 target 'Liftracker' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+  inherit! :search_paths
+  pod 'Charts', '~>3.2.2'
+  pod 'XLForm', '~> 3.0'
+  pod 'Eureka', '~>4.3.1'
+  pod 'Bond', '~>7.2.1'
+  pod 'RealmSwift', '~>3.13.1'
+  pod 'PromiseKit', '~>6.8.3'
+  pod 'Runes', '~>4.1.0'
+  pod 'Swiftz', '~>0.6.3'
+  pod 'Crashlytics', '~>3.12.0'
+  pod 'Curry'
+  abstract_target 'Tests' do
+    target "LiftrackerTests"
+    target "LiftrackerUITests"
+    target "LiftrackerLongTests"
 
-  # Pods for Liftracker
-  pod 'Fabric', '~> 1.6.11'
-  pod 'Crashlytics', '~> 3.8.4'
-  pod 'SwiftyBeaver', '~>1.2.2'
-  # pod 'Charts', '~>3.0'
-  pod 'Alamofire', '~> 4.4.0'
-  pod 'Runes', '~> 4.0.1'
-  pod 'Curry', '~> 3.0.0'
-  pod 'PromiseKit', '~> 4.5.2'
-  pod 'Swiftx', '~> 0.5.2'
-  pod 'Swiftz', '~> 0.6.3'
-  # pod 'Eureka'
-
-  target 'LiftrackerTests' do
-    inherit! :search_paths
-    # Pods for testing
-    use_frameworks!
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.3'
-    pod 'SwiftCheck', '~> 0.9.1'
+    pod 'Quick', '~>2.0.0'
+    pod 'Nimble', '~>8.0.1'
+    pod 'SwiftCheck'
   end
 end
 
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '3.0'
-        end
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '4.2'
     end
+  end
 end

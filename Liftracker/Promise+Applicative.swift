@@ -23,7 +23,7 @@ public func *> <T>(_ discard: AnyPromise, _ keep: Promise<T>) -> Promise<T> {
 }
 
 public func pure<T>(_ value: T) -> Promise<T> {
-    return Promise(value: value)
+    return Promise() { $0.fulfill(value) }
 }
 
 extension Promise {
@@ -36,7 +36,7 @@ extension Promise {
     public func applyDiscardingResult(from next: AnyPromise) -> Promise<T> {
         return self.then { value in
             next.then { _ in
-                return Promise(value: value)
+                return pure(value)
             }
         }
     }

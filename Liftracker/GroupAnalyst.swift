@@ -16,8 +16,8 @@ class GroupAnalyst : Analyst {
     }
     
     func analyze() -> Promise<AnalystResult> {
-        return Promise { fufill, reject in
-            reject(AnalystError.generic)
+        return Promise {
+            $0.reject(AnalystError.generic)
         }
     }
     

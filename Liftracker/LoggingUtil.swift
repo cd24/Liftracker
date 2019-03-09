@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyBeaver
 import os.log
 
 // OS Log API

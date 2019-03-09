@@ -38,9 +38,12 @@ public class KVSpec: QuickSpec {
             it("stores and retrieves the same value") {
                 let value = 2
                 let entry: KVEntry<Int> = UserDefaults.standard.entry("test.key")
+                entry.clear()
                 expect(entry.get()).to(beNil())
                 entry.set(value)
                 expect(entry.get()).to(equal(value))
+                entry.clear()
+                expect(entry.get()).to(beNil())
             }
             it("can reset the value to nil") {
                 let entry: KVEntry<Int> = UserDefaults.standard.entry("test.key")

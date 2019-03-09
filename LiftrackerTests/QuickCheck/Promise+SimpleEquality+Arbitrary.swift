@@ -16,11 +16,11 @@ extension Promise where T: Equatable {
     public func contentsEqual(_ rhs: Promise<T>) -> Bool {
         var v1: T? = nil
         var v2: T? = nil
-        self.then { v1_r in
+        self.done { v1_r in
             v1 = v1_r
         }
         expect(v1).toEventuallyNot(beNil())
-        rhs.then { v2_r in
+        rhs.done { v2_r in
             v2 = v2_r
         }
         expect(v2).toEventuallyNot(beNil())
@@ -75,7 +75,7 @@ public struct ArbitraryPromise<T: Arbitrary>: Arbitrary {
     public let getPromise: Promise<T>
     init(_ p: Promise<T>) { getPromise = p }
     
-    public static var arbitrary : Gen<ArbitraryPromise<T>> { return T.arbitrary.map(Promise.init).map(ArbitraryPromise.init) }
+    public static var arbitrary : Gen<ArbitraryPromise<T>> { return T.arbitrary.map { v in Promise{ f in f.fulfill(v) } }.map(ArbitraryPromise.init) }
 }
 
 public struct ArbitraryPromiseError<T: Arbitrary>: Arbitrary {

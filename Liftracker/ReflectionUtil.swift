@@ -35,7 +35,7 @@ class ReflectionUtil: BaseUtil {
     static func getAllClasses() -> [AnyClass] {
         let expectedCount = Int(objc_getClassList(nil, 0))
         let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: expectedCount)
-        let autoreleasingPointer = AutoreleasingUnsafeMutablePointer<AnyClass?>(allClasses)
+        let autoreleasingPointer = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
         let actualCount: Int32 = objc_getClassList(autoreleasingPointer, Int32(expectedCount))
         let count = Int(actualCount)
         

@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let notFirstRun = "First Run"
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         Fabric.with([Crashlytics.self])
         AnalyticsUtil.shared.setup()
-        addLaunchActions()
+        addAppCycleActions()
         NotificationUtil.shared.register()
         let diff = VersionUtil.versionDifference()
         AppActions.shared.trigger( .launch( diff ) )
@@ -56,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /// Adds all app actions
-    func addLaunchActions() {
+    func addAppCycleActions() {
         [
             setDefaultsAction
         ]

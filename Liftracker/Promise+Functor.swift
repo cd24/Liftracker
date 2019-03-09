@@ -17,7 +17,7 @@ public func <^> <T, U>( _ f: @escaping (T) -> U, _ a: Promise<T>) -> Promise<U> 
 extension Promise {
     public func fmap<U>(_ f: @escaping (T)->U) -> Promise<U> {
         let ret: Promise<U> = self.then { value in
-            return Promise<U>(value: f(value) )
+            return pure(f(value))
         }
         return ret
     }

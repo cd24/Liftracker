@@ -54,3 +54,15 @@ class Schedule {
                         .first
     }
 }
+
+extension UInt8 {
+    public func int() -> Int {
+        return Int(self)
+    }
+}
+
+extension Int {
+    public func byte() -> UInt8 {
+        return UInt8(self)
+    }
+}

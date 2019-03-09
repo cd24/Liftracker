@@ -32,7 +32,7 @@ public class AppActions: BaseUtil {
     private func exec(_ action: AppAction, _ event: EventType) {
         // Determine which dispatch queue to use for executing
         let queue = action.configuration.syncronous ? DispatchQueue.main : dispatch
-        queue.async {
+        queue.sync {
             action.run(for: event)
         }
     }

@@ -16,13 +16,13 @@ import SwiftCheck
 
 public class PromiseFunctorLaws: XCTestCase {
     func testInvariants() {
-        property("preserves errors") <- forAll { (p1: ArbitraryPromiseError<Int>, f: ArrowOf<Int, Int>) in
+        property("preserves errors", arguments: sizeArgs) <- forAll { (p1: ArbitraryPromiseError<Int>, f: ArrowOf<Int, Int>) in
             return (f.getArrow <^> p1.getPromise).errorsEqual(p1.getPromise)
         }
     }
     
     func testFunctorIdentity() {
-        property("Promise obeys Functor identity law") <- forAll { (p: ArbitraryPromise<Int>) in
+        property("Promise obeys Functor identity law", arguments: sizeArgs) <- forAll { (p: ArbitraryPromise<Int>) in
             let promise = p.getPromise
             let mapping = identity <^> promise
             let idOnly = identity(promise)
@@ -31,7 +31,7 @@ public class PromiseFunctorLaws: XCTestCase {
     }
     
     func testFunctorComposition() {
-        property("Promise obeys functor composition law") <- forAll { (p: ArbitraryPromise<Int>, f1: ArrowOf<Int, Int>, f2: ArrowOf<Int, String>) in
+        property("Promise obeys functor composition law", arguments: sizeArgs) <- forAll { (p: ArbitraryPromise<Int>, f1: ArrowOf<Int, Int>, f2: ArrowOf<Int, String>) in
             let f = f1.getArrow
             let g = f2.getArrow
             let promise = p.getPromise

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyBeaver
 
 public class BaseUtil: NSObject {
     

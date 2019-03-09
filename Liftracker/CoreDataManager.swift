@@ -25,19 +25,17 @@ class CoreDataManager: NSObject {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: objectModel)
         context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.persistentStoreCoordinator = coordinator
-        DispatchQueue.global(qos: .background).async {
-            let storeURL = FileUtil
-                            .getDocumentDirectory()
-                            .appendingPathComponent(databaseName)
-            
-            do {
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
-                                                   configurationName: nil,
-                                                   at: storeURL,
-                                                   options: nil)
-            } catch {
-                fatalError("Failed to migrate store: \(error)")
-            }
+        let storeURL = FileUtil
+            .getDocumentDirectory()
+            .appendingPathComponent(databaseName)
+        
+        do {
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+                                               configurationName: nil,
+                                               at: storeURL,
+                                               options: nil)
+        } catch {
+            fatalError("Failed to migrate store: \(error)")
         }
     }
     
@@ -78,16 +76,16 @@ class CoreDataManager: NSObject {
     }
     
     func getEntities<T: NSManagedObject>(of type: T.Type, withSortDescriptors descriptors: [NSSortDescriptor] = [], withPredicate predicate: NSPredicate? = nil) -> Promise<[T]> {
-        return Promise { fufill, reject in
+        return Promise {
             let name = self.nameFor(entity: type)
             let request: NSFetchRequest<T> = NSFetchRequest(entityName: name)
             request.sortDescriptors = descriptors
             request.predicate = predicate
             do {
                 let results = try context.fetch(request)
-                fufill( results )
+                $0.fulfill( results )
             } catch {
-                reject( error )
+                $0.reject( error )
             }
         }
     }

@@ -33,8 +33,8 @@ open class FirstLaunchAction: AppAction {
     public let execute: (VersionChange?) -> Void
     
     public init(execute: @escaping (VersionChange?) -> Void) {
-        let type = type(of: self)
-        launchKey = defaultsEntry("\(preferencePrefix).launch.\(type)")
+        let tp = type(of: self)
+        launchKey = defaultsEntry("\(preferencePrefix).launch.\(tp)")
         self.execute = execute
     }
     
